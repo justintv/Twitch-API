@@ -1,3 +1,0 @@
-This project will house the documentation and public issue tracker for the upcoming TwitchTV API.
-
-Work will start on this API relatively soon. The process of moving gaming / twitch content from the Justin.TV API to the TwitchTV API isn't as straight forward as one may think. So please bear with us as we ramp this up. Watching the repository will permit you to get updates on when we begin to move forward with this.
