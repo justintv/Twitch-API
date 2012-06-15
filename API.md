@@ -143,47 +143,7 @@ Basic information about the API and authentication status. If you are authentica
 
 (**v2**, *Authenticated, Scope:user*) Unfollow the specified user.
 
-### Users
-
-`GET /users/:user`
-
-Get the specified user.
-
-    {
-      "_id": 21229404,
-      "created_at": "2011-03-19T15:42:22Z",
-      "updated_at": "2012-03-30T20:20:36Z",
-      "_links": {
-        "self": "https://api.twitch.tv/kraken/users/hebo"
-      },
-      "display_name": "Hebo",
-      "name": "hebo"
-    }
-
-`GET /user`
-
-(*Authenticated, Scope:user_read*) Get the authenticated user.
-
-    {
-      "_id": 22765025,
-      "created_at": "2011-06-03T22:01:03Z",
-      "email": "james+test15@justin.tv",
-      "updated_at": "2012-02-07T02:24:32Z",
-      "_links": {
-        "self": "https://api.twitch.tv/kraken/users/cevtest15"
-      },
-      "display_name": "Cevtest15",
-      "name": "cevtest15"
-    }
-
-`PATCH /user`
-
-(**v2** *Authenticated, Scope:user*) Update the authenticated user.
-
-`PATCH /user/:user/`
-
-(**v2**) Update another user for whom you have some sort of access. For example, a team might have access to their team members.
-
+### [Users](Users-Resource)
 
 ### Channels
 
