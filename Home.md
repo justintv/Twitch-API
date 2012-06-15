@@ -1,1 +1,1 @@
-## [Twitch API Documentation](API)
+## [Twitch API Documentation](wiki/API)
