@@ -115,6 +115,8 @@ Send token as URL parameter:
 
 Basic information about the API and authentication status. If you are authenticated, the response includes the status of your token and links to other related resources.
 
+#### Response
+
     {
       "token": {
         "authorization": {
@@ -132,16 +134,6 @@ Basic information about the API and authentication status. If you are authentica
         "chat": "https://api.twitch.tv/kraken/chat/hebo"
       }
     }
-
-### (**v2**) Following
-
-`PUT /follows/:user` 
-
-(**v2**, *Authenticated, Scope:user*) Follow the specified user.
- 
-`DELETE /follows/:user`
-
-(**v2**, *Authenticated, Scope:user*) Unfollow the specified user.
 
 ### [Users](Users-Resource)
 ### [Channels](Channels-Resource)
