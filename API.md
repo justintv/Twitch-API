@@ -9,7 +9,7 @@ The TwitchTV API is comprised of two parts: the REST API itself and the [JavaScr
 
 [API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/justintv-api-developers
 [JavaScript SDK]: /justintv/twitch-js-sdk
-[Github Issues]: /justintv/twitch-js-sdk/issues
+[Github Issues]: /justintv/Twitch-API/issues
 
 ### Formats
 
