@@ -1,4 +1,3 @@
-
 # Channels
 
 ## Get the specified channel
@@ -8,35 +7,36 @@
 ### Response
 
     {
-      "game": "World of Warcraft: Mists of Pandaria",
-      "_id": 20694610,
+      "name": "towelliee",
+      "game": "World of Warcraft: Cataclysm",
       "created_at": "2011-02-24T01:38:43Z",
-      "mature": true,
-      "updated_at": "2012-04-02T17:46:23Z",
-      "title": "Towelliee HD Gaming",
       "teams": [{
-        "_id": 134,
+        "name": "tgn",
         "created_at": "2011-12-23T06:30:14Z",
-        "updated_at": "2012-01-08T23:48:52Z",
-        "info": "Building a career path for YouTubers! See http://tgn.tv\n\n",
-        "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-background_image-6c4e34a8def09253.jpeg",
-        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-team_logo_image-d2b677d4f1ecc008-300x300.png",
-        "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-banner_image-8607f365e2d69e22-640x125.png",
+        "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-background_image-1d969c0af8187732.jpeg",
+        "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-banner_image-f221dbf018f33148-640x125.png",
+        "updated_at": "2012-04-25T17:30:49Z",
+        "_id": 134,
+        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-team_logo_image-b710eca274634d81-300x300.png",
         "_links": {
           "self": "https://api.twitch.tv/kraken/teams/tgn"
         },
-        "display_name": "TGN",
-        "name": "tgn"
+        "info": "Building a career path for YouTubers! See http://tgn.tv\n\n",
+        "display_name": "TGN"
       }],
+      "title": "Towelliee HD Gaming",
+      "updated_at": "2012-06-18T05:22:53Z",
+      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
       "_links": {
-        "self": "https:/api.twitch.tv/kraken/channels/towelliee",
-        "chat":"https:/api.twitch.tv/kraken/chat/towelliee",
-        "commercial":"https:/api.twitch.tv/kraken/channels/towelliee/commercial"
+        "self": "https://api.twitch.tv/kraken/channels/towelliee",
+        "chat": "https://api.twitch.tv/kraken/chat/towelliee",
+        "commercial": "https://api.twitch.tv/kraken/channels/towelliee/commercial"
       },
-      "display_name": "Towelliee",
-      "name": "towelliee"
+      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
+      "_id": 20694610,
+      "mature": true,
+      "display_name": "Towelliee"
     }
-
 ## Get the authenticated channel
 
 `GET /channel`
@@ -69,6 +69,8 @@
         "chat":"https:/api.twitch.tv/kraken/chat/hebo",
         "commercial":"https:/api.twitch.tv/kraken/channels/hebo/commercial"
       },
+      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
+      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
       "id": 21229404,
       "mature": false,
       "login": "hebo",
