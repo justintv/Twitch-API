@@ -101,7 +101,7 @@ We do not allow username/password authentication. All clients must use OAuth 2.
 
 Send token as header:
 
-    curl -H "Authorization: token OAUTH-TOKEN" https://api.twitch.tv/kraken
+    curl -H "Authorization: OAuth OAUTH-TOKEN" https://api.twitch.tv/kraken
 
 Send token as URL parameter:
 
