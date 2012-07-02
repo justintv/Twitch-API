@@ -79,9 +79,27 @@
 
 ## Update the specified channel
 
-`PATCH /channel`
+`PUT /channels/:channel/`
 
-(**Not implemented**)
+### Parameters
+
+Form-encoded or JSON parameters specifying the properties to change. At present, the following properties are supported:
+
+- `status` 
+- `game`  
+
+&nbsp;
+
+    {
+        "channel": {
+        "status": "Playing cool new game!",
+        "game": "Diablo"
+        }
+    }
+
+### Response
+
+`200 OK` with the updated channel object if successful.
 
 ## Run a commercial on the specified channel
 
