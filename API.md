@@ -52,7 +52,9 @@ This allows clients to get either the latest version of the API or a specific ve
 
 ## OAuth 2
 
-[OAuth 2][] is an authentication protocol designed to make accessing user accounts easy and secure. 
+[OAuth 2][] is an authentication protocol designed to make accessing user accounts from third party clients easy and secure. An `access_token` given to your application allows you to perform actions on behalf of an authenticated Twitch user.
+
+There are two ways to get access tokens, a browser-based flow for use on most applications, and a password credentials flow, which works best on embedded applications which aren't able to integrate a browser (hardware streaming products, game consoles). The rest of this section covers the browser-based flow.
 
 Before you can handle user authorization in your app, register a [client application][]. The specified `redirect_uri` will receive the result of all client authorizations in JSON: either an access token or a failure message. 
 
@@ -77,7 +79,6 @@ That's it! Your application can now make requests on behalf of the user by inclu
 [OAuth 2]: http://hueniverse.com/2010/05/introducing-oauth-2-0
 [client application]: https://api.twitch.tv/kraken/oauth2/clients/new
 [authorization endpoint]: https://api.twitch.tv/kraken/oauth2/authorize
-
 
 ### Scopes <a name="scope"></a>
 
