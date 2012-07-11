@@ -4,7 +4,7 @@ The password credentials grant type allows you to request an access token for a 
 
 This authorization flow allows clients that cannot use a browser to get an access token for Twitch users. Your application can present a username and password prompt to the user, but should not store a user's credentials any longer than is necessary to retrieve an access token.
 
-Due to the sensitive nature of handling user passwords, this type of authorization flow is only permitted on a case-by-case basis. If you think your application is a good candidate, contact us directly.
+Due to the sensitive nature of handling user passwords, this type of authorization flow is only permitted on a case-by-case basis. If you think your application is a good candidate, please contact us directly.
 
 ## Usage
 
