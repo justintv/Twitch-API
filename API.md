@@ -86,8 +86,9 @@ When requesting authorization from users, the scope parameter allows you to spec
 
 - `user_read`: Read access to non-public user information, such as email address.
 - `channel_read`: Read access to non-public channel information, including email address and stream key.
-- **(Not Implemented)** `channel_editor`: Write access to channel metadata (title, game, status, other metadata). Cut VODs.
+- `channel_editor`: Write access to channel metadata (game, status, other metadata).
 - `channel_commercial`: Access to trigger commercials on channel.
+- `channel_stream`: Ability to reset a channel's stream key.
 
 
 Scopes are specified as a *space separated* list in the url parameter `scope` when requesting authorization:
