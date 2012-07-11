@@ -10,7 +10,7 @@ Due to the sensitive nature of handling user passwords, this type of authorizati
 
 First, register a [client application][]. The `redirect_uri` is only used for browser-based authorization flows, so you can set this to any domain you own.
 
-[client application]: https://api.twitch.tv/kraken/oauth2/clients/new
+[client application]: http://www.twitch.tv/settings?section=applications
 
 Next, make a request to our token endpoint with user credentials to get an access token
 
