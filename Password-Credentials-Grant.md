@@ -12,11 +12,13 @@ First, register a [client application][]. The `redirect_uri` is only used for br
 
 [client application]: https://api.twitch.tv/kraken/oauth2/clients/new
 
-Next, make a request to our token endpoint with user credentials to get an access token:
+Next, make a request to our token endpoint with user credentials to get an access token
+
+    POST https://api.twitch.tv/kraken/oauth2/token
 
 ### Parameters
 
 - `client_id` (required): The Client ID of your app that you recieved upon creation.
 - `username` (required): The username of the Twitch user.
 - `password` (required): The password of the Twitch user.
-- `scope` (required): A **space separated** list of [scopes](API#wiki-scope) your app is requesting approval for.
+- `scope` (required): A **space separated** list of [scopes](/API#wiki-scope) your app is requesting approval for.
