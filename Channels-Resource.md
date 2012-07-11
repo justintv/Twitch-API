@@ -81,6 +81,8 @@
 
 `PUT /channels/:channel/`
 
+(Authenticated, Scope:channel_editor)
+
 ### Parameters
 
 Form-encoded or JSON parameters specifying the properties to change. At present, the following properties are supported:
@@ -104,6 +106,8 @@ Form-encoded or JSON parameters specifying the properties to change. At present,
 ## Run a commercial on the specified channel
 
 `POST /channels/:channel/commercial`
+
+(Authenticated, Scope:channel_commercial)
 
 ### Parameters
 
