@@ -77,7 +77,7 @@ Once your application is authorized, the user will be forwarded to the specified
 That's it! Your application can now make requests on behalf of the user by including your access token as specified in [Authentication](#auth).
 
 [OAuth 2]: http://hueniverse.com/2010/05/introducing-oauth-2-0
-[client application]: https://api.twitch.tv/kraken/oauth2/clients/new
+[client application]: http://www.twitch.tv/settings?section=applications
 [authorization endpoint]: https://api.twitch.tv/kraken/oauth2/authorize
 
 ### Scopes <a name="scope"></a>
