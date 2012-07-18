@@ -29,5 +29,5 @@ Next, make a request to our token endpoint with user credentials to get an acces
 
 ### Example
 
-    $ curl -X POST 'https://api.twitch.tv/kraken/oauth2/token?client_id=4ea49phb737effd1d5mslv02e&username=awesomeuser&password=sekret&scope=user_read'
+    $ curl -X POST -d "client_id=<myclient>&username=<myuser>&password=<mypass>&scope=user_read" https://api.twitch.tv/kraken/oauth2/token
     {"scope":["user_read"],"access_token":"df4yofxyn2s7640ojfrh9chz8"}%       
