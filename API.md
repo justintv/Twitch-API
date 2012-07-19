@@ -139,5 +139,6 @@ Basic information about the API and authentication status. If you are authentica
 
 ### [Users](Users-Resource)
 ### [Channels](Channels-Resource)
+### [Streams](Streams-Resource)
 ### [Teams](Teams-Resource)
 ### [Chat](Chat-Resource)
