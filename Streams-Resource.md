@@ -87,7 +87,7 @@ This is a flexible method that allows you to query for multiple streams based on
 
 ### Parameters
 
-- `game` (optional): The game to query
+- `game` (optional): The game to query.
 - `channel` (optional): A list of channel names to query, seperated by commas.
 - `limit` (optional): The maximum number of streams to return, up to 100.
 - `offset` (optional): The offset to begin listing streams, defaults to 0.
