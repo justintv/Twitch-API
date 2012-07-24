@@ -1,4 +1,3 @@
-
 # Streams
 
 ## Get the specified channel's stream
@@ -95,8 +94,8 @@ This is a flexible method that allows you to query for multiple streams based on
 
 #### Get list of Diablo III streams
 
-`GET /streams?game=Diablo+III'
+`GET /streams?game=Diablo+III`
 
 #### Get multiple channels
 
-`GET /streams?channel=incredibleorb,incontroltv'
+`GET /streams?channel=incredibleorb,incontroltv`
