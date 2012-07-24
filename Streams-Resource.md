@@ -79,3 +79,24 @@
         "self": "https://api.twitch.tv/kraken/streams/live_user_incontroltv"
       }
     }
+
+## Get a list of streams
+
+`GET /streams`
+
+This is a flexible method that allows you to query for multiple streams based on a number of parameters.
+
+### Parameters
+
+- `game` (optional): The game to query
+- `channel` (optional): A list of channel names to query, seperated by commas.
+- `limit` (optional): The maximum number of streams to return, up to 100.
+- `offset` (optional): The offset to begin listing streams, defaults to 0.
+
+#### Get list of Diablo III streams
+
+`GET /streams?game=Diablo+III'
+
+#### Get multiple channels
+
+`GET /streams?channel=incredibleorb,incontroltv'
