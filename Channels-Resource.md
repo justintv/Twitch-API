@@ -41,7 +41,7 @@
 
 `GET /channel`
 
-(*Authenticated, Scope:channel*) Get the channel associated with the authenticated user. Includes the channel stream key.
+(*Authenticated, Scope:channel_read*) Get the channel associated with the authenticated user. Includes the channel stream key.
 
     {
       "game": "Diablo II: Lord of Destruction",
