@@ -5,7 +5,7 @@
 
 `GET /games/top`
 
-This method allows you to retrieve the top (by viewers) games on the site.
+This method allows you to retrieve the top games on the site (by current viewers).
 
 ### Parameters
 
