@@ -5,7 +5,7 @@
 
 `GET /games/top`
 
-This method allows you to retrieve the top games on the site (by current viewers).
+This method allows you to retrieve the top games on Twitch (by current viewers).
 
 ### Parameters
 
