@@ -107,7 +107,9 @@ This is a flexible method that allows you to query for multiple streams based on
 ### Parameters
 
 - `limit` (optional): The maximum number of streams to return, up to 100. Defaults to 25.
-- `offset` (optional): The offset to begin listing games, defaults to 0.
+- `offset` (optional): The offset to begin listing streams, defaults to 0.
+
+Note that the number of promoted streams varies from day to day, and there is no guarantee on how many streams will be promoted at a given time.
 
 ### Response
     
