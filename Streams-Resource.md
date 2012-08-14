@@ -113,7 +113,7 @@ Note that the number of promoted streams varies from day to day, and there is no
 
 ### Response
     
-Response an array of featured streams. Each element in the featured array has promotional text, a promotional image, and a nested stream object (see above).
+Response has an array of featured streams and paginated links. Each element in the featured array has promotional text, a promotional image, and a nested stream object (see above).
 
     {
       "_links": {
