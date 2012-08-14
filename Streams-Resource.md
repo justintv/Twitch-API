@@ -99,3 +99,33 @@ This is a flexible method that allows you to query for multiple streams based on
 #### Get multiple channels
 
 `GET /streams?channel=incredibleorb,incontroltv`
+
+## Get a list of featured (promoted) streams
+
+`GET /streams/featured`
+
+### Parameters
+
+- `limit` (optional): The maximum number of streams to return, up to 100. Defaults to 25.
+- `offset` (optional): The offset to begin listing games, defaults to 0.
+
+### Response
+    
+Response an array of featured streams. Each element in the featured array has promotional text, a promotional image, and a nested stream object (see above).
+
+    {
+      "_links": {
+         self: "https://api.twitch.tv/kraken/streams/featured?limit=25&offset=0",
+         next: "https://api.twitch.tv/kraken/streams/featured?limit=25&offset=25"
+      },
+      "featured": [
+        {
+          "image": "http://s.jtvnw.net/jtv_user_pictures/hosted_images/therun.jpg",
+          "text": "This is the run! Watch as multi-time world record Super Mario 64 gamer, Siglemic, pushes the N64 classic to its absolute limits."
+          "stream": {
+            ...
+          }
+        },
+        [...]
+      ]
+    }
