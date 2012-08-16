@@ -141,5 +141,6 @@ Basic information about the API and authentication status. If you are authentica
 ### [Channels](Channels-Resource)
 ### [Streams](Streams-Resource)
 ### [Games](Games-Resource)
+### [Search](Search-Resource)
 ### [Teams](Teams-Resource)
 ### [Chat](Chat-Resource)
