@@ -27,6 +27,8 @@
       "title": "Towelliee HD Gaming",
       "updated_at": "2012-06-18T05:22:53Z",
       "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
+      "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_offline_image-bdcb1260130fa0cb.png",
+      "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_background_image-eebc4eabf0686bb9.png",
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/towelliee",
         "chat": "https://api.twitch.tv/kraken/chat/towelliee",
@@ -70,6 +72,8 @@
         "commercial":"https:/api.twitch.tv/kraken/channels/hebo/commercial"
       },
       "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
+      "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_offline_image-bdcb1260130fa0cb.png",
+      "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_background_image-eebc4eabf0686bb9.png",
       "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
       "id": 21229404,
       "mature": false,
