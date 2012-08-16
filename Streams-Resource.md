@@ -29,6 +29,7 @@
         "viewers": 3505,
         "updated_at": "Tue Jul 24 15:33:39 2012",
         "channel_id": 20248706,
+        "preview": "http://static-cdn.jtvnw.net/previews/live_user_incontroltv-630x473.jpg",
         "_links": {
           "self": "https://api.twitch.tv/kraken/streams/live_user_incontroltv"
         },
