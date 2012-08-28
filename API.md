@@ -1,10 +1,10 @@
-# TwitchTV API 2.0
+# Twitch API 2.0
 
 ## Overview
 
-This is a comprehensive description of the resources that make up the TwitchTV API. For support or issue help, visit the [API Developers Group][] or [Github Issues][]
+The Twitch API allows websites to develop your own applications based on the rich feature set that we provide. This includes getting information about what streams are live, changing information about specific channels, or doing a SSO integration with Twitch itself. This documents lists the resources that the Twitch API provides. If you have any questions or need any help in using this API, please visit the [API Developers Group][] or [Github Issues][]
 
-The TwitchTV API is comprised of two parts: the REST API itself and the [JavaScript SDK][] that allows for easy integration into any website. Most users will only need to use the JS SDK, but if you want a deeper integration you may access the REST API directly.
+The Twitch API is comprised of two parts: the REST API itself and the [JavaScript SDK][] that allows for easy integration into any website. Most users will only need to use the JS SDK, but if you want a deeper integration (for example, for use with Python or PHP scripts) you may access the REST API directly. The [RESTful Integration Guide](Restful-Integration-Guide) should help you if that describes your needs.
 
 
 [API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/justintv-api-developers
@@ -15,16 +15,19 @@ The TwitchTV API is comprised of two parts: the REST API itself and the [JavaScr
 
 The base URL for all API resources is `https://api.twitch.tv/kraken`.
 
-All data is sent and received as JSON.
+All data is sent and received as [JSON][].
 
 Blank fields are included as `null` instead of being omitted.
 
+[JSON]: http://www.json.org/
+
 ### JSON-P
 
-All API methods support JSON-P by providing a `callback` parameter with the request.
+All API methods support [JSON-P][] by providing a `callback` parameter with the request.
 
     curl https://api.twitch.tv/kraken?callback=foo
-    
+
+[JSON-P]: http://json-p.org/
 ### Errors
 
 All error responses are in the following format, delivered with the corresponding status code:
@@ -58,7 +61,7 @@ There are two ways to get access tokens, a browser-based flow for use on most ap
 
 Before you can handle user authorization in your app, register a [client application][]. The specified `redirect_uri` will receive the result of all client authorizations in JSON: either an access token or a failure message. 
 
-Next, direct users on your application to the [authorization endpoint][], where they will log in or register on TwitchTV and approve access for your application. You can include the following URL parameters:
+Next, direct users on your application to the [authorization endpoint][], where they will log in or register on Twitch and approve access for your application. You can include the following URL parameters:
 
 - `response_type` (required): `token`.
 - `client_id` (required): The Client ID of your app that you recieved upon creation.
