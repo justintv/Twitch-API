@@ -103,7 +103,7 @@ This is a flexible method that allows you to query for multiple streams based on
 
 ## Get a list of featured (promoted) streams
 
-`GET /streams/featured`
+`GET /streams/featured` <a id="stream"/>
 
 ### Parameters
 
