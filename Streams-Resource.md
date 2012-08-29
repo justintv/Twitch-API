@@ -135,7 +135,7 @@ Response has an array of featured streams and paginated links. Each element in t
     
 ## Summarize streams
 
-`GET /streams/summary`
+`GET /streams/summary` <a id="summary"/>
 
 ### Parameters
 
