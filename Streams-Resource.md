@@ -132,3 +132,21 @@ Response has an array of featured streams and paginated links. Each element in t
         [...]
       ]
     }
+    
+## Summarize streams
+
+`GET /streams/summary`
+
+### Parameters
+
+- `game` (optional): Summarize streams on a per-game basis.
+
+### Response
+
+    {
+      "viewers": 194774,
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/summary"
+      },
+      "channels": 4144
+    }
