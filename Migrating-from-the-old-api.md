@@ -49,3 +49,25 @@ new: https://github.com/justintv/Twitch-API/wiki/Users-Resource
 old: http://apiwiki.justin.tv/mediawiki/index.php/Channel/show
 
 new: https://github.com/justintv/Twitch-API/wiki/Channels-Resource
+
+
+## Some things are missing!
+
+Yes, this is true. Some things will not have a like for like implementation, some things will be dropped, some others will be worked on. The old API broadly broke down into some key categories;
+
+ - the REST API
+ - the chat embed
+ - the SWF API
+
+So far we have concentrated primarily on the REST API. We are also building a brand spanking new chat API to replace the embed - we want you to be able to use chat as a first class citizen, not through some proxy that we control. We're also planning to build a brand new SWF integration, if you want to use our SWF player you should use our existing one, however it is tied into the old API so I warn you now... your mileage will definitely vary and we'll not be well suited to helping you a whole bunch. 
+
+Below we detail all of the things that will stay gone, if you've any issues with this list then [you are encouraged to let us know why it is a bad idea](https://groups.google.com/forum/?fromgroups#!forum/twitch-api).
+
+### things that will stay missing from the REST API
+ - stream callbacks
+ - user creation
+ - listing user events
+ - channel creation
+ - channel events
+ - chat send message (will be replaced by the new chat API)
+ - category listing (Twitch only has one category - GAMES!)
