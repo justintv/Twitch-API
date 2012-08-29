@@ -27,16 +27,20 @@ Srsly, you probably just want to use the [JS library](https://github.com/justint
 
 ### listing streams
 old: http://apiwiki.justin.tv/mediawiki/index.php/Stream/list
+
 new: https://github.com/justintv/Twitch-API/wiki/Streams-Resource
 
 ### search
 old: http://apiwiki.justin.tv/mediawiki/index.php/Stream/search
+
 new: https://github.com/justintv/Twitch-API/wiki/Search-Resource
 
 ### user data
 old: http://apiwiki.justin.tv/mediawiki/index.php/User/show
+
 new: https://github.com/justintv/Twitch-API/wiki/Users-Resource
 
 ### channel data
 old: http://apiwiki.justin.tv/mediawiki/index.php/Channel/show
+
 new: https://github.com/justintv/Twitch-API/wiki/Channels-Resource
