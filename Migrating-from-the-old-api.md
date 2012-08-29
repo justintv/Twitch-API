@@ -16,3 +16,12 @@ Finally, this API has a full integration suite, so should we change our objects 
 ## How do I get support?
 
 Right now as we ramp up the support infrastructure of this new API your best bet is going to be making sure you read this wiki, for questions you can use the [Twitch API mailing list](https://groups.google.com/forum/?fromgroups#!forum/twitch-api).
+
+## Migration guide
+
+If you're working on a front end, you probably just want to use our [JavaScript library](https://github.com/justintv/twitch-js-sdk) - it gives you super easy access to all of the features as well as letting you make use of Twitch Connect, which lets you link your user accounts to twitch user accounts and grants you the ability to use the API as those users. 
+
+Srsly, you probably just want to use the [JS library](https://github.com/justintv/twitch-js-sdk) :)
+
+... However if you use a backend to make queries for you, or if have something a browser extension, etc, you probably want to know which old calls map to which new calls. This list will evolve, and if you want something added to it let us know on the [Twitch API mailing list](https://groups.google.com/forum/?fromgroups#!forum/twitch-api) or open up an [issue on this repo](https://github.com/justintv/Twitch-API/issues).
+
