@@ -80,7 +80,7 @@
       }
     }
 
-## Get a list of streams
+## Get a list of streams <a id="streams"/>
 
 `GET /streams`
 
@@ -103,7 +103,7 @@ This is a flexible method that allows you to query for multiple streams based on
 
 ## Get a list of featured (promoted) streams
 
-`GET /streams/featured` <a id="stream"/>
+`GET /streams/featured`
 
 ### Parameters
 
@@ -133,9 +133,9 @@ Response has an array of featured streams and paginated links. Each element in t
       ]
     }
     
-## Summarize streams
+## Summarize streams  <a id="summary"/>
 
-`GET /streams/summary` <a id="summary"/>
+`GET /streams/summary`
 
 ### Parameters
 
