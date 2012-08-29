@@ -23,5 +23,5 @@ If you're working on a front end, you probably just want to use our [JavaScript 
 
 Srsly, you probably just want to use the [JS library](https://github.com/justintv/twitch-js-sdk) :)
 
-... However if you use a backend to make queries for you, or if have something a browser extension, etc, you probably want to know which old calls map to which new calls. This list will evolve, and if you want something added to it let us know on the [Twitch API mailing list](https://groups.google.com/forum/?fromgroups#!forum/twitch-api) or open up an [issue on this repo](https://github.com/justintv/Twitch-API/issues).
+... However if you use a backend to make queries for you, or if have a browser extension, etc, you probably want to know which old calls map to which new calls. This list will evolve, and if you want something added to it let us know on the [Twitch API mailing list](https://groups.google.com/forum/?fromgroups#!forum/twitch-api) or open up an [issue on this repo](https://github.com/justintv/Twitch-API/issues).
 
