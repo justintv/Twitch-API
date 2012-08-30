@@ -30,8 +30,8 @@ This URI was first introduced in Twitch for iOS 2.0.6.
 
 ### Searching
 To open the app up to a specific search query, specify the query name as a a percent-encoded string in the URI, eg:
-
+ 
     twitch://search/Minecraft
-    twitch://game/Starcraft%20II%3a%20Wings%20of%20Liberty
+    twitch://search/Starcraft%20II%3a%20Wings%20of%20Liberty
 
 This URI was first introduced in Twitch for iOS 2.1.1.
