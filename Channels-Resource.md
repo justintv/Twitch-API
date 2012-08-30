@@ -39,7 +39,7 @@
       "mature": true,
       "display_name": "Towelliee"
     }
-## Get the authenticated channel
+## Get the authenticated channel <a id="authenticated-channel"/>
 
 `GET /channel`
 
