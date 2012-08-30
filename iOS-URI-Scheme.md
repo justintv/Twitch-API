@@ -2,6 +2,9 @@
 
 The TwitchTV iOS application can be launched externally. This page serves to document how to do so. For support or issue help, visit the [API Developers Group][] or [Github Issues][]
 
+[API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/justintv-api-developers
+[Github Issues]: /justintv/Twitch-API/issues
+
 ### URI Scheme
 URLs starting with twitch:// or ttv:// will open up the Twitch iOS app, if the user has it installed. You can check if the Twitch app is installed with something along the following lines:
 
