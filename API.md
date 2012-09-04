@@ -142,6 +142,7 @@ Basic information about the API and authentication status. If you are authentica
 
 ### [Users](Users-Resource)
 ### [Channels](Channels-Resource)
+### [Videos](Videos-Resource)
 ### [Streams](Streams-Resource)
 ### [Games](Games-Resource)
 ### [Search](Search-Resource)
