@@ -24,7 +24,7 @@
 
 ## Get videos for a channel <a id="videos-channel" />
 
-`GET /channels/vanillatv/videos`
+`GET /channels/:channel/videos`
 
 ### Parameters
 
