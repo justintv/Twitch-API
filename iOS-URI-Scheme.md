@@ -9,7 +9,11 @@ The TwitchTV iOS application can be launched externally. This page serves to doc
 URLs starting with twitch:// or ttv:// will open up the Twitch iOS app, if the user has it installed. You can check if the Twitch app is installed with something along the following lines:
 
     NSURL *twitchURL = [NSURL URLWithString:@"twitch://open"];
-    [[UIApplication sharedApplication] canOpenURL:twitchURL];
+    if ([[UIApplication sharedApplication] canOpenURL:twitchURL]) {
+        // The Twitch app is installed, do whatever logic you need, and call -openURL:
+    } else {
+        // The Twitch app isn't installed, prompt the user to install it!
+    }
 
 ### Opening up the App
 If the only thing you want to do is launch the app, you should use the following:
