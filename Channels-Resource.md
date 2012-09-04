@@ -32,6 +32,7 @@
       "_links": {
         "self": "https://api.twitch.tv/kraken/channels/towelliee",
         "chat": "https://api.twitch.tv/kraken/chat/towelliee",
+        "videos": "https://api.twitch.tv/kraken/channels/towelliee/videos",
         "commercial": "https://api.twitch.tv/kraken/channels/towelliee/commercial"
       },
       "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
@@ -69,6 +70,7 @@
       "_links": {
         "self": "https:/api.twitch.tv/kraken/channels/hebo",
         "chat":"https:/api.twitch.tv/kraken/chat/hebo",
+        "videos": "https://api.twitch.tv/kraken/channels/hebo/videos",
         "commercial":"https:/api.twitch.tv/kraken/channels/hebo/commercial"
       },
       "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
@@ -80,6 +82,12 @@
       "login": "hebo",
       "email": "james@justin.tv"
     }
+
+## Retrieve videos for a channel
+
+[https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel](See the Videos Resource)
+
+
 
 ## Update the specified channel
 
