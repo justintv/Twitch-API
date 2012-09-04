@@ -85,7 +85,7 @@
 
 ## Retrieve videos for a channel
 
-[https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel](See the Videos Resource)
+[See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel)
 
 
 
