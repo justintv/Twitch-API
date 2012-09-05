@@ -50,6 +50,11 @@ old: http://apiwiki.justin.tv/mediawiki/index.php/Channel/show
 
 new: https://github.com/justintv/Twitch-API/wiki/Channels-Resource
 
+### archive data
+old: http://apiwiki.justin.tv/mediawiki/index.php/Channel/archives
+
+new: https://github.com/justintv/Twitch-API/wiki/Videos-Resource
+
 
 ## Some things are missing!
 
