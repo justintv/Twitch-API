@@ -65,7 +65,6 @@ Below we detail all of the things that will stay gone, if you've any issues with
 
 ### things that will stay missing from the REST API
  - stream callbacks
- - user creation
  - listing user events
  - channel creation
  - channel events
