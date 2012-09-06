@@ -10,7 +10,11 @@ Once you create an account, you can use the [Password Credentials Grant API][] t
 
 First, register a [client application][]. You'll send the `client id` when making requests to the API.
 
-Next, ask us to generate a `client secret` for your app, which you will send with your requests for verification. This is equivalent to a password, so never reveal this or transmit it over an insecure protocol.
+Next, you'll need a `client secret` for your app, which you will send with your requests for verification.
+
+The `client secret` is an alphanumeric string, equivalent to a password, that's tied to your `client id`. Ask us to generate it for you, and never reveal this to anyone or transmit it over an insecure protocol.
+
+Additionally, this account creation permission is tied to specific IP addresses, so let us know which IP address ranges to whitelist.
 
 
 [client application]: http://www.twitch.tv/settings?section=applications
