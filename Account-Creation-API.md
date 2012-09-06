@@ -44,7 +44,7 @@ Now you can make requests to our account creation endpoint with your client cred
       "message": "Login has already been taken"
     }
 
-`401 Unauthorized` if you do not have permission to perform an account creation, typically due to an incorrect client id and secret combination, or this request is being performed from an unauthorized IP address.
+`403 Forbidden` if you do not have permission to perform an account creation, typically due to an incorrect client id and secret combination, or this request is being performed from an unauthorized IP address.
 
     {
       "error": "Unauthorized",
