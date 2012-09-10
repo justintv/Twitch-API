@@ -1,3 +1,7 @@
+## Is this page for me?
+
+If you love video games, and you like building sites then it is very likely the answer is yes! This is even more true if you had invested the time to use the Justin.tv API. The aim of this page is to describe why we've built out a new API and what analogues exist between the two of them.
+
 ## Why?
 
 Because it is a good idea! The old API was built to satisfy a different set of requirements than those that we have now on Twitch. On top of that some bad decisions were made, so instead of trying to work out a migration plan we thought it better to build it from the ground up with all of the learning we gained from the last pass. The list of key improvements:
