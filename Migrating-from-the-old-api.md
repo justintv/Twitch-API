@@ -71,7 +71,6 @@ Below we detail all of the things that will stay gone, if you've any issues with
 ### things that will stay missing from the REST API
  - stream callbacks
  - listing user events
- - channel creation
  - channel events
  - chat send message (will be replaced by the new chat API)
  - category listing (Twitch only has one category - GAMES!)
