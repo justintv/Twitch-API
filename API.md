@@ -136,7 +136,8 @@ Basic information about the API and authentication status. If you are authentica
         "users": "https://api.twitch.tv/kraken/users/hebo",
         "user": "https://api.twitch.tv/kraken/user",
         "channels": "https://api.twitch.tv/kraken/channels/hebo",
-        "chat": "https://api.twitch.tv/kraken/chat/hebo"
+        "chat": "https://api.twitch.tv/kraken/chat/hebo",
+        "streams": "https://api.twitch.tv/kraken/streams"
       }
     }
 
