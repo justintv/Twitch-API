@@ -97,7 +97,7 @@
 
 ### Parameters
 
-Form-encoded or JSON parameters specifying the properties to change. At present, the following properties are supported:
+Form-encoded or JSON parameters specifying the properties to change. These should be under a `channel` object (in curl, this looks like `-d 'channel[game]=Halo'`). At present, the following properties are supported:
 
 - `status` 
 - `game`  
@@ -105,7 +105,7 @@ Form-encoded or JSON parameters specifying the properties to change. At present,
 &nbsp;
 
     {
-        "channel": {
+      "channel": {
         "status": "Playing cool new game!",
         "game": "Diablo"
         }
