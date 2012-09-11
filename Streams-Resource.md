@@ -13,7 +13,8 @@
     {
       "stream": null,
       "_links": {
-        "self": "https://api.twitch.tv/kraken/streams/hebo"
+        "self": "https://api.twitch.tv/kraken/streams/hebo",
+        "channel": "https://api.twitch.tv/kraken/channels/hebo"
       }
     }
 
@@ -32,6 +33,7 @@
         "preview": "http://static-cdn.jtvnw.net/previews/live_user_incontroltv-630x473.jpg",
         "_links": {
           "self": "https://api.twitch.tv/kraken/streams/live_user_incontroltv"
+          "channel": "https://api.twitch.tv/kraken/channels/live_user_incontroltv"
         },
         "_id": 138658440,
         "delay_length": 0,
