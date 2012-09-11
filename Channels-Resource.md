@@ -115,7 +115,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 `200 OK` with the updated channel object if successful.
 
-## Run a commercial on the specified channel
+## Run a commercial on the specified channel <a id="commercial"/>
 
 `POST /channels/:channel/commercial`
 
