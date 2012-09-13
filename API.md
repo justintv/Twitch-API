@@ -88,6 +88,7 @@ That's it! Your application can now make requests on behalf of the user by inclu
 When requesting authorization from users, the scope parameter allows you to specify which permissions your app requires. Without specifying scopes, your app only has access to basic information about the authenticated user. You may specify any or all of the following scopes:
 
 - `user_read`: Read access to non-public user information, such as email address.
+- `user_followed`: Access to followed streams.
 - `channel_read`: Read access to non-public channel information, including email address and stream key.
 - `channel_editor`: Write access to channel metadata (game, status, other metadata).
 - `channel_commercial`: Access to trigger commercials on channel.
