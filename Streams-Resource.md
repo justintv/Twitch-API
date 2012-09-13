@@ -152,3 +152,21 @@ Response has an array of featured streams and paginated links. Each element in t
       },
       "channels": 4144
     }
+
+
+## Get a list of followed streams
+
+`GET /streams/followed`
+
+(**Authenticated**; Scope: `channel_read`) List the live streams that the authenticated user is following
+
+
+### Response
+
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=0",
+        "next": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=25"
+      },
+      "streams": [...]
+    }
