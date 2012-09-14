@@ -53,7 +53,7 @@ Clients may specify the following MIME types:
 
 This allows clients to get either the latest version of the API or a specific version.
 
-## OAuth 2
+## OAuth 2 <a id="oauth"/>
 
 [OAuth 2][] is an authentication protocol designed to make accessing user accounts from third party clients easy and secure. An `access_token` given to your application allows you to perform actions on behalf of an authenticated Twitch user.
 
