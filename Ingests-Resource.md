@@ -2,7 +2,7 @@
 
 ## Get the list of Ingest points for twitch.
 
-These are RTMP Ingest points. By directing an rtmp stream with your stream key as the final parameter to the URL, you will broadcast your content live on twitch.
+These are RTMP Ingest points. By directing an rtmp stream with your stream key as the final part of the URL, you will broadcast your content live on twitch.
 
 `GET /ingests/`
 
