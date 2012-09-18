@@ -138,7 +138,8 @@ Basic information about the API and authentication status. If you are authentica
         "user": "https://api.twitch.tv/kraken/user",
         "channels": "https://api.twitch.tv/kraken/channels/hebo",
         "chat": "https://api.twitch.tv/kraken/chat/hebo",
-        "streams": "https://api.twitch.tv/kraken/streams"
+        "streams": "https://api.twitch.tv/kraken/streams",
+        "ingests":"https://api.twitch.tv/kraken/ingests"
       }
     }
 
@@ -150,3 +151,4 @@ Basic information about the API and authentication status. If you are authentica
 ### [Search](Search-Resource)
 ### [Teams](Teams-Resource)
 ### [Chat](Chat-Resource)
+### [Ingests](Ingests-Resource)
