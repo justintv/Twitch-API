@@ -1,6 +1,6 @@
 # Ingests
 
-## Get the a list of Ingest points for Twitch.
+## Get the list of Ingest points for Twitch.
 
 These are RTMP Ingest points.
 
