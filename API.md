@@ -25,31 +25,39 @@ Blank fields are included as `null` instead of being omitted.
 
 All API methods support [JSON-P][] by providing a `callback` parameter with the request.
 
-    curl https://api.twitch.tv/kraken?callback=foo
+```bash
+curl https://api.twitch.tv/kraken?callback=foo
+```
 
 [JSON-P]: http://json-p.org/
 ### Errors
 
 All error responses are in the following format, delivered with the corresponding status code:
 
-    {
-        "message":"Invalid Token",
-        "status":401,
-        "error":"Unauthorized"
-    }
+```json
+{
+    "message":"Invalid Token",
+    "status":401,
+    "error":"Unauthorized"
+}
+```
 
 When using JSON-P, the status code will always be `200` to allow browsers to parse it. Check the body of the response for the actual error data.
 ### MIME Types
 
 The returned MIME type from requests follows the format:
 
-    application/vnd.twitchtv[.version].param[+json]
+```bash
+application/vnd.twitchtv[.version].param[+json]
+```
 
 Clients may specify the following MIME types:
 
-    application/json
-    application/vnd.twitchtv+json
-    application/vnd.twitchtv[.version]+json
+```bash
+application/json
+application/vnd.twitchtv+json
+application/vnd.twitchtv[.version]+json
+```
 
 This allows clients to get either the latest version of the API or a specific version.
 
@@ -71,11 +79,15 @@ Next, direct users on your application to the [authorization endpoint][], where 
 
 An example authorization request:
 
-    https://api.twitch.tv/kraken/oauth2/authorize?redirect_uri=http://example.com&client_id=i29g16w8403x4s196d47tavi&response_type=token&scope=user_read+channel_read&state=user_dayjay
+```bash
+https://api.twitch.tv/kraken/oauth2/authorize?redirect_uri=http://example.com&client_id=i29g16w8403x4s196d47tavi&response_type=token&scope=user_read+channel_read&state=user_dayjay
+```
 
 Once your application is authorized, the user will be forwarded to the specified `request_uri` with a URL fragment containing `access_token` and `scope` parameters. URL fragments can be accessed from JavaScript with `document.location.hash`.
 
-    http://example.com/#access_token=bb09tmrqbxbgvlny25pbm5kfs&scope=user_read+channel_read
+```bash
+http://example.com/#access_token=bb09tmrqbxbgvlny25pbm5kfs&scope=user_read+channel_read
+```
 
 That's it! Your application can now make requests on behalf of the user by including your access token as specified in [Authentication](#auth).
 
@@ -97,7 +109,9 @@ When requesting authorization from users, the scope parameter allows you to spec
 
 Scopes are specified as a *space separated* list in the url parameter `scope` when requesting authorization:
 
-    &scope=user_read+channel_read
+```bash
+&scope=user_read+channel_read
+```
 
 Your app should ask for the minimum permissions that allow you to perform needed actions. 
 
@@ -107,11 +121,15 @@ We do not allow username/password authentication. All clients must use OAuth 2.
 
 Send token as header:
 
-    curl -H "Authorization: OAuth OAUTH-TOKEN" https://api.twitch.tv/kraken
+```bash
+curl -H "Authorization: OAuth OAUTH-TOKEN" https://api.twitch.tv/kraken
+```
 
 Send token as URL parameter:
 
-    curl https://api.twitch.tv/kraken?oauth_token=OAUTH-TOKEN
+```bash
+curl https://api.twitch.tv/kraken?oauth_token=OAUTH-TOKEN
+```
 
 ## Resources
 
@@ -123,25 +141,27 @@ Basic information about the API and authentication status. If you are authentica
 
 #### Response
 
-    {
-      "token": {
-        "authorization": {
-          "scopes": ["user_read", "channel_read", "channel_commercial", "user_read"],
-          "created_at": "2012-05-08T21:55:12Z",
-          "updated_at": "2012-05-17T21:32:13Z"
-        },
-        "valid": true
-      },
-      "_links": {
-        "channel": "https://api.twitch.tv/kraken/channel",
-        "users": "https://api.twitch.tv/kraken/users/hebo",
-        "user": "https://api.twitch.tv/kraken/user",
-        "channels": "https://api.twitch.tv/kraken/channels/hebo",
-        "chat": "https://api.twitch.tv/kraken/chat/hebo",
-        "streams": "https://api.twitch.tv/kraken/streams",
-        "ingests":"https://api.twitch.tv/kraken/ingests"
-      }
-    }
+```json
+{
+  "token": {
+    "authorization": {
+      "scopes": ["user_read", "channel_read", "channel_commercial", "user_read"],
+      "created_at": "2012-05-08T21:55:12Z",
+      "updated_at": "2012-05-17T21:32:13Z"
+    },
+    "valid": true
+  },
+  "_links": {
+    "channel": "https://api.twitch.tv/kraken/channel",
+    "users": "https://api.twitch.tv/kraken/users/hebo",
+    "user": "https://api.twitch.tv/kraken/user",
+    "channels": "https://api.twitch.tv/kraken/channels/hebo",
+    "chat": "https://api.twitch.tv/kraken/chat/hebo",
+    "streams": "https://api.twitch.tv/kraken/streams",
+    "ingests":"https://api.twitch.tv/kraken/ingests"
+  }
+}
+```
 
 ### [Users](Users-Resource)
 ### [Channels](Channels-Resource)
@@ -151,4 +171,7 @@ Basic information about the API and authentication status. If you are authentica
 ### [Search](Search-Resource)
 ### [Teams](Teams-Resource)
 ### [Chat](Chat-Resource)
+<<<<<<< Updated upstream
 ### [Ingests](Ingests-Resource)
+=======
+>>>>>>> Stashed changes
