@@ -2,7 +2,7 @@
 
 ## Get the list of Ingest points for twitch.
 
-These are RTMP Ingest points. By directing an rtmp stream with your stream key as the final part of the URL, you will broadcast your content live on twitch.
+These are RTMP Ingest points. By directing an rtmp stream with your stream_key injected into the url_template, you will broadcast your content live on twitch.
 
 `GET /ingests/`
 
@@ -17,7 +17,7 @@ These are RTMP Ingest points. By directing an rtmp stream with your stream key a
           "name": "EU: Amsterdam, NL" ,
           "default": false ,
           "_id": 24 ,
-          "url": "rtmp://live-ams.twitch.tv/app",
+          "url_template": "rtmp://live-ams.twitch.tv/app/{stream_key}",
           "availability":1.0
         }
       ]
