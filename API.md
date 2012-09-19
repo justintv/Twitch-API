@@ -48,7 +48,7 @@ When using JSON-P, the status code will always be `200` to allow browsers to par
 The returned MIME type from requests follows the format:
 
 ```bash
-application/vnd.twitchtv[.version].param[+json]
+application/vnd.twitchtv[.version][+json]
 ```
 
 Clients may specify the following MIME types:
