@@ -94,6 +94,7 @@ This is a flexible method that allows you to query for multiple streams based on
 - `channel` (optional): A list of channel names to query, seperated by commas.
 - `limit` (optional): The maximum number of streams to return, up to 100.
 - `offset` (optional): The offset to begin listing streams, defaults to 0.
+- `embeddable` (optional): If true you'll only get streams which can be embedded. Setting this to false will just drop the flag, because that is a weird thing to do!
 
 #### Get list of Diablo III streams
 
