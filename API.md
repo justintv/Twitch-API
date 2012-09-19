@@ -59,7 +59,23 @@ application/vnd.twitchtv+json
 application/vnd.twitchtv[.version]+json
 ```
 
-This allows clients to get either the latest version of the API or a specific version.
+This allows clients to get either the latest version of the API or a specific version. The current version of the API is `application/vnd.twitchtv.v1+json`
+
+### Making Requests
+
+When performing requests to the Twitch API, include your [`client_id`](#oauth) as a URL parameter.
+
+Also, set the `Accept` HTTP header to the API version you prefer.
+
+#### Example
+
+For the latest version of the API:
+
+    curl -i -H 'Accept: application/vnd.twitchtv+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
+
+Specify a specific version (v1):
+
+    curl -i -H 'Accept: application/vnd.twitchtv.v1+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
 
 ## OAuth 2 <a id="oauth"/>
 
