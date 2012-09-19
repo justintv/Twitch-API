@@ -22,7 +22,9 @@ Additionally, this account creation permission is tied to specific IP addresses,
 
 Now you can make requests to our account creation endpoint with your client credentials to create new users
 
-    POST https://api.twitch.tv/kraken/users
+```bash
+POST https://api.twitch.tv/kraken/users
+```
 
 ### Parameters
 
@@ -42,19 +44,23 @@ Now you can make requests to our account creation endpoint with your client cred
 
 `422 Unprocessable Entity` if the user could not be created with the provided attributes (login taken, password too short). The `message` property in the response provides more detail.
 
-    {
-      "error": "Unprocessable Entity",
-      "status": 422,
-      "message": "Login has already been taken"
-    }
+```json
+{
+  "error": "Unprocessable Entity",
+  "status": 422,
+  "message": "Login has already been taken"
+}
+```
 
 `403 Forbidden` if you do not have permission to perform an account creation, typically due to an incorrect client id and secret combination, or this request is being performed from an unauthorized IP address.
 
-    {
-      "error": "Unauthorized",
-      "status": 401,
-      "message": "Invalid client secret abc123"
-    }
+```json
+{
+  "error": "Unauthorized",
+  "status": 401,
+  "message": "Invalid client secret abc123"
+}
+```
 
 `400 Bad Request` if your request is missing required parameters or is otherwise invalid.
 

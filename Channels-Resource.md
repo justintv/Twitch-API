@@ -6,7 +6,7 @@
 
 ### Response
 
-```javascript
+```json
 {
   "name": "towelliee",
   "game": "World of Warcraft: Cataclysm",
@@ -49,7 +49,7 @@
 
 (*Authenticated, Scope:channel_read*) Get the channel associated with the authenticated user. Includes the channel stream key.
 
-```javascript
+```json
 {
   "game": "Diablo II: Lord of Destruction",
   "name": "Hebo",
@@ -109,7 +109,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 &nbsp;
 
-```javascript
+```json
 {
   "channel": {
     "status": "Playing cool new game!",
