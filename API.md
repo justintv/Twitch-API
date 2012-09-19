@@ -171,7 +171,4 @@ Basic information about the API and authentication status. If you are authentica
 ### [Search](Search-Resource)
 ### [Teams](Teams-Resource)
 ### [Chat](Chat-Resource)
-<<<<<<< Updated upstream
 ### [Ingests](Ingests-Resource)
-=======
->>>>>>> Stashed changes
