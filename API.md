@@ -7,7 +7,7 @@ The Twitch API allows websites to develop your own applications based on the ric
 The Twitch API is comprised of two parts: the REST API itself and the [JavaScript SDK][] that allows for easy integration into any website. Most users will only need to use the JS SDK, but if you want a deeper integration (for example, for use with Python or PHP scripts) you may access the REST API directly. The [RESTful Integration Guide](Restful-Integration-Guide) should help you if that describes your needs.
 
 
-[API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/justintv-api-developers
+[API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/twitch-api
 [JavaScript SDK]: /justintv/twitch-js-sdk
 [Github Issues]: /justintv/Twitch-API/issues
 
