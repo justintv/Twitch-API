@@ -43,7 +43,8 @@ All error responses are in the following format, delivered with the correspondin
 ```
 
 When using JSON-P, the status code will always be `200` to allow browsers to parse it. Check the body of the response for the actual error data.
-### MIME Types
+
+### MIME Types and API Versions <a id="version"/>
 
 The returned MIME type from requests follows the format:
 
