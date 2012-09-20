@@ -44,7 +44,7 @@ All error responses are in the following format, delivered with the correspondin
 
 When using JSON-P, the status code will always be `200` to allow browsers to parse it. Check the body of the response for the actual error data.
 
-### MIME Types and API Versions <a id="version"/>
+### MIME Types and API Versions
 
 The returned MIME type from requests follows the format:
 
@@ -62,7 +62,7 @@ application/vnd.twitchtv[.version]+json
 
 This allows clients to get either the latest version of the API or a specific version. The current version of the API is `application/vnd.twitchtv.v1+json`
 
-### Making Requests
+### Making Requests <a id="request-requirements"/>
 
 When performing requests to the Twitch API, include your [`client_id`](#oauth) as a URL parameter.
 
