@@ -192,3 +192,4 @@ Basic information about the API and authentication status. If you are authentica
 ### [Teams](Teams-Resource)
 ### [Chat](Chat-Resource)
 ### [Ingests](Ingests-Resource)
+### [Blocks](Blocks-Resource)
