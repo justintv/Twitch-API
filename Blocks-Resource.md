@@ -31,8 +31,7 @@
 
 (*Authenticated, Scope:user_blocks_edit*)
 
-:login is the authenticated user's login
-:user is the login of the user being blocked
+:login is the authenticated user's login, :user is the login of the user being blocked
 
 There is no response body for this endpoint.
 
@@ -42,7 +41,6 @@ There is no response body for this endpoint.
 
 (*Authenticated, Scope:user_blocks_edit*)
 
-:login is the authenticated user's login
-:user is the login of the user being unblocked
+:login is the authenticated user's login, :user is the login of the user being unblocked
 
 There is no response body for this endpoint.
