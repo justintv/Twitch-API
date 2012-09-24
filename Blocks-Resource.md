@@ -31,8 +31,18 @@
 
 (*Authenticated, Scope:user_blocks_edit*)
 
+:login is the authenticated user's login
+:user is the login of the user being blocked
+
+There is no response body for this endpoint.
+
 ## Unblock a user on behalf of the authenticated user
 
 `DELETE /users/:login/blocks/:user`
 
 (*Authenticated, Scope:user_blocks_edit*)
+
+:login is the authenticated user's login
+:user is the login of the user being unblocked
+
+There is no response body for this endpoint.
