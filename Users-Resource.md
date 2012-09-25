@@ -20,7 +20,7 @@
 }
 ```
 
-## Get the authenticated user
+## Get the authenticated user <a id="user"/>
 
 `GET /user`
 
