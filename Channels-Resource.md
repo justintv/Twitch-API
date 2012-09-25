@@ -130,7 +130,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 ### Parameters
 
-  -`length` (**Default: 30**): Length of the commercial break in seconds from 30 to 90. You may only trigger a commercial longer than 30 seconds once every 15 minutes.
+  -`length` (**Default: 30**): Length of the commercial break in seconds from 30 to 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.
 
 ### Response
 
