@@ -23,22 +23,22 @@ This method allows you to retrieve the top games on Twitch (by current viewers).
         {
           "game": {
             "name": "League of Legends",
-            "_id": 21779,
-            "_links": {},
-            "images": {
-              "screen": "http://media.giantbomb.com/uploads/8/87209/2115067-box_lol_screen.png",
-              "medium": "http://media.giantbomb.com/uploads/8/87209/2115067-box_lol_small.png",
-              "small": "http://media.giantbomb.com/uploads/8/87209/2115067-box_lol_small.png",
-              "tiny": "http://media.giantbomb.com/uploads/8/87209/2115067-box_lol_tiny.png",
-              "thumb": "http://media.giantbomb.com/uploads/8/87209/2115067-box_lol_thumb.png",
-              "icon": "http://media.giantbomb.com/uploads/8/87209/2115067-box_lol_icon.png",
-              "super": "http://media.giantbomb.com/uploads/8/87209/2115067-box_lol_super.png"
+            "box": {
+              "large": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=272&h=380&fit=scale",
+              "medium": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=136&h=190&fit=scale",
+              "small": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=52&h=72&fit=scale",
+              "template": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale"
             },
+            "logo": {
+              "large": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=240&h=144&fit=scale",
+              "medium": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=120&h=72&fit=scale",
+              "small": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=60&h=36&fit=scale",
+              "template": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale"
+            },
+            "_links": {},
+            "_id": 21779,
             "giantbomb_id": 24024
           },
-          "viewers": 24677,
-          "channels": 284
+          "viewers": 23873,
+          "channels": 305
         },
-        [...]
-      ]
-    }
