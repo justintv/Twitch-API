@@ -22,6 +22,7 @@ Next, make a request to our token endpoint with user credentials to get an acces
 - `username` (required): The username of the Twitch user.
 - `password` (required): The password of the Twitch user.
 - `scope` (required): A **space separated** list of [scopes](API#wiki-scope) your app is requesting approval for.
+- `grant_type` (required): `password`
 
 ### Response
 
@@ -29,5 +30,5 @@ Next, make a request to our token endpoint with user credentials to get an acces
 
 ### Example
 
-    $ curl -X POST -d "client_id=<myclient>&username=<myuser>&password=<mypass>&scope=user_read" https://api.twitch.tv/kraken/oauth2/token
+    $ curl -X POST -d "client_id=<myclient>&username=<myuser>&password=<mypass>&scope=user_read&grant_type=password" https://api.twitch.tv/kraken/oauth2/token
     {"scope":["user_read"],"access_token":"df4yofxyn2s7640ojfrh9chz8"}%       
