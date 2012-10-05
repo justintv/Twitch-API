@@ -78,7 +78,8 @@ Specify a specific version (`v1`):
 
     curl -i -H 'Accept: application/vnd.twitchtv.v1+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
 
-## Rate Limits <a id="rate-limits"/>
+<a id="rate-limits"/>
+## Rate Limits
 
 Requests to the Twitch API may be subject to multiple rate limits. At present, there are two types of rate limits:
 
