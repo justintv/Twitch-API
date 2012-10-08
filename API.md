@@ -74,44 +74,9 @@ For the latest version of the API:
 
     curl -i -H 'Accept: application/vnd.twitchtv+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
 
-Specify a specific version (`v1`):
+Specify a specific version (v1):
 
     curl -i -H 'Accept: application/vnd.twitchtv.v1+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
-
-<a id="rate-limits"/>
-## Rate Limits
-
-Requests to the Twitch API may be subject to multiple rate limits. At present, there are two types of rate limits:
-
-  - **anonymous** (requests without a `client_id`)
-  - **identified** (requests with a `client_id`).
-
-Should your request exceed these limits, the response will have a status code of `429 Too Many Requests`. The `Retry-After` header will contain the number of seconds until the rate limit for this request type will be reset--delay further calls from your app until then.
-
-<table>
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Limit</th>
-            <th>Period</th>
-            <th>Notes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Anonymous</td>
-            <td>6</td>
-            <td>1 minute (60 seconds)</td>
-            <td>Requests without a `client_id` (per IP Address)</td>
-        </tr>
-        <tr>
-            <td>Identified</td>
-            <td>300</td>
-            <td>1 minute (60 seconds)</td>
-            <td>Requests with a `client_id` (per client_id)</td>
-        </tr>
-    </tbody>
-</table>
 
 ## OAuth 2 <a id="oauth"/>
 
