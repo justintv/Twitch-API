@@ -58,3 +58,54 @@ This method allows you to retrieve live streams on Twitch based on a search quer
         [...]
       ]
     }
+
+## Search for games
+
+`GET /search/games`
+
+This method allows you to retrieve games on Twitch based on a search query.
+
+### Parameters
+
+- `query` or `q` (required): A url-encoded search query.
+- `type` (required): Type of search to perform. Right now, only 'suggest' is implemented
+  - `suggest`: Suggests a list of games similar to the query, e.g. 'star' might suggest 'StarCraft II: Wings of Liberty' among others
+
+### Response
+
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/search/games?q=star&type=suggest",
+      },
+      "games": [
+        {
+          "box": {
+            "small": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=52&h=72&fit=scale",
+            "large": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=272&h=380&fit=scale",
+            "medium": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=136&h=190&fit=scale",
+            "template": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w={width}&h={height}&fit=scale"
+          },
+          "logo": {
+            "small": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=60&h=36&fit=scale",
+            "large": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=240&h=144&fit=scale",
+            "medium": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=120&h=72&fit=scale",
+            "template": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w={width}&h={height}&fit=scale"
+          },
+          "images": {
+            "thumb": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_thumb.jpg",
+            "tiny": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_tiny.jpg",
+            "small": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_small.jpg",
+            "super": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_super.jpg",
+            "medium": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_small.jpg",
+            "icon": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_icon.jpg",
+            "screen": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_screen.jpg"
+          },
+          "popularity": 114,
+          "name": "StarCraft II: Wings of Liberty",
+          "_id": 63011880,
+          "_links": { },
+          "giantbomb_id": 20674          
+        },
+        ...
+      ]
+    }
