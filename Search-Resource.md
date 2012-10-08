@@ -59,7 +59,7 @@ This method allows you to retrieve live streams on Twitch based on a search quer
       ]
     }
 
-## Search for games
+## Search for games <a id="games"/>
 
 `GET /search/games`
 
