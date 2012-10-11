@@ -39,7 +39,8 @@
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/cevtest12-profile_image-62e8318af864d6d7-300x300.jpeg",
   "_id": 22761313,
   "display_name": "Cevtest12",
-  "email": "asdf@asdf.com"
+  "email": "asdf@asdf.com",
+  "partnered": true
 }
 ```
 
