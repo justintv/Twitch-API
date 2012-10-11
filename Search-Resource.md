@@ -70,6 +70,7 @@ This method allows you to retrieve games on Twitch based on a search query.
 - `query` or `q` (required): A url-encoded search query.
 - `type` (required): Type of search to perform. Right now, only 'suggest' is implemented
   - `suggest`: Suggests a list of games similar to the query, e.g. 'star' might suggest 'StarCraft II: Wings of Liberty' among others
+- `live` (optional): If set to true, only returns games that are live on at least one channel. Setting live to anything other than true has no effect. 
 
 ### Response
 
