@@ -74,8 +74,7 @@
           "display_name": "iNcontroLTV",
           "status": "EGiNcontroL: music, commentary and all the stuff that makes rainbows and children possible"
         },
-        "status": "EGiNcontroL: music, commentary and all the stuff that makes rainbows and children possible",
-        "partner": true
+        "status": "EGiNcontroL: music, commentary and all the stuff that makes rainbows and children possible"
       },
       "_links": {
         "self": "https://api.twitch.tv/kraken/streams/live_user_incontroltv"
