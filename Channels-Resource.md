@@ -39,6 +39,7 @@
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
   "_id": 20694610,
   "mature": true,
+  "url": "http://www.twitch.tv/towelliee",
   "display_name": "Towelliee"
 }
 ```
@@ -84,6 +85,7 @@
   "id": 21229404,
   "mature": false,
   "login": "hebo",
+  "url": "http://www.twitch.tv/ossareh",
   "email": "james@justin.tv"
 }
 ```
