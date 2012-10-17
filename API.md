@@ -64,9 +64,7 @@ This allows clients to get either the latest version of the API or a specific ve
 
 ### Making Requests <a id="request-requirements"/>
 
-When performing requests to the Twitch API, include your [`client_id`](#oauth) as a URL parameter.
-
-Also, set the `Accept` HTTP header to the API version you prefer.
+When performing requests to the Twitch API, set the `Accept` HTTP header to the API version you prefer.
 
 #### Example
 
