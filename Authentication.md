@@ -25,10 +25,10 @@ When authenticating on behalf of a user, you'll use an __access token__, which u
 There are three ways to get an __access token__:
 
   1. If you're making a web app that uses a server, you will probably want to use the [Authorization Code Flow](#wiki-auth-code).
-  2. If you are making an app that doesn't use a server, such as a client-side JavaScript app or a mobile app, you'll use the [Implicit Grant Flow]().
+  2. If you are making an app that doesn't use a server, such as a client-side JavaScript app or a mobile app, you'll use the [Implicit Grant Flow](#wiki-implicit-grant).
   3. If you're making a native app or are in a situation where it's very difficult to use a web browser, you may use the [Password Credentials Grant Flow]()
 
-<a id="auth-code"></a>
+<a name="auth-code"></a>
 #### Authorization Code Flow
 
 Remember, you must keep your client secret confidential, so make sure to never expose it to users, even in an obscured form.
@@ -72,12 +72,34 @@ Remember, you must keep your client secret confidential, so make sure to never e
           "scope":[array of requested scopes]
         }
   
-  You can then use this access token to perform actions on behalf of an authenticated Twitch user.
+  You can then use this access token to perform actions on behalf of an authenticated Twitch user as described in [Authenticated Requests](#authenticated-requests).
   
-  
+<a id="implicit-grant"></a>
 #### Implicit Grant Flow
 
-	[TODO](https://github.com/justintv/twitch-js-sdk)
+The Implicit Grant Flow doesn't require a server that must make requests to the API, so you can use this flow with only JavaScript. If you're integrating Twitch into your website, you'll probably want to use the [Twitch JS SDK](https://github.com/justintv/twitch-js-sdk), which uses this flow and makes the integration simple.
+
+
+  1. Send the user you'd like to authenticate to this URL:
+  
+        https://api.twitch.tv/kraken/oauth2/authorize
+            ?response_type=token
+            &client_id=[your client id]
+            &redirect_uri=[your registered redirect uri]
+            &scope=[list of [scopes](#wiki-scope) separated by spaces]
+
+      This page will ask the user to sign up or log in with their Twitch account, and allow them to choose whether to authorize your application.
+      
+  2. If the user authorizes your application, they will be redirected to the following URL:
+  
+        https://[your registered redirect URI]/#access_token=[an access token]&scope=[authorized scopes]
+        
+      > Note that the access token is in the URL fragment, not the
+      > querystring, so it won't show up in HTTP requests to your server.
+      > URL fragments can be accessed from JavaScript with
+      > `document.location.hash`.
+
+That's it! Your application can now make requests on behalf of the user by including your access token as specified in [Authenticated Requests](#authenticated-requests).
 
 #### Password Credentials Grant Flow
   
@@ -107,7 +129,8 @@ Scopes are specified as a *space separated* list in the url parameter `scope` wh
 ```
 
 You should only ask for permissions that you need, as users can view each requested permission when authorizing your app.
-  
+
+<a name="authenticated-requests"></a>
 ### Authenticated API Requests
 
 When an api requires authentication, you can send the access token you obtained above in any of the following ways:
