@@ -28,7 +28,8 @@ There are three ways to get an __access token__:
   2. If you are making an app that doesn't use a server, such as a client-side JavaScript app or a mobile app, you'll use the [Implicit Grant Flow]().
   3. If you're making a native app or are in a situation where it's very difficult to use a web browser, you may use the [Password Credentials Grant Flow]()
 
-#### Authorization Code Flow <a id="auth-code"></a>
+<a id="auth-code"></a>
+#### Authorization Code Flow
 
 Remember, you must keep your client secret confidential, so make sure to never expose it to users, even in an obscured form.
 
@@ -84,8 +85,9 @@ Remember, you must keep your client secret confidential, so make sure to never e
   
   
   
+<a name="scope"></a>
 
-### Scopes <a name="scope"></a>
+### Scopes
 
 When requesting authorization from users, the scope parameter allows you to specify which permissions your app requires. These scopes are ties to the access token you receive upon a successful authorization. Without specifying scopes, your app only has access to basic information about the authenticated user. You may specify any or all of the following scopes:
 
