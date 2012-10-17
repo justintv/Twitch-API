@@ -78,77 +78,12 @@ Specify a specific version (v1):
 
     curl -i -H 'Accept: application/vnd.twitchtv.v1+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
 
-## OAuth 2 <a id="oauth"/>
+<a id="oauth"/>
+<a name="wiki-auth"></a>
+## Authentication 
 
-[OAuth 2][] is an authentication protocol designed to make accessing user accounts from third party clients easy and secure. An `access_token` given to your application allows you to perform actions on behalf of an authenticated Twitch user.
+We use an OAuth 2.0, an authentication protocol designed to make accessing user accounts from third party clients easy and secure. Read the [authentication guide](Authentication) to see how to connect with Twitch users.
 
-There are two ways to get access tokens, a browser-based flow for use on most applications, and a [password credentials flow](Password-Credentials-Grant), which works best on embedded applications which aren't able to integrate a browser (hardware streaming products, game consoles). The rest of this section covers the browser-based flow.
-
-Before you can handle user authorization in your app, register a [client application][]. The specified `redirect_uri` will receive the result of all client authorizations in JSON: either an access token or a failure message. 
-
-Next, direct users on your application to the [authorization endpoint][], where they will log in or register on Twitch and approve access for your application. You can include the following URL parameters:
-
-- `response_type` (required): `token`.
-- `client_id` (required): The Client ID of your app that you recieved upon creation.
-- `redirect_uri` (required): The URL that clients will be forwarded to upon approval.
-- `scope` (required): A **space separated** list of [scopes](#wiki-scope) your app is requesting approval for to be displayed to the user.
-- `state` (recommended): A string that maintains state between the request and callback to `redirect_uri`. This can be useful for allowing your application to associate an authorization with a specific user request. 
-
-An example authorization request:
-
-```bash
-https://api.twitch.tv/kraken/oauth2/authorize?redirect_uri=http://example.com&client_id=i29g16w8403x4s196d47tavi&response_type=token&scope=user_read+channel_read&state=user_dayjay
-```
-
-Once your application is authorized, the user will be forwarded to the specified `request_uri` with a URL fragment containing `access_token` and `scope` parameters. URL fragments can be accessed from JavaScript with `document.location.hash`.
-
-```bash
-http://example.com/#access_token=bb09tmrqbxbgvlny25pbm5kfs&scope=user_read+channel_read
-```
-
-That's it! Your application can now make requests on behalf of the user by including your access token as specified in [Authentication](#auth).
-
-[OAuth 2]: http://hueniverse.com/2010/05/introducing-oauth-2-0
-[client application]: http://www.twitch.tv/settings?section=applications
-[authorization endpoint]: https://api.twitch.tv/kraken/oauth2/authorize
-
-### Scopes <a name="scope"></a>
-
-When requesting authorization from users, the scope parameter allows you to specify which permissions your app requires. Without specifying scopes, your app only has access to basic information about the authenticated user. You may specify any or all of the following scopes:
-
-- `user_read`: Read access to non-public user information, such as email address.
-- `user_blocks_edit`: Ability to ignore or unignore on behalf of a user.
-- `user_blocks_read`: Read access to a user's list of ignored users.
-- `user_followed`: Access to followed streams.
-- `channel_read`: Read access to non-public channel information, including email address and stream key.
-- `channel_editor`: Write access to channel metadata (game, status, other metadata).
-- `channel_commercial`: Access to trigger commercials on channel.
-- `channel_stream`: Ability to reset a channel's stream key.
-
-
-Scopes are specified as a *space separated* list in the url parameter `scope` when requesting authorization:
-
-```bash
-&scope=user_read+channel_read
-```
-
-Your app should ask for the minimum permissions that allow you to perform needed actions. 
-
-### Authentication <a name="wiki-auth"></a>
-
-We do not allow username/password authentication. All clients must use OAuth 2.
-
-Send token as header:
-
-```bash
-curl -H "Authorization: OAuth OAUTH-TOKEN" https://api.twitch.tv/kraken
-```
-
-Send token as URL parameter:
-
-```bash
-curl https://api.twitch.tv/kraken?oauth_token=OAUTH-TOKEN
-```
 
 ## Resources
 
