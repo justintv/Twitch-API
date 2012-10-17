@@ -38,7 +38,7 @@ Remember, you must keep your client secret confidential, so make sure to never e
             ?response_type=code
             &client_id=[your client id]
             &redirect_uri=[your registered redirect uri]
-            &scope=[list of scopes separated by spaces]
+            &scope=[list of [scopes](#wiki-scope) separated by spaces]
 
       > We also support the `state` parameter, which is strongly recommended
       > to avoid cross-site scripting attacks. If included, it is appended to
@@ -84,10 +84,27 @@ Remember, you must keep your client secret confidential, so make sure to never e
   
   
   
-  
-  
-  
-  
+
+### Scopes <a name="scope"></a>
+
+When requesting authorization from users, the scope parameter allows you to specify which permissions your app requires. These scopes are ties to the access token you receive upon a successful authorization. Without specifying scopes, your app only has access to basic information about the authenticated user. You may specify any or all of the following scopes:
+
+- `user_read`: Read access to non-public user information, such as email address.
+- `user_blocks_edit`: Ability to ignore or unignore on behalf of a user.
+- `user_blocks_read`: Read access to a user's list of ignored users.
+- `user_followed`: Access to followed streams.
+- `channel_read`: Read access to non-public channel information, including email address and stream key.
+- `channel_editor`: Write access to channel metadata (game, status, other metadata).
+- `channel_commercial`: Access to trigger commercials on channel.
+- `channel_stream`: Ability to reset a channel's stream key.
+
+Scopes are specified as a *space separated* list in the url parameter `scope` when requesting authorization:
+
+```bash
+&scope=user_read+channel_read
+```
+
+You should only ask for permissions that you need, as users can view each requested permission when authorizing your app.
   
 ### Authenticated API Requests
 
