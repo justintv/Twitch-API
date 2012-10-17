@@ -15,7 +15,7 @@ After you have an application, you are assigned a __client id__. Some authentica
 > Since your client secret is like a password, we can't show it to you once you leave the page, so make sure to record it somewhere safe.
 > Additionally, generating a new client secret will immediately invalidate the current one, which might make your API requests fail until your app is updated.
 
-When authenticating on behalf of a user, you'll use an __access token__, which uniquely identifies your client and the user to us. There are a few ways to obtain access tokens, as described below.
+When authenticating on behalf of a user, you'll use an __access token__, which uniquely identifies your client and the user to us. There are a few ways to obtain access tokens, as described below. An access token has a list of [scopes](#scope) associated with it, which determine what permissions you are allowed on the authorized Twitch user.
 
 [Applications tab]: http://www.twitch.tv/settings?section=applications
 
@@ -39,7 +39,7 @@ Remember, you must keep your client secret confidential, so make sure to never e
             ?response_type=code
             &client_id=[your client id]
             &redirect_uri=[your registered redirect uri]
-            &scope=[list of [scopes](#wiki-scope) separated by spaces]
+            &scope=[list of scopes separated by spaces]
 
       > We also support the `state` parameter, which is strongly recommended
       > to avoid cross-site scripting attacks. If included, it is appended to
@@ -86,7 +86,7 @@ The Implicit Grant Flow doesn't require a server that must make requests to the 
             ?response_type=token
             &client_id=[your client id]
             &redirect_uri=[your registered redirect uri]
-            &scope=[list of [scopes](#wiki-scope) separated by spaces]
+            &scope=[list of scopes separated by spaces]
 
       This page will ask the user to sign up or log in with their Twitch account, and allow them to choose whether to authorize your application.
       
