@@ -1,4 +1,4 @@
-# Twitch API 2.0
+# Twitch API
 
 ## Overview
 
