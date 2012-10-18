@@ -24,8 +24,8 @@ When authenticating on behalf of a user, you'll use an __access token__, which u
 
 There are three ways to get an __access token__:
 
-  1. If you're making a web app that uses a server, you will probably want to use the [Authorization Code Flow](#wiki-auth-code).
-  2. If you are making an app that doesn't use a server, such as a client-side JavaScript app or a mobile app, you'll use the [Implicit Grant Flow](#wiki-implicit-grant).
+  1. If you're making a web app that uses a server, you will probably want to use the [Authorization Code Flow](#auth-code).
+  2. If you are making an app that doesn't use a server, such as a client-side JavaScript app or a mobile app, you'll use the [Implicit Grant Flow](#implicit-grant).
   3. If you're making a native app or are in a situation where it's very difficult to use a web browser, you may use the [Password Credentials Grant Flow](#password-credentials-grant)
 
 <a name="auth-code"></a>
@@ -74,7 +74,7 @@ Remember, you must keep your client secret confidential, so make sure to never e
   
   You can then use this access token to perform actions on behalf of an authenticated Twitch user as described in [Authenticated Requests](#authenticated-requests).
   
-<a id="implicit-grant"></a>
+<a name="implicit-grant"></a>
 #### Implicit Grant Flow
 
 The Implicit Grant Flow doesn't require a server that must make requests to the API, so you can use this flow with only JavaScript. If you're integrating Twitch into your website, you'll probably want to use the [Twitch JS SDK](https://github.com/justintv/twitch-js-sdk), which uses this flow and makes the integration simple.
