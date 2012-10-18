@@ -106,7 +106,7 @@ That's it! Your application can now make requests on behalf of the user by inclu
   
 If you're building a native app that cannot use a web browser, the [Password Credentials Grant Flow][] might be appropriate. Due to the sensitive nature of user credentials, there are some extra rules and restrictions you have to follow, detailed on the [Password Credentials Grant Flow][] page.
 
-[Password Credentials Grant Flow]: Password-Credentials-Grant
+[Password Credentials Grant Flow]: password-credentials.md
   
 <a name="scope"></a>
 
