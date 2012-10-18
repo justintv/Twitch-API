@@ -1,4 +1,4 @@
-# Password Credentials Grant
+# Password Credentials Grant Flow
 
 The password credentials grant type allows you to request an access token for a user without using a browser by sending a user's username and password to the password grant endpoint.
 

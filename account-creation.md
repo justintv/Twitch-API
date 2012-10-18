@@ -12,7 +12,7 @@ First, register a [client application][]. You'll send the `client id` when makin
 
 Next, you'll need a `client secret` for your app, which you will send with your requests for verification.
 
-The `client secret` is an alphanumeric string, equivalent to a password, that's tied to your `client id`. Ask us to generate it for you, and never reveal this to anyone or transmit it over an insecure protocol.
+The `client secret` is an alphanumeric string, equivalent to a password, that's tied to your `client id`. Generate this on your client page, and never reveal this to anyone or transmit it over an insecure protocol.
 
 Additionally, this account creation permission is tied to specific IP addresses, so let us know which IP address ranges to whitelist.
 

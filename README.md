@@ -80,8 +80,9 @@ Specify a specific version (v1):
 <a name="wiki-auth"></a>
 ## Authentication 
 
-We use an OAuth 2.0, an authentication protocol designed to make accessing user accounts from third party clients easy and secure. Read the [authentication guide](Authentication) to see how to connect with Twitch users.
+We use an OAuth 2.0, an authentication protocol designed to make accessing user accounts from third party clients easy and secure. Read the [authentication guide][] to see how to connect with Twitch users.
 
+[authentication guide]: /justintv/Twitch-API/blob/master/authentication.md
 
 ## Resources
 
@@ -115,13 +116,13 @@ Basic information about the API and authentication status. If you are authentica
 }
 ```
 
-### [Users](Users-Resource)
-### [Channels](Channels-Resource)
-### [Videos](Videos-Resource)
-### [Streams](Streams-Resource)
-### [Games](Games-Resource)
-### [Search](Search-Resource)
-### [Teams](Teams-Resource)
-### [Chat](Chat-Resource)
-### [Ingests](Ingests-Resource)
-### [Blocks](Blocks-Resource)
+### [Users](/justintv/Twitch-API/blob/master/resources/users.md)
+### [Channels](/justintv/Twitch-API/blob/master/resources/channels.md)
+### [Videos](/justintv/Twitch-API/blob/master/resources/videos.md)
+### [Streams](/justintv/Twitch-API/blob/master/resources/streams.md)
+### [Games](/justintv/Twitch-API/blob/master/resources/games.md)
+### [Search](/justintv/Twitch-API/blob/master/resources/search.md)
+### [Teams](/justintv/Twitch-API/blob/master/resources/teams.md)
+### [Chat](/justintv/Twitch-API/blob/master/resources/chat.md)
+### [Ingests](/justintv/Twitch-API/blob/master/resources/ingests.md)
+### [Blocks](/justintv/Twitch-API/blob/master/resources/blocks.md)
