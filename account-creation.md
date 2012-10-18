@@ -2,9 +2,9 @@
 
 The account creation API allows you to create Twitch user accounts programmatically. Due to the potential for abuse, this permission is given to applications on an invite-only basis. Additionally, all requests must include a secret key to verify your client and be performed from an authorized IP Address.
 
-Once you create an account, you can use the [Password Credentials Grant API][] to get an access token for the user, allowing you to perform actions on their behalf.
+Once you create an account, you can use the [Password Credentials Grant Flow][] to get an access token for the user, allowing you to perform actions on their behalf.
 
-[Password Credentials Grant API]: Password-Credentials-Grant
+[Password Credentials Grant Flow]: password-credentials.md
 
 ## Usage
 

@@ -4,12 +4,13 @@
 
 The Twitch API allows websites to develop your own applications based on the rich feature set that we provide. This includes getting information about what streams are live, changing information about specific channels, or doing a SSO integration with Twitch itself. This documents lists the resources that the Twitch API provides. If you have any questions or need any help in using this API, please visit the [API Developers Group][] or [Github Issues][]
 
-The Twitch API is comprised of two parts: the REST API itself and the [JavaScript SDK][] that allows for easy integration into any website. Most users will only need to use the JS SDK, but if you want a deeper integration (for example, for use with Python or PHP scripts) you may access the REST API directly. The [RESTful Integration Guide](Restful-Integration-Guide) should help you if that describes your needs.
+The Twitch API is comprised of two parts: the REST API itself and the [JavaScript SDK][] that allows for easy integration into any website. Most users will only need to use the JS SDK, but if you want a deeper integration (for example, for use with Python or PHP scripts) you may access the REST API directly. The [RESTful Integration Guide][] should help you if that describes your needs.
 
 
 [API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/twitch-api
 [JavaScript SDK]: /justintv/twitch-js-sdk
 [Github Issues]: /justintv/Twitch-API/issues
+[RESTful Integration Guide]: /justintv/Twitch-API/blob/master/Restful-Integration-Guide.md
 
 ### Formats
 
@@ -62,7 +63,8 @@ application/vnd.twitchtv[.version]+json
 
 This allows clients to get either the latest version of the API or a specific version. The current version of the API is `application/vnd.twitchtv.v1+json`
 
-### Making Requests <a id="request-requirements"/>
+<a name="requests"/>
+### Making Requests
 
 When performing requests to the Twitch API, set the `Accept` HTTP header to the API version you prefer.
 
@@ -76,8 +78,8 @@ Specify a specific version (v1):
 
     curl -i -H 'Accept: application/vnd.twitchtv.v1+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
 
-<a id="oauth"/>
-<a name="wiki-auth"></a>
+<a name="oauth"/>
+<a name="wiki-auth"/>
 ## Authentication 
 
 We use an OAuth 2.0, an authentication protocol designed to make accessing user accounts from third party clients easy and secure. Read the [authentication guide][] to see how to connect with Twitch users.
