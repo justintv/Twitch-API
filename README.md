@@ -127,4 +127,4 @@ Basic information about the API and authentication status. If you are authentica
 ### [Teams](/justintv/Twitch-API/blob/master/resources/teams.md)
 ### [Chat](/justintv/Twitch-API/blob/master/resources/chat.md)
 ### [Ingests](/justintv/Twitch-API/blob/master/resources/ingests.md)
-### [Blocks](/justintv/Twitch-API/blob/master/resources/blocks.md)
+<!--### [Blocks](/justintv/Twitch-API/blob/master/resources/blocks.md)-->
