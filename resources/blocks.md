@@ -1,4 +1,6 @@
-# Blocks
+# Blocks (Unstable)
+
+**Warning:** This API method is currently experimental and the format may change without warning.
 
 ## Get the list of users that the authenticated user has blocked
 
