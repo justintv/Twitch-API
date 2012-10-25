@@ -2,47 +2,79 @@
 
 **Warning:** This API method is currently experimental and the format may change without warning.
 
-## Get the list of users that the authenticated user has blocked
+### Get a list of blocked users
 
 `GET /users/:login/blocks`
 
-(*Authenticated, Scope:user_blocks_read*)
+**[Authenticated]**  Scope: `user_blocks_read`
 
-### Response
+#### Response
 
 ```json
-[
 {
-  "name": "hebo",
-  "created_at": "2011-03-19T15:42:22Z",
-  "updated_at": "2012-06-14T00:14:27Z",
+  "blocks": [
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/users/hebo/blocks/funami"
+      },
+      "user": {
+        "name": "funami",
+        "created_at": "2011-05-01T14:50:12Z",
+        "updated_at": "2012-10-13T18:18:43Z",
+        "_id": 22125774,
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/funami"
+        },
+        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
+        "staff": false,
+        "display_name": "Funami"
+      }
+    }
+  ],
   "_links": {
-    "self": "https://api.twitch.tv/kraken/users/hebo"
-  },
-  "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/hebo-profile_image-6947308654ad603f-300x300.jpeg",
-  "_id": 21229404,
-  "display_name": "Hebo"
-},
-...
-]
+    "self": "https://api.twitch.tv/kraken/users/hebo/blocks"
+  }
+}
 ```
 
-## Block a user on behalf of the authenticated user
+### Block a user
 
-`PUT /users/:login/blocks/:user`
+`PUT /users/:user/blocks/:target`
 
-(*Authenticated, Scope:user_blocks_edit*)
+**[Authenticated]**  Scope: `user_blocks_edit`
 
-`:login` is the authenticated user's login, `:user` is the login of the user being blocked
+In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked
 
-There is no response body for this endpoint.
+#### Response
 
-## Unblock a user on behalf of the authenticated user
+```json
+{
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/users/hebo/blocks/funami"
+  },
+  "user": {
+    "name": "funami",
+    "created_at": "2011-05-01T14:50:12Z",
+    "updated_at": "2012-10-13T18:18:43Z",
+    "staff": false,
+    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
+    "_id": 22125774,
+    "_links": {
+      "self": "https://api.twitch.tv/kraken/users/funami"
+    },
+    "display_name": "Funami"
+  }
+}
+```
 
-`DELETE /users/:login/blocks/:user`
+### Unblock a user
 
-(*Authenticated, Scope:user_blocks_edit*)
+`DELETE /users/:user/blocks/:target`
 
-`:login` is the authenticated user's login, `:user` is the login of the user being unblocked
+**[Authenticated]**  Scope: `user_blocks_edit`
 
-There is no response body for this endpoint.
+In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked
+
+#### Response
+
+`204 No Content` if successful.
