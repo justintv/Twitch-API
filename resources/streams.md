@@ -158,7 +158,9 @@ Response has an array of featured streams and paginated links. Each element in t
 
 `GET /streams/followed`
 
-(**Authenticated**; Scope: `user_followed`) List the live streams that the authenticated user is following
+**[Authenticated]**`
+
+List the live streams that the authenticated user is following.
 
 
 ### Response
