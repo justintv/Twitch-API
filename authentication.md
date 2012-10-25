@@ -117,7 +117,7 @@ When requesting authorization from users, the scope parameter allows you to spec
 - `user_read`: Read access to non-public user information, such as email address.
 - `user_blocks_edit`: Ability to ignore or unignore on behalf of a user.
 - `user_blocks_read`: Read access to a user's list of ignored users.
-- `user_followed`: Access to followed streams.
+- `user_follows_edit`: Access to manage a user's followed channels.
 - `channel_read`: Read access to non-public channel information, including email address and stream key.
 - `channel_editor`: Write access to channel metadata (game, status, other metadata).
 - `channel_commercial`: Access to trigger commercials on channel.
