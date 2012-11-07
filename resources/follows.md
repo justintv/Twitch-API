@@ -16,32 +16,43 @@
 ```json
 {
   "_links": {
-    "self": "https://api.twitch.tv/kraken/users/hebo/follows/channels/funami"
+    "next": "https://api.twitch.tv/kraken/users/hebo/follows/channels?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/users/hebo/follows/channels?limit=25&offset=0"
   },
-  "channel": {
-    "name": "funami",
-    "game": null,
-    "created_at": "2011-05-01T14:50:12Z",
-    "teams": [],
-    "background": null,
-    "updated_at": "2012-10-13T18:18:43Z",
-    "banner": null,
-    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
-    "url": "http://www.twitch.tv/funami",
-    "_links": {
-      "stream_key": "https://api.twitch.tv/kraken/channels/funami/stream_key",
-      "self": "https://api.twitch.tv/kraken/channels/funami",
-      "chat": "https://api.twitch.tv/kraken/chat/funami",
-      "commercial": "https://api.twitch.tv/kraken/channels/funami/commercial",
-      "videos": "https://api.twitch.tv/kraken/channels/funami/videos",
-      "features": "https://api.twitch.tv/kraken/channels/funami/features"
+  "follows": [
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/users/hebo/follows/channels/elsmurfoz"
+      },
+      "channel": {
+        "banner": null,
+        "_id": 1,
+        "url": "http://www.twitch.tv/elsmurfoz",
+        "mature": null,
+        "teams": [
+
+        ],
+        "status": null,
+        "logo": null,
+        "name": "elsmurfoz",
+        "video_banner": null,
+        "display_name": "Elsmurfoz",
+        "created_at": "2007-05-22T10:37:47Z",
+        "game": null,
+        "_links": {
+          "stream_key": "https://api.twitch.tv/kraken/channels/elsmurfoz/stream_key",
+          "self": "https://api.twitch.tv/kraken/channels/elsmurfoz",
+          "videos": "https://api.twitch.tv/kraken/channels/elsmurfoz/videos",
+          "commercial": "https://api.twitch.tv/kraken/channels/elsmurfoz/commercial",
+          "chat": "https://api.twitch.tv/kraken/chat/elsmurfoz",
+          "features": "https://api.twitch.tv/kraken/channels/elsmurfoz/features"
+        },
+        "updated_at": "2008-02-12T06:04:29Z",
+        "background": null
+      }
     },
-    "_id": 22125774,
-    "mature": true,
-    "video_banner": null,
-    "display_name": "Funami",
-    "status": "Not Live"
-  }
+    ...
+  ]
 }
 ```
 
