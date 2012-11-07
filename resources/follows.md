@@ -6,6 +6,11 @@
 
 `GET /users/:user/follows/channels`
 
+### Parameters
+
+- `limit` (optional): The maximum number of streams to return, up to 100, default is 25.
+- `offset` (optional): The offset to begin listing streams, defaults to 0.
+
 #### Response
 
 ```json
