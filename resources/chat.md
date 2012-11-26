@@ -105,7 +105,7 @@ A brief list of commands supported by our IRC server include:
 Notes:
 
 - You should not JOIN any chat room other than the one which you are connected to the server of.
-- See [Further Notes](https://github.com/justintv/Twitch-API/blob/master/resources/chat.md#notes-about-lists-of-users) for more information
+- See [Further Notes](https://github.com/justintv/Twitch-API/blob/master/resources/chat.md#further-notes-about-lists-of-users) for more information
 - After a successful JOIN, the following will take place:
 
 1. You will be sent a list of users that are currently in the channel.
