@@ -105,6 +105,7 @@ A brief list of commands supported by our IRC server include:
 Notes:
 
 - You should not JOIN any chat room other than the one which you are connected to the server of.
+- See [Further Notes](https://github.com/justintv/Twitch-API/blob/master/resources/chat.md#notes-about-lists-of-users) for more information
 - After a successful JOIN, the following will take place:
 
 1. You will be sent a list of users that are currently in the channel.
@@ -148,7 +149,7 @@ Notes:
 #### PRIVMSG: Someone sent a message to a channel
 ```:nickname!username@nickname.tmi.twitch.tv PRIVMSG #channel :message that was sent```
 
-#### Notes about lists of users
+### Further notes about lists of users
 
 - A list of users that are currently in a channel is sent after a successful JOIN, so WHO is often not required.
 - Due to caching, JOINs and PARTs are not sent immediately to a channel. They are instead batched up and sent every 10 seconds.
