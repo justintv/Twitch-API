@@ -19,6 +19,7 @@ This method allows you to retrieve the top games on Twitch (by current viewers).
         "self": "https://api.twitch.tv/kraken/games/top?limit=10&offset=0",
         "next": "https://api.twitch.tv/kraken/games/top?limit=10&offset=10"
       },
+      "_total": 322,
       "top": [
         {
           "game": {
