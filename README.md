@@ -104,6 +104,7 @@ Basic information about the API and authentication status. If you are authentica
       "created_at": "2012-05-08T21:55:12Z",
       "updated_at": "2012-05-17T21:32:13Z"
     },
+    "user_name": "hebo",
     "valid": true
   },
   "_links": {
