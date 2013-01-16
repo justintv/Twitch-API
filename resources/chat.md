@@ -63,15 +63,22 @@ In order to connect to Twitch IRC, you must have two pieces of information:
 
 ### Connecting
 Once you have that information, you can then take it to connect to Twitch IRC with the following bits of information:
+
 - The server name to connect to is: *channellname*.jtvirc.com.
 - The port to connect to is *6667*.
 - SSL **is not** supported for Twitch IRC.
-- Your nickname must be your Twitch nickname, and password your Twitch password. Please note that in the future, we will allow for IRC login with an OAuth token instead of requiring the password.
+- Your nickname must be your Twitch nickname
+
+#### If you are connecting with an IRC client
+- Your password should be your Twitch password.
+
+#### With a bot or app for multiple users
+- An OAuth token for the user, with the `chat_login` scope. The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`.
 
 ### Upon a Successful Connection
 A successful connection session will look something like this:
 ```
-< PASS twitch_password
+< PASS oauth:twitch_oauth_token
 < NICK twitch_username
 > :tmi.twitch.tv 001 twitch_username :connected to TMI
 > :tmi.twitch.tv 002 twitch_username :your host is TMI
