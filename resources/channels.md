@@ -34,6 +34,7 @@
     "self": "https://api.twitch.tv/kraken/channels/towelliee",
     "chat": "https://api.twitch.tv/kraken/chat/towelliee",
     "videos": "https://api.twitch.tv/kraken/channels/towelliee/videos",
+    "status": "https://api.twitch.tv/kraken/channels/towelliee/videos/status",
     "commercial": "https://api.twitch.tv/kraken/channels/towelliee/commercial"
   },
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
@@ -76,6 +77,7 @@
     "self": "https:/api.twitch.tv/kraken/channels/hebo",
     "chat":"https:/api.twitch.tv/kraken/chat/hebo",
     "videos": "https://api.twitch.tv/kraken/channels/hebo/videos",
+    "status": "https://api.twitch.tv/kraken/channels/hebo/videos/status",
     "commercial":"https:/api.twitch.tv/kraken/channels/hebo/commercial"
   },
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
@@ -95,6 +97,9 @@
 [See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel)
 
 
+## Retrieve video recording status for a channel
+
+[See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-status-channel)
 
 ## Update the specified channel
 
