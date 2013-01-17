@@ -93,7 +93,9 @@
 
 ## Get status of video recording for a channel <a id="videos-status-channel" />
 
-`GET /channels/:channel/videos/status`
+`GET /channels/videos/status`
+
+(Authenticated, Scope:channel_read)
 
 ### Response
     {
