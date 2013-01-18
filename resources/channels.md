@@ -103,6 +103,8 @@
 
 (Authenticated, Scope:channel_read)
 
+#### This is not in production yet, target date 1/30/2013
+
 ### Response
 
 ```json
