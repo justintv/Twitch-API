@@ -99,7 +99,7 @@
 
 ## Retrieve video recording status for a channel
 
-`GET /chanels/:channel/video_status`
+`GET /channels/:channel/video_status`
 
 (Authenticated, Scope:channel_read)
 
