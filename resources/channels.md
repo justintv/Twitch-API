@@ -105,7 +105,7 @@
 
 ### Response
 
-```lang=json
+```json
 {
   recording: false,
   cure_url: 'https://link.twitch.tv/url_to_why_my_vods_are_not_recording',
