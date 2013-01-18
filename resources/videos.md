@@ -90,15 +90,3 @@
             next: "https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10&offset=10"
         }
     }
-
-## Get status of video recording for a channel <a id="videos-status-channel" />
-
-`GET /channels/videos/status`
-
-(Authenticated, Scope:channel_read)
-
-### Response
-    {
-        recording: false,
-        cure_url:  "http://link.twitch.tv/why_are_my_vods_not_recording"
-    }
