@@ -101,6 +101,8 @@
 
 `GET /chanels/:channel/video_status`
 
+(Authenticated, Scope:channel_read)
+
 ### Response
 
 ```lang=json
