@@ -34,6 +34,7 @@
     "self": "https://api.twitch.tv/kraken/channels/towelliee",
     "chat": "https://api.twitch.tv/kraken/chat/towelliee",
     "videos": "https://api.twitch.tv/kraken/channels/towelliee/videos",
+    "video_status": "https://api.twitch.tv/kraken/channels/towelliee/video_status",
     "commercial": "https://api.twitch.tv/kraken/channels/towelliee/commercial"
   },
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
@@ -76,6 +77,7 @@
     "self": "https:/api.twitch.tv/kraken/channels/hebo",
     "chat":"https:/api.twitch.tv/kraken/chat/hebo",
     "videos": "https://api.twitch.tv/kraken/channels/hebo/videos",
+    "video_status": "https://api.twitch.tv/kraken/channels/hebo/video_status",
     "commercial":"https:/api.twitch.tv/kraken/channels/hebo/commercial"
   },
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
@@ -93,6 +95,25 @@
 ## Retrieve videos for a channel
 
 [See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel)
+
+
+## Retrieve video recording status for a channel
+
+`GET /channels/:channel/video_status`
+
+(Authenticated, Scope:channel_read)
+
+#### This is not in production yet, target date 1/30/2013
+
+### Response
+
+```json
+{
+    "recording": false,
+    "cure_url": "https://link.twitch.tv/url_to_why_my_vods_are_not_recording",
+    "message": "A human readable message, probably english, that describes why"
+}
+```
 
 
 
