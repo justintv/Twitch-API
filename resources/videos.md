@@ -39,6 +39,9 @@
 - `offset` (optional): The offset to begin listing videos, defaults to 0.
 
 ### Response
+
+Response has an array of videos ordered by time of creation, starting with the most recent.
+
     {
         videos: [
             {
