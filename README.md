@@ -47,7 +47,7 @@ When using JSON-P, the status code will always be `200` to allow browsers to par
 
 ### API Versions and MIME Types
 
-We allow clients to use any version of our API. Versioning is per-method so for example you can have v1 of `/channels` and v2 of `/users`. If a version is not specified, the latest version will be used, which is currently **v2**.
+We allow clients to use any version of our API. Versioning is per-method so for example you can have v1 of `/channels` and v2 of `/users`. If a version is not specified, the latest version will be used, which is currently **v2**. We *strongly* recommend specifying a version, otherwise version updates might break your application if you've defaulted your requests to use the latest version.
 
 When specifying a version for a request to the Twitch API, set the `Accept` HTTP header to the API version you prefer. This is done by appending a version specifier to our vendor specific MIME type. Responses will have an `x-api-version` header that will indicate which version you received.
 
@@ -73,21 +73,9 @@ For the latest version of the API:
     curl -i -H 'Accept: application/vnd.twitchtv+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
     
     HTTP/1.1 200 OK
-    Server: nginx
-    Date: Sat, 26 Jan 2013 00:32:31 GMT
-    Content-Type: application/json; charset=utf-8
-    Content-Length: 1221
-    Connection: close
-    status: 200 OK
+    ...
     x-api-version: 2
-    via: Twice 0.2 twice2:3342
-    x-runtime: 0.012690
-    x-geo: None
-    x-request-id: 4345580124984e144291ea6181ee2de1
-    etag: "adafe7d0ff3ea04446ad0428875bca6f"
-    x-ua-compatible: IE=Edge,chrome=1
-    cache-control: max-age=0, private, must-revalidate
-    x-rack-cache: miss
+    ...
     Front-End-Https: on
     
     { ...
@@ -97,21 +85,9 @@ Specify a specific version (v1):
     curl -i -H 'Accept: application/vnd.twitchtv.v1+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
     
     HTTP/1.1 200 OK
-    Server: nginx
-    Date: Sat, 26 Jan 2013 00:35:09 GMT
-    Content-Type: application/json; charset=utf-8
-    Content-Length: 1221
-    Connection: close
-    status: 200 OK
+    ...
     x-api-version: 1
-    via: Twice 0.2 twice6:3342
-    x-runtime: 0.011793
-    x-geo: None
-    x-request-id: 8167e0f7f05beec148cee8484c1aa8b9
-    etag: "79974fa7100b05dc7ee8e076a098ba5e"
-    x-ua-compatible: IE=Edge,chrome=1
-    cache-control: max-age=0, private, must-revalidate
-    x-rack-cache: miss
+    ...
     Front-End-Https: on
     
     { ...
