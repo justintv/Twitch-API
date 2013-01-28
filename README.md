@@ -2,10 +2,9 @@
 
 ## Overview
 
-The Twitch API allows websites to develop your own applications based on the rich feature set that we provide. This includes getting information about what streams are live, changing information about specific channels, or doing a SSO integration with Twitch itself. This documents lists the resources that the Twitch API provides. If you have any questions or need any help in using this API, please visit the [API Developers Group][] or [Github Issues][]
+The Twitch API enables you to develop your own applications using the rich feature set that we provide. Features include retrieving data about what streams are live, changing information about specific channels, and doing an SSO integration with Twitch. The following pages list the resources that the Twitch API provides. If you have any questions or need help in using this API, please visit the [API Developers Group][] or [Github Issues][].
 
-The Twitch API is comprised of two parts: the REST API itself and the [JavaScript SDK][] that allows for easy integration into any website. Most users will only need to use the JS SDK, but if you want a deeper integration (for example, for use with Python or PHP scripts) you may access the REST API directly. The [RESTful Integration Guide][] should help you if that describes your needs.
-
+The Twitch API is comprised of two parts: the REST API and a [JavaScript SDK][] that allows for easy integration of the Twitch features into any website. Most users will only need to use the JS SDK, but if you want a deeper integration (for example, for use with Python or PHP scripts), you may access the REST API directly. The [RESTful Integration Guide][] provides additional information for using REST API.
 
 [API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/twitch-api
 [JavaScript SDK]: /justintv/twitch-js-sdk
@@ -16,9 +15,7 @@ The Twitch API is comprised of two parts: the REST API itself and the [JavaScrip
 
 The base URL for all API resources is `https://api.twitch.tv/kraken`.
 
-All data is sent and received as [JSON][].
-
-Blank fields are included as `null` instead of being omitted.
+All data is sent and received as [JSON][]. Blank fields are included as `null` instead of being omitted.
 
 [JSON]: http://www.json.org/
 
@@ -27,23 +24,34 @@ Blank fields are included as `null` instead of being omitted.
 All API methods support [JSON-P][] by providing a `callback` parameter with the request.
 
 ```bash
-curl https://api.twitch.tv/kraken?callback=foo
+curl -i https://api.twitch.tv/kraken?callback=foo
 ```
 
 [JSON-P]: http://json-p.org/
-### Errors
 
-All error responses are in the following format, delivered with the corresponding status code:
+### Self-Describing API
+
+The API is self-describing and can be explored from the base URL:
+
+```bash
+curl -i https://api.twitch.tv/kraken
+```
+
+Every JSON response includes a `_links` object which allows you to navigate the API without having to hardcode any of our URLs.
 
 ```json
 {
-    "message":"Invalid Token",
-    "status":401,
-    "error":"Unauthorized"
+    "_links": {
+        "teams": "https://api.twitch.tv/kraken/teams",
+        "channel": "https://api.twitch.tv/kraken/channel",
+        "user": "https://api.twitch.tv/kraken/user",
+        "ingests": "https://api.twitch.tv/kraken/ingests",
+        "streams": "https://api.twitch.tv/kraken/streams",
+        "search": "https://api.twitch.tv/kraken/search"
+    },
+    ...
 }
 ```
-
-When using JSON-P, the status code will always be `200` to allow browsers to parse it. Check the body of the response for the actual error data.
 
 ### API Versions and MIME Types
 
@@ -92,12 +100,25 @@ Specify a specific version (v1):
     
     { ...
 
+### Errors
+
+All error responses are in the following format, delivered with the corresponding status code:
+
+```json
+{
+    "message":"Invalid Token",
+    "status":401,
+    "error":"Unauthorized"
+}
+```
+
+When using JSON-P, the status code will always be `200` to allow browsers to parse it. Check the body of the response for the actual error data.
 
 <a name="oauth"/>
 <a name="wiki-auth"/>
 ## Authentication 
 
-We use an OAuth 2.0, an authentication protocol designed to make accessing user accounts from third party clients easy and secure. Read the [authentication guide][] to see how to connect with Twitch users.
+We use an OAuth 2.0, an authentication protocol designed to make accessing user accounts from third party clients easy and secure. Read our [authentication guide][] to see how to connect with Twitch users from your own service.
 
 [authentication guide]: /justintv/Twitch-API/blob/master/authentication.md
 
