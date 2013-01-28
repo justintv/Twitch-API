@@ -8,18 +8,19 @@ These are RTMP Ingest points. By directing an rtmp stream with your stream_key i
 
 ### Response
 
+```json
+{
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/ingests"
+  },
+  "ingests": [
     {
-      "_links": {
-        "self": "https://api.twitch.tv/kraken/ingests"
-      },
-      "ingests": [
-        {
-          "name": "EU: Amsterdam, NL" ,
-          "default": false ,
-          "_id": 24 ,
-          "url_template": "rtmp://live-ams.twitch.tv/app/{stream_key}",
-          "availability":1.0
-        }
-      ]
+      "name": "EU: Amsterdam, NL" ,
+      "default": false ,
+      "_id": 24 ,
+      "url_template": "rtmp://live-ams.twitch.tv/app/{stream_key}",
+      "availability":1.0
     }
-
+  ]
+}
+```
