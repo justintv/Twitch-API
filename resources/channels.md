@@ -149,7 +149,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 `DELETE /channels/:channel/stream_key`
 
-(Authenticated, Scope:channel_editor)
+(Authenticated, Scope:channel_stream)
 
 ### Response
 
