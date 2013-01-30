@@ -145,6 +145,16 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 `200 OK` with the updated channel object if successful.
 
+## Reset the specified channel's stream key
+
+`DELETE /channels/:channel/stream_key`
+
+(Authenticated, Scope:channel_editor)
+
+### Response
+
+`204 No Content` if successful.
+
 ## Run a commercial on the specified channel <a id="commercial"/>
 
 `POST /channels/:channel/commercial`
