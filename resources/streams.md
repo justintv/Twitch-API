@@ -148,7 +148,7 @@ Response has an array of featured streams and paginated links. Each element in t
 ### Parameters
 
 - `game` (optional): Summarize streams on a per-game basis.
-- `channel` (optional): Summarize streams limited to the specified set of channels.
+- `channel` (optional): Summarize streams limited to the specified set of comma separated channels.
 
 ### Response
 
