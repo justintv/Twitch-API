@@ -97,26 +97,6 @@
 [See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel)
 
 
-## Retrieve video recording status for a channel
-
-`GET /channels/:channel/video_status`
-
-(Authenticated, Scope:channel_read)
-
-#### This is not in production yet, target date 1/30/2013
-
-### Response
-
-```json
-{
-    "recording": false,
-    "cure_url": "https://link.twitch.tv/url_to_why_my_vods_are_not_recording",
-    "message": "A human readable message, probably english, that describes why"
-}
-```
-
-
-
 ## Update the specified channel
 
 `PUT /channels/:channel/`
