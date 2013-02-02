@@ -1,16 +1,16 @@
 # Authentication
 
-This page will explain how to allow users from your service or application to access, update, or in general interact with their Twitch account.
+This page will explain how to allow users from your service or application to access, update, and generally interact with their Twitch account.
 
-When working with the Twitch API, you must follow some simple rules to protect user data. This page should help you understand how Twitch authenticates applications and users, and how to perform actions on behalf of Twitch users.
+We provide three ways for obtaining access to a Twitch account on behalf of the user. We use the [OAuth 2.0 protocol] for authentication, but only certain parts which we outline below.
 
-We use the [OAuth 2.0 protocol] for authentication, but only certain parts. This page will explain the parts that we use and how they interact with the API.
+When working with the Twitch API, you must follow some simple rules to protect user data. This page should help you understand how Twitch authenticates applications and users, and how to perform actions using our API on behalf of Twitch users.
 
 [OAuth 2.0 protocol]:http://hueniverse.com/2010/05/introducing-oauth-2-0
 
 ### Developer Setup
 
-To make an application that uses the Twitch API, you will first need to create a "Developer Application" from the [applications tab][] of your Twitch settings page. When creating the app, you'll need to enter in your __redirect uri__, which is where users get redirected after they have authorized your application.
+To make an application that uses the Twitch API, you will first need to create a "Developer Application" from the [applications tab][] of your Twitch settings page. When creating this app, you'll need to enter in your __redirect URI__, which is where users are redirected after having authorized your application.
 
 After you have an application, you are assigned a __client id__. Some authentication flows require a __client secret__ as well, so you can generate one on the same page. Client ids are public and can be shared (e.g. embedded in the source of a web page), but client secrets are equivalent to a password for your application and _must_ be kept confidential.
 
