@@ -23,7 +23,9 @@ Next, make a request to our token endpoint with user credentials to get an acces
 - `client_secret` (required): The Client Secret of your app.
 - `username` (required): The username of the Twitch user.
 - `password` (required): The password of the Twitch user.
-- `scope` (required): A **space separated** list of [scopes](API#wiki-scope) your app is requesting approval for.
+- `scope` (required): A **space separated** list of [scopes][] your app is requesting approval for.
+
+[scopes]: /authentication.md#scopes
 
 ### Response
 
