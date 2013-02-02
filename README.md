@@ -155,14 +155,13 @@ Basic information about the API and authentication status. If you are authentica
 }
 ```
 
-### [Blocks](/justintv/Twitch-API/blob/master/resources/blocks.md)
-### [Users](/justintv/Twitch-API/blob/master/resources/users.md)
-### [Channels](/justintv/Twitch-API/blob/master/resources/channels.md)
-### [Videos](/justintv/Twitch-API/blob/master/resources/videos.md)
-### [Streams](/justintv/Twitch-API/blob/master/resources/streams.md)
-### [Games](/justintv/Twitch-API/blob/master/resources/games.md)
-### [Search](/justintv/Twitch-API/blob/master/resources/search.md)
-### [Teams](/justintv/Twitch-API/blob/master/resources/teams.md)
-### [Chat](/justintv/Twitch-API/blob/master/resources/chat.md)
-### [Ingests](/justintv/Twitch-API/blob/master/resources/ingests.md)
-<!--### [Blocks](/justintv/Twitch-API/blob/master/resources/blocks.md)-->
+### [Users](/resources/users.md)
+### [Channels](/resources/channels.md)
+### [Videos](/resources/videos.md)
+### [Streams](/resources/streams.md)
+### [Games](/resources/games.md)
+### [Search](/resources/search.md)
+### [Teams](/resources/teams.md)
+### [Chat](/resources/chat.md)
+### [Ingests](/resources/ingests.md)
+### [Blocks](/resources/blocks.md)
