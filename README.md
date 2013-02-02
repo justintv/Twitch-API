@@ -155,6 +155,7 @@ Basic information about the API and authentication status. If you are authentica
 }
 ```
 
+### [Blocks](/justintv/Twitch-API/blob/master/resources/blocks.md)
 ### [Users](/justintv/Twitch-API/blob/master/resources/users.md)
 ### [Channels](/justintv/Twitch-API/blob/master/resources/channels.md)
 ### [Videos](/justintv/Twitch-API/blob/master/resources/videos.md)
