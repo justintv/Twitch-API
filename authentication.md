@@ -1,5 +1,7 @@
 # Authentication
 
+This page will explain how to allow users from your service or application to access, update, or in general interact with their Twitch account.
+
 When working with the Twitch API, you must follow some simple rules to protect user data. This page should help you understand how Twitch authenticates applications and users, and how to perform actions on behalf of Twitch users.
 
 We use the [OAuth 2.0 protocol] for authentication, but only certain parts. This page will explain the parts that we use and how they interact with the API.
