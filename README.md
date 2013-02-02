@@ -7,9 +7,9 @@ The Twitch API enables you to develop your own applications using the rich featu
 The Twitch API is comprised of two parts: the REST API and a [JavaScript SDK][] that allows for easy integration of the Twitch features into any website. Most users will only need to use the JS SDK, but if you want a deeper integration (for example, for use with Python or PHP scripts), you may access the REST API directly. The [RESTful Integration Guide][] provides additional information for using REST API.
 
 [API Developers Group]: https://groups.google.com/forum/?fromgroups#!forum/twitch-api
-[JavaScript SDK]: /justintv/twitch-js-sdk
-[Github Issues]: /justintv/Twitch-API/issues
-[RESTful Integration Guide]: /justintv/Twitch-API/blob/master/RESTful-Integration-Guide.md
+[JavaScript SDK]: /../../../twitch-js-sdk
+[Github Issues]: /../../issues
+[RESTful Integration Guide]: /RESTful-Integration-Guide.md
 
 ### Formats
 
@@ -120,7 +120,7 @@ When using JSON-P, the status code will always be `200` to allow browsers to par
 
 We use an OAuth 2.0, an authentication protocol designed to make accessing user accounts from third party clients easy and secure. Read our [authentication guide][] to see how to connect with Twitch users from your own service.
 
-[authentication guide]: /justintv/Twitch-API/blob/master/authentication.md
+[authentication guide]: /authentication.md
 
 ## Resources
 
