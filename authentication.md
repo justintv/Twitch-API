@@ -12,49 +12,48 @@ When working with the Twitch API, you must follow some simple rules to protect u
 
 To make an application that uses the Twitch API, you will first need to create a "Developer Application" from the [applications tab][] of your Twitch settings page. When creating this app, you'll need to enter in your __redirect URI__, which is where users are redirected after having authorized your application.
 
-After you have an application, you are assigned a __client id__. Some authentication flows require a __client secret__ as well, so you can generate one on the same page. Client ids are public and can be shared (e.g. embedded in the source of a web page), but client secrets are equivalent to a password for your application and _must_ be kept confidential.
+Once you create a Developer Application, you are assigned a __client id__. Some authentication flows also require a __client secret__. You can generate one on the same apge as the client ID. Client IDs are public and can be shared (e.g. embedded in the source of a web page), but client secrets are equivalent to a password for your application and must be kept _confidential_.
 
-> Since your client secret is like a password, we can't show it to you once you leave the page, so make sure to record it somewhere safe.
-> Additionally, generating a new client secret will immediately invalidate the current one, which might make your API requests fail until your app is updated.
+> Your client secret is like a password and we can't show it to you once you leave the page, so make sure to recorde it somewhere safe. Additionally, generating a new client secret will immediately invalidate the current one, which might make your API requests fail until your app is updated.
 
-When authenticating on behalf of a user, you'll use an __access token__, which uniquely identifies your client and the user to us. There are a few ways to obtain access tokens, as described below. An access token has a list of [scopes](#scope) associated with it, which determine what permissions you are allowed on the authorized Twitch user.
+When authenticating on behalf of a user, you'll be granted an __access token__ that uniquely identifies to us your client and the user. There are a few ways to obtain access tokens, which are described below. An access token has an associated list of [scopes](#scope) that determine what permissions you are allowed on behalf of the authorized Twitch user.
 
 [Applications tab]: http://www.twitch.tv/settings?section=applications
 
 
 ### Getting access tokens
 
-There are three ways to get an __access token__:
+There are three ways to get an access token:
 
   1. If you're making a web app that uses a server, you will probably want to use the [Authorization Code Flow](#auth-code).
   2. If you are making an app that doesn't use a server, such as a client-side JavaScript app or a mobile app, you'll use the [Implicit Grant Flow](#implicit-grant).
-  3. If you're making a native app or are in a situation where it's very difficult to use a web browser, you may use the [Password Credentials Grant Flow](#password-credentials-grant)
+  3. If you're making a native app or are in a situation where it's very difficult to use a web browser, you may use the [Password Credentials Grant Flow](#password-credentials-grant).
 
 <a name="auth-code"></a>
 #### Authorization Code Flow
 
-Remember, you must keep your client secret confidential, so make sure to never expose it to users, even in an obscured form.
+Remember, you must keep your client secret _confidential_. Make sure to never expose it to users, even in an obscured form.
 
   1. Send the user you'd like to authenticate to this URL:
   
         https://api.twitch.tv/kraken/oauth2/authorize
             ?response_type=code
-            &client_id=[your client id]
-            &redirect_uri=[your registered redirect uri]
-            &scope=[list of scopes separated by spaces]
+            &client_id=[your client ID]
+            &redirect_uri=[your registered redirect URI]
+            &scope=[space separated list of scopes]
 
       > We also support the `state` parameter, which is strongly recommended
-      > to avoid cross-site scripting attacks. If included, it is appended to
+      > for avoid cross-site scripting attacks. If included, it is appended to
       > the list of query parameters when redirecting the user to the
       > `redirect_uri`.
       
-      This page will ask the user to sign up or log in with their Twitch account, and allow them to choose whether to authorize your application.
+      This page will ask the user to sign up or log in with their Twitch account and allow them to choose whether to authorize your application or not.
       
   2. If the user authorizes your application, they will be redirected to the following URL:
   
-        https://[your registered redirect URI]/?code=CODE
+        https://[your registered redirect URI]/?code=[CODE]
         
-  3. On your server, you can now make the following request to obtain an __access token__:
+  3. On your server, you can now make the following request to obtain an access token:
   
      `POST https://api.twitch.tv/kraken/oauth2/token`
      
@@ -79,16 +78,16 @@ Remember, you must keep your client secret confidential, so make sure to never e
 <a name="implicit-grant"></a>
 #### Implicit Grant Flow
 
-The Implicit Grant Flow doesn't require a server that must make requests to the API, so you can use this flow with only JavaScript. If you're integrating Twitch into your website, you'll probably want to use the [Twitch JS SDK](https://github.com/justintv/twitch-js-sdk), which uses this flow and makes the integration simple.
+The Implicit Grant Flow doesn't require a server that must make requests to the API, so you can use this flow only with JavaScript. If you're integrating Twitch into your website, you'll probably want to use the [Twitch JS SDK](https://github.com/justintv/twitch-js-sdk), which uses this flow and simplifies the integration.
 
 
   1. Send the user you'd like to authenticate to this URL:
   
         https://api.twitch.tv/kraken/oauth2/authorize
             ?response_type=token
-            &client_id=[your client id]
-            &redirect_uri=[your registered redirect uri]
-            &scope=[list of scopes separated by spaces]
+            &client_id=[your client ID]
+            &redirect_uri=[your registered redirect URI]
+            &scope=[space separated list of scopes
 
       This page will ask the user to sign up or log in with their Twitch account, and allow them to choose whether to authorize your application.
       
@@ -97,7 +96,7 @@ The Implicit Grant Flow doesn't require a server that must make requests to the 
         https://[your registered redirect URI]/#access_token=[an access token]&scope=[authorized scopes]
         
       > Note that the access token is in the URL fragment, not the
-      > querystring, so it won't show up in HTTP requests to your server.
+      > query string, so it won't show up in HTTP requests to your server.
       > URL fragments can be accessed from JavaScript with
       > `document.location.hash`.
 
@@ -106,7 +105,7 @@ That's it! Your application can now make requests on behalf of the user by inclu
 <a name="password-credentials-grant"/>
 #### Password Credentials Grant Flow
   
-If you're building a native app that cannot use a web browser, the [Password Credentials Grant Flow][] might be appropriate. Due to the sensitive nature of user credentials, there are some extra rules and restrictions you have to follow, detailed on the [Password Credentials Grant Flow][] page.
+If you're building a native app that cannot use a web browser, the [Password Credentials Grant Flow][] might be appropriate. Due to the sensitive nature of user credentials, you must follow some additional rules and restrictions, detailed on the [Password Credentials Grant Flow][] page.
 
 [Password Credentials Grant Flow]: password-credentials.md
   
@@ -121,7 +120,7 @@ When requesting authorization from users, the scope parameter allows you to spec
 - `user_blocks_read`: Read access to a user's list of ignored users.
 - `user_follows_edit`: Access to manage a user's followed channels.
 - `channel_read`: Read access to non-public channel information, including email address and stream key.
-- `channel_editor`: Write access to channel metadata (game, status, other metadata).
+- `channel_editor`: Write access to channel metadata (game, status, etc).
 - `channel_commercial`: Access to trigger commercials on channel.
 - `channel_stream`: Ability to reset a channel's stream key.
 
@@ -136,17 +135,17 @@ You should only ask for permissions that you need, as users can view each reques
 <a name="authenticated-requests"></a>
 ### Authenticated API Requests
 
-When an api requires authentication, you can send the access token you obtained above in any of the following ways:
+When an API request requires authentication, you can send the access token you obtained above in any of the following ways:
  
   * Send token as header:
 
-	    curl -H "Authorization: OAuth [access token]" https://api.twitch.tv/
+	    curl -H "Authorization: OAuth [access token]" https://api.twitch.tv/kraken/
 
   * Send token as URL parameter:
 
 	    curl https://api.twitch.tv/kraken?oauth_token=[access token]
 
-  * Send token in the HTTP body (Cannot be used with `GET` and `DELETE` methods)
+  * Send token in the HTTP body (cannot be used with `GET` and `DELETE` methods)
   
         curl -d 'oauth_token=[access token]' https://api.twitch.tv/kraken/channels/cevtest15/commercial
 
