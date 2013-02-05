@@ -4,6 +4,14 @@
 
 `GET /videos/:id/`
 
+Returns the specified video metadata and embed code.
+
+### Example Request
+
+```bash
+curl -i https://api.twitch.tv/kraken/videos/a328087483
+```
+
 ### Response
 
 ```json
@@ -35,14 +43,20 @@
 
 `GET /channels/:channel/videos`
 
+Returns an array of videos ordered by time of creation, starting with the most recent.
+
 ### Parameters
 
 - `limit` (optional): The maximum number of videos to return, up to 100.
 - `offset` (optional): The offset to begin listing videos, defaults to 0.
 
-### Response
+### Example Request
 
-Response has an array of videos ordered by time of creation, starting with the most recent.
+```bash
+curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
+```
+
+### Response
 
 ```json
 {
