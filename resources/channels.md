@@ -1,8 +1,22 @@
 # Channels
 
-## Get the specified channel
+Channels serve as the home location for a [user's][users] content. Channels have a [stream][streams], can run commercials, store [videos][], display information and status, and have a customized page including banners and backgrounds
+
+[users]: /resources/users.md
+[streams]: /resources/streams.md
+[videos]: /resources/videos.md
+
+## Get specified channel
 
 `GET /channels/:channel/`
+
+Returns the channel's metadata.
+
+### Example Request
+
+```bash
+curl -i https://api.twitch.tv/kraken/channels/towelliee
+```
 
 ### Response
 
@@ -45,11 +59,21 @@
 }
 ```
 
-## Get the authenticated channel <a id="authenticated-channel"/>
+## Get authenticated channel <a id="authenticated-channel"/>
 
 `GET /channel`
 
-(*Authenticated, Scope:channel_read*) Get the channel associated with the authenticated user. Includes the channel stream key.
+_Authenticated_, required scope: `channel_read`
+
+Returns the channel's metadata associated with the authenticated user. Includes the channel stream key.
+
+### Example Request
+
+```bash
+curl -i -H 'Authorization: Oauth [access token]' https://api.twitch.tv/kraken/channel
+```
+
+### Response
 
 ```json
 {
@@ -101,7 +125,9 @@
 
 `PUT /channels/:channel/`
 
-(Authenticated, Scope:channel_editor)
+_Authenticated_, required scope: `channel_editor`
+
+Update the channel's status and/or game.
 
 ### Parameters
 
@@ -129,7 +155,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 `DELETE /channels/:channel/stream_key`
 
-(Authenticated, Scope:channel_stream)
+_Authenticated_, required scope: `channel_stream`
 
 ### Response
 
@@ -139,7 +165,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 `POST /channels/:channel/commercial`
 
-(Authenticated, Scope:channel_commercial)
+_Authenticated_, required scope: `channel_commercial`
 
 ### Parameters
 
