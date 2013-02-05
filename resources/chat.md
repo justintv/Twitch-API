@@ -10,7 +10,8 @@
 {
   "_links": {
     "self": "https://api.twitch.tv/kraken/chat/kraken_test_user",
-    "emoticons":"https://api.twitch.tv/kraken/chat/kraken_test_user/emoticons"
+    "emoticons":"https://api.twitch.tv/kraken/chat/kraken_test_user/emoticons",
+    "badges": "https://api.twitch.tv/kraken/chat/kraken_test_user/badges"
   }
 }
 ```
@@ -19,7 +20,7 @@
 
 `GET /chat/:channel/emoticons`
 
-Get the emoticons that can be used in a chat.
+Returns an array of emoticon objects that can be used in the specified channel's chat.
 
 ### Response
 
