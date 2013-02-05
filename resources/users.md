@@ -5,11 +5,11 @@ These are the users of Twitch! They own a [stream][streams] that they can broadc
 [streams]: /resources/streams.md
 [channels]: /resources/channels.md
 
-## Get a single user
+## Get user
 
 `GET /users/:user`
 
-Returns a user's metadata.
+Returns the user's metadata.
 
 ### Response
 
@@ -27,11 +27,13 @@ Returns a user's metadata.
 }
 ```
 
-## Get the authenticated user <a id="user"/>
+## Get authenticated user <a id="user"/>
 
 `GET /user`
 
-_Authenticated_, required scope: `user_read`)
+_Authenticated_, required scope: `user_read`
+
+Returns the authenticated user's metadata.
 
 ### Response
 
@@ -55,6 +57,6 @@ _Authenticated_, required scope: `user_read`)
 
 `PATCH /user/:user/`
 
-_Authenticated_, required scope: `user`)
+_Authenticated_, required scope: `user`
 
 (**Not implemented**)
