@@ -106,7 +106,7 @@ If the user is following the channel:
 
 `PUT /users/:user/follows/channels/:target`
 
-**[Authenticated]**  Scope: `user_follows_edit`
+_Authenticated_, require scope: `user_follows_edit`
 
 In the above path, `:user` is the authenticated user's name and `:target` is the name of the channel to be followed.
 
@@ -148,7 +148,7 @@ In the above path, `:user` is the authenticated user's name and `:target` is the
 
 `DELETE /users/:user/follows/channels/:target`
 
-**[Authenticated]**  Scope: `user_follows_edit`
+_Authenticated_, required scope: `user_follows_edit`
 
 In the above path, `:user` is the authenticated user's name and `:target` is the name of the channel to be followed.
 
