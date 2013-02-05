@@ -6,7 +6,7 @@
 
 `GET /users/:login/blocks`
 
-**[Authenticated]**  Scope: `user_blocks_read`
+_Authenticated_, required scope: `user_blocks_read`
 
 #### Response
 
@@ -41,7 +41,7 @@
 
 `PUT /users/:user/blocks/:target`
 
-**[Authenticated]**  Scope: `user_blocks_edit`
+_Authenticated_, required scope: `user_blocks_edit`
 
 In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked
 
@@ -71,7 +71,7 @@ In the above path, `:user` is the authenticated user's name and `:target` is the
 
 `DELETE /users/:user/blocks/:target`
 
-**[Authenticated]**  Scope: `user_blocks_edit`
+_Authenticated_, required scope: `user_blocks_edit`
 
 In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked
 
