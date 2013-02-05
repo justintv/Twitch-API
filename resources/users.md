@@ -31,7 +31,7 @@ Returns a user's metadata.
 
 `GET /user`
 
-(*Authenticated, Scope:user_read*)
+_Authenticated_, required scope: `user_read`)
 
 ### Response
 
@@ -55,4 +55,6 @@ Returns a user's metadata.
 
 `PATCH /user/:user/`
 
-(**Not implemented** *Authenticated, Scope:user*)
+_Authenticated_, required scope: `user`)
+
+(**Not implemented**)
