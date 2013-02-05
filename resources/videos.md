@@ -1,5 +1,9 @@
 # Videos
 
+Videos are videos-on-demand owned by a [channel][channels].
+
+[channels]: /resources/channels.md
+
 ## Get the specified video
 
 `GET /videos/:id/`
