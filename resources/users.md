@@ -1,8 +1,15 @@
 # Users
 
+These are the users of Twitch! They own a [stream][streams] that they can broadcast on a [channel][channels].
+
+[streams]: /resources/streams.md
+[channels]: /resources/channels.md
+
 ## Get a single user
 
 `GET /users/:user`
+
+Returns a user's metadata.
 
 ### Response
 
