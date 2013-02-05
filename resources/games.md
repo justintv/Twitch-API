@@ -17,6 +17,12 @@ This method allows you to retrieve the top games on Twitch (by current viewers).
 - `limit` (optional): The maximum number of games to return, up to 100.
 - `offset` (optional): The offset to begin listing games, defaults to 0.
 
+### Example Request
+
+```bash
+curl -i https://api.twitch.tv/kraken/games/top?limit=10
+```
+
 ### Response
 
 ```json
