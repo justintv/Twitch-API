@@ -1,12 +1,24 @@
 # Blocks (Unstable)
 
-**Warning:** This API method is currently experimental and the format may change without warning.
+_**Warning:** This API method is currently experimental and the format may change without warning._
+
+Stores and updates information about a [user's][users] block list.
+
+[users]: /resources/users.md
 
 ### Get a list of blocked users
 
 `GET /users/:login/blocks`
 
 _Authenticated_, required scope: `user_blocks_read`
+
+Returns an array of users on the authenticated user's block list.
+
+#### Example Response
+
+```bash
+curl -i https://api.twitch.tv/kraken/users/hebo/blocks
+```
 
 #### Response
 
@@ -15,7 +27,7 @@ _Authenticated_, required scope: `user_blocks_read`
   "blocks": [
     {
       "_links": {
-        "self": "https://api.twitch.tv/kraken/users/hebo/blocks/funami"
+        "self": "https://api.twitch.tv/kraken/users/hebo/blocks/"
       },
       "user": {
         "name": "funami",
@@ -43,7 +55,13 @@ _Authenticated_, required scope: `user_blocks_read`
 
 _Authenticated_, required scope: `user_blocks_edit`
 
-In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked
+Adds user to authenticated user's block list. In the above path, `:user` is the authenticated user's name and `:target` is the name of the user to be blocked.
+
+#### Example Request
+
+```bash
+curl -i -X PUT https://api.twitch.tv/kraken/users/hebo/blocks/funami
+```
 
 #### Response
 
@@ -73,7 +91,13 @@ In the above path, `:user` is the authenticated user's name and `:target` is the
 
 _Authenticated_, required scope: `user_blocks_edit`
 
-In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked
+Removes user from authenticated user's block list. In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked.
+
+#### Example Request
+
+```bash
+curl -i -X DELETE https://api.twitch.tv/kraken/users/hebo/blocks/funami
+```
 
 #### Response
 
