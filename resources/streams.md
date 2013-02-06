@@ -98,6 +98,7 @@ This is a flexible method that allows you to query for multiple streams based on
 - `limit` (optional): The maximum number of streams to return, up to 100.
 - `offset` (optional): The offset to begin listing streams, defaults to 0.
 - `embeddable` (optional): If true you'll only get streams which can be embedded. Setting this to false will just drop the flag, because that is a weird thing to do!
+- `hls` (optional): If true, only returns streams using HLS.
 
 #### Get list of Diablo III streams
 
@@ -115,6 +116,7 @@ This is a flexible method that allows you to query for multiple streams based on
 
 - `limit` (optional): The maximum number of streams to return, up to 100. Defaults to 25.
 - `offset` (optional): The offset to begin listing streams, defaults to 0.
+- `hls` (optional): If true, only returns streams using HLS.
 
 Note that the number of promoted streams varies from day to day, and there is no guarantee on how many streams will be promoted at a given time.
 
@@ -149,6 +151,7 @@ Response has an array of featured streams and paginated links. Each element in t
 
 - `game` (optional): Summarize streams on a per-game basis.
 - `channel` (optional): Summarize streams limited to the specified set of comma separated channels.
+- `hls` (optional): If true, only returns streams using HLS.
 
 ### Response
 
