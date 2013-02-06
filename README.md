@@ -165,3 +165,4 @@ Basic information about the API and authentication status. If you are authentica
 ### [Chat](/resources/chat.md)
 ### [Ingests](/resources/ingests.md)
 ### [Blocks](/resources/blocks.md)
+### [Follows](/resources/follows.md)
