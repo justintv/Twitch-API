@@ -1,6 +1,4 @@
-# Follows (Unstable)
-
-**Warning:** This API method is currently experimental and the format may change without warning.
+# Follows
 
 ### Get a list of followed channels
 
