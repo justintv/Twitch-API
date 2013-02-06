@@ -4,7 +4,7 @@
 
 In cases where our API is going to be called directly by a program, instead of a web browser, you need to follow the general outline of the examples listed here. This will ensure that you have a smooth integration process.
 
-Their are two types of API requests, requests that require authorizations and ones that are general but still require the client id.
+There are two types of API requests, requests that require authorizations and ones that are general but still require the client id.
 
 These examples are in PHP but any language will work.
 
