@@ -1,6 +1,4 @@
-# Blocks (Unstable)
-
-_**Warning:** This API method is currently experimental and the format may change without warning._
+# Blocks
 
 Stores and updates information about a [user's][users] block list.
 
@@ -12,7 +10,7 @@ Stores and updates information about a [user's][users] block list.
 
 _Authenticated_, required scope: `user_blocks_read`
 
-Returns an array of users on the authenticated user's block list.
+Returns an array of users on the authenticated user's block list. This is sorted by recency (newest blocks first).
 
 #### Example Response
 
@@ -24,28 +22,31 @@ curl -i https://api.twitch.tv/kraken/users/hebo/blocks
 
 ```json
 {
+  "_links": {
+    "next": "https://api.twitch.tv/kraken/users/hebo/blocks?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/users/hebo/blocks?limit=25&offset=0"
+  },
   "blocks": [
     {
       "_links": {
-        "self": "https://api.twitch.tv/kraken/users/hebo/blocks/"
+        "self": "https://api.twitch.tv/kraken/users/hebo/blocks/flarerdb"
       },
+      "updated_at": "2013-02-07T01:04:43Z",
       "user": {
-        "name": "funami",
-        "created_at": "2011-05-01T14:50:12Z",
-        "updated_at": "2012-10-13T18:18:43Z",
-        "_id": 22125774,
         "_links": {
-          "self": "https://api.twitch.tv/kraken/users/funami"
+          "self": "https://api.twitch.tv/kraken/users/flarerdb"
         },
-        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
+        "updated_at": "2013-02-06T22:44:19Z",
+        "display_name": "FlareRDB",
         "staff": false,
-        "display_name": "Funami"
-      }
+        "name": "flarerdb",
+        "_id": 13460644,
+        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/flarerdb-profile_image-9e4de45c9e6744ac-300x300.png",
+        "created_at": "2010-06-30T08:26:49Z"
+      },
+      "_id": 970887
     }
-  ],
-  "_links": {
-    "self": "https://api.twitch.tv/kraken/users/hebo/blocks"
-  }
+  ]
 }
 ```
 
@@ -70,18 +71,20 @@ curl -i -X PUT https://api.twitch.tv/kraken/users/hebo/blocks/funami
   "_links": {
     "self": "https://api.twitch.tv/kraken/users/hebo/blocks/funami"
   },
+  "updated_at": "2013-02-07T01:04:43Z",
   "user": {
-    "name": "funami",
-    "created_at": "2011-05-01T14:50:12Z",
-    "updated_at": "2012-10-13T18:18:43Z",
-    "staff": false,
-    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
-    "_id": 22125774,
     "_links": {
       "self": "https://api.twitch.tv/kraken/users/funami"
     },
-    "display_name": "Funami"
-  }
+    "updated_at": "2013-01-18T22:33:55Z",
+    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-c3fa99f314dd9477-300x300.jpeg",
+    "staff": false,
+    "display_name": "Funami",
+    "name": "funami",
+    "_id": 22125774,
+    "created_at": "2011-05-01T14:50:12Z"
+  },
+  "_id": 287813
 }
 ```
 
