@@ -21,29 +21,29 @@ curl -i https://api.twitch.tv/kraken/channels/hebo/subscriptions
 
 ```json
 {
-  _total: 3,
-  _links: {
-    next: "https://betaapi.twitch.tv/kraken/channels/test_partner_no_pay/subscriptions?limit=25&offset=25",
-    self: "https://betaapi.twitch.tv/kraken/channels/test_partner_no_pay/subscriptions?limit=25&offset=0"
+  "_total": 3,
+  "_links": {
+    "next": "https://api.twitch.tv/kraken/channels/hebo/subscriptions?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/channels/hebo/subscriptions?limit=25&offset=0"
   }
-  subscriptions: [
+  "subscriptions": [
   {
-    _id: "88d4621871b7274c34d5c3eb5dad6780c8533318",
-    user: {
-      _id: 38248673,
-      logo: null,
-      staff: false,
-      created_at: "2012-12-06T00:32:36Z",
-      name: "test_partner_no_pay",
-      updated_at: "2013-02-06T21:27:46Z",
-      display_name: "test_partner_no_pay",
-      _links: {
-        self: "https://betaapi.twitch.tv/kraken/users/test_partner_no_pay"
+    "_id": "88d4621871b7274c34d5c3eb5dad6780c8533318",
+    "user": {
+      "_id": 38248673,
+      "logo": null,
+      "staff": false,
+      "created_at": "2012-12-06T00:32:36Z",
+      "name": "testuser",
+      "updated_at": "2013-02-06T21:27:46Z",
+      "display_name": "testuser",
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/users/testuser"
       }
     },
-    created_at: "2013-02-06T21:33:33Z",
-    _links: {
-      self: "https://betaapi.twitch.tv/kraken/channels/test_partner_no_pay/subscriptions/test_partner_no_pay"
+    "created_at": "2013-02-06T21:33:33Z",
+    "_links": {
+      "self": "https://api.twitch.tv/kraken/channels/hebo/subscriptions/testuser"
     }
   },
   ...]
