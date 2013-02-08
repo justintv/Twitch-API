@@ -123,6 +123,8 @@ When requesting authorization from users, the scope parameter allows you to spec
 - `channel_editor`: Write access to channel metadata (game, status, etc).
 - `channel_commercial`: Access to trigger commercials on channel.
 - `channel_stream`: Ability to reset a channel's stream key.
+- `channel_subscriptions`: Read access to all subscribers to your channel.
+- `channel_check_subscription`: Read access to check if a user is subscribed to your channel.
 
 Scopes are specified as a *space separated* list in the url parameter `scope` when requesting authorization:
 
