@@ -51,11 +51,11 @@ curl -i https://api.twitch.tv/kraken/channels/hebo/subscriptions
 }
 ```
 
-## Check if user is subscribed to channel
+## Check if specified channel has user as subscriber
 
 `GET /channels/:channel/subscriptions/:user`
 
-Returns a subscription which includes the user if that user is subscribed.
+Returns a subscription which includes the user if that user is subscribed. Requires authentication for `:channel`.
 
 _Authenticated_, required scope: `channel_check_subscription`
 
