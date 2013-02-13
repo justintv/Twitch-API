@@ -185,3 +185,9 @@ List the live streams that the authenticated user is following.
   "streams": [...]
 }
 ```
+
+## Embedding
+
+[See here for embedding.][embedding]
+
+[embedding]: /embedding.md#embedding-streams-vods-and-chat
