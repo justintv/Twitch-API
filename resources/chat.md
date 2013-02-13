@@ -50,6 +50,12 @@ Returns an array of emoticon objects that can be used in the specified channel's
 }
 ```
 
+## Embedding
+
+[See here for embedding.][embedding]
+
+[embedding]: /embedding.md#embedding-streams-vods-and-chat
+
 ## Connecting to IRC
 
 Twitch offers an IRC interface to its chat. This allows for people to do things like develop bots for their channel, or to connect to a channel's chat with an IRC client instead of using the web interface. While our IRC server is built to follow [RFC1459](http://tools.ietf.org/html/rfc1459.html), it is important to note that there are some cases where it will behave slightly differently than another IRC server would. These cases are noted when necessary in the following document.
