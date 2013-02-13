@@ -115,3 +115,9 @@ curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
     }
 }
 ```
+
+## Embedding
+
+[See here for embedding.][embedding]
+
+[embedding]: /embedding.md#embedding-streams-vods-and-chat
