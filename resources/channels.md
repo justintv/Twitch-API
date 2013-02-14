@@ -70,7 +70,7 @@ Returns the channel's metadata associated with the authenticated user. Includes 
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: Oauth [access token]' https://api.twitch.tv/kraken/channel
+curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/channel
 ```
 
 ### Response
@@ -131,7 +131,7 @@ Returns an array of users who are editors of specified channel.
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: Oauth [access token]' https://api.twitch.tv/kraken/channels/kraken_test_user1/editors
+curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/channels/kraken_test_user1/editors
 ```
 
 ### Response
@@ -186,7 +186,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 ### Example Request
 
 ```bash
-curl -i -X PUT -d "channel[status]=hooray&channel[game]=Halo" https://api.twitch.tv/kraken/channels/test_channel
+curl -i -H 'Authorization: OAuth [access token]' -X PUT -d "channel[status]=hooray&channel[game]=Halo" https://api.twitch.tv/kraken/channels/test_channel
 ```
 
 ### Response
