@@ -38,6 +38,7 @@ curl -i https://api.twitch.tv/kraken/videos/a328087483
     "views": 93,
     "description": "VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3",
     "length": 204,
+    "game": null,
     "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-328087483-320x240.jpg"
 }
 ```
@@ -84,6 +85,7 @@ curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
             "views": 1,
             "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296529186-320x240.jpg",
             "length": 23,
+            "game": "Team Fortress 2"
             "description": null
         },
         {
@@ -105,6 +107,7 @@ curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
             "views": 1,
             "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296526250-320x240.jpg",
             "length": 1296,
+            "game": "Team Fortress 2"
             "description": null
         },
         ...
