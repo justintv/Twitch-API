@@ -114,6 +114,10 @@ All error responses are in the following format, delivered with the correspondin
 
 When using JSON-P, the status code will always be `200` to allow browsers to parse it. Check the body of the response for the actual error data.
 
+### Rate Limits
+
+Please observe the rate limit of 60 requests per hour. This rate limit is not super strict, but we will blacklist abusers. If you feel like you have a legitimate reason to need a higher rate limit, please contact us for whitelisting.
+
 <a name="oauth"/>
 <a name="wiki-auth"/>
 ## Authentication 
