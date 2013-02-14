@@ -120,6 +120,94 @@ curl -i -H 'Authorization: Oauth [access token]' https://api.twitch.tv/kraken/ch
 
 [See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel)
 
+## Get specified channel's followers
+
+`GET /channels/:channel/follows`
+
+_Authenticated_, required scope: `channel_read`
+
+Returns an array of users who follow the specified channel.
+
+### Parameters
+
+- `limit` (optional): The maximum number of games to return, up to 100.
+- `offset` (optional): The offset to begin listing games, defaults to 0.
+
+### Example Request
+
+```bash
+curl -i -H 'Authorization: Oauth [access token]' https://api.twitch.tv/kraken/channels/kraken_test_user1/follows
+```
+
+### Response
+
+```json
+{
+  "_links": {
+    "next": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=0"
+  },
+  "follows": [
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/users/kraken_test_user2/follows/channels/kraken_test_user1"
+      },
+      "user": {
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/kraken_test_user2"
+        },
+        "staff": false,
+        "logo": null,
+        "display_name": "kraken_test_user2",
+        "created_at": "2013-02-06T21:21:57Z",
+        "updated_at": "2013-02-13T20:59:42Z",
+        "_id": 40091581,
+        "name": "kraken_test_user2"
+      }
+    },
+    ...
+  ]
+}
+```
+
+## Get specified channel's editors
+
+`GET /channels/:channel/editors`
+
+_Authenticated_, required scope: `channel_read`
+
+Returns an array of users who are editors of specified channel.
+
+### Example Request
+
+```bash
+curl -i -H 'Authorization: Oauth [access token]' https://api.twitch.tv/kraken/channels/kraken_test_user1/editors
+```
+
+### Response
+
+```json
+{
+  "_links": {
+    "self": "http://api.twitch.tv/kraken/channels/kraken_test_user1/editors"
+  },
+  "users": [
+    {
+      "_links": {
+        "self": "http://staging.twitch.tv/kraken/users/kraken_test_user2"
+      },
+      "created_at": "2013-02-06T21:21:57Z",
+      "name": "kraken_test_user2",
+      "updated_at": "2013-02-13T20:59:42Z",
+      "_id": 40091581,
+      "display_name": "kraken_test_user2",
+      "logo": null,
+      "staff": false
+    },
+    ...
+  ]
+}
+```
 
 ## Update the specified channel
 
