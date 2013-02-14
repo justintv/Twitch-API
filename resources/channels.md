@@ -224,8 +224,6 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 - `status` 
 - `game`  
 
-&nbsp;
-
 ```json
 {
   "channel": {
@@ -233,6 +231,12 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
     "game": "Diablo"
     }
 }
+```
+
+### Example Request
+
+```bash
+curl -i -X PUT -d "channel[status]=hooray&channel[game]=Halo" https://api.twitch.tv/kraken/channels/test_channel
 ```
 
 ### Response
