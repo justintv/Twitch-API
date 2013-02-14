@@ -1,6 +1,6 @@
-## Embedding Streams, VODs, and Chat
+## Embedding Streams, Videos, and Chat
 
-Here are the embed codes and parameters you might need to integrate streams, VODs, or chat onto your site.
+Here are the embed codes and parameters you might need to integrate streams, videos, or chat onto your site.
 
 ### Streams
 
@@ -38,7 +38,7 @@ Here are the embed codes and parameters you might need to integrate streams, VOD
 <object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=hebo" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=hebo&auto_play=true&start_volume=25" /></object>
 ```
 
-### VODs
+### Videos
 
 #### Parameters
 - `height`  : Player height. Default is 300.
