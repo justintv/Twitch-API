@@ -38,6 +38,9 @@ curl -i https://api.twitch.tv/kraken/chat/emoticons
 
 ```json
 {
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/chat/emoticons"
+  }
   "emoticons": [
     {
       "regex": "\:-?\(",
