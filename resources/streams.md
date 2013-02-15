@@ -4,6 +4,12 @@
 
 `GET /streams/:channel/`
 
+### Example Request
+
+```bash
+curl -i https://api.twitch.tv/kraken/streams/magicprotour
+```
+
 ### Response
 
 #### If the specified channel is offline
@@ -14,8 +20,8 @@
 {
   "stream": null,
   "_links": {
-    "self": "https://api.twitch.tv/kraken/streams/hebo",
-    "channel": "https://api.twitch.tv/kraken/channels/hebo"
+    "self": "https://api.twitch.tv/kraken/streams/magicprotour",
+    "channel": "https://api.twitch.tv/kraken/channels/magicprotour"
   }
 }
 ```
@@ -26,61 +32,47 @@
 
 ```json
 {
-  "stream": {
-    "game": "StarCraft II: Wings of Liberty",
-    "name": "live_user_incontroltv",
-    "created_at": "Tue Jul 24 13:22:26 2012",
-    "viewers": 3505,
-    "updated_at": "Tue Jul 24 15:33:39 2012",
-    "channel_id": 20248706,
-    "preview": "http://static-cdn.jtvnw.net/previews/live_user_incontroltv-630x473.jpg",
-    "_links": {
-      "self": "https://api.twitch.tv/kraken/streams/live_user_incontroltv"
-      "channel": "https://api.twitch.tv/kraken/channels/live_user_incontroltv"
-    },
-    "_id": 138658440,
-    "delay_length": 0,
-    "broadcaster": "fme",
-    "geo": "US",
-    "channel": {
-      "name": "incontroltv",
-      "game": "StarCraft II: Wings of Liberty",
-      "created_at": "2011-02-07T06:24:25Z",
-      "teams": [
-        {
-          "name": "eg",
-          "created_at": "2011-10-11T23:59:43Z",
-          "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-background_image-089a407eb59fe3b2.png",
-          "updated_at": "2012-01-15T19:43:40Z",
-          "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-banner_image-8089b058e6ffe4cd-640x125.png",
-          "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-eg-team_logo_image-53eaf029dad7d5c9-300x300.png",
-          "_links": {
-            "self": "https://api.twitch.tv/kraken/teams/eg"
-          },
-          "_id": 2,
-          "info": "Team Info\n",
-          "display_name": "Evil Geniuses"
-        }
-      ],
-      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/incontroltv-channel_header_image-612847bc6f091b50-640x125.jpeg",
-      "updated_at": "2012-07-24T20:22:26Z",
-      "_id": 20248706,
-      "_links": {
-        "stream_key": "https://api.twitch.tv/kraken/channels/incontroltv/stream_key",
-        "self": "https://api.twitch.tv/kraken/channels/incontroltv",
-        "chat": "https://api.twitch.tv/kraken/chat/incontroltv",
-        "commercial": "https://api.twitch.tv/kraken/channels/incontroltv/commercial",
-        "features": "https://api.twitch.tv/kraken/channels/incontroltv/features"
-      },
-      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/incontroltv-profile_image--300x300.",
-      "mature": null,
-      "display_name": "iNcontroLTV",
-      "status": "EGiNcontroL: music, commentary and all the stuff that makes rainbows and children possible"
-    },
-    "status": "EGiNcontroL: music, commentary and all the stuff that makes rainbows and children possible"
-  },
   "_links": {
-    "self": "https://api.twitch.tv/kraken/streams/live_user_incontroltv"
+    "channel": "https://api.twitch.tv/kraken/channels/magicprotour",
+    "self": "https://api.twitch.tv/kraken/streams/magicprotour"
+  },
+  "stream": {
+    "_links": {
+      "self": "https://api.twitch.tv/kraken/streams/magicprotour"
+    },
+    "broadcaster": "unknown_rtmp",
+    "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_magicprotour-320x200.jpg",
+    "_id": 4869165040,
+    "viewers": 11754,
+    "channel": {
+      "display_name": "MagicProTour",
+      "_links": {
+        "stream_key": "https://api.twitch.tv/kraken/channels/magicprotour/stream_key",
+        "editors": "https://api.twitch.tv/kraken/channels/magicprotour/editors",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/magicprotour/subscriptions",
+        "commercial": "https://api.twitch.tv/kraken/channels/magicprotour/commercial",
+        "videos": "https://api.twitch.tv/kraken/channels/magicprotour/videos",
+        "follows": "https://api.twitch.tv/kraken/channels/magicprotour/follows",
+        "self": "https://api.twitch.tv/kraken/channels/magicprotour",
+        "chat": "https://api.twitch.tv/kraken/chat/magicprotour",
+        "features": "https://api.twitch.tv/kraken/channels/magicprotour/features"
+      },
+      "teams": [ ],
+      "status": "Pro Tour Gatecrash in Montreal",
+      "created_at": "2011-12-23T18:03:44Z",
+      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/magicprotour-profile_image-1806cdccb1108442-300x300.jpeg",
+      "updated_at": "2013-02-15T15:22:24Z",
+      "mature": null,
+      "video_banner": null,
+      "_id": 26991613,
+      "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/magicprotour-channel_background_image-21fffe7f0c309a23.jpeg",
+      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/magicprotour-channel_header_image-4eb6147d464d9053-640x125.jpeg",
+      "name": "magicprotour",
+      "url": "http://www.twitch.tv/magicprotour",
+      "game": "Magic: The Gathering"
+    },
+    "name": "live_user_magicprotour",
+    "game": "Magic: The Gathering"
   }
 }
 ```
