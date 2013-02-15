@@ -120,6 +120,10 @@ curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/ch
 
 [See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel)
 
+## Get a channel's list of followers
+
+[See the Follows Resource](follows.md#get-a-channels-list-of-followers-)
+
 ## Get specified channel's editors
 
 `GET /channels/:channel/editors`
