@@ -1,6 +1,54 @@
 # Follows
 
-### Get a list of followed channels
+## Get specified channel's followers <a id="followers-channel" />
+
+`GET /channels/:channel/follows`
+
+Returns an array of users who follow the specified channel.
+
+### Parameters
+
+- `limit` (optional): The maximum number of games to return, up to 100.
+- `offset` (optional): The offset to begin listing games, defaults to 0.
+
+### Example Request
+
+```bash
+curl -i  https://api.twitch.tv/kraken/channels/kraken_test_user1/follows
+```
+
+### Response
+
+```json
+{
+  "_links": {
+    "next": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=0"
+  },
+  "follows": [
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/users/kraken_test_user2/follows/channels/kraken_test_user1"
+      },
+      "user": {
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/kraken_test_user2"
+        },
+        "staff": false,
+        "logo": null,
+        "display_name": "kraken_test_user2",
+        "created_at": "2013-02-06T21:21:57Z",
+        "updated_at": "2013-02-13T20:59:42Z",
+        "_id": 40091581,
+        "name": "kraken_test_user2"
+      }
+    },
+    ...
+  ]
+}
+```
+
+### Get a user's list of followed channels
 
 `GET /users/:user/follows/channels`
 
