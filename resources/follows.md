@@ -14,7 +14,7 @@ Returns an array of users who follow the specified channel.
 #### Example Request
 
 ```bash
-curl -i  https://api.twitch.tv/kraken/channels/kraken_test_user1/follows
+curl -i  https://api.twitch.tv/kraken/channels/hebo/follows
 ```
 
 #### Response
