@@ -1,6 +1,6 @@
 # Follows
 
-### Get a channel's list of followers <a id="followers-channel" />
+### Get a channel's list of followers <a id="follows-channel" />
 
 `GET /channels/:channel/follows`
 
