@@ -25,7 +25,7 @@ curl -i https://api.twitch.tv/kraken/channels/hebo/subscriptions
   "_links": {
     "next": "https://api.twitch.tv/kraken/channels/hebo/subscriptions?limit=25&offset=25",
     "self": "https://api.twitch.tv/kraken/channels/hebo/subscriptions?limit=25&offset=0"
-  }
+  },
   "subscriptions": [
     {
       "_id": "88d4621871b7274c34d5c3eb5dad6780c8533318",
