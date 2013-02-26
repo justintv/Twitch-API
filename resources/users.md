@@ -1,15 +1,17 @@
 # Users
 
-These are the users of Twitch! They own a [stream][streams] that they can broadcast on a [channel][channels].
+These are members of the Twitch community who have a Twitch account. If broadcasting, they can own a [stream][streams] that they can broadcast on their [channel][channels]. If mainly viewing, they might [follow][follows] or [subscribe][subscriptions] to channels.
 
 [streams]: /resources/streams.md
 [channels]: /resources/channels.md
+[follows]: /resources/follows.md
+[subscriptions]: /resources/subscriptions.md
 
 ## Get user
 
 `GET /users/:user`
 
-Returns the user's metadata.
+Returns a user object.
 
 ### Response
 
@@ -33,7 +35,7 @@ Returns the user's metadata.
 
 _Authenticated_, required scope: `user_read`
 
-Returns the authenticated user's metadata.
+Returns an authenticated user object.
 
 ### Response
 
@@ -57,10 +59,9 @@ Returns the authenticated user's metadata.
 
 `GET /streams/followed`
 
-**[Authenticated]**
+_Authenticated_, required scope: `user_read`
 
 List the live streams that the authenticated user is following.
-
 
 ### Response
 
