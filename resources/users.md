@@ -52,3 +52,24 @@ Returns the authenticated user's metadata.
   "partnered": true
 }
 ```
+
+## Get a list of followed streams
+
+`GET /streams/followed`
+
+**[Authenticated]**
+
+List the live streams that the authenticated user is following.
+
+
+### Response
+
+```json
+{
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=0",
+    "next": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=25"
+  },
+  "streams": [...]
+}
+```
