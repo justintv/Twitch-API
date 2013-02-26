@@ -52,11 +52,3 @@ Returns the authenticated user's metadata.
   "partnered": true
 }
 ```
-
-## Update the specified user.
-
-`PATCH /user/:user/`
-
-_Authenticated_, required scope: `user`
-
-(**Not implemented**)
