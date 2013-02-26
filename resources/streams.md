@@ -157,27 +157,6 @@ Response has an array of featured streams and paginated links. Each element in t
 }
 ```
 
-## Get a list of followed streams
-
-`GET /streams/followed`
-
-**[Authenticated]**
-
-List the live streams that the authenticated user is following.
-
-
-### Response
-
-```json
-{
-  "_links": {
-    "self": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=0",
-    "next": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=25"
-  },
-  "streams": [...]
-}
-```
-
 ## Embedding
 
 [See here for embedding.][embedding]
