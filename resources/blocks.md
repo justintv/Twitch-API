@@ -136,6 +136,8 @@ curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/blocks/test_user
 
 `204 No Content` if successful.
 
+### Errors
+
 `404 Not Found` if `:target` not on `:user`'s block list.
 
 `422 Unprocessable Entity` if delete failed.
