@@ -157,6 +157,12 @@ Response has an array of featured streams and paginated links. Each element in t
 }
 ```
 
+## Get a list of user's followed streams
+
+[See the Users resource][users]
+
+[users]: /resources/Users.md
+
 ## Embedding
 
 [See here for embedding.][embedding]
