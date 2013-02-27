@@ -1,5 +1,7 @@
 # Channels
 
+***
+
 Channels serve as the home location for a [user's][users] content. Channels have a [stream][streams], can run commercials, store [videos][], display information and status, and have a customized page including banners and backgrounds
 
 | Endpoint | Description |
@@ -305,7 +307,7 @@ Start commercial on channel.
 ### Example Request
 
 ```bash
-curl -i -X POST https://api.twitch.tv/kraken/channels/test_user1/commercial?length=30
+curl -i -X POST -d "length=30" https://api.twitch.tv/kraken/channels/test_user1/commercial
 ```
 
 ### Example Response
