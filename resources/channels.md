@@ -265,9 +265,15 @@ Resets channel's stream key.
 
 *__Authenticated__*, required scope: `channel_stream`
 
-### Response
+### Example Request
 
-`204 No Content` if successful.
+```bash
+curl -i -X DELETE https://api.twitch.tv/kraken/channels/test_user1/stream_key
+```
+
+### Example Response
+
+`204 No Content`.
 
 ## `POST /channels/:channel/commercial`
 
@@ -291,11 +297,21 @@ Start commercial on channel.
             <td><code>length</code></td>
             <td>required</td>
             <td>integer</td>
-            <td>Length of commercial break in seconds. Default is 30. Valid values are [30, 90]. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
+            <td>Length of commercial break in seconds. Valid values are 30, 60, or 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
         </tr>
     </tbody>
 </table>
 
-### Response
+### Example Request
+
+```bash
+curl -i -X POST https://api.twitch.tv/kraken/channels/test_user1/commercial?length=30
+```
+
+### Example Response
 
 `204 No Content` if successful.
+
+### Errors
+
+`422 Unprocessable Entity` if commercial length not allowed.
