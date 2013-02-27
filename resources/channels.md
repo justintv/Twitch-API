@@ -2,7 +2,7 @@
 
 ***
 
-Channels serve as the home location for a [user's][users] content. Channels have a [stream][streams], can run commercials, store [videos][], display information and status, and have a customized page including banners and backgrounds
+Channels serve as the home location for a [user's][users] content. Channels have a [stream][streams], can run commercials, store [videos][], display information and status, and have a customized page including banners and backgrounds.
 
 | Endpoint | Description |
 | ---- | --------------- |
