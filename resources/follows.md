@@ -1,5 +1,7 @@
 # Follows
 
+Status of follow relationships between [users][users] and [channels][channels].
+
 ***
 
 | Endpoint | Description |
@@ -9,6 +11,9 @@
 | [GET /users/:user/follows/channels/:target](/resources/follows.md#get-usersuserfollowschannelstarget) | Get status of follow relationship between user and target channel |
 | [PUT /users/:user/follows/channels/:target](/resources/follows.md#put-usersuserfollowschannelstarget) | Follow a channel |
 | [DELETE /users/:user/follows/channels/:target](/resources/follows.md#delete-usersuserfollowschannelstarget) | Unfollow a channel |
+
+[users]: /resources/users.md
+[channels]: /resources/channels.md
 
 ## `GET /channels/:channel/follows`
 
