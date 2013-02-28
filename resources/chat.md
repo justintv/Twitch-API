@@ -1,8 +1,19 @@
 # Chat
 
-## Get the specified channel's chat
+***
 
-`GET /chat/:channel`
+Chat is where Twitch users can interact with each other while watching a [stream][streams].
+
+[streams]: /resources/streams.md
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /chat/:channel](/resources/chat.md#get-chatchannel) | Get links object to other chat endpoints |
+| [GET /chat/emoticons](/resources/chat.md#get-chatemoticons) | Get list of every emoticon object |
+
+## `GET /chat/:channel`
+
+Returns a links object to all other chat endpoints.
 
 ### Example Request
 
@@ -10,7 +21,7 @@
 curl -i https://api.twitch.tv/kraken/chat/kraken_test_user
 ```
 
-### Response
+### Example Response
 
 ```json
 {
@@ -22,11 +33,9 @@ curl -i https://api.twitch.tv/kraken/chat/kraken_test_user
 }
 ```
 
-## Get chat emoticons
+## `GET /chat/emoticons`
 
-`GET /chat/emoticons`
-
-Returns an array of all emoticon objects for Twitch.
+Returns a list of all emoticon objects for Twitch.
 
 ### Example Request
 
@@ -34,7 +43,7 @@ Returns an array of all emoticon objects for Twitch.
 curl -i https://api.twitch.tv/kraken/chat/emoticons
 ```
 
-### Response
+### Example Response
 
 ```json
 {
@@ -64,22 +73,26 @@ curl -i https://api.twitch.tv/kraken/chat/emoticons
 }
 ```
 
-## Get a channel's chat emoticons
+## `GET /chat/:channel/emoticons` \** __DEPRECATED__ \**
 
-`GET /chat/:channel/emoticons`
+Returns a list of emoticon objects that can be used in the `:channel`'s chat.
 
-\** __DEPRECATED__ \**
+[DEPRECATED] - Emoticon sets are no longer tied to specific channels, so information returned from this endpoint is somewhat useless.
 
-Returns an array of emoticon objects that can be used in the specified channel's chat.
+### Example Request
 
-### Response
+```bash
+curl -i https://api.twitch.tv/kraken/chat/test_user1/emoticons
+```
+
+### Example Response
 
 ```json
 {
   "emoticons": [
     {
       "regex": "MeoW",
-      "url": "http://static-cdn.jtvnw.net/jtv_user_pictures/chansub-crs_crumbzz-emoticon-30bc1522fa392415-28x32.png",
+      "url": "http://static-cdn.jtvnw.net/jtv_user_pictures/chansub-test_user1-emoticon-30bc1522fa392415-28x32.png",
       "height": 32,
       "width": 28,
       "subscriber_only": true
@@ -95,7 +108,7 @@ Returns an array of emoticon objects that can be used in the specified channel's
   ],
 
   "_links": {
-   "self": "https://api.twitch.tv/kraken/chat/kraken_test_user/emoticons"
+   "self": "https://api.twitch.tv/kraken/chat/test_user1/emoticons"
   }
 }
 ```
