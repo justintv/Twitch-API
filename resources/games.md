@@ -1,35 +1,61 @@
 # Games
 
+***
+
 Games are categories (e.g. League of Legends, Diablo 3) used by [streams][] and [channels][]. Games can be [searched][search] for by query.
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /games/top](/resources/games.md#get-gamestop) | Get games by number of viewers |
 
 [streams]: /resources/streams.md
 [channels]: /resources/channels.md
 [search]: /resources/search.md#search-for-games-
 
-## Get the top games
+## `GET /games/top`
 
-`GET /games/top`
-
-This method allows you to retrieve the top games on Twitch (by current viewers).
+Returns a list of games objects sorted by number of current viewers on Twitch, most popular first.
 
 ### Parameters
 
-- `limit` (optional): The maximum number of games to return, up to 100.
-- `offset` (optional): The offset to begin listing games, defaults to 0.
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th width=100%>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>limit</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
+        </tr>
+        <tr>
+            <td><code>offset</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Object offset for pagination. Default is 0.</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/games/top?limit=10
+curl -i https://api.twitch.tv/kraken/games/top
 ```
 
-### Response
+### Example Response
 
 ```json
 {
   "_links": {
-    "self": "https://api.twitch.tv/kraken/games/top?limit=10&offset=0",
-    "next": "https://api.twitch.tv/kraken/games/top?limit=10&offset=10"
+    "self": "https://api.twitch.tv/kraken/games/top?limit=25&offset=0",
+    "next": "https://api.twitch.tv/kraken/games/top?limit=25&offset=25"
   },
   "_total": 322,
   "top": [
@@ -59,3 +85,7 @@ curl -i https://api.twitch.tv/kraken/games/top?limit=10
   ]
 }
 ```
+
+### Errors
+
+`503 Service Unvailable` if error retrieving games status.
