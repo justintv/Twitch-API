@@ -7,7 +7,7 @@ Search for [streams][streams] or [games][games] with queries.
 | Endpoint | Description |
 | ---- | --------------- |
 | [GET /search/streams](/resources/search.md#get-searchstreams) | Find streams |
-| [GET /search/games](/resources/search.md#put-searchgames) | Find games |
+| [GET /search/games](/resources/search.md#get-searchgames) | Find games |
 
 [streams]: /resources/streams.md
 [games]: /resources/games.md
