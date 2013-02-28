@@ -1,12 +1,16 @@
 # Ingests
 
-These are RTMP Ingest points. By directing an RTMP stream with your `stream_key` injected into the `url_template`, you will broadcast your content live on Twitch.
+***
 
-## Get the list of Ingest points for Twitch.
+These are RTMP ingest points. By directing an RTMP stream with your `stream_key` injected into the `url_template`, you will broadcast your content live on Twitch.
 
-`GET /ingests/`
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /ingests/](/resources/ingests.md#get-ingests) | Get list of ingests |
 
-Returns an array of ingests and their status.
+## `GET /ingests/`
+
+Returns a list of ingest objects.
 
 ### Example Request
 
@@ -14,7 +18,7 @@ Returns an array of ingests and their status.
 curl -i https://api.twitch.tv/kraken/ingests
 ```
 
-### Response
+### Example Response
 
 ```json
 {
@@ -33,3 +37,6 @@ curl -i https://api.twitch.tv/kraken/ingests
   ]
 }
 ```
+
+### Errors
+`503 Service Unavailable` if error retrieving ingest status.
