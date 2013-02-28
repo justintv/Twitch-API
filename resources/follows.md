@@ -80,6 +80,8 @@ curl -i  https://api.twitch.tv/kraken/channels/test_user1/follows
 
 ## `GET /users/:user/follows/channels`
 
+Returns a list of follows objects.
+
 ### Parameters
 
 <table>
@@ -157,6 +159,10 @@ curl -i  https://api.twitch.tv/kraken/users/test_user1/follows/channels
   ]
 }
 ```
+
+### Errors
+
+`404 Not Found` if `:user` does not exist.
 
 ## `GET /users/:user/follows/channels/:target`
 
@@ -252,6 +258,10 @@ curl -i -x PUT https://api.twitch.tv/kraken/users/test_user1/follows/channels/te
 }
 ```
 
+### Errors
+
+`422 Unprocessable Entity` if update fails.
+
 ## `DELETE /users/:user/follows/channels/:target`
 
 Removes `:user` from `:target`'s followers. `:user` is the authenticated user's name and `:target` is the name of the channel to be unfollowed.
@@ -267,3 +277,7 @@ curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/follows/channels
 ### Example Response
 
 `204 No Content` if successful.
+
+### Errors
+
+`422 Unprocessable Entity` if delete fails.
