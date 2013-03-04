@@ -127,7 +127,7 @@ curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/ch
 
 ## `GET /channels/:channel/videos`
 
-See the [Videos](/v2_resources/videosmd#get-channelschannelvideos) resource.
+See the [Videos](/v2_resources/videos.md#get-channelschannelvideos) resource.
 
 ## `GET /channels/:channel/follows`
 
