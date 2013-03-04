@@ -1,10 +1,27 @@
 # Teams
 
-## List active teams
+***
 
-`GET /teams/`
+Teams are an organization of [channels][channels].
 
-### Response
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /teams](/resources/teams.md#get-teams) | Get list of active team objects |
+| [GET /teams/:team](/resources/teams.md#get-teamsteam) | Get team object |
+
+[channels]: /resources/channels.md
+
+## `GET /teams/`
+
+Returns a list of active teams.
+
+### Example Request
+
+```bash
+curl -i https://api.twitch.tv/kraken/teams
+```
+
+### Example Response
 
 ```json
 {
@@ -46,11 +63,17 @@
 }
 ```
 
-## Get the specified team
+## `GET /teams/:team/`
 
-`GET /teams/:team/`
+Returns a team object for `:team`.
 
-### Response
+### Example Request
+
+```bash
+curl -i https://api.twitch.tv/kraken/teams/eg
+```
+
+### Example Response
 
 ```json
 {
