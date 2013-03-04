@@ -75,7 +75,7 @@ curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/us
 
 Returns a list of stream objects that the authenticated user is following.
 
-_Authenticated_, required scope: `user_read`
+*__Authenticated__*, required scope: `user_read`
 
 ### Example Request
 
