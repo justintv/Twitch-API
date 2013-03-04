@@ -126,48 +126,106 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 
 [authentication guide]: /authentication.md
 
-## Resources
+## Index
 
-### Root
+### [Blocks](/v2_resources/blocks.md)
 
-`/`
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /users/:login/blocks](/resources/blocks.md#get-usersloginblocks) | Get user's block list |
+| [PUT /users/:user/blocks/:target](/resources/blocks.md#put-usersuserblockstarget) | Update user's block list |
+| [DELETE /users/:user/blocks/:target](/resources/blocks.md#delete-usersuserblockstarget) | Update user's block list |
 
-Basic information about the API and authentication status. If you are authenticated, the response includes the status of your token and links to other related resources.
+### [Channels](/v2_resources/channels.md)
 
-#### Response
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /channels/:channel](/resources/channels.md#get-channelschannel) | Get channel object|
+| [GET /channel](/resources/channels.md#get-channel) | Get channel object |
+| [GET /channels/:channel/editors](/resources/channels.md#get-channelschanneleditors) | Get channel's list of editors |
+| [PUT /channels/:channel](/resources/channels.md#put-channelschannel) | Update channel object |
+| [GET /channels/:channel/videos](/resources/channels.md#get-channelschannelvideos) | Get channel's list of videos |
+| [GET /channels/:channel/follows](/resources/channels.md#get-channelschannelfollows) | Get channel's list of following users |
+| [DELETE /channels/:channel/stream_key](/resources/channels.md#delete-channelschannelstream_key) | Reset channel's stream key |
+| [POST /channels/:channel/commercial](/resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
 
-```json
-{
-  "token": {
-    "authorization": {
-      "scopes": ["user_read", "channel_read", "channel_commercial", "user_read"],
-      "created_at": "2012-05-08T21:55:12Z",
-      "updated_at": "2012-05-17T21:32:13Z"
-    },
-    "user_name": "hebo",
-    "valid": true
-  },
-  "_links": {
-    "channel": "https://api.twitch.tv/kraken/channel",
-    "users": "https://api.twitch.tv/kraken/users/hebo",
-    "user": "https://api.twitch.tv/kraken/user",
-    "channels": "https://api.twitch.tv/kraken/channels/hebo",
-    "chat": "https://api.twitch.tv/kraken/chat/hebo",
-    "streams": "https://api.twitch.tv/kraken/streams",
-    "ingests":"https://api.twitch.tv/kraken/ingests"
-  }
-}
-```
+### [Chat](/v2_resources/chat.md)
 
-### [Blocks](/resources/blocks.md)
-### [Channels](/resources/channels.md)
-### [Chat](/resources/chat.md)
-### [Follows](/resources/follows.md)
-### [Games](/resources/games.md)
-### [Ingests](/resources/ingests.md)
-### [Search](/resources/search.md)
-### [Streams](/resources/streams.md)
-### [Subscriptions](/resources/subscriptions.md)
-### [Teams](/resources/teams.md)
-### [Users](/resources/users.md)
-### [Videos](/resources/videos.md)
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /chat/:channel](/resources/chat.md#get-chatchannel) | Get links object to other chat endpoints |
+| [GET /chat/emoticons](/resources/chat.md#get-chatemoticons) | Get list of every emoticon object |
+
+### [Follows](/v2_resources/follows.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /channels/:channel/follows](/resources/follows.md#get-channelschannelfollows) | Get channel's list of following users |
+| [GET /users/:user/follows/channels](/resources/follows.md#get-usersuserfollowschannels) | Get a user's list of followed channels |
+| [GET /users/:user/follows/channels/:target](/resources/follows.md#get-usersuserfollowschannelstarget) | Get status of follow relationship between user and target channel |
+| [PUT /users/:user/follows/channels/:target](/resources/follows.md#put-usersuserfollowschannelstarget) | Follow a channel |
+| [DELETE /users/:user/follows/channels/:target](/resources/follows.md#delete-usersuserfollowschannelstarget) | Unfollow a channel |
+
+### [Games](/v2_resources/games.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /games/top](/resources/games.md#get-gamestop) | Get games by number of viewers |
+
+### [Ingests](/v2_resources/ingests.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /ingests](/resources/ingests.md#get-ingests) | Get list of ingests |
+
+### [Root] (/v2_resources/root.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /](/resources/root.md#get-) | Get top level links object and authorization status |
+
+### [Search](/v2_resources/search.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /search/streams](/resources/search.md#get-searchstreams) | Find streams |
+| [GET /search/games](/resources/search.md#get-searchgames) | Find games |
+
+### [Streams](/v2_resources/streams.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /streams/:channel/](/resources/streams.md#get-streamschannel) | Get stream object |
+| [GET /streams](/resources/streams.md#get-streams) | Get stream object |
+| [GET /streams/featured](/resources/streams.md#get-streamsfeatured) | Get a list of featured streams |
+| [GET /streams/summary](/resources/streams.md#get-streamssummary) | Get a summary of streams |
+| [GET /streams/followed](/resources/streams.md#get-streamsfollowed) | Get a list of streams user is following |
+
+### [Subscriptions](/v2_resources/subscriptions.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /channels/:channel/subscriptions](/resources/subscriptions.md#get-channelschannelsubscriptions) | Get list of users subscribed to channel |
+| [GET /channels/:channel/subscriptions/:user](/resources/subscriptions.md#get-channelschannelsubscriptionsuser) | Check if channel has user subscribed |
+
+### [Teams](/v2_resources/teams.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /teams](/resources/teams.md#get-teams) | Get list of active team objects |
+| [GET /teams/:team](/resources/teams.md#get-teamsteam) | Get team object |
+
+### [Users](/v2_resources/users.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /users/:user](/resources/users.md#get-usersuser) | Get user object |
+| [GET /user](/resources/users.md#get-user) | Get user object |
+| [GET /streams/followed](/resources/users.md#get-streamsfollowed) | Get list of streams user is following |
+
+### [Videos](/v2_resources/videos.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /videos/:id](/resources/videos.md#get-videosid) | Get video object|
+| [GET /channels/:channel/videos](/resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
