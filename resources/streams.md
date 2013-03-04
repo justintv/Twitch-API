@@ -145,15 +145,63 @@ Returns a list of stream objects that are queried by a number of parameters.
 
 ### Example Request
 
+```bash
+curl -i https://api.twitch.tv/kraken/streams?game=Diablo+III&channel=zisss,voyboy
+```
+
 ### Example Response
 
-#### Get list of Diablo III streams
-
-`GET /streams?game=Diablo+III`
-
-#### Get multiple channels
-
-`GET /streams?channel=incredibleorb,incontroltv`
+```json
+{
+  "streams": [
+    {
+      "broadcaster": "fme",
+      "_id": 5019229776,
+      "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-320x200.jpg",
+      "game": "Diablo III",
+      "channel": {
+        "mature": null,
+        "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_background_image-06a9d8c1113e5b45.jpeg",
+        "updated_at": "2013-03-04T05:27:27Z",
+        "_id": 31795858,
+        "status": "Barb sets giveaway and making 500m DH set... Join Zisspire, earn Zeny, collect prizes!",
+        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-profile_image-502d7c865c5e3a54-300x300.jpeg",
+        "teams": [ ],
+        "url": "http://www.twitch.tv/zisss",
+        "display_name": "Zisss",
+        "game": "Diablo III",
+        "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_header_image-997348d7f0658115-640x125.jpeg",
+        "name": "zisss",
+        "video_banner": null,
+        "_links": {
+          "chat": "https://api.twitch.tv/kraken/chat/zisss",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/zisss/subscriptions",
+          "features": "https://api.twitch.tv/kraken/channels/zisss/features",
+          "commercial": "https://api.twitch.tv/kraken/channels/zisss/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/zisss/stream_key",
+          "editors": "https://api.twitch.tv/kraken/channels/zisss/editors",
+          "videos": "https://api.twitch.tv/kraken/channels/zisss/videos",
+          "self": "https://api.twitch.tv/kraken/channels/zisss",
+          "follows": "https://api.twitch.tv/kraken/channels/zisss/follows"
+        },
+        "created_at": "2012-07-01T21:09:58Z"
+      },
+      "name": "live_user_zisss",
+      "viewers": 775,
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/zisss"
+      }
+    }
+  ],
+  "_links": {
+    "summary": "https://api.twitch.tv/kraken/streams/summary",
+    "followed": "https://api.twitch.tv/kraken/streams/followed",
+    "next": "https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=100",
+    "featured": "https://api.twitch.tv/kraken/streams/featured",
+    "self": "https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=0"
+  }
+}
+```
 
 ## `GET /streams/featured`
 
