@@ -1,14 +1,19 @@
 # Videos
 
-Videos are videos-on-demand owned by a [channel][channels].
+***
+
+Videos are broadcasts or chapters owned by a [channel][channels]. Broadcasts are unedited videos that are saved after a streaming session. Chapters are videos edited from broadcasts by the channel's owner.
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /videos/:id](/resources/videos.md#get-videosid) | Get video object|
+| [GET /channels/:channel/videos](/resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
 
 [channels]: /resources/channels.md
 
-## Get the specified video
+## `GET /videos/:id/`
 
-`GET /videos/:id/`
-
-Returns the specified video metadata and embed code.
+Returns a video object.
 
 ### Example Request
 
@@ -16,7 +21,7 @@ Returns the specified video metadata and embed code.
 curl -i https://api.twitch.tv/kraken/videos/a328087483
 ```
 
-### Response
+### Example Response
 
 ```json
 {
@@ -43,17 +48,36 @@ curl -i https://api.twitch.tv/kraken/videos/a328087483
 }
 ```
 
+## `GET /channels/:channel/videos`
 
-## Get videos for a channel <a id="videos-channel" />
-
-`GET /channels/:channel/videos`
-
-Returns an array of videos ordered by time of creation, starting with the most recent.
+Returns an list of videos ordered by time of creation, starting with the most recent from `:channel`.
 
 ### Parameters
 
-- `limit` (optional): The maximum number of videos to return, up to 100.
-- `offset` (optional): The offset to begin listing videos, defaults to 0.
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th width=100%>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>limit</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
+        </tr>
+        <tr>
+            <td><code>offset</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Object offset for pagination. Default is 0.</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Example Request
 
@@ -61,7 +85,7 @@ Returns an array of videos ordered by time of creation, starting with the most r
 curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
 ```
 
-### Response
+### Example Response
 
 ```json
 {
