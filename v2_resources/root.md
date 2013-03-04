@@ -2,7 +2,7 @@
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /](/resources/root.md#get-) | Get top level links object and authorization status |
+| [GET /](/v2_resources/root.md#get-) | Get top level links object and authorization status |
 
 ## `GET /`
 
