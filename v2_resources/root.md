@@ -7,7 +7,7 @@ Basic information about the API and authentication status. If you are authentica
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' https:/api.twitch.tv/kraken
+curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken
 ```
 
 ### Example Response
