@@ -124,5 +124,3 @@ If user is subscribed:
 ```
 
 `404 Not Found` if user is not subscribed.
-
-If user is not subscribed:
