@@ -55,7 +55,9 @@ Every JSON response includes a `_links` object which allows you to navigate the 
 
 ### API Versions and MIME Types
 
-The current stable API version is **v2**. We allow clients to use any version of our API. Versioning is per-method so for example you can have v1 of `/channels` and v2 of `/users`. We *strongly* recommend specifying a version, otherwise version updates might break your application if you've defaulted your requests to use the latest version.
+The current stable API version is **v2**. We allow clients to use any version of our API. Versioning is per-method so for example you can have v1 of `/channels` and v2 of `/users`. 
+
+>We *strongly* recommend specifying a version, otherwise version updates might break your application if you've defaulted your requests to use the latest version.
 
 When specifying a version for a request to the Twitch API, set the `Accept` HTTP header to the API version you prefer. This is done by appending a version specifier to our vendor specific MIME type. Responses will have an `x-api-version` header that will indicate which version you received.
 
@@ -65,7 +67,7 @@ You should specify the following MIME type:
 application/vnd.twitchtv[.version]+json
 ```
 
-You may also specify these _unrecommended_ MIME types which use the latest (and possibly unstable) version:
+You may also specify these MIME types which use the latest (and possibly unstable) version:
 
 ```bash
 application/vnd.twitchtv+json
