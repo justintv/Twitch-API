@@ -6,18 +6,18 @@ Channels serve as the home location for a [user's][users] content. Channels have
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /channels/:channel](/resources/channels.md#get-channelschannel) | Get channel object|
-| [GET /channel](/resources/channels.md#get-channel) | Get channel object |
-| [GET /channels/:channel/editors](/resources/channels.md#get-channelschanneleditors) | Get channel's list of editors |
-| [PUT /channels/:channel](/resources/channels.md#put-channelschannel) | Update channel object |
-| [GET /channels/:channel/videos](/resources/channels.md#get-channelschannelvideos) | Get channel's list of videos |
-| [GET /channels/:channel/follows](/resources/channels.md#get-channelschannelfollows) | Get channel's list of following users |
-| [DELETE /channels/:channel/stream_key](/resources/channels.md#delete-channelschannelstream_key) | Reset channel's stream key |
-| [POST /channels/:channel/commercial](/resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
+| [GET /channels/:channel](/v2_resources/channels.md#get-channelschannel) | Get channel object|
+| [GET /channel](/v2_resources/channels.md#get-channel) | Get channel object |
+| [GET /channels/:channel/editors](/v2_resources/channels.md#get-channelschanneleditors) | Get channel's list of editors |
+| [PUT /channels/:channel](/v2_resources/channels.md#put-channelschannel) | Update channel object |
+| [GET /channels/:channel/videos](/v2_resources/channels.md#get-channelschannelvideos) | Get channel's list of videos |
+| [GET /channels/:channel/follows](/v2_resources/channels.md#get-channelschannelfollows) | Get channel's list of following users |
+| [DELETE /channels/:channel/stream_key](/v2_resources/channels.md#delete-channelschannelstream_key) | Reset channel's stream key |
+| [POST /channels/:channel/commercial](/v2_resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
 
-[users]: /resources/users.md
-[streams]: /resources/streams.md
-[videos]: /resources/videos.md
+[users]: /v2_resources/users.md
+[streams]: /v2_resources/streams.md
+[videos]: /v2_resources/videos.md
 
 ## `GET /channels/:channel/`
 
@@ -127,11 +127,11 @@ curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/ch
 
 ## `GET /channels/:channel/videos`
 
-See the [Videos](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel) resource.
+See the [Videos](/v2_resources/videosmd#get-channelschannelvideos) resource.
 
 ## `GET /channels/:channel/follows`
 
-See the [Follows](follows.md#get-a-channels-list-of-followers-) resource.
+See the [Follows](/v2_resources/follows.md#get-channelschannelfollows) resource.
 
 ## `GET /channels/:channel/editors`
 
