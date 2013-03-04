@@ -6,14 +6,14 @@ Streams are video broadcasts that are currently live. They have a [broadcaster][
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /streams/:channel/](/resources/streams.md#get-streamschannel) | Get stream object |
-| [GET /streams](/resources/streams.md#get-streams) | Get stream object |
-| [GET /streams/featured](/resources/streams.md#get-streamsfeatured) | Get a list of featured streams |
-| [GET /streams/summary](/resources/streams.md#get-streamssummary) | Get a summary of streams |
-| [GET /streams/followed](/resources/streams.md#get-streamsfollowed) | Get a list of streams user is following |
+| [GET /streams/:channel/](/v2_resources/streams.md#get-streamschannel) | Get stream object |
+| [GET /streams](/v2_resources/streams.md#get-streams) | Get stream object |
+| [GET /streams/featured](/v2_resources/streams.md#get-streamsfeatured) | Get a list of featured streams |
+| [GET /streams/summary](/v2_resources/streams.md#get-streamssummary) | Get a summary of streams |
+| [GET /streams/followed](/v2_resources/streams.md#get-streamsfollowed) | Get a list of streams user is following |
 
-[users]: /resources/users.md
-[channels]: /resources/channels.md
+[users]: /v2_resources/users.md
+[channels]: /v2_resources/channels.md
 
 ## `GET /streams/:channel/`
 
@@ -328,7 +328,7 @@ curl -i https://api.twitch.tv/kraken/streams/summary
 
 [See the Users resource][users]
 
-[users]: /resources/users.md
+[users]: /v2_resources/users.md
 
 ## Embedding
 

@@ -6,10 +6,10 @@ Videos are broadcasts or chapters owned by a [channel][channels]. Broadcasts are
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /videos/:id](/resources/videos.md#get-videosid) | Get video object|
-| [GET /channels/:channel/videos](/resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
+| [GET /videos/:id](/v2_resources/videos.md#get-videosid) | Get video object|
+| [GET /channels/:channel/videos](/v2_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
 
-[channels]: /resources/channels.md
+[channels]: /v2_resources/channels.md
 
 ## `GET /videos/:id/`
 

@@ -6,10 +6,10 @@ Teams are an organization of [channels][channels].
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /teams](/resources/teams.md#get-teams) | Get list of active team objects |
-| [GET /teams/:team](/resources/teams.md#get-teamsteam) | Get team object |
+| [GET /teams](/v3_resources/teams.md#get-teams) | Get list of active team objects |
+| [GET /teams/:team](/v3_resources/teams.md#get-teamsteam) | Get team object |
 
-[channels]: /resources/channels.md
+[channels]: /v3_resources/channels.md
 
 ## `GET /teams/`
 

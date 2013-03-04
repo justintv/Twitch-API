@@ -6,14 +6,14 @@ Status of follow relationships between [users][users] and [channels][channels].
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /channels/:channel/follows](/resources/follows.md#get-channelschannelfollows) | Get channel's list of following users |
-| [GET /users/:user/follows/channels](/resources/follows.md#get-usersuserfollowschannels) | Get a user's list of followed channels |
-| [GET /users/:user/follows/channels/:target](/resources/follows.md#get-usersuserfollowschannelstarget) | Get status of follow relationship between user and target channel |
-| [PUT /users/:user/follows/channels/:target](/resources/follows.md#put-usersuserfollowschannelstarget) | Follow a channel |
-| [DELETE /users/:user/follows/channels/:target](/resources/follows.md#delete-usersuserfollowschannelstarget) | Unfollow a channel |
+| [GET /channels/:channel/follows](/v2_resources/follows.md#get-channelschannelfollows) | Get channel's list of following users |
+| [GET /users/:user/follows/channels](/v2_resources/follows.md#get-usersuserfollowschannels) | Get a user's list of followed channels |
+| [GET /users/:user/follows/channels/:target](/v2_resources/follows.md#get-usersuserfollowschannelstarget) | Get status of follow relationship between user and target channel |
+| [PUT /users/:user/follows/channels/:target](/v2_resources/follows.md#put-usersuserfollowschannelstarget) | Follow a channel |
+| [DELETE /users/:user/follows/channels/:target](/v2_resources/follows.md#delete-usersuserfollowschannelstarget) | Unfollow a channel |
 
-[users]: /resources/users.md
-[channels]: /resources/channels.md
+[users]: /v2_resources/users.md
+[channels]: /v2_resources/channels.md
 
 ## `GET /channels/:channel/follows`
 

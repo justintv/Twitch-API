@@ -6,7 +6,7 @@ These are RTMP ingest points. By directing an RTMP stream with your `stream_key`
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /ingests/](/resources/ingests.md#get-ingests) | Get list of ingests |
+| [GET /ingests/](/v2_resources/ingests.md#get-ingests) | Get list of ingests |
 
 ## `GET /ingests/`
 

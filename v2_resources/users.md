@@ -6,14 +6,14 @@ These are members of the Twitch community who have a Twitch account. If broadcas
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /users/:user](/resources/users.md#get-usersuser) | Get user object |
-| [GET /user](/resources/users.md#get-user) | Get user object |
-| [GET /streams/followed](/resources/users.md#get-streamsfollowed) | Get list of streams user is following |
+| [GET /users/:user](/v2_resources/users.md#get-usersuser) | Get user object |
+| [GET /user](/v2_resources/users.md#get-user) | Get user object |
+| [GET /streams/followed](/v2_resources/users.md#get-streamsfollowed) | Get list of streams user is following |
 
-[streams]: /resources/streams.md
-[channels]: /resources/channels.md
-[follows]: /resources/follows.md
-[subscriptions]: /resources/subscriptions.md
+[streams]: /v2_resources/streams.md
+[channels]: /v2_resources/channels.md
+[follows]: /v2_resources/follows.md
+[subscriptions]: /v2_resources/subscriptions.md
 
 ## `GET /users/:user`
 

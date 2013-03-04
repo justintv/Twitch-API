@@ -1,5 +1,9 @@
 # Root
 
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /](/v3_resources/root.md#get-) | Get top level links object and authorization status |
+
 ## `GET /`
 
 Basic information about the API and authentication status. If you are authenticated, the response includes the status of your token and links to other related resources.

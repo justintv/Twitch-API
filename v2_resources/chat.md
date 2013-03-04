@@ -4,12 +4,12 @@
 
 Chat is where Twitch users can interact with each other while watching a [stream][streams].
 
-[streams]: /resources/streams.md
+[streams]: /v2_resources/streams.md
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /chat/:channel](/resources/chat.md#get-chatchannel) | Get links object to other chat endpoints |
-| [GET /chat/emoticons](/resources/chat.md#get-chatemoticons) | Get list of every emoticon object |
+| [GET /chat/:channel](/v2_resources/chat.md#get-chatchannel) | Get links object to other chat endpoints |
+| [GET /chat/emoticons](/v2_resources/chat.md#get-chatemoticons) | Get list of every emoticon object |
 
 ## `GET /chat/:channel`
 

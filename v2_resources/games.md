@@ -6,11 +6,11 @@ Games are categories (e.g. League of Legends, Diablo 3) used by [streams][] and 
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /games/top](/resources/games.md#get-gamestop) | Get games by number of viewers |
+| [GET /games/top](/v2_resources/games.md#get-gamestop) | Get games by number of viewers |
 
-[streams]: /resources/streams.md
-[channels]: /resources/channels.md
-[search]: /resources/search.md#search-for-games-
+[streams]: /v2_resources/streams.md
+[channels]: /v2_resources/channels.md
+[search]: /v2_resources/search.md#search-for-games-
 
 ## `GET /games/top`
 

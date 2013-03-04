@@ -6,11 +6,11 @@
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /channels/:channel/subscriptions](/resources/subscriptions.md#get-channelschannelsubscriptions) | Get list of users subscribed to channel |
-| [GET /channels/:channel/subscriptions/:user](/resources/subscriptions.md#get-channelschannelsubscriptionsuser) | Check if channel has user subscribed |
+| [GET /channels/:channel/subscriptions](/v2_resources/subscriptions.md#get-channelschannelsubscriptions) | Get list of users subscribed to channel |
+| [GET /channels/:channel/subscriptions/:user](/v2_resources/subscriptions.md#get-channelschannelsubscriptionsuser) | Check if channel has user subscribed |
 
-[users]: /resources/users.md
-[channels]: /resources/channels.md
+[users]: /v2_resources/users.md
+[channels]: /v2_resources/channels.md
 
 ## `GET /channels/:channel/subscriptions`
 
