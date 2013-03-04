@@ -1,64 +1,30 @@
 # Subscriptions
 
-***
+## Get a list of subscribers to specified channel
 
-[Users][users] can subscribe to [channels][channels].
+`GET /channels/:channel/subscriptions`
 
-| Endpoint | Description |
-| ---- | --------------- |
-| [GET /channels/:channel/subscriptions](/resources/subscriptions.md#get-channelschannelsubscriptions) | Get list of users subscribed to channel |
-| [GET /channels/:channel/subscriptions/:user](/resources/subscriptions.md#get-channelschannelsubscriptionsuser) | Check if channel has user subscribed |
-
-[users]: /resources/users.md
-[channels]: /resources/channels.md
-
-## `GET /channels/:channel/subscriptions`
-
-Returns a list of subscription objects which contain users subscribed to `:channel`.
-
-*__Authenticated__*, required scope: `channel_subscriptions`
+_Authenticated_, required scope: `channel_subscriptions`
 
 ### Parameters
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-    </tbody>
-</table>
+- `limit` (optional): The maximum number of streams to return, up to 100.
+- `offset` (optional): The offset to begin listing streams, defaults to 0.
 
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/channels/test_channel/subscriptions
+curl -i https://api.twitch.tv/kraken/channels/hebo/subscriptions
 ```
 
-### Example Response
+### Response
 
 ```json
 {
   "_total": 3,
   "_links": {
-    "next": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions?limit=25&offset=25",
-    "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions?limit=25&offset=0"
+    "next": "https://api.twitch.tv/kraken/channels/hebo/subscriptions?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/channels/hebo/subscriptions?limit=25&offset=0"
   },
   "subscriptions": [
     {
@@ -77,7 +43,7 @@ curl -i https://api.twitch.tv/kraken/channels/test_channel/subscriptions
       },
       "created_at": "2013-02-06T21:33:33Z",
       "_links": {
-        "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
+        "self": "https://api.twitch.tv/kraken/channels/hebo/subscriptions/testuser"
       }
     },
     ...
@@ -85,19 +51,21 @@ curl -i https://api.twitch.tv/kraken/channels/test_channel/subscriptions
 }
 ```
 
-## `GET /channels/:channel/subscriptions/:user`
+## Check if specified channel has user as subscriber
 
-Returns a subscription object which includes the user if that user is subscribed. Requires authentication for `:channel`.
+`GET /channels/:channel/subscriptions/:user`
 
-*__Authenticated__*, required scope: `channel_check_subscription`
+Returns a subscription which includes the user if that user is subscribed. Requires authentication for `:channel`.
+
+_Authenticated_, required scope: `channel_check_subscription`
 
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser
+curl -i https://api.twitch.tv/kraken/channels/hebo/subscriptions/testuser
 ```
 
-### Example Response
+### Response
 
 If user is subscribed:
 
@@ -118,9 +86,17 @@ If user is subscribed:
   },
   "created_at": "2013-02-06T21:33:33Z",
   "_links": {
-    "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
+    "self": "https://api.twitch.tv/kraken/channels/hebo/subscriptions/testuser"
   }
 }
 ```
 
-`404 Not Found` if user is not subscribed.
+If user is not subscribed:
+
+```json
+{
+  "message":"testuser has no subscriptions to hebo",
+  "status":404,
+  "error":"Not Found"
+}
+```

@@ -1,118 +1,86 @@
 # Blocks
 
-***
-
 Stores and updates information about a [user's][users] block list.
-
-| Endpoint | Description |
-| ---- | --------------- |
-| [GET /users/:login/blocks](/resources/blocks.md#get-usersloginblocks) | Get user's block list |
-| [PUT /users/:user/blocks/:target](/resources/blocks.md#put-usersuserblockstarget) | Update user's block list |
-| [DELETE /users/:user/blocks/:target](/resources/blocks.md#delete-usersuserblockstarget) | Update user's block list |
 
 [users]: /resources/users.md
 
-## `GET /users/:login/blocks`
+### Get a list of blocked users
 
-Returns a list of blocks objects on `:login`'s block list. List sorted by recency, newest first.
+`GET /users/:login/blocks`
 
-*__Authenticated__*, required scope: `user_blocks_read`
+_Authenticated_, required scope: `user_blocks_read`
 
-### Parameters
+Returns an array of users on the authenticated user's block list. This is sorted by recency (newest blocks first).
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-    </tbody>
-</table>
-
-### Example Request
+#### Example Response
 
 ```bash
-curl -i https://api.twitch.tv/kraken/users/test_user1/blocks
+curl -i https://api.twitch.tv/kraken/users/hebo/blocks
 ```
 
-### Example Response
+#### Response
 
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/users/test_user1/test_user1?limit=25&offset=25",
-    "self": "https://api.twitch.tv/kraken/users/test_user1/test_user1?limit=25&offset=0"
+    "next": "https://api.twitch.tv/kraken/users/hebo/blocks?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/users/hebo/blocks?limit=25&offset=0"
   },
   "blocks": [
     {
       "_links": {
-        "self": "https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll"
+        "self": "https://api.twitch.tv/kraken/users/hebo/blocks/flarerdb"
       },
       "updated_at": "2013-02-07T01:04:43Z",
       "user": {
         "_links": {
-          "self": "https://api.twitch.tv/kraken/users/test_user_troll"
+          "self": "https://api.twitch.tv/kraken/users/flarerdb"
         },
         "updated_at": "2013-02-06T22:44:19Z",
-        "display_name": "test_user_troll",
+        "display_name": "FlareRDB",
         "staff": false,
-        "name": "test_user_troll",
+        "name": "flarerdb",
         "_id": 13460644,
-        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user_troll-profile_image-9e4de45c9e6744ac-300x300.png",
+        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/flarerdb-profile_image-9e4de45c9e6744ac-300x300.png",
         "created_at": "2010-06-30T08:26:49Z"
       },
       "_id": 970887
-    },
-    ...
+    }
   ]
 }
 ```
 
-## `PUT /users/:user/blocks/:target`
+### Block a user
 
-Adds `:target` to `:user`'s block list. `:user` is the authenticated user and `:target` is user to be blocked. Returns a blocks object.
+`PUT /users/:user/blocks/:target`
 
-*__Authenticated__*, required scope: `user_blocks_edit`
+_Authenticated_, required scope: `user_blocks_edit`
 
-### Example Request
+Adds user to authenticated user's block list. In the above path, `:user` is the authenticated user's name and `:target` is the name of the user to be blocked.
+
+#### Example Request
 
 ```bash
-curl -i -X PUT https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
+curl -i -X PUT https://api.twitch.tv/kraken/users/hebo/blocks/funami
 ```
 
-### Example Response
+#### Response
 
 ```json
 {
   "_links": {
-    "self": "https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll"
+    "self": "https://api.twitch.tv/kraken/users/hebo/blocks/funami"
   },
   "updated_at": "2013-02-07T01:04:43Z",
   "user": {
     "_links": {
-      "self": "https://api.twitch.tv/kraken/users/test_user_troll"
+      "self": "https://api.twitch.tv/kraken/users/funami"
     },
     "updated_at": "2013-01-18T22:33:55Z",
-    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user_troll-profile_image-c3fa99f314dd9477-300x300.jpeg",
+    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-c3fa99f314dd9477-300x300.jpeg",
     "staff": false,
-    "display_name": "test_user_troll",
-    "name": "test_user_troll",
+    "display_name": "Funami",
+    "name": "funami",
     "_id": 22125774,
     "created_at": "2011-05-01T14:50:12Z"
   },
@@ -120,24 +88,20 @@ curl -i -X PUT https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_tr
 }
 ```
 
-## `DELETE /users/:user/blocks/:target`
+### Unblock a user
 
-Removes `:target` from `:user`'s block list. `:user` is the authenticated user and `:target` is user to be unblocked.
+`DELETE /users/:user/blocks/:target`
 
-*__Authenticated__*, required scope: `user_blocks_edit`
+_Authenticated_, required scope: `user_blocks_edit`
 
-### Example Request
+Removes user from authenticated user's block list. In the above path, `:user` is the authenticated user's name and `:target` is the login of the user to be blocked.
+
+#### Example Request
 
 ```bash
-curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
+curl -i -X DELETE https://api.twitch.tv/kraken/users/hebo/blocks/funami
 ```
 
-### Example Response
+#### Response
 
 `204 No Content` if successful.
-
-### Errors
-
-`404 Not Found` if `:target` not on `:user`'s block list.
-
-`422 Unprocessable Entity` if delete failed.

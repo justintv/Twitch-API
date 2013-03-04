@@ -1,80 +1,71 @@
 # Channels
 
-***
-
-Channels serve as the home location for a [user's][users] content. Channels have a [stream][streams], can run commercials, store [videos][], display information and status, and have a customized page including banners and backgrounds.
-
-| Endpoint | Description |
-| ---- | --------------- |
-| [GET /channels/:channel](/resources/channels.md#get-channelschannel) | Get channel object|
-| [GET /channel](/resources/channels.md#get-channel) | Get channel object |
-| [GET /channels/:channel/editors](/resources/channels.md#get-channelschanneleditors) | Get channel's list of editors |
-| [PUT /channels/:channel](/resources/channels.md#put-channelschannel) | Update channel object |
-| [GET /channels/:channel/videos](/resources/channels.md#get-channelschannelvideos) | Get channel's list of videos |
-| [GET /channels/:channel/follows](/resources/channels.md#get-channelschannelfollows) | Get channel's list of following users |
-| [DELETE /channels/:channel/stream_key](/resources/channels.md#delete-channelschannelstream_key) | Reset channel's stream key |
-| [POST /channels/:channel/commercial](/resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
+Channels serve as the home location for a [user's][users] content. Channels have a [stream][streams], can run commercials, store [videos][], display information and status, and have a customized page including banners and backgrounds
 
 [users]: /resources/users.md
 [streams]: /resources/streams.md
 [videos]: /resources/videos.md
 
-## `GET /channels/:channel/`
+## Get specified channel
 
-Returns a channel object.
+`GET /channels/:channel/`
+
+Returns the channel's metadata.
 
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/channels/test_user1
+curl -i https://api.twitch.tv/kraken/channels/towelliee
 ```
 
-### Example Response
+### Response
 
 ```json
 {
-  "name": "test_user1",
+  "name": "towelliee",
   "game": "World of Warcraft: Cataclysm",
   "created_at": "2011-02-24T01:38:43Z",
   "teams": [{
-    "name": "staff",
-    "created_at": "2011-10-25T23:55:47Z",
-    "updated_at": "2011-11-14T19:48:21Z",
-    "background": null,
-    "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-banner_image-1e028d6b6aec8e6a-640x125.jpeg",
-    "logo": null,
+    "name": "tgn",
+    "created_at": "2011-12-23T06:30:14Z",
+    "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-background_image-1d969c0af8187732.jpeg",
+    "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-banner_image-f221dbf018f33148-640x125.png",
+    "updated_at": "2012-04-25T17:30:49Z",
+    "_id": 134,
+    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-tgn-team_logo_image-b710eca274634d81-300x300.png",
     "_links": {
-      "self": "https://api.twitch.tv/kraken/teams/staff"
+      "self": "https://api.twitch.tv/kraken/teams/tgn"
     },
-    "_id": 10,
-    "info": "We save the world..",
-    "display_name": "TwitchTV Staff"
+    "info": "Building a career path for YouTubers! See http://tgn.tv\n\n",
+    "display_name": "TGN"
   }],
-  "title": "test_user1",
+  "title": "Towelliee HD Gaming",
   "updated_at": "2012-06-18T05:22:53Z",
-  "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
-  "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
-  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png",
+  "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
+  "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_offline_image-bdcb1260130fa0cb.png",
+  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_background_image-eebc4eabf0686bb9.png",
   "_links": {
-    "self": "https://api.twitch.tv/kraken/channels/test_user1",
-    "chat": "https://api.twitch.tv/kraken/chat/test_user1",
-    "videos": "https://api.twitch.tv/kraken/channels/test_user1/videos",
-    "video_status": "https://api.twitch.tv/kraken/channels/test_user1/video_status",
-    "commercial": "https://api.twitch.tv/kraken/channels/test_user1/commercial"
+    "self": "https://api.twitch.tv/kraken/channels/towelliee",
+    "chat": "https://api.twitch.tv/kraken/chat/towelliee",
+    "videos": "https://api.twitch.tv/kraken/channels/towelliee/videos",
+    "video_status": "https://api.twitch.tv/kraken/channels/towelliee/video_status",
+    "commercial": "https://api.twitch.tv/kraken/channels/towelliee/commercial"
   },
-  "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png",
+  "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
   "_id": 20694610,
   "mature": true,
-  "url": "http://www.twitch.tv/test_user1",
-  "display_name": "test_user1"
+  "url": "http://www.twitch.tv/towelliee",
+  "display_name": "Towelliee"
 }
 ```
 
-## `GET /channel`
+## Get authenticated channel <a id="authenticated-channel"/>
 
-Returns a channel object of authenticated user. Channel object includes stream key.
+`GET /channel`
 
-*__Authenticated__*, required scope: `channel_read`
+_Authenticated_, required scope: `channel_read`
+
+Returns the channel's metadata associated with the authenticated user. Includes the channel stream key.
 
 ### Example Request
 
@@ -82,12 +73,12 @@ Returns a channel object of authenticated user. Channel object includes stream k
 curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/channel
 ```
 
-### Example Response
+### Response
 
 ```json
 {
   "game": "Diablo II: Lord of Destruction",
-  "name": "test_user1",
+  "name": "Hebo",
   "stream_key": "live_21229404_abcdefg",
   "created_at": "2011-03-19T15:42:22Z",
   "title": "Cev",
@@ -107,61 +98,63 @@ curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/ch
     "display_name": "TwitchTV Staff"
   }],
   "_links": {
-    "self": "https:/api.twitch.tv/kraken/channels/test_user1",
-    "chat":"https:/api.twitch.tv/kraken/chat/test_user1",
-    "videos": "https://api.twitch.tv/kraken/channels/test_user1/videos",
-    "video_status": "https://api.twitch.tv/kraken/channels/test_user1/video_status",
-    "commercial":"https:/api.twitch.tv/kraken/channels/test_user1/commercial"
+    "self": "https:/api.twitch.tv/kraken/channels/hebo",
+    "chat":"https:/api.twitch.tv/kraken/chat/hebo",
+    "videos": "https://api.twitch.tv/kraken/channels/hebo/videos",
+    "video_status": "https://api.twitch.tv/kraken/channels/hebo/video_status",
+    "commercial":"https:/api.twitch.tv/kraken/channels/hebo/commercial"
   },
-  "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
-  "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
-  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png",
-  "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png",
+  "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_header_image-7d10ec1bfbef2988-640x125.png",
+  "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_offline_image-bdcb1260130fa0cb.png",
+  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-channel_background_image-eebc4eabf0686bb9.png",
+  "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/towelliee-profile_image-7243b004a2ec3720-300x300.png",
   "id": 21229404,
   "mature": false,
-  "login": "test_user1",
-  "url": "http://www.twitch.tv/test_user1",
-  "email": "test_user1@justin.tv"
+  "login": "hebo",
+  "url": "http://www.twitch.tv/ossareh",
+  "email": "james@justin.tv"
 }
 ```
 
-## `GET /channels/:channel/videos`
+## Retrieve videos for a channel
 
-See the [Videos](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel) resource.
+[See the Videos Resource](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel)
 
-## `GET /channels/:channel/follows`
+## Get a channel's list of followers
 
-See the [Follows](follows.md#get-a-channels-list-of-followers-) resource.
+[See the Follows Resource](follows.md#get-a-channels-list-of-followers-)
 
-## `GET /channels/:channel/editors`
+## Get specified channel's editors
 
-Returns a list of user objects who are editors of `:channel`.
+`GET /channels/:channel/editors`
 
-*__Authenticated__*, required scope: `channel_read`
+_Authenticated_, required scope: `channel_read`
+
+Returns an array of users who are editors of specified channel.
 
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/channels/test_user1/editors
+curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/channels/kraken_test_user1/editors
 ```
 
-### Example Response
+### Response
 
 ```json
 {
   "_links": {
-    "self": "http://api.twitch.tv/kraken/channels/test_user1/editors"
+    "self": "http://api.twitch.tv/kraken/channels/kraken_test_user1/editors"
   },
   "users": [
     {
       "_links": {
-        "self": "http://staging.twitch.tv/kraken/users/test_user_editor1"
+        "self": "http://staging.twitch.tv/kraken/users/kraken_test_user2"
       },
       "created_at": "2013-02-06T21:21:57Z",
-      "name": "test_user_editor1",
+      "name": "kraken_test_user2",
       "updated_at": "2013-02-13T20:59:42Z",
       "_id": 40091581,
-      "display_name": "test_user_editor1",
+      "display_name": "kraken_test_user2",
       "logo": null,
       "staff": false
     },
@@ -170,40 +163,20 @@ curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/ch
 }
 ```
 
-## `PUT /channels/:channel/`
+## Update the specified channel
 
-Update channel's status or game.
+`PUT /channels/:channel/`
 
-*__Authenticated__*, required scope: `channel_editor`
+_Authenticated_, required scope: `channel_editor`
+
+Update the channel's status and/or game.
 
 ### Parameters
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>status</code></td>
-            <td>optional</td>
-            <td>string</td>
-            <td>Channel's title.</td>
-        </tr>
-        <tr>
-            <td><code>game</code></td>
-            <td>optional</td>
-            <td>string</td>
-            <td>Game category to be classified as.</td>
-        </tr>
-    </tbody>
-</table>
+Form-encoded or JSON parameters specifying the properties to change. These should be under a `channel` object (in curl, this looks like `-d 'channel[game]=Halo'`). At present, the following properties are supported:
 
-Form-encoded or JSON parameters specifying the properties to change. These should be under a `channel` object:
+- `status` 
+- `game`  
 
 ```json
 {
@@ -217,103 +190,33 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' -X PUT -d "channel[status]=Playing+cool+new+game!&channel[game]=Diablo" https://api.twitch.tv/kraken/channels/test_user1
+curl -i -H 'Authorization: OAuth [access token]' -X PUT -d "channel[status]=hooray&channel[game]=Halo" https://api.twitch.tv/kraken/channels/test_channel
 ```
 
-### Example Response
+### Response
 
-```json
-{
-  "name": "test_user1",
-  "game": "Diablo",
-  "created_at": "2011-02-24T01:38:43Z",
-  "teams": [{
-    "name": "staff",
-    "created_at": "2011-10-25T23:55:47Z",
-    "updated_at": "2011-11-14T19:48:21Z",
-    "background": null,
-    "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-banner_image-1e028d6b6aec8e6a-640x125.jpeg",
-    "logo": null,
-    "_links": {
-      "self": "https://api.twitch.tv/kraken/teams/staff"
-    },
-    "_id": 10,
-    "info": "We save the world..",
-    "display_name": "TwitchTV Staff"
-  }],
-  "title": "Playing cool new game!",
-  "updated_at": "2012-06-18T05:22:53Z",
-  "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
-  "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
-  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png",
-  "_links": {
-    "self": "https://api.twitch.tv/kraken/channels/test_user1",
-    "chat": "https://api.twitch.tv/kraken/chat/test_user1",
-    "videos": "https://api.twitch.tv/kraken/channels/test_user1/videos",
-    "video_status": "https://api.twitch.tv/kraken/channels/test_user1/video_status",
-    "commercial": "https://api.twitch.tv/kraken/channels/test_user1/commercial"
-  },
-  "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png",
-  "_id": 20694610,
-  "mature": true,
-  "url": "http://www.twitch.tv/test_user1",
-  "display_name": "test_user1"
-}
-```
+`200 OK` with the updated channel object if successful.
 
-## `DELETE /channels/:channel/stream_key`
+## Reset the specified channel's stream key
 
-Resets channel's stream key.
+`DELETE /channels/:channel/stream_key`
 
-*__Authenticated__*, required scope: `channel_stream`
+_Authenticated_, required scope: `channel_stream`
 
-### Example Request
-
-```bash
-curl -i -X DELETE https://api.twitch.tv/kraken/channels/test_user1/stream_key
-```
-
-### Example Response
-
-`204 No Content`.
-
-## `POST /channels/:channel/commercial`
-
-Start commercial on channel.
-
-*__Authenticated__*, required scope: `channel_commercial`
-
-### Parameters
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>length</code></td>
-            <td>required</td>
-            <td>integer</td>
-            <td>Length of commercial break in seconds. Valid values are 30, 60, or 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
-        </tr>
-    </tbody>
-</table>
-
-### Example Request
-
-```bash
-curl -i -X POST -d "length=30" https://api.twitch.tv/kraken/channels/test_user1/commercial
-```
-
-### Example Response
+### Response
 
 `204 No Content` if successful.
 
-### Errors
+## Run a commercial on the specified channel <a id="commercial"/>
 
-`422 Unprocessable Entity` if commercial length not allowed.
+`POST /channels/:channel/commercial`
+
+_Authenticated_, required scope: `channel_commercial`
+
+### Parameters
+
+  -`length` (**Default: 30**): Length of the commercial break in seconds from 30 to 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.
+
+### Response
+
+`204 No Content` if successful.

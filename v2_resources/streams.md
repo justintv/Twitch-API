@@ -1,254 +1,120 @@
 # Streams
 
-***
+## Get the specified channel's stream
 
-Streams are video broadcasts that are currently live. They have a [broadcaster][users] and are part of a [channel][channels].
-
-| Endpoint | Description |
-| ---- | --------------- |
-| [GET /streams/:channel/](/resources/streams.md#get-streamschannel) | Get stream object |
-| [GET /streams](/resources/streams.md#get-streams) | Get stream object |
-| [GET /streams/featured](/resources/streams.md#get-streamsfeatured) | Get a list of featured streams |
-| [GET /streams/summary](/resources/streams.md#get-streamssummary) | Get a summary of streams |
-| [GET /streams/followed](/resources/streams.md#get-streamsfollowed) | Get a list of streams user is following |
-
-[users]: /resources/users.md
-[channels]: /resources/channels.md
-
-## `GET /streams/:channel/`
-
-Returns a stream object if live.
+`GET /streams/:channel/`
 
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/streams/test_channel
+curl -i https://api.twitch.tv/kraken/streams/magicprotour
 ```
 
-### Example Response
+### Response
 
-#### If offline
+#### If the specified channel is offline
+
+`200 OK` with an empty stream object.
 
 ```json
 {
   "stream": null,
   "_links": {
-    "self": "https://api.twitch.tv/kraken/streams/test_channel",
-    "channel": "https://api.twitch.tv/kraken/channels/test_channel"
+    "self": "https://api.twitch.tv/kraken/streams/magicprotour",
+    "channel": "https://api.twitch.tv/kraken/channels/magicprotour"
   }
 }
 ```
 
-#### If online
+#### If the specified channel is online
+
+`200 OK` with the stream object.
 
 ```json
 {
   "_links": {
-    "channel": "https://api.twitch.tv/kraken/channels/test_channel",
-    "self": "https://api.twitch.tv/kraken/streams/test_channel"
+    "channel": "https://api.twitch.tv/kraken/channels/magicprotour",
+    "self": "https://api.twitch.tv/kraken/streams/magicprotour"
   },
   "stream": {
     "_links": {
-      "self": "https://api.twitch.tv/kraken/streams/test_channel"
+      "self": "https://api.twitch.tv/kraken/streams/magicprotour"
     },
-    "broadcaster": "test_user1",
-    "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-320x200.jpg",
+    "broadcaster": "unknown_rtmp",
+    "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_magicprotour-320x200.jpg",
     "_id": 4869165040,
     "viewers": 11754,
     "channel": {
-      "display_name": "test_channel",
+      "display_name": "MagicProTour",
       "_links": {
-        "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
-        "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
-        "subscriptions": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
-        "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
-        "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos",
-        "follows": "https://api.twitch.tv/kraken/channels/test_channel/follows",
-        "self": "https://api.twitch.tv/kraken/channels/test_channel",
-        "chat": "https://api.twitch.tv/kraken/chat/test_channel",
-        "features": "https://api.twitch.tv/kraken/channels/test_channel/features"
+        "stream_key": "https://api.twitch.tv/kraken/channels/magicprotour/stream_key",
+        "editors": "https://api.twitch.tv/kraken/channels/magicprotour/editors",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/magicprotour/subscriptions",
+        "commercial": "https://api.twitch.tv/kraken/channels/magicprotour/commercial",
+        "videos": "https://api.twitch.tv/kraken/channels/magicprotour/videos",
+        "follows": "https://api.twitch.tv/kraken/channels/magicprotour/follows",
+        "self": "https://api.twitch.tv/kraken/channels/magicprotour",
+        "chat": "https://api.twitch.tv/kraken/chat/magicprotour",
+        "features": "https://api.twitch.tv/kraken/channels/magicprotour/features"
       },
       "teams": [ ],
-      "status": "Testing 1 2 3",
+      "status": "Pro Tour Gatecrash in Montreal",
       "created_at": "2011-12-23T18:03:44Z",
-      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-1806cdccb1108442-300x300.jpeg",
+      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/magicprotour-profile_image-1806cdccb1108442-300x300.jpeg",
       "updated_at": "2013-02-15T15:22:24Z",
       "mature": null,
       "video_banner": null,
       "_id": 26991613,
-      "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_background_image-21fffe7f0c309a23.jpeg",
-      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_header_image-4eb6147d464d9053-640x125.jpeg",
-      "name": "test_channel",
-      "url": "http://www.twitch.tv/test_channel",
+      "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/magicprotour-channel_background_image-21fffe7f0c309a23.jpeg",
+      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/magicprotour-channel_header_image-4eb6147d464d9053-640x125.jpeg",
+      "name": "magicprotour",
+      "url": "http://www.twitch.tv/magicprotour",
       "game": "Magic: The Gathering"
     },
-    "name": "test_channel",
+    "name": "live_user_magicprotour",
     "game": "Magic: The Gathering"
   }
 }
 ```
 
-## `GET /streams`
+## Get a list of streams <a id="streams"/>
 
-Returns a list of stream objects that are queried by a number of parameters.
+`GET /streams`
 
-### Parameters
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>game</code></td>
-            <td>optional</td>
-            <td>string</td>
-            <td>Streams categorized under <code>game</code>.</td>
-        </tr>
-        <tr>
-            <td><code>channel</code></td>
-            <td>optional</td>
-            <td>string</td>
-            <td>Streams from a comma separated list of channels.</td>
-        </tr>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-        <tr>
-            <td><code>embeddable</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams that can be embedded</td>
-        </tr>
-        <tr>
-            <td><code>hls</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams using HLS</td>
-        </tr>
-    </tbody>
-</table>
-
-### Example Request
-
-```bash
-curl -i https://api.twitch.tv/kraken/streams?game=Diablo+III&channel=zisss,voyboy
-```
-
-### Example Response
-
-```json
-{
-  "streams": [
-    {
-      "broadcaster": "fme",
-      "_id": 5019229776,
-      "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-320x200.jpg",
-      "game": "Diablo III",
-      "channel": {
-        "mature": null,
-        "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_background_image-06a9d8c1113e5b45.jpeg",
-        "updated_at": "2013-03-04T05:27:27Z",
-        "_id": 31795858,
-        "status": "Barb sets giveaway and making 500m DH set... Join Zisspire, earn Zeny, collect prizes!",
-        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-profile_image-502d7c865c5e3a54-300x300.jpeg",
-        "teams": [ ],
-        "url": "http://www.twitch.tv/zisss",
-        "display_name": "Zisss",
-        "game": "Diablo III",
-        "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_header_image-997348d7f0658115-640x125.jpeg",
-        "name": "zisss",
-        "video_banner": null,
-        "_links": {
-          "chat": "https://api.twitch.tv/kraken/chat/zisss",
-          "subscriptions": "https://api.twitch.tv/kraken/channels/zisss/subscriptions",
-          "features": "https://api.twitch.tv/kraken/channels/zisss/features",
-          "commercial": "https://api.twitch.tv/kraken/channels/zisss/commercial",
-          "stream_key": "https://api.twitch.tv/kraken/channels/zisss/stream_key",
-          "editors": "https://api.twitch.tv/kraken/channels/zisss/editors",
-          "videos": "https://api.twitch.tv/kraken/channels/zisss/videos",
-          "self": "https://api.twitch.tv/kraken/channels/zisss",
-          "follows": "https://api.twitch.tv/kraken/channels/zisss/follows"
-        },
-        "created_at": "2012-07-01T21:09:58Z"
-      },
-      "name": "live_user_zisss",
-      "viewers": 775,
-      "_links": {
-        "self": "https://api.twitch.tv/kraken/streams/zisss"
-      }
-    }
-  ],
-  "_links": {
-    "summary": "https://api.twitch.tv/kraken/streams/summary",
-    "followed": "https://api.twitch.tv/kraken/streams/followed",
-    "next": "https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=100",
-    "featured": "https://api.twitch.tv/kraken/streams/featured",
-    "self": "https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=0"
-  }
-}
-```
-
-## `GET /streams/featured`
-
-Returns a list of featured (promoted) stream objects.
+This is a flexible method that allows you to query for multiple streams based on a number of parameters.
 
 ### Parameters
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-        <tr>
-            <td><code>hls</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams using HLS</td>
-        </tr>
-    </tbody>
-</table>
+- `game` (optional): The game to query.
+- `channel` (optional): A list of channel names to query, seperated by commas.
+- `limit` (optional): The maximum number of streams to return, up to 100.
+- `offset` (optional): The offset to begin listing streams, defaults to 0.
+- `embeddable` (optional): If true you'll only get streams which can be embedded. Setting this to false will just drop the flag, because that is a weird thing to do!
+- `hls` (optional): If true, only returns streams using HLS.
+
+#### Get list of Diablo III streams
+
+`GET /streams?game=Diablo+III`
+
+#### Get multiple channels
+
+`GET /streams?channel=incredibleorb,incontroltv`
+
+## Get a list of featured (promoted) streams
+
+`GET /streams/featured`
+
+### Parameters
+
+- `limit` (optional): The maximum number of streams to return, up to 100. Defaults to 25.
+- `offset` (optional): The offset to begin listing streams, defaults to 0.
+- `hls` (optional): If true, only returns streams using HLS.
 
 Note that the number of promoted streams varies from day to day, and there is no guarantee on how many streams will be promoted at a given time.
 
-### Example Request
-
-```bash
-curl -i https://api.twitch.tv/kraken/streams/featured
-```
-
-### Example Response
+### Response
+    
+Response has an array of featured streams and paginated links. Each element in the featured array has promotional text, a promotional image, and a nested stream object (see above).
 
 ```json
 {
@@ -269,50 +135,17 @@ curl -i https://api.twitch.tv/kraken/streams/featured
 }
 ```
     
-## `GET /streams/summary`
+## Summarize streams  <a id="summary"/>
 
-Returns a summary of current streams.
+`GET /streams/summary`
 
 ### Parameters
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-        <tr>
-            <td><code>hls</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams using HLS</td>
-        </tr>
-    </tbody>
-</table>
+- `game` (optional): Summarize streams on a per-game basis.
+- `channel` (optional): Summarize streams limited to the specified set of comma separated channels.
+- `hls` (optional): If true, only returns streams using HLS.
 
-### Example Request
-
-```bash
-curl -i https://api.twitch.tv/kraken/streams/summary
-```
-
-### Example Response
+### Response
 
 ```json
 {
@@ -324,11 +157,11 @@ curl -i https://api.twitch.tv/kraken/streams/summary
 }
 ```
 
-## `GET /streams/followed`
+## Get a list of user's followed streams
 
 [See the Users resource][users]
 
-[users]: /resources/users.md
+[users]: /resources/Users.md
 
 ## Embedding
 

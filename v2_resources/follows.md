@@ -1,81 +1,46 @@
 # Follows
 
-***
+### Get a channel's list of followers <a id="follows-channel" />
 
-Status of follow relationships between [users][users] and [channels][channels].
+`GET /channels/:channel/follows`
 
-| Endpoint | Description |
-| ---- | --------------- |
-| [GET /channels/:channel/follows](/resources/follows.md#get-channelschannelfollows) | Get channel's list of following users |
-| [GET /users/:user/follows/channels](/resources/follows.md#get-usersuserfollowschannels) | Get a user's list of followed channels |
-| [GET /users/:user/follows/channels/:target](/resources/follows.md#get-usersuserfollowschannelstarget) | Get status of follow relationship between user and target channel |
-| [PUT /users/:user/follows/channels/:target](/resources/follows.md#put-usersuserfollowschannelstarget) | Follow a channel |
-| [DELETE /users/:user/follows/channels/:target](/resources/follows.md#delete-usersuserfollowschannelstarget) | Unfollow a channel |
+Returns an array of users who follow the specified channel.
 
-[users]: /resources/users.md
-[channels]: /resources/channels.md
+#### Parameters
 
-## `GET /channels/:channel/follows`
+- `limit` (optional): The maximum number of games to return, up to 100.
+- `offset` (optional): The offset to begin listing games, defaults to 0.
 
-Returns a list of follow objects.
-
-### Parameters
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-    </tbody>
-</table>
-
-### Example Request
+#### Example Request
 
 ```bash
-curl -i  https://api.twitch.tv/kraken/channels/test_user1/follows
+curl -i  https://api.twitch.tv/kraken/channels/hebo/follows
 ```
 
-### Example Response
+#### Response
 
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=25",
-    "self": "https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=0"
+    "next": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=0"
   },
   "follows": [
     {
       "_links": {
-        "self": "https://api.twitch.tv/kraken/users/test_user2/follows/channels/test_user1"
+        "self": "https://api.twitch.tv/kraken/users/kraken_test_user2/follows/channels/kraken_test_user1"
       },
       "user": {
         "_links": {
-          "self": "https://api.twitch.tv/kraken/users/test_user2"
+          "self": "https://api.twitch.tv/kraken/users/kraken_test_user2"
         },
         "staff": false,
         "logo": null,
-        "display_name": "test_user2",
+        "display_name": "kraken_test_user2",
         "created_at": "2013-02-06T21:21:57Z",
         "updated_at": "2013-02-13T20:59:42Z",
         "_id": 40091581,
-        "name": "test_user2"
+        "name": "kraken_test_user2"
       }
     },
     ...
@@ -83,78 +48,50 @@ curl -i  https://api.twitch.tv/kraken/channels/test_user1/follows
 }
 ```
 
-## `GET /users/:user/follows/channels`
+### Get a user's list of followed channels
 
-Returns a list of follows objects.
+`GET /users/:user/follows/channels`
 
-### Parameters
+#### Parameters
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Required?</th>
-            <th width="50">Type</th>
-            <th width=100%>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-    </tbody>
-</table>
+- `limit` (optional): The maximum number of channels to return, up to 100.
+- `offset` (optional): The offset to begin listing channels, defaults to 0.
 
-### Example Request
-
-```bash
-curl -i  https://api.twitch.tv/kraken/users/test_user1/follows/channels
-```
-
-### Example Response
+#### Response
 
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?limit=25&offset=25",
-    "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?limit=25&offset=0"
+    "next": "https://api.twitch.tv/kraken/users/hebo/follows/channels?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/users/hebo/follows/channels?limit=25&offset=0"
   },
   "follows": [
     {
       "_links": {
-        "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
+        "self": "https://api.twitch.tv/kraken/users/hebo/follows/channels/elsmurfoz"
       },
       "channel": {
         "banner": null,
         "_id": 1,
-        "url": "http://www.twitch.tv/test_channel",
+        "url": "http://www.twitch.tv/elsmurfoz",
         "mature": null,
         "teams": [
 
         ],
         "status": null,
         "logo": null,
-        "name": "test_channel",
+        "name": "elsmurfoz",
         "video_banner": null,
-        "display_name": "test_channel",
+        "display_name": "Elsmurfoz",
         "created_at": "2007-05-22T10:37:47Z",
         "game": null,
         "_links": {
-          "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
-          "self": "https://api.twitch.tv/kraken/channels/test_channel",
-          "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos",
-          "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
-          "chat": "https://api.twitch.tv/kraken/chat/test_channel",
-          "features": "https://api.twitch.tv/kraken/channels/test_channel/features"
+          "stream_key": "https://api.twitch.tv/kraken/channels/elsmurfoz/stream_key",
+          "self": "https://api.twitch.tv/kraken/channels/elsmurfoz",
+          "videos": "https://api.twitch.tv/kraken/channels/elsmurfoz/videos",
+          "commercial": "https://api.twitch.tv/kraken/channels/elsmurfoz/commercial",
+          "chat": "https://api.twitch.tv/kraken/chat/elsmurfoz",
+          "features": "https://api.twitch.tv/kraken/channels/elsmurfoz/features"
         },
         "updated_at": "2008-02-12T06:04:29Z",
         "background": null
@@ -165,124 +102,150 @@ curl -i  https://api.twitch.tv/kraken/users/test_user1/follows/channels
 }
 ```
 
-### Errors
+### Get specified channel's followers
 
-`404 Not Found` if `:user` does not exist.
+`GET /channels/:channel/follows`
 
-## `GET /users/:user/follows/channels/:target`
+Returns an array of users who follow the specified channel.
 
-Returns `404 Not Found` if `:user` is not following `:target`. Returns a follow object otherwise.
+#### Parameters
 
-### Example Request
+- `limit` (optional): The maximum number of games to return, up to 100.
+- `offset` (optional): The offset to begin listing games, defaults to 0.
+
+#### Example Request
 
 ```bash
-curl -i  https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
+curl -i -H https://api.twitch.tv/kraken/channels/kraken_test_user1/follows
 ```
 
-### Example Response
-
-`404 Not Found` if user is not following channel.
-
-Otherwise,
+#### Response
 
 ```json
 {
   "_links": {
-    "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
+    "next": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/channels/kraken_test_user1/follows?limit=25&offset=0"
+  },
+  "follows": [
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/users/kraken_test_user2/follows/channels/kraken_test_user1"
+      },
+      "user": {
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/users/kraken_test_user2"
+        },
+        "staff": false,
+        "logo": null,
+        "display_name": "kraken_test_user2",
+        "created_at": "2013-02-06T21:21:57Z",
+        "updated_at": "2013-02-13T20:59:42Z",
+        "_id": 40091581,
+        "name": "kraken_test_user2"
+      }
+    },
+    ...
+  ]
+}
+```
+
+### Get the status of a follow relationship
+
+`GET /users/:user/follows/channels/:target`
+
+In the above path, `:user` is the name of the user to check and `:target` is the name of the target channel.
+
+#### Response
+
+If the user is not following the channel:
+
+    404 Not Found
+
+If the user is following the channel:
+
+```json
+{
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/users/hebo/follows/channels/funami"
   },
   "channel": {
-    "name": "test_channel",
+    "name": "funami",
     "game": null,
     "created_at": "2011-05-01T14:50:12Z",
     "teams": [],
     "background": null,
     "updated_at": "2012-10-13T18:18:43Z",
     "banner": null,
-    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
-    "url": "http://www.twitch.tv/test_channel",
+    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
+    "url": "http://www.twitch.tv/funami",
     "_links": {
-      "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
-      "self": "https://api.twitch.tv/kraken/channels/test_channel",
-      "chat": "https://api.twitch.tv/kraken/chat/test_channel",
-      "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
-      "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos",
-      "features": "https://api.twitch.tv/kraken/channels/test_channel/features"
+      "stream_key": "https://api.twitch.tv/kraken/channels/funami/stream_key",
+      "self": "https://api.twitch.tv/kraken/channels/funami",
+      "chat": "https://api.twitch.tv/kraken/chat/funami",
+      "commercial": "https://api.twitch.tv/kraken/channels/funami/commercial",
+      "videos": "https://api.twitch.tv/kraken/channels/funami/videos",
+      "features": "https://api.twitch.tv/kraken/channels/funami/features"
     },
     "_id": 22125774,
     "mature": true,
     "video_banner": null,
-    "display_name": "test_channel",
+    "display_name": "Funami",
     "status": "Not Live"
   }
 }
 ```
 
-## `PUT /users/:user/follows/channels/:target`
+### Follow a user
 
-Adds `:user` to `:target`'s followers. `:user` is the authenticated user's name and `:target` is the name of the channel to be followed.
+`PUT /users/:user/follows/channels/:target`
 
-*__Authenticated__*, require scope: `user_follows_edit`
+_Authenticated_, require scope: `user_follows_edit`
 
-### Example Request
+In the above path, `:user` is the authenticated user's name and `:target` is the name of the channel to be followed.
 
-```bash
-curl -i -x PUT https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
-```
-
-### Example Response
+#### Response
 
 ```json
 {
   "_links": {
-    "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
+    "self": "https://api.twitch.tv/kraken/users/hebo/follows/channels/funami"
   },
   "channel": {
-    "name": "test_channel",
+    "name": "funami",
     "game": null,
     "created_at": "2011-05-01T14:50:12Z",
     "teams": [],
     "background": null,
     "updated_at": "2012-10-13T18:18:43Z",
     "banner": null,
-    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
+    "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/funami-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
     "_links": {
-      "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
-      "self": "https://api.twitch.tv/kraken/channels/test_channel",
-      "chat": "https://api.twitch.tv/kraken/chat/test_channel",
-      "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
-      "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos",
-      "features": "https://api.twitch.tv/kraken/channels/test_channel/features"
+      "stream_key": "https://api.twitch.tv/kraken/channels/funami/stream_key",
+      "self": "https://api.twitch.tv/kraken/channels/funami",
+      "chat": "https://api.twitch.tv/kraken/chat/funami",
+      "commercial": "https://api.twitch.tv/kraken/channels/funami/commercial",
+      "videos": "https://api.twitch.tv/kraken/channels/funami/videos",
+      "features": "https://api.twitch.tv/kraken/channels/funami/features"
     },
-    "url": "http://www.twitch.tv/test_channel",
+    "url": "http://www.twitch.tv/funami",
     "_id": 22125774,
     "mature": true,
     "video_banner": null,
-    "display_name": "test_channel",
+    "display_name": "Funami",
     "status": "Not Live"
   }
 }
 ```
 
-### Errors
+### Unfollow a user
 
-`422 Unprocessable Entity` if update fails.
+`DELETE /users/:user/follows/channels/:target`
 
-## `DELETE /users/:user/follows/channels/:target`
+_Authenticated_, required scope: `user_follows_edit`
 
-Removes `:user` from `:target`'s followers. `:user` is the authenticated user's name and `:target` is the name of the channel to be unfollowed.
+In the above path, `:user` is the authenticated user's name and `:target` is the name of the channel to be followed.
 
-*__Authenticated__*, required scope: `user_follows_edit`
-
-### Example 
-
-```bash
-curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
-```
-
-### Example Response
+#### Response
 
 `204 No Content` if successful.
-
-### Errors
-
-`422 Unprocessable Entity` if delete fails.
