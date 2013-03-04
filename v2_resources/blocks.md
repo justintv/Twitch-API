@@ -6,11 +6,11 @@ Stores and updates information about a [user's][users] block list.
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /users/:login/blocks](/resources/blocks.md#get-usersloginblocks) | Get user's block list |
-| [PUT /users/:user/blocks/:target](/resources/blocks.md#put-usersuserblockstarget) | Update user's block list |
-| [DELETE /users/:user/blocks/:target](/resources/blocks.md#delete-usersuserblockstarget) | Update user's block list |
+| [GET /users/:login/blocks](/v2_resources/blocks.md#get-usersloginblocks) | Get user's block list |
+| [PUT /users/:user/blocks/:target](/v2_resources/blocks.md#put-usersuserblockstarget) | Update user's block list |
+| [DELETE /users/:user/blocks/:target](/v2_resources/blocks.md#delete-usersuserblockstarget) | Update user's block list |
 
-[users]: /resources/users.md
+[users]: /v2_resources/users.md
 
 ## `GET /users/:login/blocks`
 
