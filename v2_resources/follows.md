@@ -11,6 +11,7 @@ Status of follow relationships between [users][users] and [channels][channels].
 | [GET /users/:user/follows/channels/:target](/v2_resources/follows.md#get-usersuserfollowschannelstarget) | Get status of follow relationship between user and target channel |
 | [PUT /users/:user/follows/channels/:target](/v2_resources/follows.md#put-usersuserfollowschannelstarget) | Follow a channel |
 | [DELETE /users/:user/follows/channels/:target](/v2_resources/follows.md#delete-usersuserfollowschannelstarget) | Unfollow a channel |
+| [GET /streams/followed](/v2_resources/users.md#get-streamsfollowed) | Get a list of streams user is following |
 
 [users]: /v2_resources/users.md
 [channels]: /v2_resources/channels.md
@@ -286,3 +287,9 @@ curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/follows/channels
 ### Errors
 
 `422 Unprocessable Entity` if delete fails.
+
+## `GET /streams/followed`
+
+[See the Users resource][users]
+
+[users]: /resources/users.md
