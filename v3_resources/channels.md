@@ -297,9 +297,9 @@ Start commercial on channel.
     <tbody>
         <tr>
             <td><code>length</code></td>
-            <td>required</td>
+            <td>optional</td>
             <td>integer</td>
-            <td>Length of commercial break in seconds. Valid values are 30, 60, or 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
+            <td>Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, or 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
         </tr>
     </tbody>
 </table>
@@ -307,7 +307,7 @@ Start commercial on channel.
 ### Example Request
 
 ```bash
-curl -i -X POST -d "length=30" https://api.twitch.tv/kraken/channels/test_user1/commercial
+curl -i -X POST -d "length=30" https://api.twitch.tv/kraken/channels/test_user1/commercial?oauth_token=[access token]
 ```
 
 ### Example Response
