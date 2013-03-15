@@ -14,7 +14,7 @@
 
 ## `GET /channels/:channel/subscriptions`
 
-Returns a list of subscription objects which contain users subscribed to `:channel`.
+Returns a list of subscription objects sorted by subscription relationship creation date which contain users subscribed to `:channel`.
 
 *__Authenticated__*, required scope: `channel_subscriptions`
 
@@ -41,6 +41,12 @@ Returns a list of subscription objects which contain users subscribed to `:chann
             <td>optional</td>
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
+        </tr>
+        <tr>
+            <td><code>direction</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Creation date sorting direction. Default is <code>asc</code>. Valid values are <code>asc</code> and <code>desc</code>.</td>
         </tr>
     </tbody>
 </table>
