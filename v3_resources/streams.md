@@ -52,7 +52,12 @@ curl -i https://api.twitch.tv/kraken/streams/test_channel
       "self": "https://api.twitch.tv/kraken/streams/test_channel"
     },
     "broadcaster": "test_user1",
-    "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-320x200.jpg",
+    "preview": {
+      "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_user1-320x200.jpg",
+      "small": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_user1-80x50.jpg",
+      "large": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_user1-640x400.jpg",
+      "template": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_user1-{width}x{height}.jpg"
+    },
     "_id": 4869165040,
     "viewers": 11754,
     "channel": {
@@ -157,7 +162,12 @@ curl -i https://api.twitch.tv/kraken/streams?game=Diablo+III&channel=zisss,voybo
     {
       "broadcaster": "fme",
       "_id": 5019229776,
-      "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-320x200.jpg",
+      "preview": {
+        "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-320x200.jpg",
+        "small": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-80x50.jpg",
+        "large": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-640x400.jpg",
+        "template": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-{width}x{height}.jpg"
+      },
       "game": "Diablo III",
       "channel": {
         "mature": null,
