@@ -76,6 +76,12 @@ Returns an list of videos ordered by time of creation, starting with the most re
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
+        <tr>
+            <td><code>broadcasts</code></td>
+            <td>optional</td>
+            <td>bool</td>
+            <td>Returns only broadcasts when <code>true</code>. Otherwise only highlights are returned. Default is <code>false</code>.</td>
+        </tr>
     </tbody>
 </table>
 
