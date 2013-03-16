@@ -33,13 +33,6 @@ curl -i https://api.twitch.tv/kraken/videos/a328087483
       "self": "https://api.twitch.tv/kraken/videos/a328087483",
       "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
   },
-  "embed": "<object type="application/x-shockwave-flash" height="300" width="400" id="clip_embed_player_flash" data="http://www.justin.tv/widgets/archive_embed_player.swf" bgcolor="#000000">
-      <param name="movie" value="http://www.justin.tv/widgets/archive_embed_player.swf" />
-      <param name="allowScriptAccess" value="always" />
-      <param name="allowNetworking" value="all" />
-      <param name="allowFullScreen" value="true" />
-      <param name="flashvars" value="channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25" />
-  </object>",
   "views": 93,
   "description": "VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3",
   "length": 204,
@@ -104,13 +97,6 @@ curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
               "self": "https://api.twitch.tv/kraken/videos/a296529186",
               "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
           },
-          "embed": "<object type="application/x-shockwave-flash" height="300" width="400" id="clip_embed_player_flash" data="http://www.justin.tv/widgets/archive_embed_player.swf" bgcolor="#000000">
-              <param name="movie" value="http://www.justin.tv/widgets/archive_embed_player.swf" />
-              <param name="allowScriptAccess" value="always" />
-              <param name="allowNetworking" value="all" />
-              <param name="allowFullScreen" value="true" />
-              <param name="flashvars" value="channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25" />
-          </object>",
           "url": "http://www.twitch.tv/vanillatv/b/296529186",
           "views": 1,
           "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296529186-320x240.jpg",
@@ -126,13 +112,6 @@ curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
               "self": "https://api.twitch.tv/kraken/videos/a296526250",
               "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
           },
-          "embed": "<object type="application/x-shockwave-flash" height="300" width="400" id="clip_embed_player_flash" data="http://www.justin.tv/widgets/archive_embed_player.swf" bgcolor="#000000">
-              <param name="movie" value="http://www.justin.tv/widgets/archive_embed_player.swf" />
-              <param name="allowScriptAccess" value="always" />
-              <param name="allowNetworking" value="all" />
-              <param name="allowFullScreen" value="true" />
-              <param name="flashvars" value="channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25" />
-          </object>",
           "url": "http://www.twitch.tv/vanillatv/b/296526250",
           "views": 1,
           "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296526250-320x240.jpg",
