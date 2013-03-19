@@ -125,6 +125,7 @@ When requesting authorization from users, the scope parameter allows you to spec
 - `channel_stream`: Ability to reset a channel's stream key.
 - `channel_subscriptions`: Read access to all subscribers to your channel.
 - `channel_check_subscription`: Read access to check if a user is subscribed to your channel.
+- `chat_login`: Ability to log into chat and send messages.
 
 Scopes are specified as a *space separated* list in the url parameter `scope` when requesting authorization:
 
