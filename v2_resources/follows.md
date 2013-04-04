@@ -292,8 +292,4 @@ curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/follows/channels
 
 [See the Users resource][users]
 
-<<<<<<< HEAD:v2_resources/follows.md
-[users]: /resources/users.md
-=======
-[users]: /resources/users.md
->>>>>>> master:resources/follows.md
+[users]: /v2_resources/users.md
