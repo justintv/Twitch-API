@@ -81,7 +81,7 @@ Returns a list of videos created in a given time period sorted by number of view
             <td><code>game</code></td>
             <td>optional</td>
             <td>string</td>
-            <td>Returns only videos from <code>game</code.</td>
+            <td>Returns only videos from <code>game</code>.</td>
         </tr>
         <tr>
             <td><code>period</code></td>
@@ -91,6 +91,45 @@ Returns a list of videos created in a given time period sorted by number of view
         </tr>
     </tbody>
 </table>
+
+### Example Request
+
+```bash
+curl -i https://api.twitch.tv/kraken/videos/top?game=League+of+legends&period=month
+```
+
+### Example Response
+
+```json
+{
+  "_links": {
+    "next": "https://api.twitch.tv/kraken/videos/top?game=League+of+legends&limit=10&offset=10&period=month",
+    "self": "https://api.twitch.tv/kraken/videos/top?game=League+of+legends&limit=10&offset=0&period=month"
+  },
+  "videos": [
+    {
+      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-386916485-320x240.jpg",
+      "description": "harlem shake by fiddlesticks",
+      "url": "http://www.twitch.tv/lebartole/c/2115993",
+      "title": "AHAHAHA harlem shake",
+      "channel": {
+        "name": "lebartole",
+        "display_name": "Lebartole"
+      },
+      "length": 35,
+      "_links": {
+        "channel": "https://api.twitch.tv/kraken/channels/lebartole",
+        "self": "https://api.twitch.tv/kraken/videos/c2115993"
+      },
+      "game": "League of legends",
+      "recorded_at": "2013-04-05T15:38:49Z",
+      "views": 19,
+      "_id": "c2115993"
+    },
+    ...
+  ]
+}
+```
 
 ## `GET /channels/:channel/videos`
 
