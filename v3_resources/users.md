@@ -22,13 +22,14 @@ Returns a user object.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/test_user1
+curl -i https://api.twitch.tv/kraken/users/test_user1
 ```
 
 ### Example Response
 
 ```json
 {
+  "type": "user",
   "name": "test_user1",
   "created_at": "2011-03-19T15:42:22Z",
   "updated_at": "2012-06-14T00:14:27Z",
@@ -57,6 +58,7 @@ curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/us
 
 ```json
 {
+  "type": "user",
   "name": "test_user1",
   "created_at": "2011-06-03T17:49:19Z",
   "updated_at": "2012-06-18T17:19:57Z",
