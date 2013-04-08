@@ -7,11 +7,12 @@ Videos are broadcasts or highlights owned by a [channel][channels]. Broadcasts a
 | Endpoint | Description |
 | ---- | --------------- |
 | [GET /videos/:id](/v2_resources/videos.md#get-videosid) | Get video object|
+| [GET /videos/top](/v2_resources/videos.md#get-videostop) | Get top videos by number of views |
 | [GET /channels/:channel/videos](/v2_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
 
 [channels]: /v2_resources/channels.md
 
-## `GET /videos/:id/`
+## `GET /videos/:id`
 
 Returns a video object.
 
@@ -47,6 +48,49 @@ curl -i https://api.twitch.tv/kraken/videos/a328087483
   "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-328087483-320x240.jpg"
 }
 ```
+
+## `GET /videos/top`
+
+Returns a list of videos created in a given time period sorted by number of views, most popular first.
+
+### Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th width=100%>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>limit</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
+        </tr>
+        <tr>
+            <td><code>offset</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Object offset for pagination. Default is 0.</td>
+        </tr>
+        <tr>
+            <td><code>game</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Returns only videos from <code>game</code.</td>
+        </tr>
+        <tr>
+            <td><code>period</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Returns only videos created in time period. Valid values are <code>week</code>, <code>month</code>, or <code>all</code>. Default is <code>week</code>.</td>
+        </tr>
+    </tbody>
+</table>
 
 ## `GET /channels/:channel/videos`
 
