@@ -95,7 +95,7 @@ Returns a list of videos created in a given time period sorted by number of view
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/videos/top?game=League+of+legends&period=month
+curl -i https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&period=month
 ```
 
 ### Example Response
@@ -103,28 +103,28 @@ curl -i https://api.twitch.tv/kraken/videos/top?game=League+of+legends&period=mo
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/videos/top?game=League+of+legends&limit=10&offset=10&period=month",
-    "self": "https://api.twitch.tv/kraken/videos/top?game=League+of+legends&limit=10&offset=0&period=month"
+    "next": "https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=10&period=month",
+    "self": "https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=0&period=month"
   },
   "videos": [
     {
-      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-386916485-320x240.jpg",
-      "description": "harlem shake by fiddlesticks",
-      "url": "http://www.twitch.tv/lebartole/c/2115993",
-      "title": "AHAHAHA harlem shake",
+      "recorded_at": "2013-03-13T09:51:31Z",
+      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-377199700-320x240.jpg",
+      "description": "dat trist jump",
+      "url": "http://www.twitch.tv/chaoxlol/c/2023831",
+      "title": "Almost the great escape",
       "channel": {
-        "name": "lebartole",
-        "display_name": "Lebartole"
+        "name": "chaoxlol",
+        "display_name": "chaoxlol"
       },
-      "length": 35,
+      "length": 71,
+      "game": "League of Legends",
+      "views": 66436,
+      "_id": "c2023831",
       "_links": {
-        "channel": "https://api.twitch.tv/kraken/channels/lebartole",
-        "self": "https://api.twitch.tv/kraken/videos/c2115993"
-      },
-      "game": "League of legends",
-      "recorded_at": "2013-04-05T15:38:49Z",
-      "views": 19,
-      "_id": "c2115993"
+        "channel": "https://api.twitch.tv/kraken/channels/chaoxlol",
+        "self": "https://api.twitch.tv/kraken/videos/c2023831"
+      }
     },
     ...
   ]
