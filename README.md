@@ -235,4 +235,5 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | Endpoint | Description |
 | ---- | --------------- |
 | [GET /videos/:id](/v2_resources/videos.md#get-videosid) | Get video object|
+| [GET /videos/top](/v2_resources/videos.md#get-videostop) | Get top videos by number of views |
 | [GET /channels/:channel/videos](/v2_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
