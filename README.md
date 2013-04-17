@@ -11,6 +11,41 @@ The Twitch API is comprised of two parts: the REST API and a [JavaScript SDK][] 
 [Github Issues]: /../../issues
 [RESTful Integration Guide]: /RESTful-Integration-Guide.md
 
+### API Versions and MIME Types
+
+The current stable API version is **v2**. We allow clients to use any version of our API. Versioning is per-method so for example you can have v1 of `/channels` and v2 of `/users`. 
+
+__We *strongly* recommend specifying a version, otherwise version updates might break your application if you've defaulted your requests to use the latest version.__
+
+When specifying a version for a request to the Twitch API, set the `Accept` HTTP header to the API version you prefer. This is done by appending a version specifier to our vendor specific MIME type. Responses will have an `x-api-version` header that will indicate which version you received.
+
+You should specify the following MIME type:
+
+```bash
+application/vnd.twitchtv[.version]+json
+```
+
+The returned MIME type from requests is always
+
+```bash
+application/json
+```
+
+<a name="requests"/>
+#### Example Requests
+
+Specify a specific version (v2):
+
+    curl -i -H 'Accept: application/vnd.twitchtv.v2+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
+    
+    HTTP/1.1 200 OK
+    ...
+    x-api-version: 2
+    ...
+    Front-End-Https: on
+    
+    { ...
+
 ### Formats
 
 The base URL for all API resources is `https://api.twitch.tv/kraken`.
@@ -52,60 +87,6 @@ Every JSON response includes a `_links` object which allows you to navigate the 
     ...
 }
 ```
-
-### API Versions and MIME Types
-
-The current stable API version is **v2**. We allow clients to use any version of our API. Versioning is per-method so for example you can have v1 of `/channels` and v2 of `/users`. 
-
->We *strongly* recommend specifying a version, otherwise version updates might break your application if you've defaulted your requests to use the latest version.
-
-When specifying a version for a request to the Twitch API, set the `Accept` HTTP header to the API version you prefer. This is done by appending a version specifier to our vendor specific MIME type. Responses will have an `x-api-version` header that will indicate which version you received.
-
-You should specify the following MIME type:
-
-```bash
-application/vnd.twitchtv[.version]+json
-```
-
-You may also specify these MIME types which use the latest (and possibly unstable) version:
-
-```bash
-application/vnd.twitchtv+json
-application/json
-```
-
-The returned MIME type from requests is always
-
-```bash
-application/json
-```
-
-<a name="requests"/>
-### Example Requests
-
-For the latest version of the API:
-
-    curl -i -H 'Accept: application/vnd.twitchtv+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
-    
-    HTTP/1.1 200 OK
-    ...
-    x-api-version: 2
-    ...
-    Front-End-Https: on
-    
-    { ...
-
-Specify a specific version (v1):
-
-    curl -i -H 'Accept: application/vnd.twitchtv.v1+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
-    
-    HTTP/1.1 200 OK
-    ...
-    x-api-version: 1
-    ...
-    Front-End-Https: on
-    
-    { ...
 
 ### Errors
 
