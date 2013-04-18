@@ -50,7 +50,8 @@ Returns a list of follow objects.
 ### Example Request
 
 ```bash
-curl -i  https://api.twitch.tv/kraken/channels/test_user1/follows
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/channels/test_user1/follows
 ```
 
 ### Example Response
@@ -118,7 +119,8 @@ Returns a list of follows objects.
 ### Example Request
 
 ```bash
-curl -i  https://api.twitch.tv/kraken/users/test_user1/follows/channels
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/users/test_user1/follows/channels
 ```
 
 ### Example Response
@@ -177,7 +179,8 @@ Returns `404 Not Found` if `:user` is not following `:target`. Returns a follow 
 ### Example Request
 
 ```bash
-curl -i  https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
 ```
 
 ### Example Response
@@ -227,7 +230,8 @@ Adds `:user` to `:target`'s followers. `:user` is the authenticated user's name 
 ### Example Request
 
 ```bash
-curl -i -x PUT https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
+curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
+-X PUT https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
 ```
 
 ### Example Response
@@ -277,7 +281,8 @@ Removes `:user` from `:target`'s followers. `:user` is the authenticated user's 
 ### Example 
 
 ```bash
-curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
+curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
+-X DELETE https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel
 ```
 
 ### Example Response
