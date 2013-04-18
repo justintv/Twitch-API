@@ -54,7 +54,8 @@ Returns a list of subscription objects sorted by subscription relationship creat
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/channels/test_channel/subscriptions
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/channels/test_channel/subscriptions
 ```
 
 ### Example Response
@@ -100,7 +101,8 @@ Returns a subscription object which includes the user if that user is subscribed
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser
 ```
 
 ### Example Response
