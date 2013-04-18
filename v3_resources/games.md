@@ -46,7 +46,8 @@ Returns a list of games objects sorted by number of current viewers on Twitch, m
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/games/top
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/games/top
 ```
 
 ### Example Response
