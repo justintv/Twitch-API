@@ -48,7 +48,8 @@ Returns a list of blocks objects on `:login`'s block list. List sorted by recenc
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/users/test_user1/blocks
+curl -H 'Accept: application/vnd.twitchtv.v3.json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/users/test_user1/blocks
 ```
 
 ### Example Response
@@ -93,7 +94,8 @@ Adds `:target` to `:user`'s block list. `:user` is the authenticated user and `:
 ### Example Request
 
 ```bash
-curl -i -X PUT https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
+curl -H 'Accept: application/vnd.twitchtv.v3.json' -H 'Authorization: OAuth <access_token>' \
+-X PUT https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
 ```
 
 ### Example Response
@@ -129,7 +131,8 @@ Removes `:target` from `:user`'s block list. `:user` is the authenticated user a
 ### Example Request
 
 ```bash
-curl -i -X DELETE https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
+curl -H 'Accept: application/vnd.twitchtv.v3.json' -H 'Authorization: OAuth <access_token>' \
+-X DELETE https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
 ```
 
 ### Example Response
