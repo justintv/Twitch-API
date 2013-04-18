@@ -26,7 +26,8 @@ Returns a channel object.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/channels/test_user1
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/channels/test_user1
 ```
 
 ### Example Response
@@ -79,7 +80,8 @@ Returns a channel object of authenticated user. Channel object includes stream k
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/channel
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/channel
 ```
 
 ### Example Response
@@ -142,7 +144,8 @@ Returns a list of user objects who are editors of `:channel`.
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/channels/test_user1/editors
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/channels/test_user1/editors
 ```
 
 ### Example Response
@@ -217,7 +220,9 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' -X PUT -d "channel[status]=Playing+cool+new+game!&channel[game]=Diablo" https://api.twitch.tv/kraken/channels/test_user1
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-d "channel[status]=Playing+cool+new+game!&channel[game]=Diablo" \
+-X PUT https://api.twitch.tv/kraken/channels/test_user1
 ```
 
 ### Example Response
@@ -270,7 +275,8 @@ Resets channel's stream key.
 ### Example Request
 
 ```bash
-curl -i -X DELETE https://api.twitch.tv/kraken/channels/test_user1/stream_key
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-X DELETE https://api.twitch.tv/kraken/channels/test_user1/stream_key
 ```
 
 ### Example Response
@@ -307,7 +313,8 @@ Start commercial on channel.
 ### Example Request
 
 ```bash
-curl -i -X POST -d "length=30" https://api.twitch.tv/kraken/channels/test_user1/commercial?oauth_token=[access token]
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-d "length=30" -X POST https://api.twitch.tv/kraken/channels/test_user1/commercial
 ```
 
 ### Example Response
