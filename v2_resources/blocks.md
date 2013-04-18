@@ -94,7 +94,7 @@ Adds `:target` to `:user`'s block list. `:user` is the authenticated user and `:
 ### Example Request
 
 ```bash
-curl -H 'Accept: application/vnd.twitchtv.v2.json' -H 'Authorization: OAuth d8444h1152j223wbph5ck2yqc8tkou8' \
+curl -H 'Accept: application/vnd.twitchtv.v2.json' -H 'Authorization: OAuth <access_token>' \
 -X PUT https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
 ```
 
@@ -131,7 +131,7 @@ Removes `:target` from `:user`'s block list. `:user` is the authenticated user a
 ### Example Request
 
 ```bash
-curl -H 'Accept: application/vnd.twitchtv.v2.json' -H 'Authorization: OAuth d8444h1152j223wbph5ck2yqc8tkou8' \
+curl -H 'Accept: application/vnd.twitchtv.v2.json' -H 'Authorization: OAuth <access_token>' \
 -X DELETE https://api.twitch.tv/kraken/users/test_user1/blocks/test_user_troll
 ```
 
