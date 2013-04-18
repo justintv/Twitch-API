@@ -15,7 +15,8 @@ Returns a list of ingest objects.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/ingests
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/ingests
 ```
 
 ### Example Response
