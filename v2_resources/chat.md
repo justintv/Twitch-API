@@ -18,7 +18,8 @@ Returns a links object to all other chat endpoints.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/chat/kraken_test_user
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/chat/kraken_test_user
 ```
 
 ### Example Response
@@ -40,7 +41,8 @@ Returns a list of all emoticon objects for Twitch.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/chat/emoticons
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/chat/emoticons
 ```
 
 ### Example Response
@@ -82,7 +84,8 @@ Returns a list of emoticon objects that can be used in the `:channel`'s chat.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/chat/test_user1/emoticons
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/chat/test_user1/emoticons
 ```
 
 ### Example Response
