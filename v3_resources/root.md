@@ -11,7 +11,8 @@ Basic information about the API and authentication status. If you are authentica
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken
+curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken
 ```
 
 ### Example Response
