@@ -52,7 +52,8 @@ Returns a list of stream objects matching the search query.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/search/streams?q=starcraft
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/search/streams?q=starcraft
 ```
 
 ### Example Response
@@ -151,7 +152,8 @@ Returns a list of game objects matching the search query.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/search/games?q=star&type=suggest
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/search/games?q=star&type=suggest
 ```
 
 ### Example Response
