@@ -22,7 +22,8 @@ Returns a stream object if live.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/streams/test_channel
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/streams/test_channel
 ```
 
 ### Example Response
@@ -151,7 +152,8 @@ Returns a list of stream objects that are queried by a number of parameters.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/streams?game=Diablo+III&channel=zisss,voyboy
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/streams?game=Diablo+III&channel=zisss,voyboy
 ```
 
 ### Example Response
@@ -255,7 +257,8 @@ Note that the number of promoted streams varies from day to day, and there is no
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/streams/featured
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/streams/featured
 ```
 
 ### Example Response
@@ -319,7 +322,8 @@ Returns a summary of current streams.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/streams/summary
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/streams/summary
 ```
 
 ### Example Response
