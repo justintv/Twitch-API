@@ -18,7 +18,8 @@ Returns a list of active teams.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/teams
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/teams
 ```
 
 ### Example Response
@@ -70,7 +71,8 @@ Returns a team object for `:team`.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/teams/eg
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/teams/eg
 ```
 
 ### Example Response
