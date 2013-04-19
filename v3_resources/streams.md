@@ -146,6 +146,12 @@ Returns a list of stream objects that are queried by a number of parameters.
             <td>bool</td>
             <td>If set to true, only returns streams using HLS</td>
         </tr>
+        <tr>
+            <td><code>client_id</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Only shows streams from applications of <code>client_id</code></td>
+        </tr>
     </tbody>
 </table>
 
