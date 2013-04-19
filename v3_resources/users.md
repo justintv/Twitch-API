@@ -22,7 +22,8 @@ Returns a user object.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/users/test_user1
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/test_user1
 ```
 
 ### Example Response
@@ -51,7 +52,8 @@ Returns a user object.
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/user
+curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/user
 ```
 
 ### Example Response
@@ -82,7 +84,8 @@ Returns a list of stream objects that the authenticated user is following.
 ### Example Request
 
 ```bash
-curl -i -H 'Authorization: OAuth [access token]' https://api.twitch.tv/kraken/streams/followed
+curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/streams/followed
 ```
 
 ### Example Response
