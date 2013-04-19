@@ -19,7 +19,8 @@ Returns a video object.
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/videos/a328087483
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/videos/a328087483
 ```
 
 ### Example Response
@@ -95,7 +96,8 @@ Returns a list of videos created in a given time period sorted by number of view
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&period=month
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&period=month
 ```
 
 ### Example Response
@@ -171,7 +173,8 @@ Returns an list of videos ordered by time of creation, starting with the most re
 ### Example Request
 
 ```bash
-curl -i https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
+curl -H 'Accept: application/vnd.twitchtv.v2+json' \
+-X GET https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
 ```
 
 ### Example Response
