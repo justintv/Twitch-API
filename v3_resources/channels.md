@@ -37,6 +37,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   "name": "test_user1",
   "game": "World of Warcraft: Cataclysm",
   "created_at": "2011-02-24T01:38:43Z",
+  "delay": 0,
   "teams": [{
     "name": "staff",
     "created_at": "2011-10-25T23:55:47Z",
@@ -92,6 +93,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
   "name": "test_user1",
   "stream_key": "live_21229404_abcdefg",
   "created_at": "2011-03-19T15:42:22Z",
+  "delay": 0,
   "title": "Cev",
   "updated_at": "2012-03-14T03:30:41Z",
   "teams": [{
@@ -203,6 +205,12 @@ Update channel's status or game.
             <td>string</td>
             <td>Game category to be classified as.</td>
         </tr>
+        <tr>
+            <td><code>delay</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Channel delay in seconds.</td>
+        </tr>
     </tbody>
 </table>
 
@@ -212,7 +220,8 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 {
   "channel": {
     "status": "Playing cool new game!",
-    "game": "Diablo"
+    "game": "Diablo",
+    "delay": 60
     }
 }
 ```
@@ -221,7 +230,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
--d "channel[status]=Playing+cool+new+game!&channel[game]=Diablo" \
+-d "channel[status]=Playing+cool+new+game!&channel[game]=Diablo&channel[delay]=0" \
 -X PUT https://api.twitch.tv/kraken/channels/test_user1
 ```
 
@@ -232,6 +241,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
   "name": "test_user1",
   "game": "Diablo",
   "created_at": "2011-02-24T01:38:43Z",
+  "delay": 0,
   "teams": [{
     "name": "staff",
     "created_at": "2011-10-25T23:55:47Z",
