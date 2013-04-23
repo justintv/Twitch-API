@@ -85,6 +85,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_background_image-21fffe7f0c309a23.jpeg",
       "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_header_image-4eb6147d464d9053-640x125.jpeg",
       "name": "test_channel",
+      "delay": 0,
       "url": "http://www.twitch.tv/test_channel",
       "game": "Magic: The Gathering"
     },
@@ -190,6 +191,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
         "game": "Diablo III",
         "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_header_image-997348d7f0658115-640x125.jpeg",
         "name": "zisss",
+        "delay": 0,
         "video_banner": null,
         "_links": {
           "chat": "https://api.twitch.tv/kraken/chat/zisss",
