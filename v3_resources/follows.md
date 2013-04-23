@@ -150,6 +150,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
         "video_banner": null,
         "display_name": "test_channel",
         "created_at": "2007-05-22T10:37:47Z",
+        "delay": 0,
         "game": null,
         "_links": {
           "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
@@ -202,6 +203,7 @@ Otherwise,
     "background": null,
     "updated_at": "2012-10-13T18:18:43Z",
     "banner": null,
+    "delay": 0,
     "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
     "url": "http://www.twitch.tv/test_channel",
     "_links": {
@@ -248,6 +250,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
     "teams": [],
     "background": null,
     "updated_at": "2012-10-13T18:18:43Z",
+    "delay": 0,
     "banner": null,
     "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-9bd02ad8f4f5bc97-300x300.jpeg",
     "_links": {
