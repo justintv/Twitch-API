@@ -80,6 +80,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
         "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/blade55555-channel_offline_image-3abeffa573a391d4-640x360.jpeg",
         "name": "blade55555",
         "banner": null,
+        "delay": 0,
         "background": null,
         "_links": {
           "editors": "https://api.twitch.tv/kraken/channels/blade55555/editors",
