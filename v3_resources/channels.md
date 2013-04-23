@@ -209,7 +209,7 @@ Update channel's status or game.
             <td><code>delay</code></td>
             <td>optional</td>
             <td>string</td>
-            <td>Channel delay in seconds.</td>
+            <td>Channel delay in seconds. Requires the channel owner's OAuth token.</td>
         </tr>
     </tbody>
 </table>
