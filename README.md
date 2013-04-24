@@ -104,7 +104,11 @@ When using JSON-P, the status code will always be `200` to allow browsers to par
 
 ### Rate Limits
 
-Please observe the rate limit of 1 request per second. This rate limit is not super strict, but we will blacklist abusers. If you feel like you have a legitimate reason to need a higher rate limit, please contact us for whitelisting.
+We require you to send your application's `client_id` with every request you make to ensure that your application is not rate limited. You should do so by sending the following HTTP header:
+
+```bash
+Client-ID: 2b5iktd3gk4ambzeelhe8mqarew6in
+```
 
 <a name="oauth"/>
 <a name="wiki-auth"/>
