@@ -38,7 +38,7 @@ A successful connection session will look something like this:
 > :tmi.twitch.tv 376 twitch_username :End of /MOTD command
 ```
 
-About once every five minutes, you will receive a `PONG channelname.jtvirc.com` from the server, in order to ensure that your connection to the server is not prematurely terminated, you should reply with `PING channelname.jtvirc.com`.
+About once every five minutes, you will receive a `PING channelname.jtvirc.com` from the server, in order to ensure that your connection to the server is not prematurely terminated, you should reply with `PONG channelname.jtvirc.com`.
 
 ## On an Unsuccessful Connection
 If your connection fails for any reason, you will be disconnected from the server. Some common reasons for being disconnected immediately include:
