@@ -70,7 +70,7 @@ Returns a list of videos created in a given time period sorted by number of view
             <td><code>limit</code></td>
             <td>optional</td>
             <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
+            <td>Maximum number of objects in array. Default is 10. Maximum is 100.</td>
         </tr>
         <tr>
             <td><code>offset</code></td>
