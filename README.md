@@ -224,3 +224,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [GET /channels/:channel/videos](/v2_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/56e6a90fa031ae920e36cf219184c33c "githalytics.com")](http://githalytics.com/justintv/Twitch-API)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/justintv/Twitch-API/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
