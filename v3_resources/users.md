@@ -23,7 +23,7 @@ Returns a user object.
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' \
--X GET https://api.twitch.tv/kraken/test_user1
+-X GET https://api.twitch.tv/kraken/users/test_user1
 ```
 
 ### Example Response
