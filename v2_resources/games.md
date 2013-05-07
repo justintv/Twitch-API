@@ -40,6 +40,12 @@ Returns a list of games objects sorted by number of current viewers on Twitch, m
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
+        <tr>
+            <td><code>hls</code></td>
+            <td>optional</td>
+            <td>bool</td>
+            <td>If set to true, only returns game objects with streams using HLS</td>
+        </tr>
     </tbody>
 </table>
 
