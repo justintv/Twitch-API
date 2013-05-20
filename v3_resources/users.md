@@ -83,6 +83,39 @@ Returns a list of stream objects that the authenticated user is following.
 
 *__Authenticated__*, required scope: `user_read`
 
+### Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th width=100%>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>limit</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Maximum number of objects in array. Default is 10. Maximum is 100.</td>
+        </tr>
+        <tr>
+            <td><code>offset</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Object offset for pagination. Default is 0.</td>
+        </tr>
+        <tr>
+            <td><code>hls</code></td>
+            <td>optional</td>
+            <td>bool</td>
+            <td>If set to true, only returns game objects with streams using HLS</td>
+        </tr>
+    </tbody>
+</table>
+
 ### Example Request
 
 ```bash
