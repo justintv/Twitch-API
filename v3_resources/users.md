@@ -99,7 +99,7 @@ Returns a list of stream objects that the authenticated user is following.
             <td><code>limit</code></td>
             <td>optional</td>
             <td>integer</td>
-            <td>Maximum number of objects in array. Default is 10. Maximum is 100.</td>
+            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
         </tr>
         <tr>
             <td><code>offset</code></td>
