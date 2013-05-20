@@ -39,7 +39,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   },
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-6947308654ad603f-300x300.jpeg",
   "_id": 21229404,
-  "display_name": "test_user1"
+  "display_name": "test_user1",
+  "bio": "test bio woo I'm a test user"
 }
 ```
 
@@ -71,7 +72,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
   "_id": 22761313,
   "display_name": "test_user1",
   "email": "asdf@asdf.com",
-  "partnered": true
+  "partnered": true,
+  "bio": "test bio woo I'm a test user"
 }
 ```
 
