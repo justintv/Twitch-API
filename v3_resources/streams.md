@@ -52,7 +52,6 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     "_links": {
       "self": "https://api.twitch.tv/kraken/streams/test_channel"
     },
-    "broadcaster": "test_user1",
     "preview": {
       "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_user1-320x200.jpg",
       "small": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_user1-80x50.jpg",
@@ -89,7 +88,6 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "url": "http://www.twitch.tv/test_channel",
       "game": "Magic: The Gathering"
     },
-    "name": "test_channel",
     "game": "Magic: The Gathering"
   }
 }
@@ -169,7 +167,6 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 {
   "streams": [
     {
-      "broadcaster": "fme",
       "_id": 5019229776,
       "preview": {
         "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-320x200.jpg",
@@ -206,7 +203,6 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
         },
         "created_at": "2012-07-01T21:09:58Z"
       },
-      "name": "live_user_zisss",
       "viewers": 775,
       "_links": {
         "self": "https://api.twitch.tv/kraken/streams/zisss"
