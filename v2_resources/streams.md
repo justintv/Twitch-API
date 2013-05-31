@@ -52,7 +52,7 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
     "_links": {
       "self": "https://api.twitch.tv/kraken/streams/test_channel"
     },
-    "broadcaster": "test_user1",
+    "broadcaster": "xsplit",
     "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-320x200.jpg",
     "_id": 4869165040,
     "viewers": 11754,
