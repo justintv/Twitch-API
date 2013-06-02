@@ -13,7 +13,7 @@ In order to connect to Twitch IRC, you must have two pieces of information:
 ## Connecting
 Once you have that information, you can then take it to connect to Twitch IRC with the following bits of information:
 
-- The server name to connect to is: *channellname*.jtvirc.com.
+- The server name to connect to is: *irc.twitch.tv*.
 - The port to connect to is *6667*.
 - SSL **is not** supported for Twitch IRC.
 - Your nickname must be your Twitch nickname
