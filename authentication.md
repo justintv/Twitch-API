@@ -78,7 +78,7 @@ Remember, you must keep your client secret _confidential_. Make sure to never ex
 <a name="implicit-grant"></a>
 #### Implicit Grant Flow
 
-The Implicit Grant Flow doesn't require a server that must make requests to the API, so you can use this flow only with JavaScript. If you're integrating Twitch into your website, you'll probably want to use the [Twitch JS SDK](https://github.com/justintv/twitch-js-sdk), which uses this flow and simplifies the integration.
+The Implicit Grant Flow doesn't require a server that must make requests to the API, so you can use this flow with JavaScript-only applications.. If you're integrating Twitch into your website, you'll probably want to use the [Twitch JS SDK](https://github.com/justintv/twitch-js-sdk), which uses this flow and simplifies the integration.
 
 
   1. Send the user you'd like to authenticate to this URL:
