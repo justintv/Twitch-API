@@ -46,6 +46,12 @@ Returns a list of stream objects matching the search query.
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
+        <tr>
+            <td><code>hls</code></td>
+            <td>optional</td>
+            <td>bool</td>
+            <td>If set to true, only returns streams using HLS</td>
+        </tr>
     </tbody>
 </table>
 
