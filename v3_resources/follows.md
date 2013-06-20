@@ -44,6 +44,12 @@ Returns a list of follow objects.
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
+        <tr>
+            <td><code>direction</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Creation date sorting direction. Default is <code>desc</code>. Valid values are <code>asc</code> and <code>desc</code>.</td>
+        </tr>
     </tbody>
 </table>
 
@@ -59,11 +65,12 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=25",
-    "self": "https://api.twitch.tv/kraken/channels/test_user1/follows?limit=25&offset=0"
+    "next": "https://api.twitch.tv/kraken/channels/test_user1/follows?direction=DESC&limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/channels/test_user1/follows?direction=DESC&limit=25&offset=0"
   },
   "follows": [
     {
+      "created_at": "2013-06-02T09:38:45Z",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/test_user2/follows/channels/test_user1"
       },
@@ -113,6 +120,12 @@ Returns a list of follows objects.
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
+        <tr>
+            <td><code>direction</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Creation date sorting direction. Default is <code>desc</code>. Valid values are <code>asc</code> and <code>desc</code>.</td>
+        </tr>
     </tbody>
 </table>
 
@@ -128,11 +141,12 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?limit=25&offset=25",
-    "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?limit=25&offset=0"
+    "next": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?direction=DESC&limit=25&offset=25",
+    "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?direction=DESC&limit=25&offset=0"
   },
   "follows": [
     {
+      "created_at": "2013-06-02T09:38:45Z",
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
       },
