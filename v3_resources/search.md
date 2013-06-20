@@ -50,7 +50,7 @@ Returns a list of stream objects matching the search query.
             <td><code>hls</code></td>
             <td>optional</td>
             <td>bool</td>
-            <td>If set to true, only returns streams using HLS</td>
+            <td>If set to true, only returns streams using HLS. If set to false, only returns streams that are non-HLS.</td>
         </tr>
     </tbody>
 </table>
