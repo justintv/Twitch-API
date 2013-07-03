@@ -9,6 +9,8 @@ Videos are broadcasts or chapters owned by a [channel][channels]. Broadcasts are
 | [GET /videos/:id](/v3_resources/videos.md#get-videosid) | Get video object|
 | [GET /videos/top](/v3_resources/videos.md#get-videostop) | Get top videos by number of views |
 | [GET /channels/:channel/videos](/v3_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
+| [GET /videos/followed](/v3_resources/videos.md#get-videosfollowed) | Get list of videos belonging to channels you follow |
+
 
 [channels]: /v3_resources/channels.md
 
@@ -213,6 +215,12 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   }
 }
 ```
+
+## `GET /videos/followed`
+
+[See the Users resource][users]
+
+[users]: /v3_resources/users.md
 
 ## Embedding
 
