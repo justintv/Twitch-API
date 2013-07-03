@@ -158,7 +158,7 @@ Returns a list of video objects from channels that the authenticated user is fol
             <td><code>limit</code></td>
             <td>optional</td>
             <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
+            <td>Maximum number of objects in array. Default is 10. Maximum is 100.</td>
         </tr>
         <tr>
             <td><code>offset</code></td>
@@ -181,8 +181,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
 ```json
 {
   "_links": {
-    "self": "https://api.twitch.tv/kraken/videos/followed?limit=25&offset=0",
-    "next": "https://api.twitch.tv/kraken/videos/followed?limit=25&offset=25"
+    "self": "https://api.twitch.tv/kraken/videos/followed?limit=10&offset=0",
+    "next": "https://api.twitch.tv/kraken/videos/followed?limit=10&offset=25"
   },
   "videos": [...]
 }
