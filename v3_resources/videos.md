@@ -9,7 +9,7 @@ Videos are broadcasts or chapters owned by a [channel][channels]. Broadcasts are
 | [GET /videos/:id](/v3_resources/videos.md#get-videosid) | Get video object|
 | [GET /videos/top](/v3_resources/videos.md#get-videostop) | Get top videos by number of views |
 | [GET /channels/:channel/videos](/v3_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
-| [GET /videos/followed](/v3_resources/videos.md#get-videosfollowed) | Get list of videos belonging to channels you follow |
+| [GET /videos/followed](/v3_resources/videos.md#get-videosfollowed) | Get list of videos belonging to channels user is  following |
 
 
 [channels]: /v3_resources/channels.md
