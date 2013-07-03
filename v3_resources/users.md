@@ -9,6 +9,7 @@ These are members of the Twitch community who have a Twitch account. If broadcas
 | [GET /users/:user](/v3_resources/users.md#get-usersuser) | Get user object |
 | [GET /user](/v3_resources/users.md#get-user) | Get user object |
 | [GET /streams/followed](/v3_resources/users.md#get-streamsfollowed) | Get list of streams user is following |
+| [GET /videos/followed](/v3_resources/users.md#get-videosfollowed) | Get list of videos belonging to channels user is following |
 
 [streams]: /v3_resources/streams.md
 [channels]: /v3_resources/channels.md
@@ -132,5 +133,57 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
     "next": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=25"
   },
   "streams": [...]
+}
+```
+
+## `GET /videos/followed`
+
+Returns a list of video objects from channels that the authenticated user is following.
+
+*__Authenticated__*, required scope: `user_read`
+
+### Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th width=100%>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>limit</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
+        </tr>
+        <tr>
+            <td><code>offset</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Object offset for pagination. Default is 0.</td>
+        </tr>
+    </tbody>
+</table>
+
+### Example Request
+
+```bash
+curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/videos/followed
+```
+
+### Example Response
+
+```json
+{
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/videos/followed?limit=25&offset=0",
+    "next": "https://api.twitch.tv/kraken/videos/followed?limit=25&offset=25"
+  },
+  "videos": [...]
 }
 ```
