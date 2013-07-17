@@ -124,6 +124,7 @@ When requesting authorization from users, the scope parameter allows you to spec
 - `channel_commercial`: Access to trigger commercials on channel.
 - `channel_stream`: Ability to reset a channel's stream key.
 - `channel_subscriptions`: Read access to all subscribers to your channel.
+- `user_subscriptions`: Read access to subscriptions of a user.
 - `channel_check_subscription`: Read access to check if a user is subscribed to your channel.
 - `chat_login`: Ability to log into chat and send messages.
 
