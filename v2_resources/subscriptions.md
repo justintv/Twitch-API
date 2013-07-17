@@ -191,3 +191,5 @@ If user is subscribed:
 ```
 
 `404 Not Found` if user is not subscribed.
+
+`422 Unprocessable Entity` if channel has no subscription program.
