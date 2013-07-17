@@ -8,6 +8,7 @@
 | ---- | --------------- |
 | [GET /channels/:channel/subscriptions](/v2_resources/subscriptions.md#get-channelschannelsubscriptions) | Get list of users subscribed to channel |
 | [GET /channels/:channel/subscriptions/:user](/v2_resources/subscriptions.md#get-channelschannelsubscriptionsuser) | Check if channel has user subscribed |
+| [GET /users/:user/subscriptions/:channel](/v2_resources/subscriptions.md#get-usersusersubscriptionschannel) | Check if user subscribes to channel |
 
 [users]: /v2_resources/users.md
 [channels]: /v2_resources/channels.md
@@ -128,6 +129,64 @@ If user is subscribed:
   "_links": {
     "self": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions/testuser"
   }
+}
+```
+
+`404 Not Found` if user is not subscribed.
+
+## `GET /users/:user/subscriptions/:channel`
+
+Returns a channel object that user subscribe to it. Requires authentication for `:user`.
+
+*__Authenticated__*, required scope: `user_subscriptions`
+
+### Example Request
+
+```bash
+curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/users/test_user/subscriptions/test_channel
+```
+
+### Example Response
+
+If user is subscribed:
+
+```json
+{
+    _links: {
+        self: "https://api.twitch.tv/kraken/users/test_user/subscriptions/test_channel"
+    },
+    channel: {
+        logo: "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-db450d501aa3e884-300x300.jpeg",
+        _links: {
+            subscriptions: "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
+            commercial: "https://api.twitch.tv/kraken/channels/test_channel/commercial",
+            editors: "https://api.twitch.tv/kraken/channels/test_channel/editors",
+            videos: "https://api.twitch.tv/kraken/channels/test_channel/videos",
+            stream_key: "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
+            follows: "https://api.twitch.tv/kraken/channels/test_channel/follows",
+            teams: "https://api.twitch.tv/kraken/channels/test_channel/teams",
+            self: "https://api.twitch.tv/kraken/channels/test_channel",
+            chat: "https://api.twitch.tv/kraken/chat/test_channel",
+            features: "https://api.twitch.tv/kraken/channels/test_channel/features"
+        },
+        updated_at: "2013-07-16T22:58:51Z",
+        background: null,
+        status: "Game Dev Tycoon Time!",
+        game: "Game Dev Tycoon",
+        profile_banner: null,
+        banner: null,
+        display_name: "test_channel",
+        _id: 188563,
+        url: "https://www.twitch.tv/test_channel",
+        video_banner: null,
+        delay: 0,
+        name: "test_channel",
+        mature: true,
+        created_at: "2007-11-29T05:17:53Z"
+    },
+    _id: "ba93ea2a1046081cf8621e3811b435c403479aa2",
+    created_at: "2013-07-16T21:46:27Z"
 }
 ```
 
