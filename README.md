@@ -126,7 +126,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | ---- | --------------- |
 | [GET /users/:login/blocks](/v2_resources/blocks.md#get-usersloginblocks) | Get user's block list |
 | [PUT /users/:user/blocks/:target](/v2_resources/blocks.md#put-usersuserblockstarget) | Update user's block list |
-| [DELETE /users/:user/blocks/:target](/v2_resources/blocks.md#delete-usersuserblockstarget) | Update user's block list |
+| [DELETE /users/:user/blocks/:target](/v2_resources/blocks.md#delete-usersuserblockstarget) | Delete target from user's block list |
 
 ### [Channels](/v2_resources/channels.md)
 
