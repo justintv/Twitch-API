@@ -91,7 +91,7 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
 
 ## `GET /streams`
 
-Returns a list of stream objects that are queried by a number of parameters.
+Returns a list of stream objects that are queried by a number of parameters sorted by number of viewers descending.
 
 ### Parameters
 
