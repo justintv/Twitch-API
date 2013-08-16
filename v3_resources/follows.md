@@ -64,6 +64,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 
 ```json
 {
+  "_total": 1234,
   "_links": {
     "next": "https://api.twitch.tv/kraken/channels/test_user1/follows?direction=DESC&limit=25&offset=25",
     "self": "https://api.twitch.tv/kraken/channels/test_user1/follows?direction=DESC&limit=25&offset=0"
