@@ -11,15 +11,26 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
     <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
-      $( function() {
+      $(function () {
         window.onPlayerLoad = function () {
-        var player = $("#twitch_embed_player")[0];
-        player.playVideo();
-        player.pauseVideo();
-        player.mute();
-        player.unmute();
+          var player = $("#twitch_embed_player")[0];
+          player.playVideo();
+          player.pauseVideo();
+          player.mute();
+          player.unmute();
         };
-        swfobject.embedSWF("https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "100%", "100%", "11", null, {"loadCallback":"onPlayerLoad","hostname":"www.twitch.tv","publisherGuard":null,"hide_chat":"true","publisherTimezoneOffset":-240,"channel":"chaoxlol","auto_play":"true"}, {"allowScriptAccess":"always","allowNetworking":"all","wmode":"opaque","allowFullScreen":"true"});
+        swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "100%", "100%", "11", null,
+          { "loadCallback":"onPlayerLoad",
+            "hostname":"www.twitch.tv",
+            "publisherGuard":null,
+            "hide_chat":"true",
+            "publisherTimezoneOffset":-240,
+            "channel":"chaoxlol",
+            "auto_play":"true"},
+          { "allowScriptAccess":"always",
+            "allowNetworking":"all",
+            "wmode":"opaque",
+            "allowFullScreen":"true"});
       });
     </script>
   </head>
