@@ -15,21 +15,14 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
         window.onPlayerLoad = function () {
           var player = $("#twitch_embed_player")[0];
           player.playVideo();
-          player.pauseVideo();
           player.mute();
-          player.unmute();
         };
-        swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "100%", "100%", "11", null,
+        swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
           { "loadCallback":"onPlayerLoad",
-            "hostname":"www.twitch.tv",
-            "publisherGuard":null,
-            "hide_chat":"true",
-            "publisherTimezoneOffset":-240,
+            "embed":1,
             "channel":"chaoxlol",
             "auto_play":"true"},
           { "allowScriptAccess":"always",
-            "allowNetworking":"all",
-            "wmode":"opaque",
             "allowFullScreen":"true"});
       });
     </script>
@@ -66,6 +59,18 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
         <tr>
             <td><code>unmute</code></td>
             <td>Unmutes the player.</td>
+        </tr>
+        <tr>
+            <td><code>onlineStatus</code></td>
+            <td>Returns the online status of the loaded stream. Values are <code>online</code>, <code>offline</code>, or <code>unknown</code>.</td>
+        </tr>
+        <tr>
+            <td><code>loadStream</code></td>
+            <td>Loads a given stream. Parameter is a string.</td>
+        </tr>
+        <tr>
+            <td><code>loadVideo</code></td>
+            <td>Loads a given video. Parameter is the video id.</td>
         </tr>
     </tbody>
 </table>
