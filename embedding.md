@@ -38,6 +38,21 @@ Here are the embed codes and parameters you might need to integrate streams, vid
 <object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=hebo" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=hebo&auto_play=true&start_volume=25" /></object>
 ```
 
+### HTML5 Streams Player
+
+#### Parameters
+- `height`  : Player height. Default is 378.
+- `width`   : Player width. Default is 620.
+- `channel` : Channel to show.
+
+#### Code
+
+```html
+<iframe id="player" type="text/html" width="620" height="378"
+  src="http://www.twitch.tv/{CHANNEL}/hls"
+  frameborder="0"></iframe>
+```
+
 ### Videos
 
 #### Parameters
