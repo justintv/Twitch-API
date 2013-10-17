@@ -18,9 +18,9 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
           player.mute();
         };
         swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
-          { "loadCallback":"onPlayerLoad",
+          { "initCallback":"onPlayerLoad",
             "embed":1,
-            "channel":"chaoxlol",
+            "channel":"day9tv",
             "auto_play":"true"},
           { "allowScriptAccess":"always",
             "allowFullScreen":"true"});
