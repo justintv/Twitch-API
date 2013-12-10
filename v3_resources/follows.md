@@ -125,7 +125,13 @@ Returns a list of follows objects.
             <td><code>direction</code></td>
             <td>optional</td>
             <td>string</td>
-            <td>Creation date sorting direction. Default is <code>desc</code>. Valid values are <code>asc</code> and <code>desc</code>.</td>
+            <td>Sorting direction. Default is <code>desc</code>. Valid values are <code>asc</code> and <code>desc</code>.</td>
+        </tr>
+        <tr>
+            <td><code>sortby</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Sort key. Default is <code>created_at</code>. Valid values are <code>created_at</code> and <code>last_broadcast</code>.</td>
         </tr>
     </tbody>
 </table>
