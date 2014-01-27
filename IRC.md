@@ -70,10 +70,10 @@ After a successful JOIN, the following will take place:
 > 353: = #channelname nickname nickname2 nickname3 nickname4 anotherNickname
 > 353: = #channelname nickname25 nickname26 nicknameN
 > 366: #channelname End of /NAMES list
-> jtv MODE #ignproleague +o channel_moderator
-> jtv MODE #ignproleague +o channel_moderator2
-> jtv MODE #ignproleague +o staff_user
-> jtv MODE #ignproleague +o twitch_global_mod_user
+> jtv MODE #channelname +o channel_moderator
+> jtv MODE #channelname +o channel_moderator2
+> jtv MODE #channelname +o staff_user
+> jtv MODE #channelname +o twitch_global_mod_user
 ```
 ### PART: Leaving a chat room
 **PART** *#channelname*
