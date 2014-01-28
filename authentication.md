@@ -10,7 +10,7 @@ When working with the Twitch API, you must follow some simple rules to protect u
 
 ### Developer Setup
 
-To make an application that uses the Twitch API, you will first need to create a "Developer Application" from the [applications tab][] of your Twitch settings page. When creating this app, you'll need to enter in your __redirect URI__, which is where users are redirected after having authorized your application.
+To make an application that uses the Twitch API, you will first need to "Register your application" from the [connections tab][] of your Twitch settings page. When creating this app, you'll need to enter in your __redirect URI__, which is where users are redirected after having authorized your application.
 
 Once you create a Developer Application, you are assigned a __client id__. Some authentication flows also require a __client secret__. You can generate one on the same page as the client ID. Client IDs are public and can be shared (e.g. embedded in the source of a web page), but client secrets are equivalent to a password for your application and must be kept _confidential_.
 
@@ -18,7 +18,7 @@ Once you create a Developer Application, you are assigned a __client id__. Some 
 
 When authenticating on behalf of a user, you'll be granted an __access token__ that uniquely identifies to us your client and the user. There are a few ways to obtain access tokens, which are described below. An access token has an associated list of [scopes](#scope) that determine what permissions you are allowed on behalf of the authorized Twitch user.
 
-[Applications tab]: http://www.twitch.tv/settings?section=applications
+[Connections tab]: http://www.twitch.tv/settings/connections
 
 
 ### Getting access tokens
