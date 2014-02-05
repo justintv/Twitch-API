@@ -105,7 +105,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     "self": "https://api.twitch.tv/kraken/search/channels?limit=10&offset=0&q=starcraft", 
     "next": "https://api.twitch.tv/kraken/search/channels?limit=10&offset=10&q=starcraft"
   }
-}```
+}
+```
 
 ### Errors
 
