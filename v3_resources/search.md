@@ -2,15 +2,114 @@
 
 ***
 
-Search for [streams][streams] or [games][games] with queries.
+Search for [channels][channels], [streams][streams] or [games][games] with queries.
 
 | Endpoint | Description |
 | ---- | --------------- |
+| [GET /search/channels](/v3_resources/search.md#get-searchchannels) | Find channels |
 | [GET /search/streams](/v3_resources/search.md#get-searchstreams) | Find streams |
 | [GET /search/games](/v3_resources/search.md#get-searchgames) | Find games |
 
+[channels]: /v3_resources/channels.md
 [streams]: /v3_resources/streams.md
 [games]: /v3_resources/games.md
+
+## `GET /search/channels`
+
+Returns a list of channel objects matching the search query.
+
+### Parameters
+
+<table width=100%>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>query</code> or <code>q</code></td>
+            <td>required</td>
+            <td>string</td>
+            <td>A url-encoded search query.</td>
+        </tr>
+        <tr>
+            <td><code>limit</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
+        </tr>
+        <tr>
+            <td><code>offset</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Object offset for pagination. Default is 0.</td>
+        </tr>
+    </tbody>
+</table>
+
+### Example Request
+
+```bash
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/search/channels?q=starcraft
+```
+
+### Example Response
+
+```json
+{
+  "channels": [
+    {
+      "updated_at": "2013-12-25T15:18:23Z", 
+      "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/starcrafttv2013-channel_offline_image-16ceb6186030f1a8-640x360.jpeg", 
+      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/starcrafttv2013-profile_image-1c30dd07717a3007-300x300.jpeg", 
+      "display_name": "Starcrafttv2013", 
+      "delay": 0, 
+      "followers": 1216, 
+      "_links": {
+        "videos": "https://api.twitch.tv/kraken/channels/starcrafttv2013/videos", 
+        "features": "https://api.twitch.tv/kraken/channels/starcrafttv2013/features", 
+        "stream_key": "https://api.twitch.tv/kraken/channels/starcrafttv2013/stream_key", 
+        "subscriptions": "https://api.twitch.tv/kraken/channels/starcrafttv2013/subscriptions", 
+        "follows": "https://api.twitch.tv/kraken/channels/starcrafttv2013/follows", 
+        "self": "https://api.twitch.tv/kraken/channels/starcrafttv2013", 
+        "commercial": "https://api.twitch.tv/kraken/channels/starcrafttv2013/commercial", 
+        "editors": "https://api.twitch.tv/kraken/channels/starcrafttv2013/editors", 
+        "teams": "https://api.twitch.tv/kraken/channels/starcrafttv2013/teams", 
+        "chat": "https://api.twitch.tv/kraken/chat/starcrafttv2013"
+      }, 
+      "status": "Star TV\u5373\u5c07\u66ab\u505c\u4e00\u6bb5\u6642\u9593", 
+      "primary_team_name": null, 
+      "views": 80334, 
+      "abuse_reported": null, 
+      "game": "StarCraft II: Heart of the Swarm", 
+      "background": null, 
+      "banner": null, 
+      "name": "starcrafttv2013", 
+      "url": "http://www.twitch.tv/starcrafttv2013", 
+      "created_at": "2013-10-07T15:00:40Z", 
+      "primary_team_display_name": null, 
+      "mature": false, 
+      "profile_banner_background_color": null, 
+      "_id": 49902474, 
+      "profile_banner": null
+    }, 
+    ...
+  ], 
+  "_total": 42679, 
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/search/channels?limit=10&offset=0&q=starcraft", 
+    "next": "https://api.twitch.tv/kraken/search/channels?limit=10&offset=10&q=starcraft"
+  }
+}```
+
+### Errors
+
+`503 Service Unavailable` if unable to retrieve search results.
 
 ## `GET /search/streams`
 
