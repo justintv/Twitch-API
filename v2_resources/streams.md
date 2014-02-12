@@ -115,7 +115,7 @@ Returns a list of stream objects that are queried by a number of parameters sort
             <td><code>channel</code></td>
             <td>optional</td>
             <td>string</td>
-            <td>Streams from a comma separated list of channels.</td>
+            <td>Streams from a comma separated list of channels. Names are case sensitive.</td>
         </tr>
         <tr>
             <td><code>limit</code></td>
@@ -271,7 +271,7 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
   ]
 }
 ```
-    
+
 ## `GET /streams/summary`
 
 Returns a summary of current streams.
