@@ -51,23 +51,13 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
     "stream_key":"https://api.twitch.tv/kraken/channels/test_user1/stream_key",
     "features":"https://api.twitch.tv/kraken/channels/test_user1/features",
     "subscriptions":"https://api.twitch.tv/kraken/channels/test_user1/subscriptions",
-    "editors":"https://api.twitch.tv/kraken/channels/test_user1/editors",
-    "teams":"https://api.twitch.tv/kraken/channels/test_user1/teams"
+    "editors":"https://api.twitch.tv/kraken/channels/test_user1/editors"
   },
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png",
   "_id": 20694610,
   "mature": true,
   "url": "http://www.twitch.tv/test_user1",
-  "display_name": "test_user1",
-  "status": "Daily World of Warcraft streams.",
-  "delay": 0,
-  "abuse_reported": null,
-  "primary_team_name": null,
-  "primary_team_display_name": null,
-  "profile_banner": null,
-  "profile_banner_background_color": null,
-  "views": 1337,
-  "followers": 1337
+  "display_name": "test_user1"
 }
 ```
 
