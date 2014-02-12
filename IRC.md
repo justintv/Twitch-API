@@ -5,10 +5,11 @@ Twitch offers an IRC interface to its chat. This allows for people to do things 
 Lines prefixed with < are sent from client to server, and lines prefixed with > are sent from the server to the connecting client.
 
 ## Prerequisites
-In order to connect to Twitch IRC, you must have two pieces of information:
+In order to connect to Twitch IRC, you must have three pieces of information:
 
 1. The name of channel that you want to join.
 2. A Twitch account.
+3. Oauth token from API or from a site using it: www.twitchapps.com/tmi 
 
 ## Connecting
 Once you have that information, you can then take it to connect to Twitch IRC with the following bits of information:
@@ -33,7 +34,7 @@ A successful connection session will look something like this:
 > :tmi.twitch.tv 376 twitch_username :End of /MOTD command
 ```
 
-About once every five minutes, you will receive a `PING channelname.jtvirc.com` from the server, in order to ensure that your connection to the server is not prematurely terminated, you should reply with `PONG channelname.jtvirc.com`.
+About once every five minutes, you will receive a `PING tmi.twitch.tv` from the server, in order to ensure that your connection to the server is not prematurely terminated, you should reply with `PONG tmi.twitch.tv`.
 
 ## On an Unsuccessful Connection
 If your connection fails for any reason, you will be disconnected from the server. Some common reasons for being disconnected immediately include:
@@ -41,6 +42,9 @@ If your connection fails for any reason, you will be disconnected from the serve
 - Connecting on the wrong port
 - Connecting to the wrong server
 - Using an incorrect username and/or password
+ 
+## Command & Message Limit
+- If you send more than 20 commands or messages to the server within a 30 second period, you will get locked out for 8 hours automatically. These are **not** lifted so please be careful when working with IRC!
 
 ## Commands you can send
 If you send an invalid command, you will receive a 421 numeric back:
@@ -55,9 +59,7 @@ A brief list of commands supported by our IRC server include:
 
 Notes:
 
-- You should not JOIN any chat room other than the one which you are connected to the server of.
-- See [Further Notes](https://github.com/justintv/Twitch-API/blob/master/IRC.md#further-notes-about-lists-of-users) for more information
-- After a successful JOIN, the following will take place:
+After a successful JOIN, the following will take place:
 
 1. You will be sent a list of users that are currently in the channel.
 2. A number of MODEs will be set from the **jtv** user to signify that a user can moderate chat. Users that can moderate chat are are defined as *Channel Moderators*, *Admin*'s and *Staff*.
@@ -68,10 +70,10 @@ Notes:
 > 353: = #channelname nickname nickname2 nickname3 nickname4 anotherNickname
 > 353: = #channelname nickname25 nickname26 nicknameN
 > 366: #channelname End of /NAMES list
-> jtv MODE #ignproleague +o ignproleague
-> jtv MODE #ignproleague +o ravager01
-> jtv MODE #ignproleague +o mirhi
-> jtv MODE #ignproleague +o zadr
+> jtv MODE #channelname +o channel_moderator
+> jtv MODE #channelname +o channel_moderator2
+> jtv MODE #channelname +o staff_user
+> jtv MODE #channelname +o twitch_global_mod_user
 ```
 ### PART: Leaving a chat room
 **PART** *#channelname*
