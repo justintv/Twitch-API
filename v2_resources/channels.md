@@ -37,20 +37,6 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
   "name": "test_user1",
   "game": "World of Warcraft: Cataclysm",
   "created_at": "2011-02-24T01:38:43Z",
-  "teams": [{
-    "name": "staff",
-    "created_at": "2011-10-25T23:55:47Z",
-    "updated_at": "2011-11-14T19:48:21Z",
-    "background": null,
-    "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-banner_image-1e028d6b6aec8e6a-640x125.jpeg",
-    "logo": null,
-    "_links": {
-      "self": "https://api.twitch.tv/kraken/teams/staff"
-    },
-    "_id": 10,
-    "info": "We save the world..",
-    "display_name": "TwitchTV Staff"
-  }],
   "title": "test_user1",
   "updated_at": "2012-06-18T05:22:53Z",
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
@@ -60,8 +46,12 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
     "self": "https://api.twitch.tv/kraken/channels/test_user1",
     "chat": "https://api.twitch.tv/kraken/chat/test_user1",
     "videos": "https://api.twitch.tv/kraken/channels/test_user1/videos",
-    "video_status": "https://api.twitch.tv/kraken/channels/test_user1/video_status",
-    "commercial": "https://api.twitch.tv/kraken/channels/test_user1/commercial"
+    "commercial": "https://api.twitch.tv/kraken/channels/test_user1/commercial",
+    "follows":"https://api.twitch.tv/kraken/channels/test_user1/follows",
+    "stream_key":"https://api.twitch.tv/kraken/channels/test_user1/stream_key",
+    "features":"https://api.twitch.tv/kraken/channels/test_user1/features",
+    "subscriptions":"https://api.twitch.tv/kraken/channels/test_user1/subscriptions",
+    "editors":"https://api.twitch.tv/kraken/channels/test_user1/editors"
   },
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png",
   "_id": 20694610,

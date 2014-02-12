@@ -201,7 +201,7 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
           "views": 1,
           "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296529186-320x240.jpg",
           "length": 23,
-          "game": "Team Fortress 2"
+          "game": "Team Fortress 2",
           "description": null
       },
       {
