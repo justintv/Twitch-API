@@ -165,6 +165,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 
 ```json
 {
+  "_total": 12345,
   "streams": [
     {
       "_id": 5019229776,
