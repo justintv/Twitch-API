@@ -132,6 +132,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
     "self": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=0",
     "next": "https://api.twitch.tv/kraken/streams/followed?limit=25&offset=25"
   },
+  "_total": 123,
   "streams": [...]
 }
 ```
