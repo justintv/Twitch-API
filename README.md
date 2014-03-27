@@ -110,6 +110,10 @@ We require you to send your application's `client_id` with every request you mak
 Client-ID: <client_id>
 ```
 
+### Terms of Service
+
+Please review our [Terms of Service](http://www.twitch.tv/user/legal?page=api_terms_of_service) for the Twitch API.
+
 <a name="oauth"/>
 <a name="wiki-auth"/>
 ## Authentication 
