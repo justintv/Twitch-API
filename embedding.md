@@ -61,6 +61,7 @@ Here are the embed codes and parameters you might need to integrate streams, vid
 - `channel` : Channel that video belongs to.
 - `chapter_id` : Chapter ID of the video.
 - `volume`  : Player volume ranging from 0 to 50. Default is 25.
+- `initial_time` : Start time in seconds.
 
 #### Code
 
