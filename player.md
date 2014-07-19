@@ -14,12 +14,12 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
       $(function () {
         window.onPlayerEvent = function (data) {
           data.forEach(function(event) {
-    				if (event.event == "playerInit") {
-    					var player = $("#live_embed_player")[0];
-    					player.playVideo();
-    					player.mute();
-    				}
-    			});
+            if (event.event == "playerInit") {
+              var player = $("#live_embed_player")[0];
+              player.playVideo();
+              player.mute();
+            }
+        });
         
         swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
           { "eventsCallback":"onPlayerEvent",
