@@ -12,13 +12,17 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
       $(function () {
-        window.onPlayerLoad = function () {
-          var player = $("#twitch_embed_player")[0];
-          player.playVideo();
-          player.mute();
-        };
+        window.onPlayerEvent = function (data) {
+          data.forEach(function(event) {
+            if (event.event == "playerInit") {
+              var player = $("#live_embed_player")[0];
+              player.playVideo();
+              player.mute();
+            }
+        });
+        
         swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
-          { "initCallback":"onPlayerLoad",
+          { "eventsCallback":"onPlayerEvent",
             "embed":1,
             "channel":"day9tv",
             "auto_play":"true"},
