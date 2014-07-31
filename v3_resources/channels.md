@@ -52,7 +52,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     "info": "We save the world..",
     "display_name": "TwitchTV Staff"
   }],
-  "title": "test_user1",
+  "status": "test_user1",
   "updated_at": "2012-06-18T05:22:53Z",
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
   "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
@@ -94,7 +94,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
   "stream_key": "live_21229404_abcdefg",
   "created_at": "2011-03-19T15:42:22Z",
   "delay": 0,
-  "title": "Cev",
+  "status": "Cev",
   "updated_at": "2012-03-14T03:30:41Z",
   "teams": [{
     "name": "staff",
@@ -256,7 +256,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
     "info": "We save the world..",
     "display_name": "TwitchTV Staff"
   }],
-  "title": "Playing cool new game!",
+  "status": "Playing cool new game!",
   "updated_at": "2012-06-18T05:22:53Z",
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
   "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
