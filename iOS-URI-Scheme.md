@@ -26,13 +26,3 @@ To open the app up to a live stream, specify the name in the URL, eg:
     twitch://stream/hebo
 
 This URI was first introduced in Twitch for iOS 2.0.
-
-### Games
-To open the app up to a list of games, specify the game name as a a percent-encoded string in the URI, eg:
-
-    twitch://game/Minecraft
-    twitch://game/Starcraft%20II%3a%20Wings%20of%20Liberty
-
-This URI was first introduced in Twitch for iOS 2.0.6.
-
-This URI was first introduced in Twitch for iOS 2.1.1.
