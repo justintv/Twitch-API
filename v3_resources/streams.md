@@ -60,6 +60,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     },
     "_id": 4869165040,
     "viewers": 11754,
+    "created_at": "2014-09-12T02:03:17Z",
     "channel": {
       "display_name": "test_channel",
       "_links": {
@@ -205,6 +206,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
         "created_at": "2012-07-01T21:09:58Z"
       },
       "viewers": 775,
+      "created_at": "2014-09-12T02:03:17Z",
       "_links": {
         "self": "https://api.twitch.tv/kraken/streams/zisss"
       }
