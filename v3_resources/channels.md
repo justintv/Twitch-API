@@ -14,6 +14,7 @@ Channels serve as the home location for a [user's][users] content. Channels have
 | [GET /channels/:channel/follows](/v3_resources/channels.md#get-channelschannelfollows) | Get channel's list of following users |
 | [DELETE /channels/:channel/stream_key](/v3_resources/channels.md#delete-channelschannelstream_key) | Reset channel's stream key |
 | [POST /channels/:channel/commercial](/v3_resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
+| [GET /channels/:channel/teams](/v3_resources/channels.md#get-channelschannelteams) | Get list of teams channel belongs to |
 
 [users]: /v3_resources/users.md
 [streams]: /v3_resources/streams.md
@@ -334,3 +335,41 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
 ### Errors
 
 `422 Unprocessable Entity` if commercial length not allowed.
+
+## `GET /channels/:channel/teams`
+
+Returns a list of team objects `:channel` belongs to.
+
+### Example Request
+
+```bash
+curl -H 'Accept: application/vnd.twitchtv.v3+json' \
+-X GET https://api.twitch.tv/kraken/channels/test_user1/teams
+```
+
+### Example Response
+
+```json
+{
+  "_links": {
+    "self": "http://api.twitch.tv/kraken/channels/test_user1/teams"
+  },
+  "teams": [
+    {
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/teams/staff"
+      },
+      "_id": 10,
+      "name": "staff",
+      "info": "We save the world..\n\n\n",
+      "display_name": "Twitch Staff",
+      "created_at": "2011-10-25T23:55:47Z",
+      "updated_at": "2013-05-24T00:17:12Z",
+      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-team_logo_image-e26f89ac4f424216-300x300.png",
+      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-banner_image-c81e25b281c06e8f-640x125.png",
+      "background": null
+    },
+    ...
+  ]
+}
+```
