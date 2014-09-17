@@ -316,7 +316,7 @@ Start commercial on channel.
             <td><code>length</code></td>
             <td>optional</td>
             <td>integer</td>
-            <td>Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, or 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
+            <td>Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150 or 180. You can only trigger a commercial once every 8 minutes.</td>
         </tr>
     </tbody>
 </table>
