@@ -87,7 +87,7 @@ The Implicit Grant Flow doesn't require a server that must make requests to the 
             ?response_type=token
             &client_id=[your client ID]
             &redirect_uri=[your registered redirect URI]
-            &scope=[space separated list of scopes
+            &scope=[space separated list of scopes]
 
       This page will ask the user to sign up or log in with their Twitch account, and allow them to choose whether to authorize your application.
       
