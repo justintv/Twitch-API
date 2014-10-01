@@ -23,11 +23,10 @@ When authenticating on behalf of a user, you'll be granted an __access token__ t
 
 ### Getting access tokens
 
-There are three ways to get an access token:
+There are two ways to get an access token:
 
   1. If you're making a web app that uses a server, you will probably want to use the [Authorization Code Flow](#auth-code).
   2. If you are making an app that doesn't use a server, such as a client-side JavaScript app or a mobile app, you'll use the [Implicit Grant Flow](#implicit-grant).
-  3. If you're making a native app or are in a situation where it's very difficult to use a web browser, you may use the [Password Credentials Grant Flow](#password-credentials-grant).
 
 <a name="auth-code"></a>
 #### Authorization Code Flow
@@ -102,13 +101,6 @@ The Implicit Grant Flow doesn't require a server that must make requests to the 
 
 That's it! Your application can now make requests on behalf of the user by including your access token as specified in [Authenticated Requests](#authenticated-requests).
 
-<a name="password-credentials-grant"/>
-#### Password Credentials Grant Flow
-  
-If you're building a native app that cannot use a web browser, the [Password Credentials Grant Flow][] might be appropriate. Due to the sensitive nature of user credentials, you must follow some additional rules and restrictions, detailed on the [Password Credentials Grant Flow][] page.
-
-[Password Credentials Grant Flow]: password-credentials.md
-  
 <a name="scope"></a>
 
 ### Scopes
