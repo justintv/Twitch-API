@@ -248,7 +248,7 @@ Otherwise,
 
 Adds `:user` to `:target`'s followers. `:user` is the authenticated user's name and `:target` is the name of the channel to be followed.
 
-*__Authenticated__*, require scope: `user_follows_edit`
+*__Authenticated__*, required scope: `user_follows_edit`
 
 ### Example Request
 

@@ -112,7 +112,7 @@ Returns a list of stream objects that the authenticated user is following.
             <td><code>hls</code></td>
             <td>optional</td>
             <td>bool</td>
-            <td>If set to true, only returns game objects with streams using HLS</td>
+            <td>If set to true, only returns game objects with streams using HLS.</td>
         </tr>
     </tbody>
 </table>
