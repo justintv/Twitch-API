@@ -135,7 +135,7 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
 
 ## `GET /channels/:channel/videos`
 
-Returns an list of videos ordered by time of creation, starting with the most recent from `:channel`.
+Returns a list of videos ordered by time of creation, starting with the most recent from `:channel`.
 
 ### Parameters
 

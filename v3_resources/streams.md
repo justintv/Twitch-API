@@ -138,19 +138,19 @@ Returns a list of stream objects that are queried by a number of parameters sort
             <td><code>embeddable</code></td>
             <td>optional</td>
             <td>bool</td>
-            <td>If set to true, only returns streams that can be embedded</td>
+            <td>If set to true, only returns streams that can be embedded.</td>
         </tr>
         <tr>
             <td><code>hls</code></td>
             <td>optional</td>
             <td>bool</td>
-            <td>If set to true, only returns streams using HLS</td>
+            <td>If set to true, only returns streams using HLS.</td>
         </tr>
         <tr>
             <td><code>client_id</code></td>
             <td>optional</td>
             <td>string</td>
-            <td>Only shows streams from applications of <code>client_id</code></td>
+            <td>Only shows streams from applications of <code>client_id</code>.</td>
         </tr>
     </tbody>
 </table>
@@ -254,7 +254,7 @@ Returns a list of featured (promoted) stream objects.
             <td><code>hls</code></td>
             <td>optional</td>
             <td>bool</td>
-            <td>If set to true, only returns streams using HLS</td>
+            <td>If set to true, only returns streams using HLS.</td>
         </tr>
     </tbody>
 </table>
