@@ -36,7 +36,9 @@ application/json
 
 Specify a specific version (v2):
 
-    curl -i -H 'Accept: application/vnd.twitchtv.v2+json' 'https://api.twitch.tv/kraken/channels/hebo?client_id=axjhfp777tflhy0yjb5sftsil' 
+    curl -i -H 'Accept: application/vnd.twitchtv.v2+json'\
+    -H 'Client-ID: axjhfp777tflhy0yjb5sftsil'\
+    'https://api.twitch.tv/kraken/channels/hebo' 
     
     HTTP/1.1 200 OK
     ...
