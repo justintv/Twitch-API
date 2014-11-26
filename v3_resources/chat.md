@@ -51,7 +51,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 {
   "_links": {
     "self": "https://api.twitch.tv/kraken/chat/emoticons"
-  }
+  },
   "emoticons": [
     {
       "regex": "\:-?\(",
