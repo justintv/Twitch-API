@@ -15,7 +15,7 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
         window.onPlayerEvent = function (data) {
           data.forEach(function(event) {
             if (event.event == "playerInit") {
-              var player = $("#live_embed_player")[0];
+              var player = $("#twitch_embed_player")[0];
               player.playVideo();
               player.mute();
             }
