@@ -80,6 +80,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-1806cdccb1108442-300x300.jpeg",
       "updated_at": "2013-02-15T15:22:24Z",
       "mature": null,
+      "partner": false,
       "video_banner": null,
       "_id": 26991613,
       "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_background_image-21fffe7f0c309a23.jpeg",
@@ -179,6 +180,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "game": "Diablo III",
       "channel": {
         "mature": null,
+        "partner": false,
         "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_background_image-06a9d8c1113e5b45.jpeg",
         "updated_at": "2013-03-04T05:27:27Z",
         "_id": 31795858,
