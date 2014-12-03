@@ -74,7 +74,11 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
   "display_name": "test_user1",
   "email": "asdf@asdf.com",
   "partnered": true,
-  "bio": "test bio woo I'm a test user"
+  "bio": "test bio woo I'm a test user",
+  "notifications": {
+    "email": true,
+    "push": false
+  }
 }
 ```
 
