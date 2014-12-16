@@ -75,6 +75,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/test_user2/follows/channels/test_user1"
       },
+      "notifications": true,
       "user": {
         "_links": {
           "self": "https://api.twitch.tv/kraken/users/test_user2"
@@ -157,6 +158,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "_links": {
         "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
       },
+      "notifications": true,
       "channel": {
         "banner": null,
         "_id": 1,
@@ -216,6 +218,7 @@ Otherwise,
   "_links": {
     "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
   },
+  "notifications": true,
   "channel": {
     "name": "test_channel",
     "game": null,
@@ -264,6 +267,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
   "_links": {
     "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
   },
+  "notifications": true,
   "channel": {
     "name": "test_channel",
     "game": null,
