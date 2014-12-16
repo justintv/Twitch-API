@@ -19,7 +19,8 @@ We expose a Javascript API for our flash Twitch player that gives flexibility an
               player.playVideo();
               player.mute();
             }
-        });
+          });
+        }
         
         swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
           { "eventsCallback":"onPlayerEvent",
