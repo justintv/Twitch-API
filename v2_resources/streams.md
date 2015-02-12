@@ -74,10 +74,12 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
       "created_at": "2011-12-23T18:03:44Z",
       "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-1806cdccb1108442-300x300.jpeg",
       "updated_at": "2013-02-15T15:22:24Z",
-      "mature": null,
+      "mature": false,
+      "partner": true,
+      "broadcaster_language": "en",
       "video_banner": null,
       "_id": 26991613,
-      "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_background_image-21fffe7f0c309a23.jpeg",
+      "background": null,
       "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_header_image-4eb6147d464d9053-640x125.jpeg",
       "name": "test_channel",
       "url": "http://www.twitch.tv/test_channel",
@@ -129,18 +131,6 @@ Returns a list of stream objects that are queried by a number of parameters sort
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
-        <tr>
-            <td><code>embeddable</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams that can be embedded.</td>
-        </tr>
-        <tr>
-            <td><code>hls</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams using HLS.</td>
-        </tr>
     </tbody>
 </table>
 
@@ -148,7 +138,7 @@ Returns a list of stream objects that are queried by a number of parameters sort
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v2+json' \
--X GET https://api.twitch.tv/kraken/streams?game=Diablo+III&channel=zisss,voyboy
+-X GET https://api.twitch.tv/kraken/streams?game=Diablo+III&channel=test_channel,test_channel_2
 ```
 
 ### Example Response
@@ -159,49 +149,52 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
     {
       "broadcaster": "fme",
       "_id": 5019229776,
-      "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_zisss-320x200.jpg",
+      "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-320x200.jpg",
       "game": "Diablo III",
       "channel": {
-        "mature": null,
-        "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_background_image-06a9d8c1113e5b45.jpeg",
+        "mature": false,
+        "partner": true,
+        "broadcaster_language": "en",
+        "background": null,
         "updated_at": "2013-03-04T05:27:27Z",
         "_id": 31795858,
         "status": "Barb sets giveaway and making 500m DH set... Join Zisspire, earn Zeny, collect prizes!",
-        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-profile_image-502d7c865c5e3a54-300x300.jpeg",
+        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-502d7c865c5e3a54-300x300.jpeg",
         "teams": [ ],
-        "url": "http://www.twitch.tv/zisss",
-        "display_name": "Zisss",
+        "url": "http://www.twitch.tv/test_channel",
+        "display_name": "test_channel",
         "game": "Diablo III",
-        "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/zisss-channel_header_image-997348d7f0658115-640x125.jpeg",
-        "name": "zisss",
+        "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_header_image-997348d7f0658115-640x125.jpeg",
+        "name": "test_channel",
         "video_banner": null,
         "_links": {
-          "chat": "https://api.twitch.tv/kraken/chat/zisss",
-          "subscriptions": "https://api.twitch.tv/kraken/channels/zisss/subscriptions",
-          "features": "https://api.twitch.tv/kraken/channels/zisss/features",
-          "commercial": "https://api.twitch.tv/kraken/channels/zisss/commercial",
-          "stream_key": "https://api.twitch.tv/kraken/channels/zisss/stream_key",
-          "editors": "https://api.twitch.tv/kraken/channels/zisss/editors",
-          "videos": "https://api.twitch.tv/kraken/channels/zisss/videos",
-          "self": "https://api.twitch.tv/kraken/channels/zisss",
-          "follows": "https://api.twitch.tv/kraken/channels/zisss/follows"
+          "chat": "https://api.twitch.tv/kraken/chat/test_channel",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
+          "features": "https://api.twitch.tv/kraken/channels/test_channel/features",
+          "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
+          "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
+          "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos",
+          "self": "https://api.twitch.tv/kraken/channels/test_channel",
+          "follows": "https://api.twitch.tv/kraken/channels/test_channel/follows"
         },
         "created_at": "2012-07-01T21:09:58Z"
       },
-      "name": "live_user_zisss",
+      "name": "live_user_test_channel",
       "viewers": 775,
       "_links": {
-        "self": "https://api.twitch.tv/kraken/streams/zisss"
+        "self": "https://api.twitch.tv/kraken/streams/test_channel"
       }
     }
   ],
   "_links": {
     "summary": "https://api.twitch.tv/kraken/streams/summary",
     "followed": "https://api.twitch.tv/kraken/streams/followed",
-    "next": "https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=100",
+    "next": "https://api.twitch.tv/kraken/streams?channel=test_channel%2Ctest_channel_2&game=Diablo+III&limit=100&offset=100",
     "featured": "https://api.twitch.tv/kraken/streams/featured",
-    "self": "https://api.twitch.tv/kraken/streams?channel=zisss%2Cvoyboy&game=Diablo+III&limit=100&offset=0"
-  }
+    "self": "https://api.twitch.tv/kraken/streams?channel=test_channel%2Ctest_channel_2&game=Diablo+III&limit=100&offset=0"
+  },
+  ...
 }
 ```
 
@@ -233,12 +226,6 @@ Returns a list of featured (promoted) stream objects.
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
-        <tr>
-            <td><code>hls</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams using HLS.</td>
-        </tr>
     </tbody>
 </table>
 
@@ -261,10 +248,45 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
   },
   "featured": [
     {
-      "image": "http://s.jtvnw.net/jtv_user_pictures/hosted_images/therun.jpg",
-      "text": "This is the run! Watch as multi-time world record Super Mario 64 gamer, Siglemic, pushes the N64 classic to its absolute limits.",
+      "image": "http://s.jtvnw.net/jtv_user_pictures/hosted_images/TwitchPartnerSpotlight.png",
+      "text": "<p>some html to describe this featured stream</p>",
       "stream": {
-        ...
+        "broadcaster": "fme",
+        "_id": 5019229776,
+        "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-320x200.jpg",
+        "game": "Diablo III",
+        "channel": {
+          "mature": false,
+          "background": null,
+          "updated_at": "2013-03-04T05:27:27Z",
+          "_id": 31795858,
+          "status": "Barb sets giveaway and making 500m DH set... Join Zisspire, earn Zeny, collect prizes!",
+          "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-502d7c865c5e3a54-300x300.jpeg",
+          "teams": [ ],
+          "url": "http://www.twitch.tv/test_channel",
+          "display_name": "test_channel",
+          "game": "Diablo III",
+          "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_header_image-997348d7f0658115-640x125.jpeg",
+          "name": "test_channel",
+          "video_banner": null,
+          "_links": {
+            "chat": "https://api.twitch.tv/kraken/chat/test_channel",
+            "subscriptions": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
+            "features": "https://api.twitch.tv/kraken/channels/test_channel/features",
+            "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
+            "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
+            "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
+            "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos",
+            "self": "https://api.twitch.tv/kraken/channels/test_channel",
+            "follows": "https://api.twitch.tv/kraken/channels/test_channel/follows"
+          },
+          "created_at": "2012-07-01T21:09:58Z"
+        },
+        "name": "live_user_test_channel",
+        "viewers": 775,
+        "_links": {
+          "self": "https://api.twitch.tv/kraken/streams/test_channel"
+        }
       }
     },
     [...]
@@ -289,6 +311,12 @@ Returns a summary of current streams.
     </thead>
     <tbody>
         <tr>
+            <td><code>game</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Only show stats for the set game</td>
+        </tr>
+        <tr>
             <td><code>limit</code></td>
             <td>optional</td>
             <td>integer</td>
@@ -299,12 +327,6 @@ Returns a summary of current streams.
             <td>optional</td>
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
-        </tr>
-        <tr>
-            <td><code>hls</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns streams using HLS.</td>
         </tr>
     </tbody>
 </table>

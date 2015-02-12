@@ -64,39 +64,39 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 {
   "channels": [
     {
-      "updated_at": "2013-12-25T15:18:23Z", 
-      "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/starcrafttv2013-channel_offline_image-16ceb6186030f1a8-640x360.jpeg", 
-      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/starcrafttv2013-profile_image-1c30dd07717a3007-300x300.jpeg", 
-      "display_name": "Starcrafttv2013", 
-      "delay": 0, 
-      "followers": 1216, 
+      "mature": false,
+      "status": "test status",
+      "broadcaster_language": "en",
+      "display_name": "test_channel",
+      "game": "StarCraft II: Heart of the Swarm",
+      "delay": 0,
+      "language": "en",
+      "_id": 12345,
+      "name": "test_channel",
+      "created_at": "2007-05-22T10:39:54Z",
+      "updated_at": "2015-02-12T04:15:49Z",
+      "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-94a42b3a13c31c02-300x300.jpeg",
+      "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_header_image-08dd874c17f39837-640x125.png",
+      "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_offline_image-b314c834d210dc1a-640x360.png",
+      "background": null,
+      "profile_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_banner-6936c61353e4aeed-480.png",
+      "profile_banner_background_color": "null",
+      "partner": true,
+      "url": "http://www.twitch.tv/test_channel",
+      "views": 49144894,
+      "followers": 215780,
       "_links": {
-        "videos": "https://api.twitch.tv/kraken/channels/starcrafttv2013/videos", 
-        "features": "https://api.twitch.tv/kraken/channels/starcrafttv2013/features", 
-        "stream_key": "https://api.twitch.tv/kraken/channels/starcrafttv2013/stream_key", 
-        "subscriptions": "https://api.twitch.tv/kraken/channels/starcrafttv2013/subscriptions", 
-        "follows": "https://api.twitch.tv/kraken/channels/starcrafttv2013/follows", 
-        "self": "https://api.twitch.tv/kraken/channels/starcrafttv2013", 
-        "commercial": "https://api.twitch.tv/kraken/channels/starcrafttv2013/commercial", 
-        "editors": "https://api.twitch.tv/kraken/channels/starcrafttv2013/editors", 
-        "teams": "https://api.twitch.tv/kraken/channels/starcrafttv2013/teams", 
-        "chat": "https://api.twitch.tv/kraken/chat/starcrafttv2013"
-      }, 
-      "status": "Star TV\u5373\u5c07\u66ab\u505c\u4e00\u6bb5\u6642\u9593", 
-      "primary_team_name": null, 
-      "views": 80334, 
-      "abuse_reported": null, 
-      "game": "StarCraft II: Heart of the Swarm", 
-      "background": null, 
-      "banner": null, 
-      "name": "starcrafttv2013", 
-      "url": "http://www.twitch.tv/starcrafttv2013", 
-      "created_at": "2013-10-07T15:00:40Z", 
-      "primary_team_display_name": null, 
-      "mature": false, 
-      "profile_banner_background_color": null, 
-      "_id": 49902474, 
-      "profile_banner": null
+        "self": "https://api.twitch.tv/kraken/channels/test_channel",
+        "follows": "https://api.twitch.tv/kraken/channels/test_channel/follows",
+        "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
+        "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
+        "chat": "https://api.twitch.tv/kraken/chat/test_channel",
+        "features": "https://api.twitch.tv/kraken/channels/test_channel/features",
+        "subscriptions": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
+        "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
+        "teams": "https://api.twitch.tv/kraken/channels/test_channel/teams",
+        "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos"
+      }
     }, 
     ...
   ], 
@@ -173,42 +173,53 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   "streams": [
     {
       "game": "StarCraft II: Heart of the Swarm",
-      "viewers": 2,
+      "viewers": 2123,
+      "created_at": "2015-02-12T04:42:31Z",
       "_id": 4989654544,
       "channel": {
+        "mature": false,
+        "status": "test status",
+        "broadcaster_language": "en",
+        "display_name": "test_channel",
         "game": "StarCraft II: Heart of the Swarm",
-        "display_name": "Blade55555",
-        "created_at": "2009-09-19T02:07:23Z",
-        "status": "Starcraft 2 HOTS GM zerg",
-        "updated_at": "2013-02-28T22:30:17Z",
-        "mature": null,
-        "_id": 8341905,
-        "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/blade55555-channel_offline_image-3abeffa573a391d4-640x360.jpeg",
-        "name": "blade55555",
-        "banner": null,
         "delay": 0,
+        "language": "en",
+        "_id": 12345,
+        "name": "test_channel",
+        "created_at": "2007-05-22T10:39:54Z",
+        "updated_at": "2015-02-12T04:15:49Z",
+        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-94a42b3a13c31c02-300x300.jpeg",
+        "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_header_image-08dd874c17f39837-640x125.png",
+        "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-channel_offline_image-b314c834d210dc1a-640x360.png",
         "background": null,
+        "profile_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_banner-6936c61353e4aeed-480.png",
+        "profile_banner_background_color": "null",
+        "partner": true,
+        "url": "http://www.twitch.tv/test_channel",
+        "views": 49144894,
+        "followers": 215780,
         "_links": {
-          "editors": "https://api.twitch.tv/kraken/channels/blade55555/editors",
-          "stream_key": "https://api.twitch.tv/kraken/channels/blade55555/stream_key",
-          "commercial": "https://api.twitch.tv/kraken/channels/blade55555/commercial",
-          "features": "https://api.twitch.tv/kraken/channels/blade55555/features",
-          "videos": "https://api.twitch.tv/kraken/channels/blade55555/videos",
-          "subscriptions": "https://api.twitch.tv/kraken/channels/blade55555/subscriptions",
-          "follows": "https://api.twitch.tv/kraken/channels/blade55555/follows",
-          "self": "https://api.twitch.tv/kraken/channels/blade55555",
-          "chat": "https://api.twitch.tv/kraken/chat/blade55555"
-        },
-        "teams": [ ],
-        "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/blade55555-profile_image-e551610be15ec896-300x300.png",
-        "url": "http://www.twitch.tv/blade55555"
+          "self": "https://api.twitch.tv/kraken/channels/test_channel",
+          "follows": "https://api.twitch.tv/kraken/channels/test_channel/follows",
+          "commercial": "https://api.twitch.tv/kraken/channels/test_channel/commercial",
+          "stream_key": "https://api.twitch.tv/kraken/channels/test_channel/stream_key",
+          "chat": "https://api.twitch.tv/kraken/chat/test_channel",
+          "features": "https://api.twitch.tv/kraken/channels/test_channel/features",
+          "subscriptions": "https://api.twitch.tv/kraken/channels/test_channel/subscriptions",
+          "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
+          "teams": "https://api.twitch.tv/kraken/channels/test_channel/teams",
+          "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos"
+        }
       },
-      "preview": "http://static-cdn.jtvnw.net/previews-ttv/live_user_blade55555-320x200.jpg",
-      "name": "live_user_blade55555",
+      "preview": {
+        "small": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-80x45.jpg",
+        "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-320x180.jpg",
+        "large": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-640x360.jpg",
+        "template": "http://static-cdn.jtvnw.net/previews-ttv/live_user_test_channel-{width}x{height}.jpg"
+      },
       "_links": {
-        "self": "https://api.twitch.tv/kraken/streams/blade55555"
-      },
-      "broadcaster": "fme"
+        "self": "https://api.twitch.tv/kraken/streams/test_channel"
+      }
     },
     ...
   ]
@@ -273,25 +284,16 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   "games": [
     {
       "box": {
-        "small": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=52&h=72&fit=scale",
-        "large": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=272&h=380&fit=scale",
-        "medium": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=136&h=190&fit=scale",
-        "template": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w={width}&h={height}&fit=scale"
+        "large": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II:%20Wings%20of%20Liberty-272x380.jpg",
+        "medium": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II:%20Wings%20of%20Liberty-136x190.jpg",
+        "small": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II:%20Wings%20of%20Liberty-52x72.jpg",
+        "template": "http://static-cdn.jtvnw.net/ttv-boxart/StarCraft%20II:%20Wings%20of%20Liberty-{width}x{height}.jpg"
       },
       "logo": {
-        "small": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=60&h=36&fit=scale",
-        "large": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=240&h=144&fit=scale",
-        "medium": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w=120&h=72&fit=scale",
-        "template": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II%3A%20Wings%20of%20Liberty.jpg?w={width}&h={height}&fit=scale"
-      },
-      "images": {
-        "thumb": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_thumb.jpg",
-        "tiny": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_tiny.jpg",
-        "small": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_small.jpg",
-        "super": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_super.jpg",
-        "medium": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_small.jpg",
-        "icon": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_icon.jpg",
-        "screen": "http://media.giantbomb.com/uploads/0/30/1319229-sc2_se_2d_rgb_web_na_screen.jpg"
+        "large": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II:%20Wings%20of%20Liberty-240x144.jpg",
+        "medium": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II:%20Wings%20of%20Liberty-120x72.jpg",
+        "small": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II:%20Wings%20of%20Liberty-60x36.jpg",
+        "template": "http://static-cdn.jtvnw.net/ttv-logoart/StarCraft%20II:%20Wings%20of%20Liberty-{width}x{height}.jpg"
       },
       "popularity": 114,
       "name": "StarCraft II: Wings of Liberty",

@@ -9,12 +9,11 @@ Videos are broadcasts or chapters owned by a [channel][channels]. Broadcasts are
 | [GET /videos/:id](/v3_resources/videos.md#get-videosid) | Get video object|
 | [GET /videos/top](/v3_resources/videos.md#get-videostop) | Get top videos by number of views |
 | [GET /channels/:channel/videos](/v3_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
-| [GET /videos/followed](/v3_resources/videos.md#get-videosfollowed) | Get list of videos belonging to channels user is  following |
-
+| [GET /videos/followed](/v3_resources/videos.md#get-videosfollowed) | Get list of videos belonging to channels user is following |
 
 [channels]: /v3_resources/channels.md
 
-## `GET /videos/:id/`
+## `GET /videos/:id`
 
 Returns a video object.
 
@@ -22,26 +21,34 @@ Returns a video object.
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' \
--X GET https://api.twitch.tv/kraken/videos/a328087483
+-X GET https://api.twitch.tv/kraken/videos/c6055863
 ```
 
 ### Example Response
 
 ```json
 {
-  "recorded_at": "2012-08-09T20:49:47Z",
-  "title": "VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3",
-  "url": "http://www.twitch.tv/vanillatv/b/328087483",
-  "_id": "a328087483",
-  "_links": {
-      "self": "https://api.twitch.tv/kraken/videos/a328087483",
-      "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
-  },
-  "views": 93,
-  "description": "VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3",
-  "length": 204,
+  "title": "Twitch Weekly - February 6, 2015",
+  "description": "Twitch Weekly LIVE on February 6, 2015!",
+  "broadcast_id": 13019796368,
+  "status": "recorded",
+  "_id": "c6055863",
+  "tag_list": "",
+  "recorded_at": "2015-02-06T21:01:09Z",
   "game": null,
-  "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-328087483-320x240.jpg"
+  "length": 4015,
+  "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-621292653-320x240.jpg",
+  "url": "http://www.twitch.tv/twitch/c/6055863",
+  "views": 318,
+  "broadcast_type": "highlight",
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/videos/c6055863",
+    "channel": "https://api.twitch.tv/kraken/channels/twitch"
+  },
+  "channel": {
+    "name": "twitch",
+    "display_name": "Twitch"
+  }
 }
 ```
 
@@ -92,7 +99,7 @@ Returns a list of videos created in a given time period sorted by number of view
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' \
--X GET https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&period=month
+-X GET https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&period=month
 ```
 
 ### Example Response
@@ -100,29 +107,33 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=10&period=month",
-    "self": "https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=0&period=month"
+    "next": "https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&limit=10&offset=10&period=month",
+    "self": "https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&limit=10&offset=0&period=month"
   },
   "videos": [
     {
-      "recorded_at": "2013-03-13T09:51:31Z",
-      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-377199700-320x240.jpg",
-      "description": "dat trist jump",
-      "url": "http://www.twitch.tv/chaoxlol/c/2023831",
-      "title": "Almost the great escape",
-      "channel": {
-        "name": "chaoxlol",
-        "display_name": "chaoxlol"
-      },
-      "length": 71,
-      "game": "League of Legends",
-      "views": 66436,
-      "_id": "c2023831",
+      "title": "Twitch Weekly - February 6, 2015",
+      "description": "Twitch Weekly LIVE on February 6, 2015!",
+      "broadcast_id": 13019796368,
+      "status": "recorded",
+      "tag_list": "",
+      "_id": "c6055863",
+      "recorded_at": "2015-02-06T21:01:09Z",
+      "game": "Gaming Talk Shows",
+      "length": 4015,
+      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-621292653-320x240.jpg",
+      "url": "http://www.twitch.tv/twitch/c/6055863",
+      "views": 318,
+      "broadcast_type": "highlight",
       "_links": {
-        "channel": "https://api.twitch.tv/kraken/channels/chaoxlol",
-        "self": "https://api.twitch.tv/kraken/videos/c2023831"
+        "self": "https://api.twitch.tv/kraken/videos/c6055863",
+        "channel": "https://api.twitch.tv/kraken/channels/twitch"
+      },
+      "channel": {
+        "name": "twitch",
+        "display_name": "Twitch"
       }
-    },
+    }
     ...
   ]
 }
@@ -130,7 +141,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 
 ## `GET /channels/:channel/videos`
 
-Returns an list of videos ordered by time of creation, starting with the most recent from `:channel`.
+Returns a list of videos ordered by time of creation, starting with the most recent from `:channel`.
 
 ### Parameters
 
@@ -162,6 +173,12 @@ Returns an list of videos ordered by time of creation, starting with the most re
             <td>bool</td>
             <td>Returns only broadcasts when <code>true</code>. Otherwise only highlights are returned. Default is <code>false</code>.</td>
         </tr>
+        <tr>
+            <td><code>hls</code></td>
+            <td>optional</td>
+            <td>bool</td>
+            <td>Returns only HLS VoDs when <code>true</code>. Otherwise only non-HLS VoDs are returned. Default is <code>false</code>.</td>
+        </tr>
     </tbody>
 </table>
 
@@ -169,49 +186,43 @@ Returns an list of videos ordered by time of creation, starting with the most re
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' \
--X GET https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
+-X GET https://api.twitch.tv/kraken/channels/twitch/videos?limit=10
 ```
 
 ### Example Response
 
 ```json
 {
+  "_total": 179,
   "videos": [
-      {
-          "title": "ETF2L Week 1: Epsilon vs. Dignitas",
-          "recorded_at": "2011-10-02T19:57:06Z",
-          "_id": "a296529186",
-          "_links": {
-              "self": "https://api.twitch.tv/kraken/videos/a296529186",
-              "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
-          },
-          "url": "http://www.twitch.tv/vanillatv/b/296529186",
-          "views": 1,
-          "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296529186-320x240.jpg",
-          "length": 23,
-          "game": "Team Fortress 2"
-          "description": null
+    {
+      "title": "Twitch Weekly - February 6, 2015",
+      "description": "Twitch Weekly LIVE on February 6, 2015!",
+      "broadcast_id": 13019796368,
+      "status": "recorded",
+      "tag_list": "",
+      "_id": "c6055863",
+      "recorded_at": "2015-02-06T21:01:09Z",
+      "game": null,
+      "length": 4015,
+      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-621292653-320x240.jpg",
+      "url": "http://www.twitch.tv/twitch/c/6055863",
+      "views": 318,
+      "broadcast_type": "highlight",
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/videos/c6055863",
+        "channel": "https://api.twitch.tv/kraken/channels/twitch"
       },
-      {
-          "title": "ETF2L Week 1: Epsilon vs. Dignitas",
-          "recorded_at": "2011-10-02T19:01:23Z",
-          "_id": "a296526250",
-          "_links": {
-              "self": "https://api.twitch.tv/kraken/videos/a296526250",
-              "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
-          },
-          "url": "http://www.twitch.tv/vanillatv/b/296526250",
-          "views": 1,
-          "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296526250-320x240.jpg",
-          "length": 1296,
-          "game": "Team Fortress 2",
-          "description": null
-      },
-      ...
+      "channel": {
+        "name": "twitch",
+        "display_name": "Twitch"
+      }
+    },
+    ...
   ],
   "_links": {
-      "self": "https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10&offset=0",
-      "next": "https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10&offset=10"
+    "self": "https://api.twitch.tv/kraken/channels/twitch/videos?limit=10&offset=0",
+    "next": "https://api.twitch.tv/kraken/channels/twitch/videos?limit=10&offset=10"
   }
 }
 ```

@@ -40,12 +40,6 @@ Returns a list of games objects sorted by number of current viewers on Twitch, m
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
-        <tr>
-            <td><code>hls</code></td>
-            <td>optional</td>
-            <td>bool</td>
-            <td>If set to true, only returns game objects with streams using HLS.</td>
-        </tr>
     </tbody>
 </table>
 
@@ -68,22 +62,22 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   "top": [
     {
       "game": {
-        "name": "League of Legends",
+        "name": "Counter-Strike: Global Offensive",
         "box": {
-          "large": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=272&h=380&fit=scale",
-          "medium": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=136&h=190&fit=scale",
-          "small": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w=52&h=72&fit=scale",
-          "template": "http://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale"
+          "large": "http://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-272x380.jpg",
+          "medium": "http://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-136x190.jpg",
+          "small": "http://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-52x72.jpg",
+          "template": "http://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-{width}x{height}.jpg"
         },
         "logo": {
-          "large": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=240&h=144&fit=scale",
-          "medium": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=120&h=72&fit=scale",
-          "small": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w=60&h=36&fit=scale",
-          "template": "http://static-cdn.jtvnw.net/ttv-logoart/League%20of%20Legends.jpg?w={width}&h={height}&fit=scale"
+          "large": "http://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-240x144.jpg",
+          "medium": "http://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-120x72.jpg",
+          "small": "http://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-60x36.jpg",
+          "template": "http://static-cdn.jtvnw.net/ttv-logoart/Counter-Strike:%20Global%20Offensive-{width}x{height}.jpg"
         },
         "_links": {},
-        "_id": 21779,
-        "giantbomb_id": 24024
+        "_id": 32399,
+        "giantbomb_id": 36113
       },
       "viewers": 23873,
       "channels": 305
