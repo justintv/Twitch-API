@@ -28,11 +28,11 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
   },
   "ingests": [
     {
-      "name": "EU: Amsterdam, NL" ,
-      "default": false ,
-      "_id": 24 ,
+      "name": "EU: Amsterdam, NL",
+      "default": false,
+      "_id": 24,
       "url_template": "rtmp://live-ams.twitch.tv/app/{stream_key}",
-      "availability":1.0
+      "availability": 1.0
     },
     ...
   ]

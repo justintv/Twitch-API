@@ -19,7 +19,7 @@ Channels serve as the home location for a [user's][users] content. Channels have
 [streams]: /v2_resources/streams.md
 [videos]: /v2_resources/videos.md
 
-## `GET /channels/:channel/`
+## `GET /channels/:channel`
 
 Returns a channel object.
 
@@ -41,7 +41,7 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
   "updated_at": "2012-06-18T05:22:53Z",
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
   "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
-  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png",
+  "background": null,
   "_links": {
     "self": "https://api.twitch.tv/kraken/channels/test_user1",
     "chat": "https://api.twitch.tv/kraken/chat/test_user1",
@@ -57,7 +57,21 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
   "_id": 20694610,
   "mature": true,
   "url": "http://www.twitch.tv/test_user1",
-  "display_name": "test_user1"
+  "display_name": "test_user1",
+  "teams": [{
+    "name": "staff",
+    "created_at": "2011-10-25T23:55:47Z",
+    "updated_at": "2011-11-14T19:48:21Z",
+    "background": null,
+    "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/team-staff-banner_image-1e028d6b6aec8e6a-640x125.jpeg",
+    "logo": null,
+    "_links": {
+      "self": "https://api.twitch.tv/kraken/teams/staff"
+    },
+    "_id": 10,
+    "info": "We save the world..",
+    "display_name": "TwitchTV Staff"
+  }]
 }
 ```
 
@@ -107,9 +121,9 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <acc
   },
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
   "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
-  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png",
+  "background": null,
   "logo": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-profile_image-7243b004a2ec3720-300x300.png",
-  "id": 21229404,
+  "_id": 21229404,
   "mature": false,
   "login": "test_user1",
   "url": "http://www.twitch.tv/test_user1",
@@ -203,7 +217,7 @@ Form-encoded or JSON parameters specifying the properties to change. These shoul
   "channel": {
     "status": "Playing cool new game!",
     "game": "Diablo"
-    }
+  }
 }
 ```
 
@@ -240,7 +254,7 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <acc
   "updated_at": "2012-06-18T05:22:53Z",
   "banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_header_image-7d10ec1bfbef2988-640x125.png",
   "video_banner": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_offline_image-bdcb1260130fa0cb.png",
-  "background": "http://static-cdn.jtvnw.net/jtv_user_pictures/test_user1-channel_background_image-eebc4eabf0686bb9.png",
+  "background": null,
   "_links": {
     "self": "https://api.twitch.tv/kraken/channels/test_user1",
     "chat": "https://api.twitch.tv/kraken/chat/test_user1",
@@ -295,7 +309,7 @@ Start commercial on channel.
             <td><code>length</code></td>
             <td>optional</td>
             <td>integer</td>
-            <td>Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, or 90. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
+            <td>Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You may only trigger a commercial longer than 30 seconds once every 8 minutes.</td>
         </tr>
     </tbody>
 </table>
@@ -313,4 +327,4 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' -H 'Authorization: OAuth <acc
 
 ### Errors
 
-`422 Unprocessable Entity` if commercial length not allowed.
+`422 Unprocessable Entity` if commercial length not allowed, a commercial was ran less than 8 minutes ago, or the channel is not partnered.

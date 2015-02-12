@@ -20,33 +20,34 @@ Returns a video object.
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v2+json' \
--X GET https://api.twitch.tv/kraken/videos/a328087483
+-X GET https://api.twitch.tv/kraken/videos/c6055863
 ```
 
 ### Example Response
 
 ```json
 {
-  "recorded_at": "2012-08-09T20:49:47Z",
-  "title": "VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3",
-  "url": "http://www.twitch.tv/vanillatv/b/328087483",
-  "_id": "a328087483",
-  "_links": {
-      "self": "https://api.twitch.tv/kraken/videos/a328087483",
-      "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
-  },
-  "embed": "<object type="application/x-shockwave-flash" height="300" width="400" id="clip_embed_player_flash" data="http://www.justin.tv/widgets/archive_embed_player.swf" bgcolor="#000000">
-      <param name="movie" value="http://www.justin.tv/widgets/archive_embed_player.swf" />
-      <param name="allowScriptAccess" value="always" />
-      <param name="allowNetworking" value="all" />
-      <param name="allowFullScreen" value="true" />
-      <param name="flashvars" value="channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25" />
-  </object>",
-  "views": 93,
-  "description": "VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3",
-  "length": 204,
+  "title": "Twitch Weekly - February 6, 2015",
+  "description": "Twitch Weekly LIVE on February 6, 2015!",
+  "broadcast_id": 13019796368,
+  "status": "recorded",
+  "_id": "c6055863",
+  "recorded_at": "2015-02-06T21:01:09Z",
   "game": null,
-  "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-328087483-320x240.jpg"
+  "length": 4015,
+  "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-621292653-320x240.jpg",
+  "url": "http://www.twitch.tv/twitch/c/6055863",
+  "embed": "<object bgcolor='#000000' data='http://www.twitch.tv/swflibs/TwitchPlayer.swf' height='300' id='clip_embed_player_flash' type='application/x-shockwave-flash' width='400'>\n<param name='movie' value='http://www.twitch.tv/swflibs/TwitchPlayer.swf' />\n<param name='allowScriptAccess' value='always' />\n<param name='allowNetworking' value='all' />\n<param name='allowFullScreen' value='true' />\n<param name='flashvars' value='title=Twitch%2BWeekly%2B-%2BFebruary%2B6%252C%2B2015&amp;channel=twitch&amp;auto_play=false&amp;start_volume=25&amp;videoId=c6055863' />\n</object>\n",
+  "views": 318,
+  "broadcast_type": "highlight",
+  "_links": {
+    "self": "https://api.twitch.tv/kraken/videos/c6055863",
+    "channel": "https://api.twitch.tv/kraken/channels/twitch"
+  },
+  "channel": {
+    "name": "twitch",
+    "display_name": "Twitch"
+  }
 }
 ```
 
@@ -97,7 +98,7 @@ Returns a list of videos created in a given time period sorted by number of view
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v2+json' \
--X GET https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&period=month
+-X GET https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&period=month
 ```
 
 ### Example Response
@@ -105,29 +106,33 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
 ```json
 {
   "_links": {
-    "next": "https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=10&period=month",
-    "self": "https://api.twitch.tv/kraken/videos/top?game=League+of+Legends&limit=10&offset=0&period=month"
+    "next": "https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&limit=10&offset=10&period=month",
+    "self": "https://api.twitch.tv/kraken/videos/top?game=Gaming+Talk+Shows&limit=10&offset=0&period=month"
   },
   "videos": [
     {
-      "recorded_at": "2013-03-13T09:51:31Z",
-      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-377199700-320x240.jpg",
-      "description": "dat trist jump",
-      "url": "http://www.twitch.tv/chaoxlol/c/2023831",
-      "title": "Almost the great escape",
-      "channel": {
-        "name": "chaoxlol",
-        "display_name": "chaoxlol"
-      },
-      "length": 71,
-      "game": "League of Legends",
-      "views": 66436,
-      "_id": "c2023831",
+      "title": "Twitch Weekly - February 6, 2015",
+      "description": "Twitch Weekly LIVE on February 6, 2015!",
+      "broadcast_id": 13019796368,
+      "status": "recorded",
+      "_id": "c6055863",
+      "recorded_at": "2015-02-06T21:01:09Z",
+      "game": "Gaming Talk Shows",
+      "length": 4015,
+      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-621292653-320x240.jpg",
+      "url": "http://www.twitch.tv/twitch/c/6055863",
+      "embed": "<object bgcolor='#000000' data='http://www.twitch.tv/swflibs/TwitchPlayer.swf' height='300' id='clip_embed_player_flash' type='application/x-shockwave-flash' width='400'>\n<param name='movie' value='http://www.twitch.tv/swflibs/TwitchPlayer.swf' />\n<param name='allowScriptAccess' value='always' />\n<param name='allowNetworking' value='all' />\n<param name='allowFullScreen' value='true' />\n<param name='flashvars' value='title=Twitch%2BWeekly%2B-%2BFebruary%2B6%252C%2B2015&amp;channel=twitch&amp;auto_play=false&amp;start_volume=25&amp;videoId=c6055863' />\n</object>\n",
+      "views": 318,
+      "broadcast_type": "highlight",
       "_links": {
-        "channel": "https://api.twitch.tv/kraken/channels/chaoxlol",
-        "self": "https://api.twitch.tv/kraken/videos/c2023831"
+        "self": "https://api.twitch.tv/kraken/videos/c6055863",
+        "channel": "https://api.twitch.tv/kraken/channels/twitch"
+      },
+      "channel": {
+        "name": "twitch",
+        "display_name": "Twitch"
       }
-    },
+    }
     ...
   ]
 }
@@ -174,63 +179,43 @@ Returns a list of videos ordered by time of creation, starting with the most rec
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v2+json' \
--X GET https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10
+-X GET https://api.twitch.tv/kraken/channels/twitch/videos?limit=10
 ```
 
 ### Example Response
 
 ```json
 {
+  "_total": 179,
   "videos": [
-      {
-          "title": "ETF2L Week 1: Epsilon vs. Dignitas",
-          "recorded_at": "2011-10-02T19:57:06Z",
-          "_id": "a296529186",
-          "_links": {
-              "self": "https://api.twitch.tv/kraken/videos/a296529186",
-              "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
-          },
-          "embed": "<object type="application/x-shockwave-flash" height="300" width="400" id="clip_embed_player_flash" data="http://www.justin.tv/widgets/archive_embed_player.swf" bgcolor="#000000">
-              <param name="movie" value="http://www.justin.tv/widgets/archive_embed_player.swf" />
-              <param name="allowScriptAccess" value="always" />
-              <param name="allowNetworking" value="all" />
-              <param name="allowFullScreen" value="true" />
-              <param name="flashvars" value="channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25" />
-          </object>",
-          "url": "http://www.twitch.tv/vanillatv/b/296529186",
-          "views": 1,
-          "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296529186-320x240.jpg",
-          "length": 23,
-          "game": "Team Fortress 2",
-          "description": null
+    {
+      "title": "Twitch Weekly - February 6, 2015",
+      "description": "Twitch Weekly LIVE on February 6, 2015!",
+      "broadcast_id": 13019796368,
+      "status": "recorded",
+      "_id": "c6055863",
+      "recorded_at": "2015-02-06T21:01:09Z",
+      "game": null,
+      "length": 4015,
+      "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-621292653-320x240.jpg",
+      "url": "http://www.twitch.tv/twitch/c/6055863",
+      "embed": "<object bgcolor='#000000' data='http://www.twitch.tv/swflibs/TwitchPlayer.swf' height='300' id='clip_embed_player_flash' type='application/x-shockwave-flash' width='400'>\n<param name='movie' value='http://www.twitch.tv/swflibs/TwitchPlayer.swf' />\n<param name='allowScriptAccess' value='always' />\n<param name='allowNetworking' value='all' />\n<param name='allowFullScreen' value='true' />\n<param name='flashvars' value='title=Twitch%2BWeekly%2B-%2BFebruary%2B6%252C%2B2015&amp;channel=twitch&amp;auto_play=false&amp;start_volume=25&amp;videoId=c6055863' />\n</object>\n",
+      "views": 318,
+      "broadcast_type": "highlight",
+      "_links": {
+        "self": "https://api.twitch.tv/kraken/videos/c6055863",
+        "channel": "https://api.twitch.tv/kraken/channels/twitch"
       },
-      {
-          "title": "ETF2L Week 1: Epsilon vs. Dignitas",
-          "recorded_at": "2011-10-02T19:01:23Z",
-          "_id": "a296526250",
-          "_links": {
-              "self": "https://api.twitch.tv/kraken/videos/a296526250",
-              "owner": "https://api.twitch.tv/kraken/channels/vanillatv"
-          },
-          "embed": "<object type="application/x-shockwave-flash" height="300" width="400" id="clip_embed_player_flash" data="http://www.justin.tv/widgets/archive_embed_player.swf" bgcolor="#000000">
-              <param name="movie" value="http://www.justin.tv/widgets/archive_embed_player.swf" />
-              <param name="allowScriptAccess" value="always" />
-              <param name="allowNetworking" value="all" />
-              <param name="allowFullScreen" value="true" />
-              <param name="flashvars" value="channel=vanillatv&title=VanillaTV - Sweden vs Russia - ETF2L Nations Cup - Snakewater [Map3] - Part 3&auto_play=false&archive_id=328087483&start_volume=25" />
-          </object>",
-          "url": "http://www.twitch.tv/vanillatv/b/296526250",
-          "views": 1,
-          "preview": "http://static-cdn.jtvnw.net/jtv.thumbs/archive-296526250-320x240.jpg",
-          "length": 1296,
-          "game": "Team Fortress 2",
-          "description": null
-      },
-      ...
+      "channel": {
+        "name": "twitch",
+        "display_name": "Twitch"
+      }
+    },
+    ...
   ],
   "_links": {
-      "self": "https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10&offset=0",
-      "next": "https://api.twitch.tv/kraken/channels/vanillatv/videos?limit=10&offset=10"
+    "self": "https://api.twitch.tv/kraken/channels/twitch/videos?limit=10&offset=0",
+    "next": "https://api.twitch.tv/kraken/channels/twitch/videos?limit=10&offset=10"
   }
 }
 ```

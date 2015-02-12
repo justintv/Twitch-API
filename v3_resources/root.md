@@ -35,7 +35,9 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
     "channels": "https://api.twitch.tv/kraken/channels/test_user1",
     "chat": "https://api.twitch.tv/kraken/chat/test_user1",
     "streams": "https://api.twitch.tv/kraken/streams",
-    "ingests":"https://api.twitch.tv/kraken/ingests"
+    "ingests":"https://api.twitch.tv/kraken/ingests",
+    "teams": "https://api.twitch.tv/kraken/teams",
+    "search": "https://api.twitch.tv/kraken/search"
   }
 }
 ```

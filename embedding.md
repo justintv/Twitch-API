@@ -5,98 +5,107 @@ Here are the embed codes and parameters you might need to integrate streams, vid
 ### Streams
 
 #### Parameters
-- `height`  : Player height. Default is 378.
-- `width`   : Player width. Default is 620.
-- `channel` : Channel to show.
-- `volume`  : Player volume ranging from 0 to 50. Default is 25.
+- `auto_play` : Boolean value for playing the video on player load.
+- `channel`   : Channel to show.
+- `height`    : Player height.
+- `volume`    : Player volume ranging from 0 to 50. Default is 25.
+- `width`     : Player width.
 
 #### Code
 
 ```html
-<object type="application/x-shockwave-flash" 
+<object bgcolor="#000000" 
+        data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
         height="{HEIGHT}" 
+        type="application/x-shockwave-flash" 
         width="{WIDTH}" 
-        id="live_embed_player_flash" 
-        data="http://www.twitch.tv/widgets/live_embed_player.swf?channel={CHANNEL}" 
-        bgcolor="#000000">
-  <param  name="allowFullScreen" 
+        > 
+  <param name="allowFullScreen" 
           value="true" />
-  <param  name="allowScriptAccess" 
-          value="always" />
-  <param  name="allowNetworking" 
+  <param name="allowNetworking" 
           value="all" />
-  <param  name="movie" 
-          value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-  <param  name="flashvars" 
-          value="hostname=www.twitch.tv&channel={CHANNEL}&auto_play=true&start_volume={VOLUME}" />
+  <param name="allowScriptAccess" 
+          value="always" />
+  <param name="movie" 
+          value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
+  <param name="flashvars" 
+          value="channel={CHANNEL}&auto_play={AUTO_PLAY}&start_volume={VOLUME}" />
 </object>
 ```
 
 #### Example
 
 ```html
-<object type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=hebo" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=hebo&auto_play=true&start_volume=25" /></object>
+<object type="application/x-shockwave-flash" height="378" width="620" data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" /><param name="flashvars" value="channel=hebo&auto_play=true&start_volume=25" /></object>
 ```
 
-### HTML5 Streams Player
+#### Player API
+
+Our Flash Twitch player also exposes a JavaScript API. Read the [Twitch Player API][] for documentation.
+
+### IFrame Streams Player
 
 #### Parameters
-- `height`  : Player height. Default is 378.
-- `width`   : Player width. Default is 620.
 - `channel` : Channel to show.
+- `height`  : Player height.
+- `width`   : Player width.
 
 #### Code
 
 ```html
-<iframe id="player" type="text/html" width="620" height="378"
-  src="http://www.twitch.tv/{CHANNEL}/hls"
+<iframe id="player" type="text/html" width="{WIDTH}" height="{HEIGHT}"
+  src="http://www.twitch.tv/{CHANNEL}/embed"
   frameborder="0"></iframe>
 ```
 
 ### Videos
 
 #### Parameters
-- `height`  : Player height. Default is 300.
-- `width`   : Player width. Default is 400.
-- `channel` : Channel that video belongs to.
-- `chapter_id` : Chapter ID of the video.
-- `volume`  : Player volume ranging from 0 to 50. Default is 25.
+- `auto_play`    : Boolean value for playing the video on player load.
+- `channel`      : Channel the video belongs to.
+- `height`       : Player height.
 - `initial_time` : Start time in seconds.
+- `video_id`     : ID of the video.
+- `volume`       : Player volume ranging from 0 to 50. Default is 25.
+- `width`        : Player width.
 
 #### Code
 
 ```html
 <object bgcolor='#000000' 
-        data='http://www.twitch.tv/widgets/archive_embed_player.swf' 
+        data='//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf' 
         height='{HEIGHT}' 
-        id='clip_embed_player_flash' 
         type='application/x-shockwave-flash' 
         width='{WIDTH}'> 
-  <param  name='movie' 
-          value='http://www.twitch.tv/widgets/archive_embed_player.swf' /> 
-  <param  name='allowScriptAccess' 
-          value='always' /> 
-  <param  name='allowNetworking' 
-          value='all' /> 
-  <param  name='allowFullScreen' 
-          value='true' /> 
-  <param  name='flashvars' 
-          value='channel={CHANNEL}&start_volume={VOLUME}&auto_play=false&chapter_id={CHAPTER_ID}' />
+  <param name="allowFullScreen" 
+          value="true" />
+  <param name="allowNetworking" 
+          value="all" />
+  <param name="allowScriptAccess" 
+          value="always" />
+  <param name='movie' 
+          value='//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf' /> 
+  <param name='flashvars' 
+          value='channel={CHANNEL}&start_volume={VOLUME}&auto_play={AUTO_PLAY}&videoId={VIDEO_ID}&initial_time={INITIAL_TIME}' />
 </object>
 ```
 
 #### Example
 
 ```html
-<object bgcolor='#000000' data='http://www.twitch.tv/widgets/archive_embed_player.swf' height='378' id='clip_embed_player_flash' type='application/x-shockwave-flash' width='620'><param name='movie' value='http://www.twitch.tv/widgets/archive_embed_player.swf' /><param name='allowScriptAccess' value='always' /><param name='allowNetworking' value='all' /><param name='allowFullScreen' value='true' /><param name='flashvars' value='channel=tsm_chaox&start_volume=25&auto_play=false&chapter_id=1353487' /></object>
+<object bgcolor='#000000' data='//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf' height='378' id='clip_embed_player_flash' type='application/x-shockwave-flash' width='620'><param name='movie' value='//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf' /><param name='allowScriptAccess' value='always' /><param name='allowNetworking' value='all' /><param name='allowFullScreen' value='true' /><param name='flashvars' value='channel=chaoxlol&start_volume=25&auto_play=true&videoId=c1353487&initial_time=0' /></object>
 ```
+
+#### Player API
+
+Our Flash Twitch player also exposes a JavaScript API. Read the [Twitch Player API][] for documentation.
 
 ### Chat
 
 #### Parameters
-- `height`  : Chat window height. Default is 500.
-- `width`   : Chat window width. Default is 350.
 - `channel` : Channel the chat belongs to.
+- `height`  : Chat window height.
+- `width`   : Chat window width.
 
 #### Code
 
@@ -104,7 +113,7 @@ Here are the embed codes and parameters you might need to integrate streams, vid
 <iframe frameborder="0" 
         scrolling="no" 
         id="chat_embed" 
-        src="http://twitch.tv/chat/embed?channel={CHANNEL}&amp;popout_chat=true" 
+        src="http://www.twitch.tv/{CHANNEL}/chat" 
         height="{HEIGHT}" 
         width="{WIDTH}">
 </iframe>
@@ -113,5 +122,7 @@ Here are the embed codes and parameters you might need to integrate streams, vid
 #### Example
 
 ```html
-<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=hebo&amp;popout_chat=true" height="500" width="350"></iframe>
+<iframe frameborder="0" scrolling="no" id="chat_embed" src="http://www.twitch.tv/hebo/chat" height="500" width="350"></iframe>
 ```
+
+[Twitch Player API]: player.md
