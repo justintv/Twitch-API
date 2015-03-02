@@ -1,7 +1,5 @@
 # Games
 
-***
-
 Games are categories (e.g. League of Legends, Diablo 3) used by [streams][] and [channels][]. Games can be [searched][search] for by query.
 
 | Endpoint | Description |

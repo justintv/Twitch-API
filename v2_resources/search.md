@@ -1,7 +1,5 @@
 # Search
 
-***
-
 Search for [streams][streams] or [games][games] with queries.
 
 | Endpoint | Description |

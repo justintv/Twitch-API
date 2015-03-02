@@ -1,7 +1,5 @@
 # Blocks
 
-***
-
 Stores and updates information about a [user's][users] block list.
 
 | Endpoint | Description |

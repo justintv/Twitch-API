@@ -1,7 +1,5 @@
 # Follows
 
-***
-
 Status of follow relationships between [users][users] and [channels][channels].
 
 | Endpoint | Description |

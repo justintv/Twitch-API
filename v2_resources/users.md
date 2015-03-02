@@ -1,7 +1,5 @@
 # Users
 
-***
-
 These are members of the Twitch community who have a Twitch account. If broadcasting, they can own a [stream][streams] that they can broadcast on their [channel][channels]. If mainly viewing, they might [follow][follows] or [subscribe][subscriptions] to channels.
 
 | Endpoint | Description |

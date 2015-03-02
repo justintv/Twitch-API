@@ -1,7 +1,5 @@
 # Chat
 
-***
-
 Chat is where Twitch users can interact with each other while watching a [stream][streams].
 
 [streams]: /v2_resources/streams.md

@@ -1,7 +1,5 @@
 # Videos
 
-***
-
 Videos are broadcasts or highlights owned by a [channel][channels]. Broadcasts are unedited videos that are saved after a streaming session. Highlights are videos edited from broadcasts by the channel's owner.
 
 | Endpoint | Description |

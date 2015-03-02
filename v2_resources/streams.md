@@ -1,7 +1,5 @@
 # Streams
 
-***
-
 Streams are video broadcasts that are currently live. They have a [broadcaster][users] and are part of a [channel][channels].
 
 | Endpoint | Description |

@@ -1,7 +1,5 @@
 # Ingests
 
-***
-
 These are RTMP ingest points. By directing an RTMP stream with your `stream_key` injected into the `url_template`, you will broadcast your content live on Twitch.
 
 | Endpoint | Description |

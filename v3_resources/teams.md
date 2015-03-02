@@ -1,7 +1,5 @@
 # Teams
 
-***
-
 Teams are an organization of [channels][channels].
 
 | Endpoint | Description |

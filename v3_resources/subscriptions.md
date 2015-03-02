@@ -1,7 +1,5 @@
 # Subscriptions
 
-***
-
 [Users][users] can subscribe to [channels][channels].
 
 | Endpoint | Description |
