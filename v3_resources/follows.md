@@ -271,6 +271,12 @@ Adds `:user` to `:target`'s followers. `:user` is the authenticated user's name 
 
 *__Authenticated__*, required scope: `user_follows_edit`
 
+### Parameters
+
+| Name            | Required? | Type    | Description                                                                                                                                      |
+|:----------------|:----------|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notifications` | optional  | boolean | Whether `:user` should receive email/push notifications (depending on their notification settings) when `:target` goes live. Default is `false`. |
+
 ### Example Request
 
 ```bash
