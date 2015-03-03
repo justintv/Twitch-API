@@ -292,7 +292,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
   "_links": {
     "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels/test_channel"
   },
-  "notifications": true,
+  "notifications": false,
   "channel": {
     "mature": false,
     "status": "test status",
