@@ -46,9 +46,10 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 ## `GET /user`
 
 Returns a user object.
-If the user's Twitch registered Email Address is not verified, 'null' will be returned.
 
 *__Authenticated__*, required scope: `user_read`
+
+*__Gotcha__* If the user's Twitch registered Email Address is not verified, 'null' will be returned.
 
 ### Example Request
 
