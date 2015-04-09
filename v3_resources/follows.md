@@ -360,4 +360,4 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
 
 [See the Users resource][users]
 
-[users]: /resources/users.md
+[users]: /v3_resources/users.md
