@@ -13,6 +13,13 @@ Teams are an organization of [channels][channels].
 
 Returns a list of active teams.
 
+### Parameters
+
+| Name     | Required? | Type    | Description                                                        |
+|----------|-----------|---------|--------------------------------------------------------------------|
+| `limit`  | optional  | integer | Maximum number of objects in array. Default is 25. Maximum is 100. |
+| `offset` | optional  | integer | Object offset for pagination. Default is 0.                        |
+
 ### Example Request
 
 ```bash
