@@ -118,7 +118,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
     "editors": "https://api.twitch.tv/kraken/channels/test_channel/editors",
     "teams": "https://api.twitch.tv/kraken/channels/test_channel/teams",
     "videos": "https://api.twitch.tv/kraken/channels/test_channel/videos"
-  }
+  },
   "email": "test_channel@twitch.tv",
   "stream_key": "live_5439587_s8df7s9d7g6dsfggsdfg"
 }
