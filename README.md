@@ -143,7 +143,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | Endpoint | Description |
 | ---- | --------------- |
 | [GET /users/:login/blocks](/v3_resources/blocks.md#get-usersloginblocks) | Get user's block list |
-| [PUT /users/:user/blocks/:target](/v3_resources/blocks.md#put-usersuserblockstarget) | Update user's block list |
+| [PUT /users/:user/blocks/:target](/v3_resources/blocks.md#put-usersuserblockstarget) | Add target to user's block list |
 | [DELETE /users/:user/blocks/:target](/v3_resources/blocks.md#delete-usersuserblockstarget) | Delete target from user's block list |
 
 ### [Channels](/v3_resources/channels.md)
@@ -158,6 +158,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [GET /channels/:channel/follows](/v3_resources/channels.md#get-channelschannelfollows) | Get channel's list of following users |
 | [DELETE /channels/:channel/stream_key](/v3_resources/channels.md#delete-channelschannelstream_key) | Reset channel's stream key |
 | [POST /channels/:channel/commercial](/v3_resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
+| [GET /channels/:channel/teams](/v3_resources/channels.md#get-channelschannelteams) | Get list of teams channel belongs to |
 
 ### [Chat](/v3_resources/chat.md)
 
@@ -176,6 +177,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [GET /users/:user/follows/channels/:target](/v3_resources/follows.md#get-usersuserfollowschannelstarget) | Get status of follow relationship between user and target channel |
 | [PUT /users/:user/follows/channels/:target](/v3_resources/follows.md#put-usersuserfollowschannelstarget) | Follow a channel |
 | [DELETE /users/:user/follows/channels/:target](/v3_resources/follows.md#delete-usersuserfollowschannelstarget) | Unfollow a channel |
+| [GET /streams/followed](/v3_resources/users.md#get-streamsfollowed) | Get a list of streams user is following |
 
 ### [Games](/v3_resources/games.md)
 
@@ -199,6 +201,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 
 | Endpoint | Description |
 | ---- | --------------- |
+| [GET /search/channels](/v3_resources/search.md#get-searchchannels) | Find channels |
 | [GET /search/streams](/v3_resources/search.md#get-searchstreams) | Find streams |
 | [GET /search/games](/v3_resources/search.md#get-searchgames) | Find games |
 
@@ -218,6 +221,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | ---- | --------------- |
 | [GET /channels/:channel/subscriptions](/v3_resources/subscriptions.md#get-channelschannelsubscriptions) | Get list of users subscribed to channel |
 | [GET /channels/:channel/subscriptions/:user](/v3_resources/subscriptions.md#get-channelschannelsubscriptionsuser) | Check if channel has user subscribed |
+| [GET /users/:user/subscriptions/:channel](/v3_resources/subscriptions.md#get-usersusersubscriptionschannel) | Check if user subscribes to channel |
 
 ### [Teams](/v3_resources/teams.md)
 
@@ -233,6 +237,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [GET /users/:user](/v3_resources/users.md#get-usersuser) | Get user object |
 | [GET /user](/v3_resources/users.md#get-user) | Get user object |
 | [GET /streams/followed](/v3_resources/users.md#get-streamsfollowed) | Get list of streams user is following |
+| [GET /videos/followed](/v3_resources/users.md#get-videosfollowed) | Get list of videos belonging to channels user is following |
 
 ### [Videos](/v3_resources/videos.md)
 
@@ -241,5 +246,6 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [GET /videos/:id](/v3_resources/videos.md#get-videosid) | Get video object|
 | [GET /videos/top](/v3_resources/videos.md#get-videostop) | Get top videos by number of views |
 | [GET /channels/:channel/videos](/v3_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
+| [GET /videos/followed](/v3_resources/videos.md#get-videosfollowed) | Get list of videos belonging to channels user is following |
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/56e6a90fa031ae920e36cf219184c33c "githalytics.com")](http://githalytics.com/justintv/Twitch-API)
