@@ -10,9 +10,9 @@ Stores and updates information about a [user's][users] block list.
 
 [users]: /v3_resources/users.md
 
-## `GET /users/:login/blocks`
+## `GET /users/:user/blocks`
 
-Returns a list of blocks objects on `:login`'s block list. List sorted by recency, newest first.
+Returns a list of blocks objects on `:user`'s block list. List sorted by recency, newest first.
 
 *__Authenticated__*, required scope: `user_blocks_read`
 
