@@ -126,11 +126,11 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
 
 ## `GET /channels/:channel/videos`
 
-See the [Videos](https://github.com/justintv/Twitch-API/wiki/Videos-Resource#wiki-videos-channel) resource.
+See the [Videos](videos.md#get-channelschannelvideos) resource.
 
 ## `GET /channels/:channel/follows`
 
-See the [Follows](follows.md#get-a-channels-list-of-followers-) resource.
+See the [Follows](follows.md#get-channelschannelfollows) resource.
 
 ## `GET /channels/:channel/editors`
 
