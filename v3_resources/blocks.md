@@ -4,15 +4,15 @@ Stores and updates information about a [user's][users] block list.
 
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /users/:login/blocks](/v3_resources/blocks.md#get-usersloginblocks) | Get user's block list |
+| [GET /users/:user/blocks](/v3_resources/blocks.md#get-usersloginblocks) | Get user's block list |
 | [PUT /users/:user/blocks/:target](/v3_resources/blocks.md#put-usersuserblockstarget) | Add target to user's block list |
 | [DELETE /users/:user/blocks/:target](/v3_resources/blocks.md#delete-usersuserblockstarget) | Delete target from user's block list |
 
 [users]: /v3_resources/users.md
 
-## `GET /users/:login/blocks`
+## `GET /users/:user/blocks`
 
-Returns a list of blocks objects on `:login`'s block list. List sorted by recency, newest first.
+Returns a list of blocks objects on `:user`'s block list. List sorted by recency, newest first.
 
 *__Authenticated__*, required scope: `user_blocks_read`
 
