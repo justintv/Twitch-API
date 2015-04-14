@@ -270,6 +270,10 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <acc
 }
 ```
 
+### Errors
+
+`422 Unprocessable Entity` if trying to set `delay` for a channel that is not partnered.
+
 ## `DELETE /channels/:channel/stream_key`
 
 Resets channel's stream key.
