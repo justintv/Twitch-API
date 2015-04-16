@@ -362,18 +362,6 @@ Returns a summary of current streams.
             <td>string</td>
             <td>Only show stats for the set game</td>
         </tr>
-        <tr>
-            <td><code>limit</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Maximum number of objects in array. Default is 25. Maximum is 100.</td>
-        </tr>
-        <tr>
-            <td><code>offset</code></td>
-            <td>optional</td>
-            <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
-        </tr>
     </tbody>
 </table>
 
