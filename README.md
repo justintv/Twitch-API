@@ -152,10 +152,10 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | ---- | --------------- |
 | [GET /channels/:channel](/v3_resources/channels.md#get-channelschannel) | Get channel object|
 | [GET /channel](/v3_resources/channels.md#get-channel) | Get channel object |
-| [GET /channels/:channel/editors](/v3_resources/channels.md#get-channelschanneleditors) | Get channel's list of editors |
-| [PUT /channels/:channel](/v3_resources/channels.md#put-channelschannel) | Update channel object |
 | [GET /channels/:channel/videos](/v3_resources/channels.md#get-channelschannelvideos) | Get channel's list of videos |
 | [GET /channels/:channel/follows](/v3_resources/channels.md#get-channelschannelfollows) | Get channel's list of following users |
+| [GET /channels/:channel/editors](/v3_resources/channels.md#get-channelschanneleditors) | Get channel's list of editors |
+| [PUT /channels/:channel](/v3_resources/channels.md#put-channelschannel) | Update channel object |
 | [DELETE /channels/:channel/stream_key](/v3_resources/channels.md#delete-channelschannelstream_key) | Reset channel's stream key |
 | [POST /channels/:channel/commercial](/v3_resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
 | [GET /channels/:channel/teams](/v3_resources/channels.md#get-channelschannelteams) | Get list of teams channel belongs to |
