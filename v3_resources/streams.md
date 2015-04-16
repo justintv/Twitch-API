@@ -49,6 +49,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   "stream": {
     "game": "StarCraft II: Heart of the Swarm",
     "viewers": 2123,
+    "average_fps": 29.9880749574,
+    "video_height": 720,
     "created_at": "2015-02-12T04:42:31Z",
     "_id": 4989654544,
     "channel": {
@@ -164,6 +166,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     {
       "game": "StarCraft II: Heart of the Swarm",
       "viewers": 2123,
+      "average_fps": 29.9880749574,
+      "video_height": 720,
       "created_at": "2015-02-12T04:42:31Z",
       "_id": 4989654544,
       "channel": {
@@ -281,6 +285,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "stream": {
         "game": "StarCraft II: Heart of the Swarm",
         "viewers": 2123,
+        "average_fps": 29.9880749574,
+        "video_height": 720,
         "created_at": "2015-02-12T04:42:31Z",
         "_id": 4989654544,
         "channel": {
