@@ -164,6 +164,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 
 ```json
 {
+  "_total": 76,
   "_links": {
     "self": "https://api.twitch.tv/kraken/search/streams?limit=25&offset=0&q=starcraft",
     "next": "https://api.twitch.tv/kraken/search/streams?limit=25&offset=25&q=starcraft"
