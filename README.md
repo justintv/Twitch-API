@@ -247,5 +247,3 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [GET /videos/top](/v3_resources/videos.md#get-videostop) | Get top videos by number of views |
 | [GET /channels/:channel/videos](/v3_resources/videos.md#get-channelschannelvideos) | Get list of video objects belonging to channel |
 | [GET /videos/followed](/v3_resources/videos.md#get-videosfollowed) | Get list of videos belonging to channels user is following |
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/56e6a90fa031ae920e36cf219184c33c "githalytics.com")](http://githalytics.com/justintv/Twitch-API)
