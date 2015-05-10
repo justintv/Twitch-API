@@ -144,5 +144,3 @@ When an API request requires authentication, you can send the access token you o
   * Send token in the HTTP body (cannot be used with `GET` and `DELETE` methods)
   
         curl -d 'oauth_token=[access token]' https://api.twitch.tv/kraken/channels/cevtest15/commercial
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/56e6a90fa031ae920e36cf219184c33c "githalytics.com")](http://githalytics.com/justintv/Twitch-API/blob/master/authentication.md)
