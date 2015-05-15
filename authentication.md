@@ -40,8 +40,9 @@ Remember, you must keep your client secret _confidential_. Make sure to never ex
             &client_id=[your client ID]
             &redirect_uri=[your registered redirect URI]
             &scope=[space separated list of scopes]
+            &state=[your provided unique token]
 
-      > We also support the `state` parameter, which is strongly recommended
+      > We support the `state` OAuth2 parameter, which is strongly recommended
       > for avoid cross-site scripting attacks. If included, it is appended to
       > the list of query parameters when redirecting the user to the
       > `redirect_uri`.
@@ -63,7 +64,7 @@ Remember, you must keep your client secret _confidential_. Make sure to never ex
         &grant_type=authorization_code
         &redirect_uri=[your registered redirect URI]
         &code=[code received from redirect URI]
-
+        &state=[your provided unique token]
      
   4. We'll respond with a JSON-encoded access token:
    
