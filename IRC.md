@@ -17,7 +17,7 @@ Once you have that information, you can then take it to connect to Twitch IRC wi
 - The server name to connect to is: *irc.twitch.tv*.
 - The port to connect to is *6667*.
 - SSL **is not** supported for Twitch IRC.
-- Your nickname must be your Twitch nickname
+- Your nickname must be your Twitch nickname in lowercase
 - Your password should be an OAuth token with the `chat_login` scope. The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`. You can get a token for your account with this helpful [page](http://twitchapps.com/tmi/) (thanks to [Andrew Bashore](https://github.com/bashtech)!).
 
 ## Upon a Successful Connection
