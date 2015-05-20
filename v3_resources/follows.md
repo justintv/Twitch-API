@@ -151,6 +151,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     "next": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?direction=DESC&limit=25&offset=25",
     "self": "https://api.twitch.tv/kraken/users/test_user1/follows/channels?direction=DESC&limit=25&offset=0"
   },
+  "_total": 32,
   "follows": [
     {
       "created_at": "2013-06-02T09:38:45Z",
