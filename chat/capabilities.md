@@ -4,6 +4,13 @@ Twitch Capabilities
 Using IRCv3 capability registration, it is possible to register for Twitch-specific
 capabilities. The capabilities are defined below:
 
+## Membership
+
+    < CAP REQ :twitch.tv/membership
+    > :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+
+Adds JOIN and PART functionality.  When we remove support for the TWITCHCLIENT command, we will by default *not* send this data to clients without this capability.
+
 ## Commands
 
     < CAP REQ :twitch.tv/commands
@@ -45,13 +52,6 @@ Use with tags CAP to get anything out of it. See USERSTATE tags below as it does
     > :tmi.twitch.tv CAP * ACK :twitch.tv/tags
 
 Adds IRC v3 message tags to `PRIVMSG` and `USERSTATE` (if enabled with commands CAP)
-
-## Membership
-
-    < CAP REQ :twitch.tv/membership
-    > :tmi.twitch.tv CAP * ACK :twitch.tv/membership
-
-Adds JOIN and PART functionality.  When we remove support for the TWITCHCLIENT command, we will by default *not* send this data to clients without this capability.
 
 ### PRIVMSG
 
