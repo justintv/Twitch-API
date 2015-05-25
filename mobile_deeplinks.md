@@ -36,7 +36,7 @@ URLs starting with twitch:// or ttv:// will open up the Twitch app, if it's inst
     twitch://open
     twitch://open?stream=#channel_name
     twitch://open?game=#game_name
-    twitch://open?video=#video_id
+    twitch://open?video=#video_id   (For a VOD with URL twitch.tv/some_channel/v/1234567 the video_id is v1234567)
 
 ##### Launch the app and go to the user's following directory (if user is not logged in, goes to the login page):
 
