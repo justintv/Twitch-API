@@ -4,7 +4,7 @@ The Twitch iOS and Android applications can be launched externally. This page se
 
 [Twitch Developer Forums]: http://discuss.dev.twitch.tv
 
-### Checking for the presense of the app
+### Checking for the presence of the app
 You can check if the Twitch app is installed on the device with something along the following lines:
 
 ##### iOS
