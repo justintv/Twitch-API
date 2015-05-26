@@ -31,17 +31,30 @@ You can check if the Twitch app is installed on the device with something along 
 ### URL Scheme
 URLs starting with twitch:// or ttv:// will open up the Twitch app, if it's installed on the device. 
 
-##### Launch the App and optionally go to a live stream, a game's directory, or a VOD:
+#### Launch the App
 
     twitch://open
-    twitch://open?stream=#channel_name
-    twitch://open?game=#game_name
-    twitch://open?video=#video_id   (For a VOD with URL twitch.tv/some_channel/v/1234567 the video_id is v1234567)
+    
+#### Launch the app and go to a particular stream, game, etc.
+   **Live Stream**  
+        `twitch://stream/#channel_name` or `twitch://open?stream=#channel_name`  
+        
+   **Game Directory**  
+        `twitch://game/#game_name` or `twitch://open?game=#game_name`  
+        
+   **VOD**  
+        `twitch://video/#video_id` or `twitch://open?video=#video_id`  
+        (For a VOD with URL twitch.tv/some_channel/v/1234567 the video_id is v1234567)  
+        
+   **Channel Activity Feed (includes VODs)**  
+        `twitch://channel/#channel_name` or `twitch://open?channel=#channel_name`  
 
-##### Launch the app and go to the user's following directory (if user is not logged in, goes to the login page):
+
+#### Launch the app and go to the user's following directory (if user is not logged in, goes to the login page):
 
     twitch://following
 
-##### Launch the app and go to the login page:
+#### Launch the app and go to the login page:
 
     twitch://login
+
