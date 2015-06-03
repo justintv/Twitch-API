@@ -16,7 +16,13 @@ Adds JOIN and PART functionality.  When we remove support for the TWITCHCLIENT c
     < CAP REQ :twitch.tv/commands
     > :tmi.twitch.tv CAP * ACK :twitch.tv/commands
 
-Enables `USERSTATE`, `HOSTTARGET` and `CLEARCHAT` raw commands.
+Enables `USERSTATE`, `GLOBALUSERSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
+
+### NOTICE
+
+General notices from the server - could be about state change (slowmode enabled), feedback (you have banned <user> from the channel), etc.  Each NOTICE message includes a msg-id tag which can be used for i18ln.
+
+    @msg-id=slow_off :tmi.twitch.tv NOTICE #channel :This room is no longer in slow mode.
 
 ### HOSTTARGET
 
@@ -80,3 +86,7 @@ The tags shared with PRIVMSG work exactly the same.
 `emote-sets` contains your emote set, which you can use to request `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=[straight from the emote-sets tag]`. Always contains at least 0.
 
 `emotesets` is deprecated and will be removed soon. Use `emote-sets` instead.
+
+### USERSTATE
+
+GLOBALUSERSTATE will be used in the future to describe non-channel-specific state information.
