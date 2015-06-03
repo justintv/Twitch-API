@@ -87,6 +87,6 @@ The tags shared with PRIVMSG work exactly the same.
 
 `emotesets` is deprecated and will be removed soon. Use `emote-sets` instead.
 
-### USERSTATE
+### GLOBALUSERSTATE
 
 GLOBALUSERSTATE will be used in the future to describe non-channel-specific state information.
