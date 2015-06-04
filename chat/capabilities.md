@@ -24,6 +24,17 @@ General notices from the server - could be about state change (slowmode enabled)
 
     @msg-id=slow_off :tmi.twitch.tv NOTICE #channel :This room is no longer in slow mode.
 
+ msg-id | reponse
+ ---|---
+subs_on | This room is now in subscribers-only mode.
+subs_off | This room is no longer in subscribers-only mode.
+slow_on | This room is now in slow mode. You may send messages every `slow_duration` seconds.
+slow_off | This room is no longer in slow mode.
+r9k_on | This room is now in r9k mode.
+r9k_off | This room is no longer in r9k mode.
+host_on | Now hosting `target_channel`.
+host_off | Exited host mode.
+
 ### HOSTTARGET
 
 Host starts message:
