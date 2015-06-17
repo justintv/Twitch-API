@@ -131,7 +131,7 @@ Returns a list of follows objects.
             <td><code>sortby</code></td>
             <td>optional</td>
             <td>string</td>
-            <td>Sort key. Default is <code>created_at</code>. Valid values are <code>created_at</code> and <code>last_broadcast</code>.</td>
+            <td>Sort key. Default is <code>created_at</code>. Valid values are <code>created_at</code>, <code>last_broadcast</code>, and <code>login</code>.</td>
         </tr>
     </tbody>
 </table>
