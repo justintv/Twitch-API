@@ -13,8 +13,8 @@ You can connect to Twitch IRC using the following bits of information:
 - **SSL is not currently supported for Twitch IRC**
 - Your nickname must be your Twitch username in lowercase.
 - Your password should be an OAuth token [authorized through our API](/authentication.md) with the `chat_login` scope.
-    - The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`.
-    - You can quickly get a token for your account with this helpful [page](http://twitchapps.com/tmi/) (thanks to [Andrew Bashore](https://github.com/bashtech)!).
+  - The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`.
+  - You can quickly get a token for your account with this helpful [page](http://twitchapps.com/tmi/) (thanks to [Andrew Bashore](https://github.com/bashtech)!).
 
 ## Upon a Successful Connection
 
@@ -44,7 +44,7 @@ If your connection fails for any reason, you will be disconnected from the serve
 
 ## Command & Message Limit
 
-- If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 8 hours automatically. These are **not** lifted so please be careful when working with IRC!
+- If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 8 hours automatically. These are *not* lifted so please be careful when working with IRC!
 - This limit is elevated to 100 messages per 30 seconds for users that *only* send messages/commands to channels in which they have Moderator/Operator status.
 
 ## Commands you can send
@@ -91,15 +91,26 @@ Basic message reception is as follows:
 
 # Twitch Capabilities
 
-Using IRCv3 capability registration, it is possible to register for Twitch-specific
-capabilities. The capabilities are defined below:
+Using IRCv3 capability registration, it is possible to register for Twitch-specific capabilities. The capabilities are defined below:
 
 ## Membership
 
-    < CAP REQ :twitch.tv/membership
-    > :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+```
+< CAP REQ :twitch.tv/membership
+> :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+```
 
-Adds JOIN, PART, NAMES, and MODE functionality. By default we do *not* send this data to clients without this capability.
+Adds membership state event (`NAMES`, `JOIN`,`PART`, or `MODE`) functionality. By default we do *not* send this data to clients without this capability.
+
+### NAMES
+
+The list of current chatters in a channel:
+
+```
+> :twitch_username.tmi.twitch.tv 353 twitch_username = #channel :twitch_username user2 user3
+> :twitch_username.tmi.twitch.tv 353 twitch_username = #channel :user5 user6 nicknameN
+> :twitch_username.tmi.twitch.tv 366 twitch_username #channel :End of /NAMES list
+```
 
 ### JOIN
 
@@ -115,16 +126,6 @@ Someone left a channel:
 
 ```
 > :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PART #channel
-```
-
-### NAMES
-
-The list of current chatters in a channel:
-
-```
-> :twitch_username.tmi.twitch.tv 353 twitch_username = #channel :twitch_username user2 user3
-> :twitch_username.tmi.twitch.tv 353 twitch_username = #channel :user5 user6 nicknameN
-> :twitch_username.tmi.twitch.tv 366 twitch_username #channel :End of /NAMES list
 ```
 
 ### MODE
@@ -144,8 +145,10 @@ Someone gained or lost operator:
 
 ## Commands
 
-    < CAP REQ :twitch.tv/commands
-    > :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+```
+< CAP REQ :twitch.tv/commands
+> :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+```
 
 Enables `USERSTATE`, `GLOBALUSERSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
 
@@ -153,7 +156,9 @@ Enables `USERSTATE`, `GLOBALUSERSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` r
 
 General notices from the server - could be about state change (slowmode enabled), feedback (you have banned <user> from the channel), etc.  Each NOTICE message includes a msg-id tag which can be used for i18ln.
 
-    @msg-id=slow_off :tmi.twitch.tv NOTICE #channel :This room is no longer in slow mode.
+```
+> @msg-id=slow_off :tmi.twitch.tv NOTICE #channel :This room is no longer in slow mode.
+```
 
  msg-id | reponse
  ---|---
@@ -170,62 +175,75 @@ host_off | Exited host mode.
 
 Host starts message:
 
-    :tmi.twitch.tv HOSTTARGET #hosting_channel :target_channel [number]
-
+```
+> :tmi.twitch.tv HOSTTARGET #hosting_channel :target_channel [number]
+```
 Host stops message:
 
-    :tmi.twitch.tv HOSTTARGET #hosting_channel :- [number]
-
+```
+> :tmi.twitch.tv HOSTTARGET #hosting_channel :- [number]
+```
 Number is assumed to be the number of viewers watching the host.
 
 ### CLEARCHAT
 
 Username is timed out on channel:
 
-    :tmi.twitch.tv CLEARCHAT #channel :username
-
+```
+> :tmi.twitch.tv CLEARCHAT #channel :twitch_username
+```
 Chat is cleared on channel:
 
-    :tmi.twitch.tv CLEARCHAT #channel
-
+```
+> :tmi.twitch.tv CLEARCHAT #channel
+```
 ### USERSTATE
 
 Use with tags CAP to get anything out of it. See USERSTATE tags below as it doesn't offer anything without them.
 
-    :tmi.twitch.tv USERSTATE #notventic
-
+```
+> :tmi.twitch.tv USERSTATE #channel
+```
 ## Tags
 
-    < CAP REQ :twitch.tv/tags
-    > :tmi.twitch.tv CAP * ACK :twitch.tv/tags
-
+```
+< CAP REQ :twitch.tv/tags
+> :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+```
 Adds IRC v3 message tags to `PRIVMSG`, `USERSTATE`, `NOTICE` and `GLOBALUSERSTATE` (if enabled with commands CAP)
 
 ### PRIVMSG
 
 Example message:
 
-    @color=#0D4200;display-name=3ventic;emotes=25:0-4,12-16/1902:6-10;subscriber=0;turbo=1;user-type=global_mod :3ventic!3ventic@3ventic.tmi.twitch.tv PRIVMSG #3ventic :Kappa Keepo Kappa
+```
+> @color=#0D4200;display-name=TWITCH_UserNaME;emotes=25:0-4,12-16/1902:6-10;subscriber=0;turbo=1;user-type=global_mod :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PRIVMSG #channel :Kappa Keepo Kappa
+```
 
-- `color` is hexadecimal RGB color code, which *can be empty* if the user never set it.
-- `display-name` is the user's display name, escaped as described [as described in the IRCv3 spec](http://ircv3.net/specs/core/message-tags-3.2.html). Empty if it's never been set.
+- `color` is a hexadecimal RGB color code
+  - Empty if it's never been set.
+- `display-name` is the user's display name, escaped as described [as described in the IRCv3 spec](http://ircv3.net/specs/core/message-tags-3.2.html).
+  - Empty if it's never been set.
 - `emotes` contains information to replace text in the message with the emote images and *can be empty*. The format is as follows:
   - `emote_id:first_index-last_index,another_first-another_last/another_emote_id:first_index-last_index`
   - `emote_id` is the number to use in this URL: `http://static-cdn.jtvnw.net/emoticons/v1/:emote_id/:size` (size is 1.0, 2.0 or 3.0)
   - Emote indexes are simply character indexes. `\001ACTION ` does *not* count and indexing starts from the first character that is part of the user's "actual message". In the example message, the first Kappa (emote id 25) is from character 0 (K) to character 4 (a), and the other Kappa is from 12 to 16.
 - `subscriber`and `turbo` are either 0 or 1 depending on whether the user has sub or turbo badge or not.
-- `user-type` is either *empty*, `mod`, `global_mod`, `admin` or `staff`. The broadcaster can have any of these including empty.
+- `user-type` is either *empty*, `mod`, `global_mod`, `admin` or `staff`.
+  - The broadcaster can have any of these, including empty.
 
 ### USERSTATE
 
 USERSTATE is sent when joining a channel and every time you send a PRIVMSG to a channel. Example:
 
-    @color=#0D4200;display-name=3ventic;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;subscriber=0;turbo=1;user-type=global_mod :tmi.twitch.tv USERSTATE #3ventic
+```
+> @color=#0D4200;display-name=TWITCH_UserNaME;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;subscriber=1;turbo=1;user-type=staff :tmi.twitch.tv USERSTATE #channel
+```
 
-The tags shared with PRIVMSG work exactly the same.
-
-- `emote-sets` contains your emote set, which you can use to request `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=[straight_from_the_emote-sets_tag]`.
+- `emote-sets` contains your emote set, which you can use to request a subset of `https://api.twitch.tv/kraken/chat/emoticon_images`.
+  - eg: `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239`
   - Always contains at least 0.
+- Other tags shared with PRIVMSG function the same way.
 
 ### GLOBALUSERSTATE
 
