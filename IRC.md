@@ -1,26 +1,20 @@
-# Connecting to IRC
+# Twitch IRC
 
-Twitch offers an IRC interface to its chat. This allows for people to do things like develop bots for their channel, or to connect to a channel's chat with an IRC client instead of using the web interface. While our IRC server is built to follow [RFC1459](http://tools.ietf.org/html/rfc1459.html), it is important to note that there are **several** cases where it will behave slightly differently than another IRC server would. These cases are noted when necessary in the following document.
+Twitch offers an IRC interface to its chat. This allows for people to do things like develop bots for their channel, or to connect to a channel's chat with an IRC client instead of using the web interface. While our IRC server is built to follow [RFC1459](http://tools.ietf.org/html/rfc1459.html), it is important to note that there are *several* cases where it will behave slightly differently than another IRC server would. These cases are noted when necessary in the following document.
 
 Lines prefixed with < are sent from client to server, and lines prefixed with > are sent from the server to the connecting client.
 
-## Prerequisites
-
-In order to connect to Twitch IRC, you must have three pieces of information:
-
-1. The name of channel that you want to join.
-2. A Twitch account.
-3. An OAuth token [authorized through our API](/authentication.md) either directly or via an application which provides it
-
 ## Connecting
 
-Once you have that information, you can then take it to connect to Twitch IRC with the following bits of information:
+You can connect to Twitch IRC using the following bits of information:
 
-- The server name to connect to is: *irc.twitch.tv*.
-- SSL is not currently supported for Twitch IRC
-- The port to connect to is *6667*
-- Your nickname must be your Twitch nickname in lowercase
-- Your password should be an OAuth token with the `chat_login` scope. The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`. You can get a token for your account with this helpful [page](http://twitchapps.com/tmi/) (thanks to [Andrew Bashore](https://github.com/bashtech)!).
+- The server name to connect to is: `irc.twitch.tv`.
+- The port to connect to is `6667`
+- **SSL is not currently supported for Twitch IRC**
+- Your nickname must be your Twitch username in lowercase.
+- Your password should be an OAuth token [authorized through our API](/authentication.md) with the `chat_login` scope.
+    - The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`.
+    - You can quickly get a token for your account with this helpful [page](http://twitchapps.com/tmi/) (thanks to [Andrew Bashore](https://github.com/bashtech)!).
 
 ## Upon a Successful Connection
 
@@ -51,7 +45,7 @@ If your connection fails for any reason, you will be disconnected from the serve
 ## Command & Message Limit
 
 - If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 8 hours automatically. These are **not** lifted so please be careful when working with IRC!
-- The above limit is elevated to 100/30 for users who *only* send messages/commands to channels in which they have Moderator/Operator status.
+- This limit is elevated to 100 messages per 30 seconds for users that *only* send messages/commands to channels in which they have Moderator/Operator status.
 
 ## Commands you can send
 
@@ -63,11 +57,11 @@ If you send an invalid command, you will receive a 421 numeric back:
 ```
 
 A brief list of commands supported by our IRC server include:
-#### JOIN: Opening up a chat room
+### JOIN: Opening up a chat room
 
 **JOIN** *#channel*
 
-Note: After a successful `JOIN`, you will *not* receive a user list (`NAMES`) nor `JOIN`,`PART`, or `MODE` events *unless* you've requested our [IRCv3 `Membership`](#membership) capability
+Note: After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`,`PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability
 
 ```
 < JOIN #channel
@@ -76,7 +70,7 @@ Note: After a successful `JOIN`, you will *not* receive a user list (`NAMES`) no
 > :twitch_username.tmi.twitch.tv 366 twitch_username #channel :End of /NAMES list
 ```
 
-#### PART: Leaving a chat room
+### PART: Leaving a chat room
 
 **PART** *#channel*
 
@@ -85,7 +79,7 @@ Note: After a successful `JOIN`, you will *not* receive a user list (`NAMES`) no
 > :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PART #channel
 ````
 
-#### PRIVMSG: Sending a message
+### PRIVMSG: Sending a message
 
 **PRIVMSG** *#channel* :Message to send
 
@@ -107,7 +101,7 @@ capabilities. The capabilities are defined below:
 
 Adds JOIN, PART, NAMES, and MODE functionality. By default we do *not* send this data to clients without this capability.
 
-#### JOIN
+### JOIN
 
 Someone joined a channel:
 
@@ -115,7 +109,7 @@ Someone joined a channel:
 > :twitch_username!twitch_username@twitch_username.tmi.twitch.tv JOIN #channel
 ```
 
-#### PART
+### PART
 
 Someone left a channel:
 
@@ -123,7 +117,7 @@ Someone left a channel:
 > :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PART #channel
 ```
 
-#### NAMES
+### NAMES
 
 The list of current chatters in a channel:
 
@@ -133,7 +127,7 @@ The list of current chatters in a channel:
 > :twitch_username.tmi.twitch.tv 366 twitch_username #channel :End of /NAMES list
 ```
 
-#### MODE
+### MODE
 
 Someone gained or lost operator:
 
@@ -155,7 +149,7 @@ Someone gained or lost operator:
 
 Enables `USERSTATE`, `GLOBALUSERSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
 
-#### NOTICE
+### NOTICE
 
 General notices from the server - could be about state change (slowmode enabled), feedback (you have banned <user> from the channel), etc.  Each NOTICE message includes a msg-id tag which can be used for i18ln.
 
@@ -172,7 +166,7 @@ r9k_off | This room is no longer in r9k mode.
 host_on | Now hosting `target_channel`.
 host_off | Exited host mode.
 
-#### HOSTTARGET
+### HOSTTARGET
 
 Host starts message:
 
@@ -184,7 +178,7 @@ Host stops message:
 
 Number is assumed to be the number of viewers watching the host.
 
-#### CLEARCHAT
+### CLEARCHAT
 
 Username is timed out on channel:
 
@@ -194,7 +188,7 @@ Chat is cleared on channel:
 
     :tmi.twitch.tv CLEARCHAT #channel
 
-#### USERSTATE
+### USERSTATE
 
 Use with tags CAP to get anything out of it. See USERSTATE tags below as it doesn't offer anything without them.
 
@@ -207,7 +201,7 @@ Use with tags CAP to get anything out of it. See USERSTATE tags below as it does
 
 Adds IRC v3 message tags to `PRIVMSG`, `USERSTATE`, `NOTICE` and `GLOBALUSERSTATE` (if enabled with commands CAP)
 
-#### PRIVMSG
+### PRIVMSG
 
 Example message:
 
@@ -222,7 +216,7 @@ Example message:
 - `subscriber`and `turbo` are either 0 or 1 depending on whether the user has sub or turbo badge or not.
 - `user-type` is either *empty*, `mod`, `global_mod`, `admin` or `staff`. The broadcaster can have any of these including empty.
 
-#### USERSTATE
+### USERSTATE
 
 USERSTATE is sent when joining a channel and every time you send a PRIVMSG to a channel. Example:
 
@@ -233,6 +227,6 @@ The tags shared with PRIVMSG work exactly the same.
 - `emote-sets` contains your emote set, which you can use to request `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=[straight_from_the_emote-sets_tag]`.
   - Always contains at least 0.
 
-#### GLOBALUSERSTATE
+### GLOBALUSERSTATE
 
 GLOBALUSERSTATE will be used in the future to describe non-channel-specific state information.
