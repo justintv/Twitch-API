@@ -1,111 +1,250 @@
-# Connecting to IRC
+# Twitch IRC
 
-Twitch offers an IRC interface to its chat. This allows for people to do things like develop bots for their channel, or to connect to a channel's chat with an IRC client instead of using the web interface. While our IRC server is built to follow [RFC1459](http://tools.ietf.org/html/rfc1459.html), it is important to note that there are some cases where it will behave slightly differently than another IRC server would. These cases are noted when necessary in the following document.
+Twitch offers an IRC interface to its chat. This allows for people to do things like develop bots for their channel, or to connect to a channel's chat with an IRC client instead of using the web interface. While our IRC server is built to follow [RFC1459](http://tools.ietf.org/html/rfc1459.html), it is important to note that there are *several* cases where it will behave slightly differently than another IRC server would. These cases are noted when necessary in the following document.
 
 Lines prefixed with < are sent from client to server, and lines prefixed with > are sent from the server to the connecting client.
 
-## Prerequisites
-In order to connect to Twitch IRC, you must have three pieces of information:
-
-1. The name of channel that you want to join.
-2. A Twitch account.
-3. Oauth token from API or from a site using it: www.twitchapps.com/tmi 
-
 ## Connecting
-Once you have that information, you can then take it to connect to Twitch IRC with the following bits of information:
 
-- The server name to connect to is: *irc.twitch.tv*.
-- The port to connect to is *6667*.
-- SSL **is not** supported for Twitch IRC.
-- Your nickname must be your Twitch nickname in lowercase
-- Your password should be an OAuth token with the `chat_login` scope. The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`. You can get a token for your account with this helpful [page](http://twitchapps.com/tmi/) (thanks to [Andrew Bashore](https://github.com/bashtech)!).
+You can connect to Twitch IRC using the following bits of information:
+
+- The server name to connect to is: `irc.twitch.tv`.
+- The port to connect to is `6667`
+- **SSL is not currently supported for Twitch IRC**
+- Your nickname must be your Twitch username in lowercase.
+- Your password should be an OAuth token [authorized through our API](/authentication.md) with the `chat_login` scope.
+  - The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`.
+  - You can quickly get a token for your account with this helpful [page](http://twitchapps.com/tmi/) (thanks to [Andrew Bashore](https://github.com/bashtech)!).
 
 ## Upon a Successful Connection
+
 A successful connection session will look something like this:
+
 ```
 < PASS oauth:twitch_oauth_token
 < NICK twitch_username
-> :tmi.twitch.tv 001 twitch_username :connected to TMI
-> :tmi.twitch.tv 002 twitch_username :your host is TMI
-> :tmi.twitch.tv 003 twitch_username :this server is pretty new
-> :tmi.twitch.tv 004 twitch_username tmi.twitch.tv 0.0.1 w n
-> :tmi.twitch.tv 375 twitch_username :- tmi.twitch.tv Message of the day - 
-> :tmi.twitch.tv 372 twitch_username :- not much to say here
-> :tmi.twitch.tv 376 twitch_username :End of /MOTD command
+> :tmi.twitch.tv 001 twitch_username :Welcome, GLHF!
+> :tmi.twitch.tv 002 twitch_username :Your host is tmi.twitch.tv
+> :tmi.twitch.tv 003 twitch_username :This server is rather new
+> :tmi.twitch.tv 004 twitch_username :-
+> :tmi.twitch.tv 375 twitch_username :-
+> :tmi.twitch.tv 372 twitch_username :You are in a maze of twisty passages, all alike.
+> :tmi.twitch.tv 376 twitch_username :>
 ```
 
 About once every five minutes, you will receive a `PING tmi.twitch.tv` from the server, in order to ensure that your connection to the server is not prematurely terminated, you should reply with `PONG tmi.twitch.tv`.
 
 ## On an Unsuccessful Connection
+
 If your connection fails for any reason, you will be disconnected from the server. Some common reasons for being disconnected immediately include:
 
 - Connecting on the wrong port
 - Connecting to the wrong server
 - Using an incorrect username and/or password
- 
+
 ## Command & Message Limit
-- If you send more than 20 commands or messages to the server within a 30 second period, you will get locked out for 8 hours automatically. These are **not** lifted so please be careful when working with IRC!
+
+- If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 8 hours automatically. These are *not* lifted so please be careful when working with IRC!
+- This limit is elevated to 100 messages per 30 seconds for users that *only* send messages/commands to channels in which they have Moderator/Operator status.
 
 ## Commands you can send
+
 If you send an invalid command, you will receive a 421 numeric back:
+
 ```
-< CAP REQ :multi-prefix
-> :tmi.twitch.tv 421 you CAP :Unknown command
+< WHO #channel
+> :tmi.twitch.tv 421 twitch_username WHO :Unknown command
 ```
 
 A brief list of commands supported by our IRC server include:
-### JOIN: Opening up a chat room (and obtaining a list of users)
-**JOIN** *#channelname*
+### JOIN: Opening up a chat room
 
-Notes:
+**JOIN** *#channel*
 
-After a successful JOIN, the following will take place:
-
-1. You will be sent a list of users that are currently in the channel.
-2. A number of MODEs will be set from the **jtv** user to signify that a user can moderate chat. Users that can moderate chat are are defined as *Channel Moderators*, *Admin*'s and *Staff*.
+Note: After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`, `PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability
 
 ```
-< JOIN #channelname
-> JOIN #channelname
-> 353: = #channelname nickname nickname2 nickname3 nickname4 anotherNickname
-> 353: = #channelname nickname25 nickname26 nicknameN
-> 366: #channelname End of /NAMES list
-> jtv MODE #channelname +o channel_moderator
-> jtv MODE #channelname +o channel_moderator2
-> jtv MODE #channelname +o staff_user
-> jtv MODE #channelname +o twitch_global_mod_user
+< JOIN #channel
+> :twitch_username!twitch_username@twitch_username.tmi.twitch.tv JOIN #channel
+> :twitch_username.tmi.twitch.tv 353 twitch_username = #channel :twitch_username
+> :twitch_username.tmi.twitch.tv 366 twitch_username #channel :End of /NAMES list
 ```
+
 ### PART: Leaving a chat room
-**PART** *#channelname*
+
+**PART** *#channel*
+
 ```
-< PART #channelname
-> PART #channelname
+< PART #channel
+> :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PART #channel
 ````
-### WHO: Obtaining a detailed list of users
-**WHO** *#channel*
+
+### PRIVMSG: Sending a message
+
+**PRIVMSG** *#channel* :Message to send
+
+Basic message reception is as follows:
+
 ```
-< WHO #channelname
-> 352: #channelname nickname channelname.tmi.twitch.tv tmi.twitch.tv username H 0 realname
-> 352: #channelname nickname2 channelname.tmi.twitch.tv tmi.twitch.tv username H 0 realname
-> ...
-> 352: #channelname nicknameN channel.tmi.twitch.tv tmi.twitch.tv username H 0 realname
-> 315: #channelname End of /WHO list
+> :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PRIVMSG #channel :message here
 ```
 
-## Commands you may receive
-### JOIN: Someone joined a channel!
-```:nickname!username@nickname.tmi.twitch.tv JOIN #channelname```
+# Twitch Capabilities
 
-### PART: Someone parted a channel
-```:nickname!username@nickname.tmi.twitch.tv PART #channelname```
+Using IRCv3 capability registration, it is possible to register for Twitch-specific capabilities. The capabilities are defined below:
 
-### PRIVMSG: Someone sent a message to a channel
-```:nickname!username@nickname.tmi.twitch.tv PRIVMSG #channel :message that was sent```
+## Membership
 
-## Further notes about lists of users
+```
+< CAP REQ :twitch.tv/membership
+> :tmi.twitch.tv CAP * ACK :twitch.tv/membership
+```
 
-- A list of users that are currently in a channel is sent after a successful JOIN, so WHO is often not required.
-- Due to caching, JOINs and PARTs are not sent immediately to a channel. They are instead batched up and sent every 10 seconds.
-- After receiving your initial list of users or after performing your first WHO, it is recommended to process PARTs and JOINs as they come in instead of re-requesting this list from the server.
-- Due to caching, the response of this command may be delayed by up to 10 seconds on initial connect and may be up, but no more than, to 10 seconds out of date.
-- You cannot request a list of users for a channel that you did not JOIN.
+Adds membership state event (`NAMES`, `JOIN`, `PART`, or `MODE`) functionality. By default we do *not* send this data to clients without this capability.
+
+### NAMES
+
+The list of current chatters in a channel:
+
+```
+> :twitch_username.tmi.twitch.tv 353 twitch_username = #channel :twitch_username user2 user3
+> :twitch_username.tmi.twitch.tv 353 twitch_username = #channel :user5 user6 nicknameN
+> :twitch_username.tmi.twitch.tv 366 twitch_username #channel :End of /NAMES list
+```
+
+### JOIN
+
+Someone joined a channel:
+
+```
+> :twitch_username!twitch_username@twitch_username.tmi.twitch.tv JOIN #channel
+```
+
+### PART
+
+Someone left a channel:
+
+```
+> :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PART #channel
+```
+
+### MODE
+
+Someone gained or lost operator:
+
+```
+> :jtv MODE #channel +o operator_user
+> :jtv MODE #channel -o operator_user
+```
+
+*Notes*:
+- If there are greater than 1000 chatters in a room, NAMES will only return the list of OPs currently in the room
+- Due to caching, events are not sent immediately to a channel. They are instead batched up and sent every 10 seconds.
+- `WHO` is unsupported
+- All elevated users are given OP. To determine a user's actual elevation level, request the [tags](#tags) capability and parse the `user-type` tag
+
+## Commands
+
+```
+< CAP REQ :twitch.tv/commands
+> :tmi.twitch.tv CAP * ACK :twitch.tv/commands
+```
+
+Enables `USERSTATE`, `GLOBALUSERSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
+
+### NOTICE
+
+General notices from the server - could be about state change (slowmode enabled), feedback (you have banned <user> from the channel), etc.  Each NOTICE message includes a msg-id tag which can be used for i18ln.
+
+```
+> @msg-id=slow_off :tmi.twitch.tv NOTICE #channel :This room is no longer in slow mode.
+```
+
+ msg-id | reponse
+ ---|---
+subs_on | This room is now in subscribers-only mode.
+subs_off | This room is no longer in subscribers-only mode.
+slow_on | This room is now in slow mode. You may send messages every `slow_duration` seconds.
+slow_off | This room is no longer in slow mode.
+r9k_on | This room is now in r9k mode.
+r9k_off | This room is no longer in r9k mode.
+host_on | Now hosting `target_channel`.
+host_off | Exited host mode.
+
+### HOSTTARGET
+
+Host starts message:
+
+```
+> :tmi.twitch.tv HOSTTARGET #hosting_channel :target_channel [number]
+```
+Host stops message:
+
+```
+> :tmi.twitch.tv HOSTTARGET #hosting_channel :- [number]
+```
+Number is assumed to be the number of viewers watching the host.
+
+### CLEARCHAT
+
+Username is timed out on channel:
+
+```
+> :tmi.twitch.tv CLEARCHAT #channel :twitch_username
+```
+Chat is cleared on channel:
+
+```
+> :tmi.twitch.tv CLEARCHAT #channel
+```
+### USERSTATE
+
+Use with tags CAP to get anything out of it. See USERSTATE tags below as it doesn't offer anything without them.
+
+```
+> :tmi.twitch.tv USERSTATE #channel
+```
+## Tags
+
+```
+< CAP REQ :twitch.tv/tags
+> :tmi.twitch.tv CAP * ACK :twitch.tv/tags
+```
+Adds IRC v3 message tags to `PRIVMSG`, `USERSTATE`, `NOTICE` and `GLOBALUSERSTATE` (if enabled with commands CAP)
+
+### PRIVMSG
+
+Example message:
+
+```
+> @color=#0D4200;display-name=TWITCH_UserNaME;emotes=25:0-4,12-16/1902:6-10;subscriber=0;turbo=1;user-type=global_mod :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PRIVMSG #channel :Kappa Keepo Kappa
+```
+
+- `color` is a hexadecimal RGB color code
+  - Empty if it's never been set.
+- `display-name` is the user's display name, escaped as described [as described in the IRCv3 spec](http://ircv3.net/specs/core/message-tags-3.2.html).
+  - Empty if it's never been set.
+- `emotes` contains information to replace text in the message with the emote images and *can be empty*. The format is as follows:
+  - `emote_id:first_index-last_index,another_first-another_last/another_emote_id:first_index-last_index`
+  - `emote_id` is the number to use in this URL: `http://static-cdn.jtvnw.net/emoticons/v1/:emote_id/:size` (size is 1.0, 2.0 or 3.0)
+  - Emote indexes are simply character indexes. `\001ACTION ` does *not* count and indexing starts from the first character that is part of the user's "actual message". In the example message, the first Kappa (emote id 25) is from character 0 (K) to character 4 (a), and the other Kappa is from 12 to 16.
+- `subscriber`and `turbo` are either 0 or 1 depending on whether the user has sub or turbo badge or not.
+- `user-type` is either *empty*, `mod`, `global_mod`, `admin` or `staff`.
+  - The broadcaster can have any of these, including empty.
+
+### USERSTATE
+
+USERSTATE is sent when joining a channel and every time you send a PRIVMSG to a channel. Example:
+
+```
+> @color=#0D4200;display-name=TWITCH_UserNaME;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;subscriber=1;turbo=1;user-type=staff :tmi.twitch.tv USERSTATE #channel
+```
+
+- `emote-sets` contains your emote set, which you can use to request a subset of `https://api.twitch.tv/kraken/chat/emoticon_images`.
+  - eg: `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239`
+  - Always contains at least 0.
+- Other tags shared with PRIVMSG function the same way.
+
+### GLOBALUSERSTATE
+
+GLOBALUSERSTATE will be used in the future to describe non-channel-specific state information.
