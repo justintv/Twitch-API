@@ -61,7 +61,7 @@ A brief list of commands supported by our IRC server include:
 
 **JOIN** *#channel*
 
-Note: After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`,`PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability
+Note: After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`, `PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability
 
 ```
 < JOIN #channel
@@ -100,7 +100,7 @@ Using IRCv3 capability registration, it is possible to register for Twitch-speci
 > :tmi.twitch.tv CAP * ACK :twitch.tv/membership
 ```
 
-Adds membership state event (`NAMES`, `JOIN`,`PART`, or `MODE`) functionality. By default we do *not* send this data to clients without this capability.
+Adds membership state event (`NAMES`, `JOIN`, `PART`, or `MODE`) functionality. By default we do *not* send this data to clients without this capability.
 
 ### NAMES
 
