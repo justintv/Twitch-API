@@ -2,6 +2,8 @@
 
 Twitch offers an IRC interface to its chat. This allows for people to do things like develop bots for their channel, or to connect to a channel's chat with an IRC client instead of using the web interface. While our IRC server is built to follow [RFC1459](http://tools.ietf.org/html/rfc1459.html), it is important to note that there are *several* cases where it will behave slightly differently than another IRC server would. These cases are noted when necessary in the following document.
 
+Such differences in behavior are **necessary** both to accommodate the massive scale at which our chat servers must operate, as well as the complex Twitch-specific features that we provide our users.
+
 Lines prefixed with < are sent from client to server, and lines prefixed with > are sent from the server to the connecting client.
 
 ## Connecting
