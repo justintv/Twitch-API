@@ -201,14 +201,14 @@ Chat is cleared on channel:
 ```
 ### USERSTATE
 
-Use with tags CAP. See USERSTATE tags [below](https://github.com/justintv/Twitch-API/blob/master/IRC.md#userstate-1).
+Use with tags CAP. See USERSTATE tags [below](#userstate-1).
 
 ```
 > :tmi.twitch.tv USERSTATE #channel
 ```
 ### ROOMSTATE
 
-Use with tags CAP. See ROOMSTATE tags [below](https://github.com/justintv/Twitch-API/blob/master/IRC.md#roomstate-1).
+Use with tags CAP. See ROOMSTATE tags [below](#roomstate-1).
 
 ```
 > :tmi.twitch.tv ROOMSTATE #channel
