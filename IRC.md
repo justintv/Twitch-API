@@ -152,7 +152,7 @@ Someone gained or lost operator:
 > :tmi.twitch.tv CAP * ACK :twitch.tv/commands
 ```
 
-Enables `USERSTATE`, `GLOBALUSERSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
+Enables `USERSTATE`, `GLOBALUSERSTATE`, `ROOMSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
 
 ### NOTICE
 
