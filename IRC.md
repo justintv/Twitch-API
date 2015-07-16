@@ -152,7 +152,7 @@ Someone gained or lost operator:
 > :tmi.twitch.tv CAP * ACK :twitch.tv/commands
 ```
 
-Enables `USERSTATE`, `GLOBALUSERSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
+Enables `USERSTATE`, `GLOBALUSERSTATE`, `ROOMSTATE`, `HOSTTARGET`, `NOTICE` and `CLEARCHAT` raw commands.
 
 ### NOTICE
 
@@ -201,10 +201,17 @@ Chat is cleared on channel:
 ```
 ### USERSTATE
 
-Use with tags CAP to get anything out of it. See USERSTATE tags below as it doesn't offer anything without them.
+Use with tags CAP. See USERSTATE tags [below](#userstate-1).
 
 ```
 > :tmi.twitch.tv USERSTATE #channel
+```
+### ROOMSTATE
+
+Use with tags CAP. See ROOMSTATE tags [below](#roomstate-1).
+
+```
+> :tmi.twitch.tv ROOMSTATE #channel
 ```
 ## Tags
 
@@ -250,3 +257,22 @@ USERSTATE is sent when joining a channel and every time you send a PRIVMSG to a 
 ### GLOBALUSERSTATE
 
 GLOBALUSERSTATE will be used in the future to describe non-channel-specific state information.
+
+### ROOMSTATE
+
+ROOMSTATE is sent when joining a channel and every time one of the chat room settings, like slow mode, change. The message on join contains all room settings. Example:
+
+```
+> @broadcaster-lang=;r9k=0;slow=0;subs-only=0 :tmi.twitch.tv ROOMSTATE #channel
+```
+
+Changes only contain the relevant tag. Setting slow mode to 10 seconds for example:
+
+```
+> @slow=10 :tmi.twitch.tv ROOMSTATE #channel
+```
+
+- `broadcaster-lang` is a work in progress.
+- `r9k` is R9K mode. Messages with more than 9 characters must be unique. `0` means disabled, `1` enabled.
+- `subs-only` is subscribers only mode. Only subscribers and moderators can chat. `0` disabled, `1` enabled.
+- `slow` determines how many seconds chatters without moderator privileges must wait between sending messages.
