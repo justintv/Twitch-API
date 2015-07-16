@@ -272,7 +272,7 @@ Changes only contain the relevant tag. Setting slow mode to 10 seconds for examp
 > @slow=10 :tmi.twitch.tv ROOMSTATE #channel
 ```
 
-- `broadcaster-lang` is currently unused and a work in progress.
+- `broadcaster-lang` is a work in progress.
 - `r9k` is R9K mode. Messages with more than 9 characters must be unique. `0` means disabled, `1` enabled.
 - `subs-only` is subscribers only mode. Only subscribers and moderators can chat. `0` disabled, `1` enabled.
 - `slow` determines how many seconds chatters without moderator privileges must wait between sending messages.
