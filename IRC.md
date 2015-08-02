@@ -46,7 +46,7 @@ If your connection fails for any reason, you will be disconnected from the serve
 
 ## Command & Message Limit
 
-- If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 8 hours automatically. These are *not* lifted so please be careful when working with IRC!
+- If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 2 hours automatically. These are *not* lifted so please be careful when working with IRC!
 - This limit is elevated to 100 messages per 30 seconds for users that *only* send messages/commands to channels in which they have Moderator/Operator status.
 
 ## Commands you can send
