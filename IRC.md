@@ -272,7 +272,7 @@ Changes only contain the relevant tag. Setting slow mode to 10 seconds for examp
 > @slow=10 :tmi.twitch.tv ROOMSTATE #channel
 ```
 
-- `broadcaster-lang` is the chat language when [broadcaster language mode](http://blog.twitch.tv/2015/07/broadcaster-language-mode/) is enabled, and empty otherwise. A few examples would be `en` for English, `fi` for Finnish and `es-MX` for Mexican variant of Spanish. Changes to this will not trigger another `ROOMSTATE`.
+- `broadcaster-lang` is the chat language when [broadcaster language mode](http://blog.twitch.tv/2015/07/broadcaster-language-mode/) is enabled, and empty otherwise. A few examples would be `en` for English, `fi` for Finnish and `es-MX` for Mexican variant of Spanish.
 - `r9k` is R9K mode. Messages with more than 9 characters must be unique. `0` means disabled, `1` enabled.
 - `subs-only` is subscribers only mode. Only subscribers and moderators can chat. `0` disabled, `1` enabled.
 - `slow` determines how many seconds chatters without moderator privileges must wait between sending messages.
