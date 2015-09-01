@@ -47,6 +47,14 @@ Remember, you must keep your client secret _confidential_. Make sure to never ex
       > the list of query parameters when redirecting the user to the
       > `redirect_uri`.
       
+      > The parameter `force_verify` can also be appended to this URL. This
+      > parameter decides whether the user should be re-prompted for authorization.
+      > The default is `false`, so a given user will only see the authorization
+      > page for a given set of scopes the first time through the sequence. If set
+      > to `true`, the user will always be prompted to confirm authorization.
+      > *This is useful for allowing your users to switch Twitch accounts, since
+      > there is not a way to log users out of the API.*
+      
       This page will ask the user to sign up or log in with their Twitch account and allow them to choose whether to authorize your application or not.
       
   2. If the user authorizes your application, they will be redirected to the following URL:
@@ -88,6 +96,19 @@ The Implicit Grant Flow doesn't require a server that must make requests to the 
             &client_id=[your client ID]
             &redirect_uri=[your registered redirect URI]
             &scope=[space separated list of scopes]
+
+      > We support the `state` OAuth2 parameter, which is strongly recommended
+      > for avoid cross-site scripting attacks. If included, it is appended to
+      > the list of query parameters when redirecting the user to the
+      > `redirect_uri`.
+      
+      > The parameter `force_verify` can also be appended to this URL. This
+      > parameter decides whether the user should be re-prompted for authorization.
+      > The default is `false`, so a given user will only see the authorization
+      > page for a given set of scopes the first time through the sequence. If set
+      > to `true`, the user will always be prompted to confirm authorization.
+      > *This is useful for allowing your users to switch Twitch accounts, since
+      > there is not a way to log users out of the API.*
 
       This page will ask the user to sign up or log in with their Twitch account, and allow them to choose whether to authorize your application.
       
