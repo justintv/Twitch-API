@@ -167,6 +167,7 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [GET /chat/:channel](/v3_resources/chat.md#get-chatchannel) | Get links object to other chat endpoints |
 | [GET /chat/:channel/badges](/v3_resources/chat.md#get-chatchannelbadges) | Get chat badges for channel |
 | [GET /chat/emoticons](/v3_resources/chat.md#get-chatemoticons) | Get list of every emoticon object |
+| [GET /chat/emoticon_images](/v3_resources/chat.md#get-chatemoticon_images) | Get list of emoticons |
 
 ### [Follows](/v3_resources/follows.md)
 
