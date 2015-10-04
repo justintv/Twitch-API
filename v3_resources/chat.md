@@ -9,6 +9,7 @@ Chat is where Twitch users can interact with each other while watching a [stream
 | [GET /chat/:channel](/v3_resources/chat.md#get-chatchannel) | Get links object to other chat endpoints |
 | [GET /chat/:channel/badges](/v3_resources/chat.md#get-chatchannelbadges) | Get chat badges for channel |
 | [GET /chat/emoticons](/v3_resources/chat.md#get-chatemoticons) | Get list of every emoticon object |
+| [GET /chat/emoticon_images](/v3_resources/chat.md#get-chatemoticon_images) | Get list of emoticons |
 
 ## `GET /chat/:channel`
 
@@ -71,6 +72,91 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     },
     ...
   ]
+}
+```
+
+## `GET /chat/emoticon_images`
+
+Returns a list of emoticons.
+
+### Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th width=100%>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>emotesets</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Emotes from a comma separated list of emote sets.</td>
+        </tr>
+    </tbody>
+</table>
+
+### Example Request
+
+```bash
+curl -H 'Accept: application/vnd.twitchtv.v3+json'
+-X GET https://api.twitch.tv/kraken/chat/emoticon_images
+```
+
+### Example Responses
+
+Without specified emote sets:
+
+```json
+{
+  "emoticons": [
+    {
+      "id": 25,
+      "code": "Kappa",
+      "emoticon_set": null
+    },
+    {
+      "id": 2412,
+      "code": "pipeKoppa",
+      "emoticon_set": 469
+    },
+    ...
+  ]
+}
+```
+
+With specified emote sets:
+
+```json
+{
+  "emoticon_sets": {
+    "0": [
+      {
+        "id": 25,
+        "code": "Kappa"
+      },
+      {
+        "id": 1902,
+        "code": "Keepo"
+      },
+      ...
+    ],
+    "469": [
+      {
+        "id": 2412,
+        "code": "pipeKoppa"
+      },
+      {
+        "id": 33152,
+        "code": "pipeKappa"
+      },
+      ...
+    ]
+  }
 }
 ```
 
