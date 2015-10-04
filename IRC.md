@@ -249,7 +249,7 @@ USERSTATE is sent when joining a channel and every time you send a PRIVMSG to a 
 > @color=#0D4200;display-name=TWITCH_UserNaME;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;subscriber=1;turbo=1;user-type=staff :tmi.twitch.tv USERSTATE #channel
 ```
 
-- `emote-sets` contains your emote set, which you can use to request a subset of `https://api.twitch.tv/kraken/chat/emoticon_images`.
+- `emote-sets` contains your emote set, which you can use to request a subset of [`/chat/emoticon_images`](/v3_resources/chat.md#get-chatemoticon_images).
   - eg: `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239`
   - Always contains at least 0.
 - Other tags shared with PRIVMSG function the same way.
