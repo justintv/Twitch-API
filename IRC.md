@@ -46,7 +46,7 @@ If your connection fails for any reason, you will be disconnected from the serve
 
 ## Command & Message Limit
 
-- If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 8 hours automatically. These are *not* lifted so please be careful when working with IRC!
+- If you send more than 20 commands or messages to the server within a 30 second period, you will be locked out for 2 hours automatically. These are *not* lifted so please be careful when working with IRC!
 - This limit is elevated to 100 messages per 30 seconds for users that *only* send messages/commands to channels in which they have Moderator/Operator status.
 
 ## Commands you can send
@@ -249,7 +249,7 @@ USERSTATE is sent when joining a channel and every time you send a PRIVMSG to a 
 > @color=#0D4200;display-name=TWITCH_UserNaME;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;subscriber=1;turbo=1;user-type=staff :tmi.twitch.tv USERSTATE #channel
 ```
 
-- `emote-sets` contains your emote set, which you can use to request a subset of `https://api.twitch.tv/kraken/chat/emoticon_images`.
+- `emote-sets` contains your emote set, which you can use to request a subset of [`/chat/emoticon_images`](/v3_resources/chat.md#get-chatemoticon_images).
   - eg: `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239`
   - Always contains at least 0.
 - Other tags shared with PRIVMSG function the same way.
@@ -272,7 +272,7 @@ Changes only contain the relevant tag. Setting slow mode to 10 seconds for examp
 > @slow=10 :tmi.twitch.tv ROOMSTATE #channel
 ```
 
-- `broadcaster-lang` is the chat language when [broadcaster language mode](http://blog.twitch.tv/2015/07/broadcaster-language-mode/) is enabled, and empty otherwise. A few examples would be `en` for English, `fi` for Finnish and `es-MX` for Mexican variant of Spanish. Changes to this will not trigger another `ROOMSTATE`.
+- `broadcaster-lang` is the chat language when [broadcaster language mode](http://blog.twitch.tv/2015/07/broadcaster-language-mode/) is enabled, and empty otherwise. A few examples would be `en` for English, `fi` for Finnish and `es-MX` for Mexican variant of Spanish.
 - `r9k` is R9K mode. Messages with more than 9 characters must be unique. `0` means disabled, `1` enabled.
 - `subs-only` is subscribers only mode. Only subscribers and moderators can chat. `0` disabled, `1` enabled.
 - `slow` determines how many seconds chatters without moderator privileges must wait between sending messages.
