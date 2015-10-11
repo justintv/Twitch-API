@@ -51,6 +51,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
     "viewers": 2123,
     "average_fps": 29.9880749574,
     "video_height": 720,
+    "is_playlist": false,
     "created_at": "2015-02-12T04:42:31Z",
     "_id": 4989654544,
     "channel": {
@@ -147,6 +148,12 @@ Returns a list of stream objects that are queried by a number of parameters sort
             <td>string</td>
             <td>Only shows streams from applications of <code>client_id</code>.</td>
         </tr>
+        <tr>
+            <td><code>stream_type</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Only shows streams from a certain type. Permitted values: <code>all</code>, <code>playlist</code>, <code>live</code></td>
+        </tr>
     </tbody>
 </table>
 
@@ -168,6 +175,7 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
       "viewers": 2123,
       "average_fps": 29.9880749574,
       "video_height": 720,
+      "is_playlist": false,
       "created_at": "2015-02-12T04:42:31Z",
       "_id": 4989654544,
       "channel": {

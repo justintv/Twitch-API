@@ -110,6 +110,12 @@ Returns a list of stream objects that the authenticated user is following.
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
+        <tr>
+            <td><code>stream_type</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Only shows streams from a certain type. Permitted values: <code>all</code>, <code>playlist</code>, <code>live</code></td>
+        </tr>
     </tbody>
 </table>
 
