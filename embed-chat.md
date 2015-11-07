@@ -1,11 +1,11 @@
-### Embedding Twitch Chat
+# Embedding Twitch Chat
 
-#### Parameters
+## Parameters
 - `channel` : Channel the chat belongs to.
 - `height`  : Chat window height.
 - `width`   : Chat window width.
 
-#### Code
+## Code
 
 ```html
 <iframe frameborder="0" 
@@ -17,7 +17,7 @@
 </iframe>
 ```
 
-#### Example
+## Example
 
 ```html
 <iframe frameborder="0" scrolling="no" id="chat_embed" src="http://www.twitch.tv/hebo/chat" height="500" width="350"></iframe>
