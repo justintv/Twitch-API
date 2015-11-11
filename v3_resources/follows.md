@@ -40,7 +40,13 @@ Returns a list of follow objects.
             <td><code>offset</code></td>
             <td>optional</td>
             <td>integer</td>
-            <td>Object offset for pagination. Default is 0.</td>
+            <td>(deprecated) Object offset for pagination. Default is 0. Maximum is 1600.</td>
+        </tr>
+        <tr>
+            <td><code>cursor</code></td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Twitch uses cursoring to paginate long lists of followers. Check <code>_cursor</code> in response body and set <code>cursor</code> to this value to get the next page of results, or use <code>_links.next</code> to navigate to the next page of results</td>
         </tr>
         <tr>
             <td><code>direction</code></td>
@@ -64,9 +70,10 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 {
   "_total": 1234,
   "_links": {
-    "next": "https://api.twitch.tv/kraken/channels/test_user1/follows?direction=DESC&limit=25&offset=25",
-    "self": "https://api.twitch.tv/kraken/channels/test_user1/follows?direction=DESC&limit=25&offset=0"
+    "self": "https://api.twitch.tv/kraken/channels/test_user1/follows?direction=DESC&limit=25",
+    "next": "https://api.twitch.tv/kraken/channels/test_user1/follows?cursor=1364170340354965000&direction=DESC&limit=25"
   },
+  "_cursor": "1364170340354965000"
   "follows": [
     {
       "created_at": "2013-06-02T09:38:45Z",
