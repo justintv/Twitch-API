@@ -45,7 +45,7 @@ Returns a list of follow objects.
         <tr>
             <td><code>cursor</code></td>
             <td>optional</td>
-            <td>integer</td>
+            <td>string</td>
             <td>Twitch uses cursoring to paginate long lists of followers. Check <code>_cursor</code> in response body and set <code>cursor</code> to this value to get the next page of results, or use <code>_links.next</code> to navigate to the next page of results.</td>
         </tr>
         <tr>
