@@ -7,9 +7,17 @@ The Twitch iOS and Android applications can be launched externally. This page se
 ### Checking for the presence of the app
 You can check if the Twitch app is installed on the device with something along the following lines:
 
-##### iOS
+##### iOS Objective C
     NSURL *twitchURL = [NSURL URLWithString:@"twitch://open"];
     if ([[UIApplication sharedApplication] canOpenURL:twitchURL]) {
+        // The Twitch app is installed, do whatever logic you need, and call -openURL:
+    } else {
+        // The Twitch app isn't installed, prompt the user to install it!
+    }
+    
+##### iOS Swift
+    let twitchURL = NSURL(string: "twitch://open")
+    if (UIApplication.sharedApplication().canOpenURL(twitchURL!)) {
         // The Twitch app is installed, do whatever logic you need, and call -openURL:
     } else {
         // The Twitch app isn't installed, prompt the user to install it!
