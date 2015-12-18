@@ -60,7 +60,7 @@ Unpauses player
 
 #####setCurrentTime(`timestamp`)
 - `timestamp`   : timestamp to seek to (in seconds) `2000`
-- 
+
 #####getCurrentTime()
 Returns current timestamp in seconds `1234`
 
