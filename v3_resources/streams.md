@@ -405,4 +405,4 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 
 [See here for embedding.][embedding]
 
-[embedding]: /embedding.md#embedding-streams-vods-and-chat
+[embedding]: /embed-video.md#embedding-twitch-live-streams--videos
