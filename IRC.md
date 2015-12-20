@@ -231,7 +231,7 @@ Example message:
 
 - `color` is a hexadecimal RGB color code
   - Empty if it's never been set.
-- `display-name` is the user's display name, escaped as described [as described in the IRCv3 spec](http://ircv3.net/specs/core/message-tags-3.2.html).
+- `display-name` is the user's display name, escaped [as described in the IRCv3 spec](http://ircv3.net/specs/core/message-tags-3.2.html).
   - Empty if it's never been set.
 - `emotes` contains information to replace text in the message with the emote images and *can be empty*. The format is as follows:
   - `emote_id:first_index-last_index,another_first-another_last/another_emote_id:first_index-last_index`
