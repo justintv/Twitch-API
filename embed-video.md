@@ -1,16 +1,17 @@
 # Embedding Twitch Live Streams & Videos
 
 
-## Non-Interactive Embed `<iframe>` Example
+## Non-Interactive Iframe Embed
     <iframe 
         src="http://player.twitch.tv/?channel={CHANNEL}" 
         height="720" 
         width="1280" 
         frameborder="0" 
-        scrolling="no">
+        scrolling="no"
+        allowfullscreen="true">
     </iframe>
     
-###Parameters
+### Parameters
 **Either Required**
 - `channel`   : Channel name for live streams. (ex. `twitch`)
 - `video`     : Video ID for past broadcasts. Has no effect if `channel` is specified. (ex. `v123456`)
@@ -20,17 +21,12 @@
 - `autoplay`  : Automatically starts playing without the user clicking play. `true` or `false`. Defaults to `true`.
 - `time`      : Start playback at the given timestamp for videos ONLY. Must be in the format `1h2m3s` specifying hours, minutes, and seconds respectively. Defaults to the start of the video.
 
-###Video and Channel Metadata
+### Video and Channel Metadata
 For video and channel metadata refer to the [Twitch API (Kraken)] (https://github.com/justintv/Twitch-API).
-For convenience, some available metadata is listed below for convenience. All are available by [`GET/videos/:id`] (https://github.com/justintv/Twitch-API/blob/master/v3_resources/videos.md#get-videosid). 
-- Video length
-- Video title
-- Video description
-- Video viewcounts
+Info such as video channel, length, description, viewcounts are available through the Twitch API.
 
-
-##Interactive Embed Example (Not Available Yet)
-    <div id="video-playback"></div>
+## Interactive Embed (Not Available Yet)
+    <div id="{PLAYER_DIV_ID}"></div>
 	<script type="text/javascript">
 		var options = {
 			width: 854,
@@ -38,39 +34,53 @@ For convenience, some available metadata is listed below for convenience. All ar
 			channel: "{CHANNEL}", //video: "{VIDEO_ID}",
 		};
 
-		var player = new Twitch.embed.Player("video-playback", options);
+		var player = new Twitch.embed.Player("PLAYER_DIV_ID", options);
 		player.setCurrentTime(3000);
 		
 	</script>
 
-Include *.js files???
+Include *.js files??? TBD
 
-###Embed Calls
-#####pause()
+### Embed Calls
+All calls are synchronous. 
+
+**pause()**
+
 Pauses player
 
-#####play()
+**play()**
+
 Unpauses player
 
-#####setVideo(`videoid`)
+**setVideo(`videoid`)**
+
 - `videoid`     : string of the video's id `"v25831761"`
 
-#####setChannel(`channelname`)
+**setChannel(`channelname`)**
+
 - `channnelname`: string of the channel's name `"monstercat"`
 
-#####setCurrentTime(`timestamp`)
+**setCurrentTime(`timestamp`)**
+
+Does not work for streams. Seeks to `timestamp` in video and plays.
 - `timestamp`   : timestamp to seek to (in seconds) `2000`
 
-#####getCurrentTime()
-Returns current timestamp in seconds `1234`
+**getCurrentTime()**
 
-#####getQuality()
-Returns current quality `"Source"`
+Does not work for streams. Returns current timestamp in seconds for video. `1230`
 
-#####getQualities()
-Returns available qualities `["source","medium","low"]`
+**getQuality()**
 
-#####getPaused()
-Returns the paused state of the player `true` or `false`
+Returns current quality. `"Source"`
 
+**getQualities()**
 
+Returns available qualities. `["source","medium","low"]`
+
+**getPaused()**
+
+Returns the paused state of the player. `true` or `false`
+
+### Events
+
+TBD
