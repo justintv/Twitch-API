@@ -34,7 +34,7 @@ Info such as video channel, length, description, viewcounts are available throug
 			channel: "{CHANNEL}", //video: "{VIDEO_ID}",
 		};
 
-		var player = new Twitch.embed.Player("PLAYER_DIV_ID", options);
+		var player = new Twitch.embed.Player("{PLAYER_DIV_ID}", options);
 		player.setCurrentTime(3000);
 		
 	</script>
