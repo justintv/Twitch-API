@@ -34,7 +34,7 @@ A successful connection session will look something like this:
 > :tmi.twitch.tv 376 twitch_username :>
 ```
 
-About once every five minutes, you will receive a `PING tmi.twitch.tv` from the server, in order to ensure that your connection to the server is not prematurely terminated, you should reply with `PONG tmi.twitch.tv`.
+About once every five minutes, you will receive a `PING :tmi.twitch.tv` from the server, in order to ensure that your connection to the server is not prematurely terminated, you should reply with `PONG :tmi.twitch.tv`.
 
 ## On an Unsuccessful Connection
 
