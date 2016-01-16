@@ -253,11 +253,17 @@ USERSTATE is sent when joining a channel and every time you send a PRIVMSG to a 
 - `emote-sets` contains your emote set, which you can use to request a subset of [`/chat/emoticon_images`](/v3_resources/chat.md#get-chatemoticon_images).
   - eg: `https://api.twitch.tv/kraken/chat/emoticon_images?emotesets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239`
   - Always contains at least 0.
-- Other tags shared with PRIVMSG function the same way.
+- Other tags are shared with PRIVMSG and function the same way.
 
 ### GLOBALUSERSTATE
 
-GLOBALUSERSTATE will be used in the future to describe non-channel-specific state information.
+GLOBALUSERSTATE is sent on successful login, if the capabilities have been acknowledged before then. Example:
+
+```
+@color=#0D4200;display-name=TWITCH_UserNaME;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;turbo=0;user-id=1337;user-type=admin :tmi.twitch.tv GLOBALUSERSTATE
+```
+
+- All tags are shared with PRIVMSG or USERSTATE and function the same way.
 
 ### ROOMSTATE
 
