@@ -124,6 +124,10 @@ Doesn't work for videos. Returns the channel's name. `"monstercat"`
 
 Doesn't work for channels. Returns the video's id. `"v25831761"`
 
+**getPlaybackStats() `Object`**
+
+Returns an `Object` with the stats on the player and the current video or stream.
+
 #### Event Handling
 
 **addEventListener(`event :String, callback :Function`)**
