@@ -160,6 +160,17 @@ We use an OAuth 2.0, an authentication protocol designed to make accessing user 
 | [POST /channels/:channel/commercial](/v3_resources/channels.md#post-channelschannelcommercial) | Start a commercial on channel |
 | [GET /channels/:channel/teams](/v3_resources/channels.md#get-channelschannelteams) | Get list of teams channel belongs to |
 
+### [Channel Feed](/v3_resources/channel_feed.md)
+
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /feed/:channel/posts](/v3_resources/channel_feed.md#get-feedchannelposts) | Get channel feed posts |
+| [POST /feed/:channel/posts](/v3_resources/channel_feed.md#post-feedchannelposts) | Create post |
+| [GET /feed/:channel/posts/:id](/v3_resources/channel_feed.md#get-feedchannelpostsid) | Get post |
+| [DELETE /feed/:channel/posts/:id](/v3_resources/channel_feed.md#delete-feedchannelpostsid) | Delete post |
+| [POST /feed/:channel/posts/:id/reactions](/v3_resources/channel_feed.md#post-feedchannelpostsidreactions) | Create reaction to post |
+| [DELETE /feed/:channel/posts/:id/reactions](/v3_resources/channel_feed.md#delete-feedchannelpostsidreactions) | Delete reaction |
+
 ### [Chat](/v3_resources/chat.md)
 
 | Endpoint | Description |

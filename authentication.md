@@ -141,6 +141,8 @@ When requesting authorization from users, the scope parameter allows you to spec
 - `user_subscriptions`: Read access to subscriptions of a user.
 - `channel_check_subscription`: Read access to check if a user is subscribed to your channel.
 - `chat_login`: Ability to log into chat and send messages.
+- `channel_feed_read`: Ability to view to a channel feed.
+- `channel_feed_edit`: Ability to add posts and reactions to a channel feed.
 
 Scopes are specified as a *space separated* list in the url parameter `scope` when requesting authorization:
 
