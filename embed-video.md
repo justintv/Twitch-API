@@ -48,101 +48,101 @@ Info such as video channel, length, description, viewcounts are available throug
 All calls are synchronous.
 
 #### Playback Controls
-**pause()**
+`pause():void`
 
 Pauses player
 
-**play()**
+`play():void`
 
 Unpauses player
 
-**setVideo(`videoid :String`)**
+`setVideo(videoid:String):void` 
 
 - `videoid`     : video id `"v25831761"`
 
-**setChannel(`channelname :String`)**
+`setChannel(channelname:String):void`
 
 - `channnelname`: channel name `"monstercat"`
 
-**seek(`timestamp :Float`)**
+`seek(timestamp:Float):void`
 
 Does not work for streams. Seeks to `timestamp` in video and plays.
 - `timestamp`   : timestamp to seek to (in seconds) `2000`
 
-**setQuality(`quality :String`)**
+`setQuality(quality:String):void`
 
 - `quality`: quality wanted `"medium"`
 
 #### Volume Controls
 
-**setVolume(`volumelevel :Float`)**
+`setVolume(volumelevel:Float):void`
 
 - `volumelevel`: volume level between 0.0 and 1.0 `0.2`
 
-**setMuted(`muted :Boolean`)**
+`setMuted(muted:Boolean):void`
 
 - `muted`: `true` mutes the player, `false` unmutes
 
-**getVolume() `Float`**
+`getVolume():Float`
 
 Returns volume level, between 0.0 and 1.0 `0.3`
 
-**getMuted() `Boolean`**
+`getMuted():Boolean`
 
 Returns `true` if muted, else `false`
 
 #### Player Status
-**getEnded() `Boolean`**
+`getEnded():Boolean`
 
 Returns `true` if stream or video has ended, else `false`
 
-**getDuration() `Float`**
+`getDuration():Float`
 
 Does not work for streams. Returns duration of video in seconds. `45232`
 
-**getCurrentTime() `Float`**
+`getCurrentTime():Float`
 
 Does not work for streams. Returns current timestamp in seconds for video. `1230`
 
-**getQuality() `String`**
+`getQuality():String`
 
 Returns current quality. `"Source"`
 
-**getQualities() `[String]`**
+`getQualities():String[]`
 
 Returns available qualities. `["source","medium","low"]`
 
-**isPaused() `Boolean`**
+`isPaused():Boolean`
 
 Returns `true` if paused, else `false`. Buffering or seeking is considered `false`.
 
-**getChannel() `String`**
+`getChannel():String`
 
 Doesn't work for videos. Returns the channel's name. `"monstercat"`
 
-**getVideo() `String`**
+`getVideo():String`
 
 Doesn't work for channels. Returns the video's id. `"v25831761"`
 
-**getPlaybackStats() `Object`**
+`getPlaybackStats():Object`
 
 Returns an `Object` with the stats on the player and the current video or stream.
 
 #### Event Handling
 
-**addEventListener(`event :String, callback :Function`)**
+`addEventListener(event:String, callback:Function)`
 
 - `event`     : the event to listen to `"pause"`
 - `callback`  : function to call when `event` is triggered `function() { console.log("Event fired"); }`
 
-**removeEventListener(`event :String, callback :Function`)**
+`removeEventListener(event:String, callback:Function)`
 
 - `event`     : the `event` the `callback` is associated with
 - `callback`  : the function to remove 
 
 
 ### Events
-Events emitted by player. Call `addEventListener(event, callback)` to listen to events.
+Events emitted by player. Call `addEventListener(event:String, callback:Function)` to listen to events.
 
 - `"play"`   : Emitted when video or stream plays.
 - `"pause"`  : Emitted when video or stream is paused. Buffering and seeking is not considered paused.
