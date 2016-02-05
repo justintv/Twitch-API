@@ -29,7 +29,8 @@ Info such as video channel, length, description, viewcounts are available throug
 
 ## Interactive Embed (Not Available Yet)
 ```html
-    <div id="{PLAYER_DIV_ID}"></div>
+<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+<div id="{PLAYER_DIV_ID}"></div>
 	<script type="text/javascript">
 		var options = {
 			width: 854,
@@ -38,11 +39,10 @@ Info such as video channel, length, description, viewcounts are available throug
 		};
 
 		var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
-		player.setCurrentTime(3000);
-		
+		player.seek(3000);
 	</script>
+</div>
 ```
-Include *.js files??? TBD
 
 ### Embed Player Calls
 All calls are synchronous.
