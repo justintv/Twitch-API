@@ -35,7 +35,8 @@ Info such as video channel, length, description, viewcounts are available throug
 		var options = {
 			width: 854,
 			height: 480,
-			channel: "{CHANNEL}", //video: "{VIDEO_ID}",
+			channel: "{CHANNEL}", 
+			//video: "{VIDEO_ID}"
 		};
 
 		var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
