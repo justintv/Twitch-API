@@ -44,6 +44,14 @@ Info such as video channel, length, description, viewcounts are available throug
 </div>
 ```
 
+### Options
+- `width:Number`	: width of embed player in pixels
+- `height:Number`	: height of embed player in pixels
+- `channel:String`	: channel name for live streams `monstercat` 
+- `video:String`	: video id for past broadcast `v40464143` 
+
+Either a channel or a video can be loaded at one time.
+
 ### Embed Player Calls
 All calls are synchronous.
 
