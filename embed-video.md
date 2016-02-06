@@ -153,8 +153,8 @@ Returns an `Object` with the stats on the player and the current video or stream
 ### Events
 Events emitted by player. Call `addEventListener(event:String, callback:Function)` to listen to events.
 
-- `"play"`   : Emitted when video or stream plays.
-- `"pause"`  : Emitted when video or stream is paused. Buffering and seeking is not considered paused.
+- `"play"`   : Emitted when player is playing.
+- `"pause"`  : Emitted when player is paused. Buffering and seeking is not considered paused.
 - `"ended"`  : Emitted when video or stream ends.
 - `"online"` : Emitted when loaded channel goes online.
 - `"offline"`: Emitted when loaded channel goes offline.
