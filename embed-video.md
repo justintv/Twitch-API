@@ -27,7 +27,7 @@
 For video and channel metadata refer to the [Twitch API (Kraken)] (https://github.com/justintv/Twitch-API).
 Info such as video channel, length, description, viewcounts are available through the Twitch API.
 
-## Interactive Embed (Not Available Yet)
+## Interactive Embed
 ```html
 <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
 <div id="{PLAYER_DIV_ID}"></div>
