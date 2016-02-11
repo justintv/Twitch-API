@@ -127,15 +127,15 @@ Returns `true` if paused, else `false`. Buffering or seeking is considered playi
 
 `getChannel():String`
 
-Doesn't work for videos. Returns the channel's name. `"monstercat"`
+Doesn't work for videos. Returns the channel's name.
 
 `getVideo():String`
 
-Doesn't work for channels. Returns the video's id. `"v25831761"`
+Doesn't work for channels. Returns the video's id.
 
 `getPlaybackStats():Object`
 
-Returns an `Object` with the stats on the player and the current video or stream.
+Returns an `Object` with the stats on the player and the current video or live stream.
 
 #### Event Handling
 
