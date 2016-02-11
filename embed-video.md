@@ -31,18 +31,16 @@ Info such as video channel, length, description, viewcounts are available throug
 ```html
 <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
 <div id="{PLAYER_DIV_ID}"></div>
-	<script type="text/javascript">
-		var options = {
-			width: 854,
-			height: 480,
-			channel: "{CHANNEL}", 
-			//video: "{VIDEO_ID}"
-		};
-
-		var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
-		player.seek(3000);
-	</script>
-</div>
+<script type="text/javascript">
+	var options = {
+		width: 854,
+		height: 480,
+		channel: "{CHANNEL}", 
+		//video: "{VIDEO_ID}"		}
+	;
+	var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
+	player.seek(3000);
+</script>
 ```
 
 ### Options
@@ -63,38 +61,40 @@ Pauses player
 
 `play():void`
 
-Unpauses player
+Begins playing specified content.
 
 `setVideo(videoid:String):void` 
 
-- `videoid`     : video id `"v25831761"`
+- `videoid`     : video id (e.g. `"v1234567890"`)
 
 `setChannel(channelname:String):void`
 
-- `channnelname`: channel name `"monstercat"`
+- `channelname`: channel name 
 
 `seek(timestamp:Float):void`
 
-Does not work for streams. Seeks to `timestamp` in video and plays.
-- `timestamp`   : timestamp to seek to (in seconds) `2000`
+Does not work for live streams. Seeks to `timestamp` in video and resumes playing, if paused.
+- `timestamp`   : timestamp to seek to (in seconds)
 
 `setQuality(quality:String):void`
 
-- `quality`: quality wanted `"medium"`
+There are 5 available qualities: `"Source"`, `"High"`, `"Medium"`, `"Low"`, `"Mobile"`.
+Quality will default to `"Source"`if there are no transcodes available for the video.
+- `quality`: quality wanted (e.g. `"High"`) 
 
 #### Volume Controls
 
 `setVolume(volumelevel:Float):void`
 
-- `volumelevel`: volume level between 0.0 and 1.0 `0.2`
+- `volumelevel`: volume level between 0.0 and 1.0
 
 `setMuted(muted:Boolean):void`
 
-- `muted`: `true` mutes the player, `false` unmutes
+- `muted`: `true` mutes the player independent of volume setting, `false` unmutes
 
 `getVolume():Float`
 
-Returns volume level, between 0.0 and 1.0 `0.3`
+Returns volume level, between 0.0 and 1.0
 
 `getMuted():Boolean`
 
@@ -107,23 +107,23 @@ Returns `true` if stream or video has ended, else `false`
 
 `getDuration():Float`
 
-Does not work for streams. Returns duration of video in seconds. `45232`
+Does not work for live streams. Returns duration of video in seconds.
 
 `getCurrentTime():Float`
 
-Does not work for streams. Returns current timestamp in seconds for video. `1230`
+Does not work for live streams. Returns current timestamp in seconds for video.
 
 `getQuality():String`
 
-Returns current quality. `"Source"`
+Returns current quality of playback. (e.g. `"Source"`)
 
 `getQualities():String[]`
 
-Returns available qualities. `["source","medium","low"]`
+Returns available qualities. (e.g. `["Source", "High", "Medium", "Low", "Mobile"]` or `["Source"]`)
 
 `isPaused():Boolean`
 
-Returns `true` if paused, else `false`. Buffering or seeking is considered `false`.
+Returns `true` if paused, else `false`. Buffering or seeking is considered playing.
 
 `getChannel():String`
 
