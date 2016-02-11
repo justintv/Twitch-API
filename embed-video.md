@@ -36,10 +36,10 @@ Info such as video channel, length, description, viewcounts are available throug
 		width: 854,
 		height: 480,
 		channel: "{CHANNEL}", 
-		//video: "{VIDEO_ID}"		}
-	;
+		//video: "{VIDEO_ID}"		
+	};
 	var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
-	player.seek(3000);
+	player.setVolume(0.5);
 </script>
 ```
 
@@ -73,14 +73,14 @@ Begins playing specified content.
 
 `seek(timestamp:Float):void`
 
-Does not work for live streams. Seeks to `timestamp` in video and resumes playing, if paused.
+Seeks to `timestamp` in video and resumes playing, if paused. Does not work for live streams. 
 - `timestamp`   : timestamp to seek to (in seconds)
 
 `setQuality(quality:String):void`
 
-There are 5 available qualities: `"Source"`, `"High"`, `"Medium"`, `"Low"`, `"Mobile"`.
-Quality will default to `"Source"`if there are no transcodes available for the video.
-- `quality`: quality wanted (e.g. `"High"`) 
+There are 5 available qualities: `"chunked"`, `"high"`, `"medium"`, `"low"`, `"mobile"`.
+Quality will default to `"chunked"`if there are no transcodes available for the video. `"chunked"` is equivalent to the "Source" quality.
+- `quality`: quality wanted (e.g. `"high"`) 
 
 #### Volume Controls
 
@@ -107,19 +107,19 @@ Returns `true` if stream or video has ended, else `false`
 
 `getDuration():Float`
 
-Does not work for live streams. Returns duration of video in seconds.
+Returns duration of video in seconds. Does not work for live streams. 
 
 `getCurrentTime():Float`
 
-Does not work for live streams. Returns current timestamp in seconds for video.
+Returns current timestamp in seconds for video. Does not work for live streams. 
 
 `getQuality():String`
 
-Returns current quality of playback. (e.g. `"Source"`)
+Returns current quality of playback. (e.g. `"high"`)
 
 `getQualities():String[]`
 
-Returns available qualities. (e.g. `["Source", "High", "Medium", "Low", "Mobile"]` or `["Source"]`)
+Returns available qualities. (e.g. `["chunked", "high", "medium", "low", "mobile"]` or `["chunked"]`)
 
 `isPaused():Boolean`
 
@@ -127,11 +127,11 @@ Returns `true` if paused, else `false`. Buffering or seeking is considered playi
 
 `getChannel():String`
 
-Doesn't work for videos. Returns the channel's name.
+Returns the channel's name. Doesn't work for videos. 
 
 `getVideo():String`
 
-Doesn't work for channels. Returns the video's id.
+Returns the video's id. Doesn't work for channels. 
 
 `getPlaybackStats():Object`
 
