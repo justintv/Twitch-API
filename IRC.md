@@ -10,7 +10,7 @@ Lines prefixed with < are sent from client to server, and lines prefixed with > 
 
 You can connect to Twitch IRC using the following bits of information:
 
-- The server name to connect to is: `irc.twitch.tv`.
+- The server name to connect to is: `irc.chat.twitch.tv`.
 - The port to connect to is `6667`
 - **SSL is not currently supported for Twitch IRC**
 - Your nickname must be your Twitch username in lowercase.
