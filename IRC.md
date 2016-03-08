@@ -63,7 +63,7 @@ A brief list of commands supported by our IRC server include:
 
 **JOIN** *#channel*
 
-Note: After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`, `PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability
+Note: After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`, `PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability. The channel name should be entered in lowercase.
 
 ```
 < JOIN #channel
