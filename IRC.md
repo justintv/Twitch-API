@@ -10,9 +10,9 @@ Lines prefixed with < are sent from client to server, and lines prefixed with > 
 
 You can connect to Twitch IRC using the following bits of information:
 
-- The server name to connect to is: `irc.twitch.tv`.
+- The server name to connect to is: `irc.chat.twitch.tv`.
 - The port to connect to is `6667`
-- **SSL is not currently supported for Twitch IRC**
+- SSL is supported on `irc.chat.twitch.tv` on port 443
 - Your nickname must be your Twitch username in lowercase.
 - Your password should be an OAuth token [authorized through our API](/authentication.md) with the `chat_login` scope.
   - The token must have the prefix of `oauth:`. For example, if you have the token `abcd`, you send `oauth:abcd`.
@@ -206,6 +206,13 @@ Use with tags CAP. See USERSTATE tags [below](#userstate-1).
 ```
 > :tmi.twitch.tv USERSTATE #channel
 ```
+
+### RECONNECT
+
+Twitch IRC processes ocasionally need to be restarted. When this happens, clients that have requested the IRCv3 `twitch.tv/commands` capability are issued a `RECONNECT`. After a short period of time, the connection will be closed.
+ 
+In this circumstance, please reconnect and rejoin channels that were on that connection as you would normally.
+
 ### ROOMSTATE
 
 Use with tags CAP. See ROOMSTATE tags [below](#roomstate-1).
