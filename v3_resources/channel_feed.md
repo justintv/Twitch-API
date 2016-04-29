@@ -238,10 +238,10 @@ Create a reaction to a post.
     </thead>
     <tbody>
         <tr>
-            <td><code>emote</code></td>
+            <td><code>emote_id</code></td>
             <td>required</td>
             <td>string</td>
-            <td>Single emote or "endorse" for the reaction.</td>
+            <td>Single emote id (ex: "25" => Kappa) or the string "endorse"</td>
         </tr>
     </tbody>
 </table>
@@ -250,7 +250,7 @@ Create a reaction to a post.
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
--X POST https://api.twitch.tv/kraken/feed/bangbangalang/posts/21/reactions?emote=Kappa
+-X POST https://api.twitch.tv/kraken/feed/bangbangalang/posts/21/reactions?emote_id=25
 ```
 
 ### Example Response
@@ -284,11 +284,32 @@ Delete a reaction to a post.
 
 Deletes a reaction by the requesting user on the target post.
 
+### Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Required?</th>
+            <th width="50">Type</th>
+            <th width=100%>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>emote_id</code></td>
+            <td>required</td>
+            <td>string</td>
+            <td>Single emote id (ex: "25" => Kappa) or the string "endorse"</td>
+        </tr>
+    </tbody>
+</table>
+
 ### Example Request
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
--X DELETE https://api.twitch.tv/kraken/feed/bangbangalang/posts/21/reactions
+-X DELETE https://api.twitch.tv/kraken/feed/bangbangalang/posts/21/reactions?emote_id=25
 ```
 
 
