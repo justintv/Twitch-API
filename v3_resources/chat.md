@@ -79,6 +79,8 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
 
 Returns a list of emoticons.
 
+_Note:_ You can query a user's list of usable emoticons with [`GET /users/:user/emotes`](users.md#get-usersuseremotes)
+
 ### Parameters
 
 <table>

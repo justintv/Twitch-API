@@ -5,6 +5,7 @@ These are members of the Twitch community who have a Twitch account. If broadcas
 | Endpoint | Description |
 | ---- | --------------- |
 | [GET /users/:user](/v3_resources/users.md#get-usersuser) | Get user object |
+| [GET /users/:user/emotes](/v3_resources/users.md#get-usersuseremotes) | Get list of user's emotes |
 | [GET /user](/v3_resources/users.md#get-user) | Get user object |
 | [GET /streams/followed](/v3_resources/users.md#get-streamsfollowed) | Get list of streams user is following |
 | [GET /videos/followed](/v3_resources/users.md#get-videosfollowed) | Get list of videos belonging to channels user is following |
@@ -40,6 +41,50 @@ curl -H 'Accept: application/vnd.twitchtv.v3+json' \
   "_id": 21229404,
   "display_name": "test_user1",
   "bio": "test bio woo I'm a test user"
+}
+```
+
+## `GET /users/:user/emotes`
+
+Returns a list of emoticons that the user is authorized to use.
+
+*__Authenticated__*, required scope: `user_subscriptions`
+
+### Example Request
+
+```bash
+curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
+-X GET https://api.twitch.tv/kraken/users/test_user1/emotes
+```
+
+### Example Response
+
+```json
+{
+  "emoticon_sets": {
+    "0": [
+      {
+        "id": 25,
+        "code": "Kappa"
+      },
+      {
+        "id": 1902,
+        "code": "Keepo"
+      },
+      ...
+    ],
+    "469": [
+      {
+        "id": 2412,
+        "code": "pipeKoppa"
+      },
+      {
+        "id": 33152,
+        "code": "pipeKappa"
+      },
+      ...
+    ]
+  }
 }
 ```
 
