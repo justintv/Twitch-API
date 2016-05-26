@@ -155,6 +155,12 @@ Returns a list of stream objects that are queried by a number of parameters sort
             <td>string</td>
             <td>Only shows streams from a certain type. Permitted values: <code>all</code>, <code>playlist</code>, <code>live</code></td>
         </tr>
+        <tr>
+            <td><code>language</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Only shows streams of a certain language. Permitted values are locale ID strings, e.g. `en`, `fi`, `es-mx`.</td>
+        </tr>
     </tbody>
 </table>
 

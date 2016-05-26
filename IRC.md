@@ -63,7 +63,9 @@ A brief list of commands supported by our IRC server include:
 
 **JOIN** *#channel*
 
-Note: After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`, `PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability
+Note:
+- After a successful `JOIN`, you will *not* receive a membership state events (`NAMES`, `JOIN`, `PART`, or `MODE`) *unless* you've requested our [IRCv3 `Membership`](#membership) capability.
+- The channel name should be entered in lowercase.
 
 ```
 < JOIN #channel
@@ -233,9 +235,10 @@ Adds IRC v3 message tags to `PRIVMSG`, `USERSTATE`, `NOTICE` and `GLOBALUSERSTAT
 Example message:
 
 ```
-> @color=#0D4200;display-name=TWITCH_UserNaME;emotes=25:0-4,12-16/1902:6-10;mod=0;subscriber=0;turbo=1;user-id=1337;user-type=global_mod :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PRIVMSG #channel :Kappa Keepo Kappa
+> @badges=global_mod/1,turbo/1;color=#0D4200;display-name=TWITCH_UserNaME;emotes=25:0-4,12-16/1902:6-10;mod=0;room-id=1337;subscriber=0;turbo=1;user-id=1337;user-type=global_mod :twitch_username!twitch_username@twitch_username.tmi.twitch.tv PRIVMSG #channel :Kappa Keepo Kappa
 ```
 
+- `badges` is a comma-separated list of chat badges, valid badges are `staff`, `admin`, `global_mod`, `moderator`, `subscriber` and `turbo`.
 - `color` is a hexadecimal RGB color code
   - Empty if it's never been set.
 - `display-name` is the user's display name, escaped [as described in the IRCv3 spec](http://ircv3.net/specs/core/message-tags-3.2.html).
@@ -245,6 +248,7 @@ Example message:
   - `emote_id` is the number to use in this URL: `http://static-cdn.jtvnw.net/emoticons/v1/:emote_id/:size` (size is 1.0, 2.0 or 3.0)
   - Emote indexes are simply character indexes. `\001ACTION ` does *not* count and indexing starts from the first character that is part of the user's "actual message". In the example message, the first Kappa (emote id 25) is from character 0 (K) to character 4 (a), and the other Kappa is from 12 to 16.
 - `mod`, `subscriber` and `turbo` are either 0 or 1 depending on whether the user has mod, sub or turbo badge or not.
+- `room-id` is the ID of the channel.
 - `user-id` is the user's ID.
 - `user-type` is either *empty*, `mod`, `global_mod`, `admin` or `staff`.
   - The broadcaster can have any of these, including empty.
