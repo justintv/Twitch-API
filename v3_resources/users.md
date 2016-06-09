@@ -216,6 +216,12 @@ Returns a list of video objects from channels that the authenticated user is fol
             <td>integer</td>
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
+        <tr>
+            <td><code>broadcast_type</code></td>
+            <td>optional</td>
+            <td>string</td>
+            <td>Only shows videos of a certain type. Supported values: <code>all</code>, <code>archive</code>, <code>highlight</code>. Default: <code>all</code>.</td>
+        </td>
     </tbody>
 </table>
 
