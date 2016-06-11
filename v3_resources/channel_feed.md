@@ -50,7 +50,7 @@ If authentication is provided, the user_ids array in the reaction body contains 
 
 ```bash
 curl -H 'Accept: application/vnd.twitchtv.v3+json' -H 'Authorization: OAuth <access_token>' \
--X GET https://api.twitch.tv/kraken/feed/bangbangalang?limit=1
+-X GET https://api.twitch.tv/kraken/feed/bangbangalang/posts?limit=1
 ```
 
 ### Example Response
