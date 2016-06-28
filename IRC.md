@@ -232,7 +232,7 @@ Use with tags CAP. See USERSTATE tags [below](#userstate-1).
 ### RECONNECT
 
 Twitch IRC processes ocasionally need to be restarted. When this happens, clients that have requested the IRCv3 `twitch.tv/commands` capability are issued a `RECONNECT`. After a short period of time, the connection will be closed.
- 
+
 In this circumstance, please reconnect and rejoin channels that were on that connection as you would normally.
 
 ### ROOMSTATE
@@ -282,6 +282,7 @@ Adds IRC v3 message tags to `PRIVMSG`, `USERSTATE`, `NOTICE` and `GLOBALUSERSTAT
   - `emote_id:first_index-last_index,another_first-another_last/another_emote_id:first_index-last_index`
   - `emote_id` is the number to use in this URL: `http://static-cdn.jtvnw.net/emoticons/v1/:emote_id/:size` (size is 1.0, 2.0 or 3.0)
   - Emote indexes are simply character indexes. `\001ACTION ` does *not* count and indexing starts from the first character that is part of the user's "actual message". In the example message, the first Kappa (emote id 25) is from character 0 (K) to character 4 (a), and the other Kappa is from 12 to 16.
+- `id` is a unique identifier for a message.
 - `mod`, `subscriber` and `turbo` are either 0 or 1 depending on whether the user has mod, sub or turbo badge or not.
 - `room-id` is the ID of the channel.
 - `user-id` is the user's ID.
