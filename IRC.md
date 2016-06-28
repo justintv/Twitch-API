@@ -288,7 +288,7 @@ Adds IRC v3 message tags to `PRIVMSG`, `USERSTATE`, `NOTICE` and `GLOBALUSERSTAT
 - `user-id` is the user's ID.
 - `user-type` is either *empty*, `mod`, `global_mod`, `admin` or `staff`.
   - The broadcaster can have any of these, including empty.
-- `bits`, if present, means the user sent this amount of bits to the broadcaster. All instances of `/(^|\s)cheer\d+(\s|$)/` should be replaced with the appropriate emote: `static-cdn.jtvnw.net/bits/THEME/TYPE/COLOR/SIZE`, where
+- `bits`, if present, means the user used this amount of cheer/bits. All instances of `/(^|\s)cheer\d+(\s|$)/` should be replaced with the appropriate emote: `static-cdn.jtvnw.net/bits/THEME/TYPE/COLOR/SIZE`, where
   - `THEME` is `light` or `dark`
   - `TYPE` is `animated` or `static`
   - `COLOR` is `red` for >= 10000 bits, `blue` for >= 5000, `green` for >= 1000, `purple` for >= 100, or otherwise `gray`
