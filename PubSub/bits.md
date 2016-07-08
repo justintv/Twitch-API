@@ -11,7 +11,7 @@ In full, you would send a request that looks like the following:
 ```json
 {
   "type": "LISTEN",
-  "nonce": "0c41e26d-209e-4bb4-8db5-d9f46fab94bf",
+  "nonce": "...",
   "data": {
     "topics": ["channel-bitsevents.XXXXXXXX"],
     "auth_token": "...",
@@ -23,10 +23,13 @@ After your initial request, you'll receive a response message with the error if 
 ```json
 {
   "type": "RESPONSE",
-  "nonce": "...", //Matches the request nonce.
-  "error": "..." //Empty string if no error. Otherwise, one of ERR_BADMESSAGE, ERR_BADAUTH, ERR_SERVER, ERR_BADTOPIC.
+  "nonce": "...",
+  "error": "..." 
 }
 ```
+
+The `nonce` field will match the request `nonce`. The `error` field will be an empty string if there is no error. If there is an error, it can be one of 
+ERR_BADMESSAGE, ERR_BADAUTH, ERR_SERVER, ERR_BADTOPIC.
 
 ## Receiving a Bits event message
 When a message for your subscription is published, you will receive a message containing the applicable data. The message will look like the following:
@@ -44,7 +47,7 @@ When a message for your subscription is published, you will receive a message co
             "time": "2015-12-19T16:39:57-08:00",
             "chat_message": "Omg that baneling bust was Kreygasm cheer10 cheer10 cheer100",
             "bits_used": 120,
-            "total_bits_from_user": 620,
+            "total_bits_used": 620,
             "context": "cheer"
             }
     }
