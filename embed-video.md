@@ -161,3 +161,28 @@ Events emitted by player. Call `addEventListener(event:String, callback:Function
 - `"offline"`: Emitted when loaded channel goes offline.
 
 
+# Twitch Clips Embed Player
+
+Embedding a Clip is separate from embedding a live stream or VOD. The Clip embed player
+uses a different set of query parameters and doesn’t support the JavaScript interactive embed.
+
+## Non-Interactive Iframe Embed
+
+```html
+<iframe 
+    src="https://clips.twitch.tv/embed?clip={CLIP_ID}" 
+    height="360" 
+    width="640" 
+    frameborder="0" 
+    scrolling="no"
+    allowfullscreen="true">
+</iframe>
+```
+
+### URL Query Parameters
+**Required**
+- `clip`: The `"channel/slug"` identifier. Eg: `eleaguetv/ZealousMosquitoPeteZarollTie`
+
+**Optional**
+- `autoplay`  : Automatically starts playing without the user clicking play. `true` or `false`. Defaults to `true`.
+- `muted`     : Sets the initial muted state. `true` or `false`. Defaults to `false`.
