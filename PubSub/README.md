@@ -220,7 +220,7 @@ Clients that have listened on a set of topics will receive message streams to th
 
 #### Limits
 
-*  Clients can currently listen on up to 10 topics per connection. Attemping to listen on any more topics will result in an error message.
+*  Clients can currently listen on up to 50 topics per connection. Attemping to listen on any more topics will result in an error message.
 *  We recommend that a single client IP address establishes no more than 10 instantaneous connections.
 *  The previous two limits are likely to be relaxed for approved third-party applications as we start to better understand third-party requirements.
 *  Malicious or careless applications that result in abnormally high server load may be blacklisted from establishing connections.
