@@ -142,8 +142,8 @@ Returns an `Object` with the stats on the player and the current video or live s
 
 `addEventListener(event:String, callback:Function)`
 
-- `event`     : the event to listen to `"pause"`
-- `callback`  : function to call when `event` is triggered `function() { console.log("Event fired"); }`
+- `event`     : the event to listen to `Twitch.Player.PAUSE`
+- `callback`  : function to call when `event` is triggered `function() { console.log("Pause event fired"); }`
 
 `removeEventListener(event:String, callback:Function)`
 
