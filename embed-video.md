@@ -152,14 +152,14 @@ Returns an `Object` with the stats on the player and the current video or live s
 
 
 ### Events
-Events emitted by player. Call `addEventListener(event:String, callback:Function)` to listen to events.
+Events emitted by and defined by the player. Call `addEventListener(event:String, callback:Function)` to listen to events.
 
-- `"ready"`  : Emitted when player is ready to accept function calls.
-- `"playing"`: Emitted when player is playing.
-- `"pause"`  : Emitted when player is paused. Buffering and seeking is not considered paused.
-- `"ended"`  : Emitted when video or stream ends.
-- `"online"` : Emitted when loaded channel goes online.
-- `"offline"`: Emitted when loaded channel goes offline.
+- `Twitch.Player.READY`  : Emitted when player is ready to accept function calls.
+- `Twitch.Player.PLAY`: Emitted when player is playing.
+- `Twitch.Player.PAUSE`  : Emitted when player is paused. Buffering and seeking is not considered paused.
+- `Twitch.Player.ENDED`  : Emitted when video or stream ends.
+- `Twitch.Player.ONLINE` : Emitted when loaded channel goes online.
+- `Twitch.Player.OFFLINE`: Emitted when loaded channel goes offline.
 
 
 # Twitch Clips Embed Player
