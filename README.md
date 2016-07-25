@@ -1,5 +1,7 @@
 # Twitch API v3
 
+[![Analytics](https://ga-beacon.appspot.com/UA-23719667-10/README)](https://github.com/igrigorik/ga-beacon)
+
 ## Terms of Use
 
 By accessing or using Twitch API, you are indicating that you have read and agree to Twitch's [Terms of Service][], [Privacy Policy][], and [API Terms of Service][].
