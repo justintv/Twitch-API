@@ -47,7 +47,6 @@ curl -H 'Accept: application/vnd.twitchtv.v2+json' \
     "commercial": "https://api.twitch.tv/kraken/channels/test_user1/commercial",
     "follows":"https://api.twitch.tv/kraken/channels/test_user1/follows",
     "stream_key":"https://api.twitch.tv/kraken/channels/test_user1/stream_key",
-    "features":"https://api.twitch.tv/kraken/channels/test_user1/features",
     "subscriptions":"https://api.twitch.tv/kraken/channels/test_user1/subscriptions",
     "editors":"https://api.twitch.tv/kraken/channels/test_user1/editors"
   },
