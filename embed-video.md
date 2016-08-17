@@ -40,6 +40,7 @@ Info such as video channel, length, description, viewcounts are available throug
 	};
 	var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
 	player.setVolume(0.5);
+	player.addEventListener(Twitch.Player.PAUSE, () => { console.log('Player is paused!'); });
 </script>
 ```
 
@@ -152,7 +153,7 @@ Returns an `Object` with the stats on the player and the current video or live s
 
 
 ### Events
-Events emitted by and defined by the player. Call `addEventListener(event:String, callback:Function)` to listen to events.
+Event string constants emitted by and defined by the player. Call `addEventListener(event:String, callback:Function)` to listen to events.
 
 - `Twitch.Player.READY`  : Emitted when player is ready to accept function calls.
 - `Twitch.Player.PLAY`: Emitted when player is playing.
