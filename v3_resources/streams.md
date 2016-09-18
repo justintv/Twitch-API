@@ -144,12 +144,6 @@ Returns a list of stream objects that are queried by a number of parameters sort
             <td>Object offset for pagination. Default is 0.</td>
         </tr>
         <tr>
-            <td><code>client_id</code></td>
-            <td>optional</td>
-            <td>string</td>
-            <td>Only shows streams from applications of <code>client_id</code>.</td>
-        </tr>
-        <tr>
             <td><code>stream_type</code></td>
             <td>optional</td>
             <td>string</td>
