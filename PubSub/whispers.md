@@ -52,8 +52,6 @@ When a message for your subscription is published, you will receive a message co
             "login":"xangold",
             "display_name":"Xangold",
             "color":"#8A2BE2",
-            "user_type":"staff",
-            "turbo":true,
             "emotes":[
 
             ],
@@ -73,8 +71,6 @@ When a message for your subscription is published, you will receive a message co
             "username":"xantest",
             "display_name":"xantest",
             "color":"",
-            "user_type":"",
-            "turbo":false,
             "badges":[
 
             ]
@@ -91,8 +87,6 @@ When a message for your subscription is published, you will receive a message co
             "login":"xangold",
             "display_name":"Xangold",
             "color":"#8A2BE2",
-            "user_type":"staff",
-            "turbo":true,
             "emotes":[
 
             ],
@@ -112,8 +106,6 @@ When a message for your subscription is published, you will receive a message co
             "username":"xantest",
             "display_name":"xantest",
             "color":"",
-            "user_type":"",
-            "turbo":false,
             "badges":[
 
             ]
