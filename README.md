@@ -84,7 +84,7 @@ application/javascript
 ```
 
 
-[JSON-P]: http://json-p.org/
+[JSON-P]: https://en.wikipedia.org/wiki/JSONP
 
 ### Self-Describing API
 
