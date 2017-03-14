@@ -3,11 +3,11 @@
 
 ## Non-Interactive Iframe Embed
 ```html
-    <iframe 
-        src="http://player.twitch.tv/?channel={CHANNEL}" 
-        height="720" 
-        width="1280" 
-        frameborder="0" 
+    <iframe
+        src="http://player.twitch.tv/?channel={CHANNEL}"
+        height="720"
+        width="1280"
+        frameborder="0"
         scrolling="no"
         allowfullscreen="true">
     </iframe>
@@ -35,8 +35,8 @@ Info such as video channel, length, description, viewcounts are available throug
 	var options = {
 		width: 854,
 		height: 480,
-		channel: "{CHANNEL}", 
-		//video: "{VIDEO_ID}"		
+		channel: "{CHANNEL}",
+		//video: "{VIDEO_ID}"
 	};
 	var player = new Twitch.Player("{PLAYER_DIV_ID}", options);
 	player.setVolume(0.5);
@@ -47,8 +47,8 @@ Info such as video channel, length, description, viewcounts are available throug
 ### Options
 - `width:Number`	: width of embed player in pixels
 - `height:Number`	: height of embed player in pixels
-- `channel:String`	: channel name for live streams `monstercat` 
-- `video:String`	: video id for past broadcast `v40464143` 
+- `channel:String`	: channel name for live streams `monstercat`
+- `video:String`	: video id for past broadcast `v40464143`
 - `playsinline:Boolean` : embed player plays inline for mobile iOS apps
 
 Either a channel or a video can be loaded at one time.
@@ -65,24 +65,24 @@ Pauses player
 
 Begins playing specified content.
 
-`setVideo(videoid:String):void` 
+`setVideo(videoid:String):void`
 
 - `videoid`     : video id (e.g. `"v1234567890"`)
 
 `setChannel(channelname:String):void`
 
-- `channelname`: channel name 
+- `channelname`: channel name
 
 `seek(timestamp:Float):void`
 
-Seeks to `timestamp` in video and resumes playing, if paused. Does not work for live streams. 
+Seeks to `timestamp` in video and resumes playing, if paused. Does not work for live streams.
 - `timestamp`   : timestamp to seek to (in seconds)
 
 `setQuality(quality:String):void`
 
 There are 5 available qualities: `"chunked"`, `"high"`, `"medium"`, `"low"`, `"mobile"`.
 Quality will default to `"chunked"`if there are no transcodes available for the video. `"chunked"` is equivalent to the "Source" quality.
-- `quality`: quality wanted (e.g. `"high"`) 
+- `quality`: quality wanted (e.g. `"high"`)
 
 #### Volume Controls
 
@@ -109,11 +109,11 @@ Returns `true` if stream or video has ended, else `false`
 
 `getDuration():Float`
 
-Returns duration of video in seconds. Does not work for live streams. 
+Returns duration of video in seconds. Does not work for live streams.
 
 `getCurrentTime():Float`
 
-Returns current timestamp in seconds for video. Does not work for live streams. 
+Returns current timestamp in seconds for video. Does not work for live streams.
 
 `getQuality():String`
 
@@ -129,11 +129,11 @@ Returns `true` if paused, else `false`. Buffering or seeking is considered playi
 
 `getChannel():String`
 
-Returns the channel's name. Doesn't work for videos. 
+Returns the channel's name. Doesn't work for videos.
 
 `getVideo():String`
 
-Returns the video's id. Doesn't work for channels. 
+Returns the video's id. Doesn't work for channels.
 
 `getPlaybackStats():Object`
 
@@ -149,7 +149,7 @@ Returns an `Object` with the stats on the player and the current video or live s
 `removeEventListener(event:String, callback:Function)`
 
 - `event`     : the `event` the `callback` is associated with
-- `callback`  : the function to remove 
+- `callback`  : the function to remove
 
 
 ### Events
@@ -171,11 +171,11 @@ uses a different set of query parameters and doesn’t support the JavaScript in
 ## Non-Interactive Iframe Embed
 
 ```html
-<iframe 
-    src="https://clips.twitch.tv/embed?clip={CLIP_ID}" 
-    height="360" 
-    width="640" 
-    frameborder="0" 
+<iframe
+    src="https://clips.twitch.tv/embed?clip={SLUG}"
+    height="360"
+    width="640"
+    frameborder="0"
     scrolling="no"
     allowfullscreen="true">
 </iframe>
@@ -183,7 +183,7 @@ uses a different set of query parameters and doesn’t support the JavaScript in
 
 ### URL Query Parameters
 **Required**
-- `clip`: The `"channel/slug"` identifier. Eg: `eleaguetv/ZealousMosquitoPeteZarollTie`
+- `clip`: The `"slug"` identifier. Eg: `AdamantZealousMosquitoPeteZarollTie`
 
 **Optional**
 - `autoplay`  : Automatically starts playing without the user clicking play. `true` or `false`. Defaults to `true`.
